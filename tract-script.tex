@@ -1,0 +1,484 @@
+\documentclass[11pt]{article}
+% Compiles with pdflatex, xelatex or lualatex.
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{mathptmx}
+  \usepackage[scaled=.9]{helvet}
+  \usepackage{courier}
+  \usepackage[expansion=false]{microtype}
+\else
+  \usepackage{fontspec}
+  \setmainfont{TeX Gyre Termes}
+  \setsansfont{TeX Gyre Heros}[Scale=0.9]
+  \setmonofont{TeX Gyre Cursor}
+  \usepackage{microtype}
+\fi
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{amssymb}
+\usepackage{textcomp}
+\usepackage[colorlinks=true,linkcolor=black,urlcolor=blue!50!black]{hyperref}
+
+\definecolor{tractred}{RGB}{176,32,32}
+\titleformat{\section}{\large\bfseries\color{tractred}}{}{0pt}{}
+\titleformat{\subsection}{\normalsize\bfseries}{}{0pt}{}
+\titlespacing*{\section}{0pt}{1.6em}{0.6em}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+\setlength{\emergencystretch}{3em}
+\raggedright
+\setlist[itemize]{leftmargin=1.5em,itemsep=0.1em,topsep=0.2em}
+
+% Script macros
+\newcommand{\op}[1]{\textbf{Operation:} #1\par}
+\newcommand{\panel}[2]{\textbf{#1.} #2\par}
+\newenvironment{lines}{\begin{itemize}[label={},leftmargin=1.5em,itemsep=0.05em,topsep=0.1em]}{\end{itemize}}
+\newcommand{\say}[2]{\item \textsc{#1}: \textsf{\small #2}}
+\newcommand{\fix}[1]{\textcolor{tractred}{\textbf{Fix:}} #1\par}
+\newcommand{\handoff}[1]{\emph{Hand-off:} #1\par}
+
+\title{\textbf{Tract Script}\\[0.3em]\large Do Tech Billionaires Want the World to Burn?}
+\author{Flyxion\\\small Independent Researcher}
+\date{September 2026}
+
+\begin{document}
+\maketitle
+
+The full script for the tract: cover, eleven story pages and the references back page, in final reading order. Pages already drawn are transcribed as built, and any fixes still owed are flagged under each page.
+
+\section{Running order}
+
+{\small
+\begin{tabularx}{\textwidth}{@{}r>{\raggedright\arraybackslash}p{4.6cm}X>{\raggedright\arraybackslash}p{2.8cm}@{}}
+\toprule
+\textbf{Page} & \textbf{Title} & \textbf{Operation} & \textbf{Status}\\
+\midrule
+1 & Cover: \textsc{Do Tech Billionaires Want the World to Burn?} & The spectacular accusation & Drawn\\
+2 & \textsc{Three Roads Out} & Name the coalition & Drawn; reporter redraw\\
+3 & \textsc{When the Whales Return} & Hidden second ending (read early, it's a flash-forward) & Drawn\\
+4 & \textsc{The Future for Whom?} & The shared material logic & Drawn\\
+5 & \textsc{Who Feeds the Machine?} & From ideology to infrastructure & Drawn\\
+6 & \textsc{The Ledger} & Harm turned into a green light & Drawn\\
+7 & \textsc{Your Replacement Is Progress} & Capability versus arranged disposability & Drawn\\
+8 & \textsc{The Wall with No Witness} & The emergency that outlives itself & Drawn; balloon tail fix\\
+9 & \textsc{Gospel of Acceleration} & The secular theology & Drawn; banner fix\\
+10 & \textsc{Admissible Degradation} & The conceptual culmination & Drawn\\
+11 & \textsc{The Exit That Cannot Exit} & Demolish the escape fantasy & Drawn; caption fix\\
+12 & \textsc{The Living World} & The affirmative ending; sends the reader to page 3 & Drawn; reporter redraw\\
+13 & \textsc{References \& Influences} & Back page bibliography and coupon & Drawn; text fixes\\
+\bottomrule
+\end{tabularx}}
+
+\textbf{The loop.} Page 12 ends with a corner tag, \textsf{RETURN TO PAGE 3}. On a first pass, page 3 is an unexplained underwater interlude between the coalition and the argument. On the second pass it's the proof that the repairs on page 12 happened. The whales appear twice: from above on page 12, from below on page 3.
+
+\section{Production conventions}
+
+\textbf{Reporter reference.} Curly dark-brown hair with substantial volume, large black square glasses, rust-red blazer, cream blouse, spiral notepad, silver handheld microphone. Mature, skeptical, expressive face; not glamorous, not resembling any recognizable person. The cover and pages 5 to 11 are on model. Pages 2 and 12 drift toward short, straighter hair and should be regenerated against the sheet.
+
+\textbf{Lettering.} All caps. Yellow rectangular caption boxes for narration, white balloons for speech, a red-on-yellow title banner across the top of each story page. Page 3's banner is tinted blue to match its palette.
+
+\textbf{Recurring figures.}
+\begin{itemize}
+\item The hard-hat worker appears on pages 4, 5, 7 and 11, a quiet second face alongside the reporter.
+\item The three billionaires are generic composites, never likenesses of real people. The fur-collar billionaire from the cover owns the bunker on page 11.
+\item The man in the striped-band fedora on page 12 nods to Tom Landry, the tract's main formal source.
+\item Page 9's preacher echoes the Sacred Ending preacher on page 2, holding a tablet instead of a Bible.
+\end{itemize}
+
+\textbf{Crowds.} Diverse and unstereotyped throughout, especially at the checkpoint on page 8.
+
+\textbf{Script notation.} Each panel's art direction is followed by its lettering: \textsc{Caption} for narration boxes, a character name for speech.
+
+% ------------------------------------------------------------
+\section{Page 1: Cover}
+
+\op{the spectacular accusation, in the voice of a tabloid and a 39\textcent{} tract at once.}
+
+\begin{lines}
+\say{Top burst}{A SHOCKING SPECIAL REPORT!}
+\say{Price roundel}{39\textcent}
+\say{Title}{DO TECH BILLIONAIRES WANT THE WORLD TO BURN?}
+\say{Burst, right}{THE SECRET FUTURE THEY'RE BUILDING WITHOUT YOU!}
+\end{lines}
+
+\panel{Art}{Three billionaire composites rise above a burning, flooding Earth. Left, a silver-haired man in a suit holding a toy rocket aloft. Centre, a curly-haired man in tinted glasses and a black turtleneck lifting a glowing circuit globe. Right, a bald man in a fur-collar coat and tinted glasses swinging open a vault door onto a lit bunker lounge. Below, a drowned city in flames; the reporter in the foreground looks up in alarm, microphone and notepad in hand.}
+
+\panel{Insets}{}
+\begin{itemize}
+\item Left: a data center under transmission pylons at dusk. Label: \textsf{\small THE AI POWER GRAB!}
+\item Right: a rocket leaving a burning Earth toward the moon. Label: \textsf{\small ROCKETS!}
+\item Lower right: a walled hilltop compound with crowds pressed against the fence. Label: \textsf{\small BUNKERS!}
+\end{itemize}
+
+\begin{lines}
+\say{Bottom banner}{WHO GETS A FUTURE -- AND WHO GETS LEFT BEHIND?}
+\end{lines}
+
+% ------------------------------------------------------------
+\section{Page 2: Three Roads Out}
+
+\op{name the coalition and show that its members disagree about everything except what they need.}
+
+\panel{Panel 1 (wide)}{The reporter before a wall map of the world with three diverging arrows: red curving left, blue straight up, green curving right.}
+\begin{lines}\say{Reporter}{THE ALLIANCE DOESN'T SHARE ONE DREAM.}\end{lines}
+
+\panel{Panel 2}{Label: \textsf{\small THE TECH EXIT}. An executive in profile; behind him a rocket on its gantry and a domed city on a cliff.}
+\begin{lines}\say{Executive}{BUILD A NEW WORLD FOR THE FEW.}\end{lines}
+
+\panel{Panel 3}{Label: \textsf{\small THE SACRED ENDING}. A preacher with a Bible, arm raised to a storm sky over a burning skyline.}
+\begin{lines}\say{Preacher}{THE DISASTER PROVES THE STORY.}\end{lines}
+
+\panel{Panel 4 (wide)}{Label: \textsf{\small THE FORTRESS}. An officer in a green peaked cap before a long wall with watchtowers; a crowd stands below it.}
+\begin{lines}\say{Officer}{SAVE OURSELVES. CAST OUT THE REST.}\end{lines}
+
+\panel{Panel 5 (wide)}{The three men shake hands over plans labeled \textsf{\small POWER}, \textsf{\small LAND} and \textsf{\small DATA}. The reporter watches from the right.}
+\begin{lines}\say{Reporter}{THEIR BELIEFS CONFLICT. THEIR PERMISSIONS CONVERGE.}\end{lines}
+
+\panel{Panel 6 (wide)}{The reporter walks through a busy, diverse street crowd: workers, families, children.}
+\begin{lines}\say{Reporter}{EACH ROAD TURNS A COMMON FUTURE INTO SELECTIVE SURVIVAL.}\end{lines}
+
+\fix{regenerate the reporter against the reference sheet.}
+\handoff{a page break into silence and deep water.}
+
+% ------------------------------------------------------------
+\section{Page 3: When the Whales Return}
+
+\op{the hidden second ending. The return isn't a miracle. It's evidence that many coordinated repairs have actually happened.}
+
+\textbf{Reporter.} Absent. This is the only page with nobody reporting, because the repairs no longer need a witness.
+
+\textbf{Palette.} Deep blues and greens, filtered light, no fire colors anywhere.
+
+\panel{Panel 1 (wide)}{Underwater. A humpback and her calf cross a blue corridor marked by dotted lines on the seafloor. Two ships pass slowly at the surface above.}
+\begin{lines}\say{Caption}{THEY DID NOT RETURN BECAUSE WE ESCAPED THE WORLD.}\end{lines}
+
+\panel{Panel 2}{A hydrophone cable on the seabed, cut against a shore station where a technician in headphones points at a waveform.}
+\begin{lines}\say{Caption}{THE SHIPPING LANES WENT QUIET ENOUGH TO HEAR.}\say{Technician}{THERE. THAT'S HER.}\end{lines}
+
+\panel{Panel 3}{Two divers cut away a ghost net on a reef; a sea turtle and a school of fish swim free.}
+\begin{lines}\say{Caption}{SOMEONE HAULED OUT THE NETS NOBODY OWNED.}\end{lines}
+
+\panel{Panel 4}{A regrowing kelp forest; a sea otter at the surface above, urchins held in check on the rocks below.}
+\begin{lines}\say{Caption}{THE FOREST GREW BACK WHEN THE BALANCE DID.}\end{lines}
+
+\panel{Panel 5}{Close on the whale's eye, calm.}
+\begin{lines}\say{Caption}{THEY RETURNED BECAUSE WE CHANGED THE CONDITIONS OF RETURN.}\end{lines}
+
+\panel{Panel 6 (wide)}{The deep ocean in near-black blue. The whale's song travels as curved bands that break past the right border, the one place in the tract where the art leaves its frame.}
+\begin{lines}\say{Caption}{AN ENDING IS NOT WHERE THE STORY STOPS. IT IS THE WORLD THAT CAN CONTINUE.}\end{lines}
+
+\handoff{on a first read, back to the surface and the summit on page 4. On a second read, none: the loop closes here.}
+
+% ------------------------------------------------------------
+\section{Page 4: The Future for Whom?}
+
+\op{the coalition's shared material logic. The fantasy is far away; the permits are signed now.}
+
+\panel{Panel 1}{The reporter outside a glass summit hall hung with national flags; limousines and a red carpet.}
+\begin{lines}\say{Caption}{THEY PROMISED A FUTURE FOR EVERYONE.}\end{lines}
+
+\panel{Panel 2}{A silver-haired speaker at a podium; behind him a rocket in a spotlight and a glowing circuit globe.}
+\begin{lines}\say{Speaker}{WE'LL OUTRUN EVERY LIMIT!}\end{lines}
+
+\panel{Panel 3}{The reporter before a power plant and a shrunken reservoir ringed by cracked, dry lakebed.}
+\begin{lines}\say{Reporter}{BUT WHO PAYS FOR THE RUNNING?}\end{lines}
+
+\panel{Panel 4}{Workers in hard hats beneath pylons and cooling towers; a bulldozer and a length of pipe in the dirt.}
+\begin{lines}\say{Caption}{THE FANTASY IS DISTANT. THE PERMISSIONS ARE IMMEDIATE.}\end{lines}
+
+\panel{Panel 5}{The reporter interviews the hard-hat worker at the plant.}
+\begin{lines}\say{Worker}{THE MACHINE IS CALLED INEVITABLE AFTER WE BUILD THE WORLD IT NEEDS.}\end{lines}
+
+\panel{Panel 6}{Close on the reporter.}
+\begin{lines}\say{Reporter}{THE QUESTION ISN'T WHETHER THEY WANT COLLAPSE. IT'S WHETHER THEY STILL NEED TO PREVENT IT.}\end{lines}
+
+\handoff{if the machine needs a world, what does it eat?}
+
+% ------------------------------------------------------------
+\section{Page 5: Who Feeds the Machine?}
+
+\op{descend from ideology into infrastructure.}
+
+\panel{Panel 1 (wide)}{A keynote stage. A glowing network cloud floats above the audience; a smiling executive with a headset mic. The reporter watches from the front row.}
+\begin{lines}\say{Executive}{OUR INTELLIGENCE LIVES IN THE CLOUD.}\end{lines}
+
+\panel{Panel 2}{The reporter peels back the corner of the cloud projection like a poster, revealing rows of server racks.}
+\begin{lines}\say{Caption}{THE CLOUD HAS A FLOOR PLAN.}\end{lines}
+
+\panel{Panel 3}{A local woman on a riverbank beside a large intake pipe running toward cooling towers.}
+\begin{lines}\say{Caption}{IT DRINKS.}\say{Woman}{THEY GOT THE WATER RIGHTS BEFORE WE GOT A HEARING.}\end{lines}
+
+\panel{Panel 4}{An open-pit mine: terraced walls, haul trucks, dust, small workers watching.}
+\begin{lines}\say{Caption}{IT EATS.}\end{lines}
+
+\panel{Panel 5}{An e-waste yard at dusk; people sorting cables and circuit boards by hand beside a burn pile.}
+\begin{lines}\say{Caption}{IT DISCARDS.}\end{lines}
+
+\panel{Panel 6 (wide)}{From a ridge, the reporter surveys mine, river, power plant, pylons and data center laid out as one connected system. The hard-hat worker walks the power line below.}
+\begin{lines}\say{Reporter}{THE CLOUD HAS A MINE, A RIVER, A POWER PLANT, AND AN ADDRESS.}\end{lines}
+
+\handoff{if the costs are this physical, where do they go on paper?}
+
+% ------------------------------------------------------------
+\section{Page 6: The Ledger}
+
+\op{harm travels up through an institution and becomes a green light. The reporter rides the elevator; floor numbers rise panel by panel.}
+
+\panel{Panel 1}{Street level: a shuttered clinic, a family on the steps holding an eviction notice, a closed factory gate. A clerk with a clipboard counts. Elevator indicator: 1.}
+\begin{lines}\say{Caption}{FLOOR 1: THE HARM.}\end{lines}
+
+\panel{Panel 2}{A filing drawer labeled \textsf{\small TRANSITION COSTS}; photographs of faces slide into the folders. Indicator: 12.}
+\begin{lines}\say{Caption}{FLOOR 12: THE CATEGORY.}\end{lines}
+
+\panel{Panel 3}{An analyst points at a spreadsheet: \textsf{\small TRANSITION COSTS: 4,000,000}. \textsf{\small FUTURE BENEFICIARIES: 10,000,000,000,000}.}
+\begin{lines}\say{Analyst}{WE MULTIPLY BY EVERYONE WHO MIGHT EVER LIVE.}\say{Reporter}{AND DIVIDE BY EVERYONE WHO LIVES NOW?}\end{lines}
+
+\panel{Panel 4}{A manager pushes away a stack of reports; a screen shows a rising bar and \textsf{\small NET POSITIVE}. Indicator: 40.}
+\begin{lines}\say{Caption}{FLOOR 40: THE SUMMARY.}\say{Manager}{JUST GIVE ME THE TOPLINE.}\end{lines}
+
+\panel{Panel 5}{The penthouse: a calm executive before a wall dashboard with one green light, \textsf{\small HUMANITY: ON TRACK}.}
+\begin{lines}\say{Executive}{NOBODY IN THIS BUILDING HAS HURT ANYONE.}\end{lines}
+
+\panel{Panel 6}{The reporter in the elevator, doors closing, looking down at the closed clinic and factory far below.}
+\begin{lines}\say{Caption}{EVERY FLOOR DID SOMETHING SMALL AND REASONABLE.}\say{Reporter}{NOBODY GAVE THE ORDER. THE BUILDING DID.}\end{lines}
+
+\handoff{the ledger's biggest line item is workers.}
+
+% ------------------------------------------------------------
+\section{Page 7: Your Replacement Is Progress}
+
+\op{separate the capability to automate from the arranged condition of disposability. Four withdrawals, then the blame.}
+
+\panel{Panel 1}{A vocational trade school, doors chained and padlocked: \textsf{\small PROGRAM DISCONTINUED}.}
+\begin{lines}\say{Caption}{FIRST, THEY CLOSED THE TRAINING.}\end{lines}
+
+\panel{Panel 2}{The worker, wrench in hand, at a machine cabinet marked \textsf{\small SERVICE BY VENDOR ONLY} with a no-tools symbol.}
+\begin{lines}\say{Caption}{THEN THEY LOCKED THE REPAIRS.}\end{lines}
+
+\panel{Panel 3}{An empty union hall, folding chairs stacked, \textsf{\small FOR LEASE} in the window.}
+\begin{lines}\say{Caption}{THEN THEY EMPTIED THE HALL.}\end{lines}
+
+\panel{Panel 4}{The worker at his kitchen table with a termination letter; on the TV, an anchor beside a robot arm.}
+\begin{lines}\say{Caption}{THEN THEY BLAMED THE ROBOT.}\say{TV}{AUTOMATION IS UNSTOPPABLE!}\end{lines}
+
+\panel{Panel 5 (wide)}{At the factory fence the reporter interviews the worker, back in his hard hat. Behind the fence the robot arm sits idle while a contract technician repairs it.}
+\begin{lines}\say{Worker}{THE ROBOT COULDN'T DO MY JOB. THEY MADE SURE I COULDN'T EITHER.}\end{lines}
+
+\panel{Panel 6 (wide)}{Close on the reporter; behind her, faded, the four withdrawals return as a montage.}
+\begin{lines}\say{Reporter}{A MACHINE THAT CAN REPLACE YOU IS A CAPABILITY. A WORLD WHERE YOU'RE DISPOSABLE WAS ARRANGED.}\end{lines}
+
+\handoff{the disposable have to go somewhere, and someone decides where they can't.}
+
+% ------------------------------------------------------------
+\section{Page 8: The Wall with No Witness}
+
+\op{an emergency measure outlives the emergency and loses its author. Year captions carry the time.}
+
+\panel{Panel 1 (wide)}{A press conference; wildfire and floodwater on screens behind an official at the podium. The reporter in the press pack.}
+\begin{lines}\say{Caption}{YEAR ONE.}\say{Official}{TEMPORARY MEASURES. ONLY UNTIL THE CRISIS PASSES.}\end{lines}
+
+\panel{Panel 2 (narrow)}{A checkpoint queue; cameras overhead and color-coded risk scores (23, 67, 91, 48) boxed over faces.}
+\begin{lines}\say{Caption}{YEAR THREE. THE CRISIS PASSED. THE CAMERAS STAYED.}\end{lines}
+
+\panel{Panel 3 (narrow)}{Drones over a desert fence line, stacked above a server room.}
+\begin{lines}\say{Caption}{YEAR SEVEN. THE SYSTEM BEGAN LEARNING FROM ITSELF.}\end{lines}
+
+\panel{Panel 4 (narrow)}{A man at a gate kiosk: \textsf{\small DENIED. REASON: UNAVAILABLE.}}
+\begin{lines}\say{Caption}{YEAR TWELVE.}\end{lines}
+
+\panel{Panel 5}{An appeals window: the man and the reporter at the counter, a tired clerk behind the glass.}
+\begin{lines}\say{Man}{I WAS NEVER CHARGED. I JUST CAN'T CROSS.}\say{Clerk}{THERE'S NO FILE. THERE'S A SCORE.}\end{lines}
+
+\panel{Panel 6 (wide)}{The reporter in the desert; the wall runs from concrete and watchtowers on the left to a lattice of faces, data and drones on the right.}
+\begin{lines}\say{Caption}{THE EMERGENCY ENDED. ITS AUTHOR DISAPPEARED.}\say{Reporter}{THE WALL IS NO LONGER ONLY CONCRETE. IT'S A DECISION WITH NO WITNESS.}\end{lines}
+
+\fix{the clerk's balloon tail sits between the clerk and the reporter; point it clearly at the clerk.}
+\handoff{who tells people all of this is worth it?}
+
+% ------------------------------------------------------------
+\section{Page 9: Gospel of Acceleration}
+
+\op{reveal the secular theology, rhyming deliberately with the old Christian tracts: revival tent, testimony, offering.}
+
+\panel{Panel 1 (wide)}{A revival tent at night. Neon banner: \textsf{\small THE EXPONENTIAL IS COMING}. The preacher raises a glowing tablet over a sea of raised hands.}
+\begin{lines}\say{Preacher}{REPENT OF YOUR LINEAR THINKING!}\end{lines}
+
+\panel{Panel 2}{An up-and-to-the-right curve glows across a cosmic screen like a stained-glass window; hands reach toward it.}
+\begin{lines}\say{Caption}{THE PROMISE: ABUNDANCE.}\end{lines}
+
+\panel{Panel 3}{The preacher mid-sermon, tablet in hand; behind him forest fire, smokestacks and a flooded house.}
+\begin{lines}\say{Preacher}{THE LAYOFFS ARE TRIBULATION! THE FLOODS ARE BIRTH PANGS!}\end{lines}
+
+\panel{Panel 4}{A young founder at the pulpit, hand on heart.}
+\begin{lines}\say{Founder}{I WAS LOST. THEN I SCALED.}\end{lines}
+
+\panel{Panel 5}{Close on a brass collection plate: \textsf{\small LAND DEED}, \textsf{\small WATER RIGHTS}, a check marked \textsf{\small PUBLIC GRANT}.}
+\begin{lines}\say{Caption}{THE OFFERING.}\end{lines}
+
+\panel{Panel 6 (wide)}{The reporter outside the tent in the rain, looking back at the glow; the filled plate sits by the tent flap.}
+\begin{lines}\say{Reporter}{THEY DIDN'T ABOLISH PROVIDENCE. THEY GAVE IT A GRAPH.}\end{lines}
+
+\fix{the preacher's raised hand covers part of ``COMING,'' and the banner now misreads. Reletter the sign or move the arm.}
+\handoff{when the promised abundance fails, what gets sacrificed?}
+
+% ------------------------------------------------------------
+\section{Page 10: Admissible Degradation}
+
+\op{the conceptual culmination. A damaged ark sheds functions to stay viable; the math is sound, the priorities are the politics.}
+
+\panel{Panel 1 (wide)}{A starship bridge in red alarm light; crew at consoles. Main screen: \textsf{\small POWER RESERVE 40\%. SHED LOAD TO REMAIN VIABLE.}}
+\begin{lines}\say{Caption}{THE ARK IS DAMAGED.}\end{lines}
+
+\panel{Panel 2 (wide)}{A ship schematic, the stern half going red. Tags: \textsf{\small HYDROPONICS C: NONESSENTIAL}. \textsf{\small SCHOOL: NONESSENTIAL}. \textsf{\small MEDICAL BAY 3: NONESSENTIAL}.}
+\begin{lines}\say{Computer}{ALL DECISIONS ARE WITHIN CONSTRAINTS.}\end{lines}
+
+\panel{Panel 3}{A dark lower deck; families with flashlights, a child with a teddy bear. A mechanic presses his palm to a sealed bulkhead.}
+\begin{lines}\say{Mechanic}{WHO DECIDED WE WERE A SUBSYSTEM?}\end{lines}
+
+\panel{Panel 4}{The reporter reading a printout headed \textsf{\small PRIORITY WEIGHTS: SET BY COMMAND DECK}.}
+\begin{lines}\say{Caption}{THE MATH WAS CORRECT. THE INPUTS WERE A CONSTITUTION.}\end{lines}
+
+\panel{Panel 5 (wide)}{The command deck lounge: champagne, laughter, a galaxy in the window.}
+\begin{lines}\say{Computer}{SYSTEM INTEGRITY PRESERVED.}\end{lines}
+
+\panel{Panel 6 (wide)}{The reporter wipes the fog from a screen. \textsf{\small SAVE THE SYSTEM.} glows red above; the cleared glass reveals the rest.}
+\begin{lines}\say{Screen}{SAVE THE PARTS OF THE SYSTEM THAT WRITE THE PRIORITIES.}\end{lines}
+
+\handoff{the command deck believes it could leave altogether.}
+
+% ------------------------------------------------------------
+\section{Page 11: The Exit That Cannot Exit}
+
+\op{demolish the escape fantasy by showing every exit plugged back into the world it abandons.}
+
+\panel{Panel 1}{The fur-collar billionaire in a bunker lounge with champagne, fruit and a hydroponic wall.}
+\begin{lines}\say{Billionaire}{COMPLETELY SELF-SUFFICIENT.}\end{lines}
+
+\panel{Panel 2}{The reporter at the bunker's loading dock watching workers unload produce, medicine and supplies from a truck.}
+\begin{lines}\say{Driver}{EVERY TUESDAY.}\end{lines}
+
+\panel{Panel 3}{Inside a Mars dome, a colonist reaches toward a cracked seal; a console reads \textsf{\small RESUPPLY WINDOW: 26 MONTHS}.}
+\begin{lines}\say{Caption}{THE MOST DEPENDENT CITY EVER BUILT.}\say{Colonist}{THE PART SHIPS FROM EARTH.}\end{lines}
+
+\panel{Panel 4 (split)}{Top: a man in a VR headset lounging in a tropical paradise. Bottom: the same man slumped in a headset among server fans, while the hard-hat worker checks a breaker panel.}
+\begin{lines}\say{Caption}{EVEN HEAVEN NEEDS COOLING.}\end{lines}
+
+\panel{Panel 5 (wide)}{Night at the bunker wall; a guard looks out at the lights of a town.}
+\begin{lines}\say{Caption}{EVERY FORTRESS RUNS ON TRUST IT CAN'T COMMAND.}\say{Guard}{MY FAMILY'S OUT THERE.}\end{lines}
+
+\panel{Panel 6 (wide)}{From a hilltop the reporter sees bunker, Mars-style dome and data center tethered by pipes and cables to farms, a power plant, a hospital, trucks and workers.}
+\begin{lines}\say{Reporter}{THE PRIVATE EXIT ISN'T INDEPENDENCE. IT'S DEPENDENCE WITH THE WORLD CROPPED OUT.}\say{Caption}{THE WORLD THEY CROPPED OUT IS THE ONLY ONE THERE IS.}\end{lines}
+
+\fix{panel 5's caption has a stray mark (``CAN'.T''). Reletter.}
+\handoff{page 12 opens on a flooded town and the duty to repair.}
+
+% ------------------------------------------------------------
+\section{Page 12: The Living World}
+
+\op{the affirmative ending. A future isn't a place you leave for; it's one you keep habitable.}
+
+\panel{Panel 1}{The reporter and a man in a striped-band fedora look through a window at a flooded town.}
+\begin{lines}\say{Caption}{PRIVATE ESCAPE WEAKENS THE DUTY TO REPAIR.}\end{lines}
+
+\panel{Panel 2}{A planner in shirtsleeves gestures over a model of transit lines and restored wetlands.}
+\begin{lines}\say{Planner}{A FUTURE ISN'T AN EXIT. IT'S A PLACE WE KEEP HABITABLE.}\end{lines}
+
+\panel{Panel 3}{Workers wiring a server cabinet beside solar panels; wind turbines and a restored river delta beyond.}
+\begin{lines}\say{Caption}{TECHNOLOGY CAN SERVE CONTINUITY INSTEAD OF FLIGHT.}\end{lines}
+
+\panel{Panel 4 (four-part)}{A clinic, a library, a woodworking shop and a community kitchen.}
+\begin{lines}\say{Caption}{PUBLIC CAPACITY IS SURVIVAL HELD IN COMMON.}\end{lines}
+
+\panel{Panel 5 (wide)}{Two children on shoreline rocks at sunset as whales breach offshore.}
+\begin{lines}\say{Child}{LOOK! THEY CAME BACK!}\end{lines}
+
+\panel{Panel 6 (wide)}{The reporter, smiling, before a green coastal city with rail, a greenhouse and gardens.}
+\begin{lines}\say{Reporter}{THE REAL STRUGGLE IS SHARED CONTINUATION AGAINST SELECTIVE CONTINUATION.}\say{Caption}{THE FUTURE IS NOT SOMEWHERE ELSE.}\say{Corner tag}{RETURN TO PAGE 3}\end{lines}
+
+\fix{regenerate the reporter against the reference sheet.}
+\handoff{back to page 3, under the surface.}
+
+% ------------------------------------------------------------
+\section{Page 13: References \& Influences (back page)}
+
+\op{the tract shows its sources, styled as a Spire mail-order page crossed with a prize-club coupon.}
+
+\textbf{Layout.}
+\begin{itemize}
+\item Masthead: \textsf{\small A READER'S GUIDE TO THE BOOKS, COMICS AND ARGUMENTS BEHIND / REFERENCES \& INFLUENCES}. Badge: \textsf{\small NO SECRET SOURCES! CHECK THEM YOURSELF}.
+\item Two columns: \textsf{\small THE ARGUMENT} and \textsf{\small FLYXION ESSAYS}.
+\item Banner: \textsf{\small ILLUSTRATED! DOCUMENTED! CITABLE!} over \textsf{\small CHRISTIAN TRACT COMICS}, \textsf{\small PERIOD COMICS AND EPHEMERA} and a \textsf{\small FILM REFERENCE} box.
+\item Dashed coupon: \textsf{\small A COMPLETE READER'S SOURCE GUIDE}. Tract, format and method lines; the disclaimer (``This tract is an interpretive comic, not a transcript. Public figures are discussed in the sources but are not depicted. All billionaire characters are fictional composites.''); a \textsf{\small CHECK THE CLAIMS!} form (name, library, favorite source, correction); \textsf{\small CUT OUT! READ! DISAGREE! CHECK EVERY SOURCE!}; closing line \textsf{\small THE FUTURE IS TOO IMPORTANT TO LEAVE UNCITED.}
+\end{itemize}
+
+\textbf{Fixes.}
+\begin{itemize}
+\item \textsf{FORMAT} line: change ``11-PAGE COMIC TRACT'' to ``12-PAGE COMIC TRACT''.
+\item ``Behind Page'' numbers, updated for the whales page: Value of Floods, pages 10 and 11; Manufactured Necessity, pages 5 and 6; Arranged Conditions, page 7; What Probability Forgets, page 6.
+\item Add the missing space in ``METHOD:FICTIONAL''.
+\item The disclaimer's ``not depicted.'' runs into the \textsf{CHECK THE CLAIMS!} box; shorten the line or narrow the text block.
+\end{itemize}
+
+% ------------------------------------------------------------
+\section{Bibliography}
+
+\subsection{Argument}
+\begin{itemize}
+\item Klein, Naomi, and Astra Taylor. \emph{End Times Fascism and the Fight for the Living World}. New York: Farrar, Straus and Giroux; Toronto: Knopf Canada; London: Allen Lane, 2026 (published September 15, 2026). Source of the ``end-timers'' coalition, the three roads, and ``the living world'' as the affirmative term. \url{https://naomiklein.org/end-times-fascism/}
+\item Marchese, David. ``Do Tech Billionaires Want the World to Burn?'' Interview with Naomi Klein and Astra Taylor. \emph{The Interview}, The New York Times, September 2026 (video on YouTube). Source of the cover question. \url{https://www.youtube.com/watch?v=5GDKpDkieh0}
+\item Klein and Taylor on Adam Conover's \emph{Factually!} podcast, 2026.
+\end{itemize}
+
+\subsection{Related Flyxion essays}
+\begin{itemize}
+\item \emph{The Value of Floods: Private Protection and Differential Survivability} (September 2026; drafted as \emph{The Ark and the Flood}). Behind pages 10 and 11.
+\item \emph{Manufactured Necessity} and the structural-waste series (\emph{Conditioned Emptiness}, \emph{The Economy of Replaced Things}). Behind pages 5 and 6.
+\item \emph{Arranged Conditions: Two Accounts of the Same Fear}. Behind page 7.
+\item \emph{What Probability Forgets}. Behind page 6.
+\end{itemize}
+
+\subsection{Christian tract comics}
+\begin{itemize}
+\item Zeoli, Billy (script), and Al Hartley (art). \emph{Tom Landry and the Dallas Cowboys}. Old Tappan, NJ: Spire Christian Comics / Fleming H. Revell, 1973. The main formal model: sports spectacle turned into testimony, the locker-room interview with a bespectacled reporter holding a microphone, and the conversion beat. Parodied in page 9's testimony panel.
+\item Hartley, Al. \emph{Live It Up}. Spire Christian Comics / Fleming H. Revell, c.~1973. Cover collage model.
+\item Spire Christian Comics house ads (mail-order page and back-cover title grid). Source of the 39\textcent{} price and burst banners.
+\item \emph{Christmas and Archie}. An Archie Special Edition, treasury format, distributed by Fawcett, c.~1975. Hartley-era Archie house style.
+\end{itemize}
+
+\subsection{Period comics and ephemera}
+\begin{itemize}
+\item Kirby, Jack. \emph{2001: A Space Odyssey}. Marvel Comics, 1976--77 (``New Seed'' story, pages 22, 23 and 27; issue to confirm). Omniscient caption voice and regeneration from what remains; a model for pages 3, 10 and 12.
+\item \emph{Star Trek}. Gold Key Comics, 1970s (Rykunian octopus page; issue to confirm). Starship staging for page 10.
+\item Green Arrow and Black Canary story page. DC Comics, 1970s (issue to confirm). Action layout.
+\item Youth Opportunity Sales Club, Sales Leadership Club and Olympic Sales Club advertisements (\textcopyright{} 1977). The coupon-and-prize-catalog model for page 13.
+\item \emph{National Enquirer}, December 7, 1982. The tabloid headline stack behind the cover.
+\end{itemize}
+
+\subsection{Film}
+\begin{itemize}
+\item \emph{Teenage Mutant Ninja Turtles}. Directed by Steve Barron. New Line Cinema, 1990. April O'Neil, the TV reporter who follows a story into a hidden world, is the model for the reporter.
+\end{itemize}
+
+% ------------------------------------------------------------
+\section{Production checklist}
+
+\begin{itemize}[label=$\square$]
+\item Page 2: regenerate the reporter on model
+\item Page 8: repoint the clerk's balloon tail
+\item Page 9: fix the \textsf{THE EXPONENTIAL IS COMING} banner
+\item Page 11: fix ``CAN'.T'' in the panel 5 caption
+\item Page 12: regenerate the reporter on model
+\item Page 13: format line, page numbers, METHOD spacing, disclaimer overflow
+\item Confirm issue numbers for the Kirby, Gold Key and DC pages
+\item Confirm the YouTube upload date and the Spire and Archie publication years against the indicia
+\item Rebuild the print PDF
+\end{itemize}
+
+\end{document}

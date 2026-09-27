@@ -1,0 +1,637 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://standardgalactic.github.io/cutaway/schema/event.schema.json",
+  "title": "Reader log event",
+  "description": "One line of the reader log (*.reader.jsonl, the page's store, 'Copy log'). The log is a set: events merge by union on id and order by (seq, actor, id). An event is never changed or removed; retire and unbind are events too.",
+  "oneOf": [
+    {
+      "type": "object",
+      "required": [
+        "id",
+        "actor",
+        "seq",
+        "t"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "actor": {
+          "type": "string"
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "at": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d",
+          "description": "when it happened; absent only on events upgraded from logs written before events had identity (actor 'legacy')"
+        },
+        "work": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "renamedFrom": {
+          "const": "flare"
+        },
+        "t": {
+          "const": "session"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "required": [
+        "id",
+        "actor",
+        "seq",
+        "t",
+        "chamber"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "actor": {
+          "type": "string"
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "at": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d",
+          "description": "when it happened; absent only on events upgraded from logs written before events had identity (actor 'legacy')"
+        },
+        "work": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "renamedFrom": {
+          "const": "flare"
+        },
+        "t": {
+          "const": "enter"
+        },
+        "chamber": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "required": [
+        "id",
+        "actor",
+        "seq",
+        "t",
+        "key",
+        "from",
+        "to"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "actor": {
+          "type": "string"
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "at": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d",
+          "description": "when it happened; absent only on events upgraded from logs written before events had identity (actor 'legacy')"
+        },
+        "work": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "renamedFrom": {
+          "const": "flare"
+        },
+        "t": {
+          "const": "traverse"
+        },
+        "key": {
+          "type": "string"
+        },
+        "from": {
+          "type": "string"
+        },
+        "to": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "required": [
+        "id",
+        "actor",
+        "seq",
+        "t",
+        "pos"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "actor": {
+          "type": "string"
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "at": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d",
+          "description": "when it happened; absent only on events upgraded from logs written before events had identity (actor 'legacy')"
+        },
+        "work": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "renamedFrom": {
+          "const": "flare"
+        },
+        "t": {
+          "const": "scan"
+        },
+        "pos": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "chamber": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    {
+      "type": "object",
+      "required": [
+        "id",
+        "actor",
+        "seq",
+        "t",
+        "n",
+        "chamber",
+        "pos"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "actor": {
+          "type": "string"
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "at": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d",
+          "description": "when it happened; absent only on events upgraded from logs written before events had identity (actor 'legacy')"
+        },
+        "work": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "renamedFrom": {
+          "const": "flare"
+        },
+        "t": {
+          "const": "beacon"
+        },
+        "n": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "chamber": {
+          "type": "string"
+        },
+        "pos": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "quat": {
+          "type": [
+            "array",
+            "null"
+          ]
+        },
+        "facing": {
+          "type": [
+            "array",
+            "null"
+          ]
+        },
+        "via": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "required": [
+        "id",
+        "actor",
+        "seq",
+        "t",
+        "ref"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "actor": {
+          "type": "string"
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "at": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d",
+          "description": "when it happened; absent only on events upgraded from logs written before events had identity (actor 'legacy')"
+        },
+        "work": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "renamedFrom": {
+          "const": "flare"
+        },
+        "t": {
+          "const": "retire"
+        },
+        "ref": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "required": [
+        "id",
+        "actor",
+        "seq",
+        "t",
+        "chamber"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "actor": {
+          "type": "string"
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "at": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d",
+          "description": "when it happened; absent only on events upgraded from logs written before events had identity (actor 'legacy')"
+        },
+        "work": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "renamedFrom": {
+          "const": "flare"
+        },
+        "t": {
+          "const": "bind"
+        },
+        "chamber": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "required": [
+        "id",
+        "actor",
+        "seq",
+        "t",
+        "chamber"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "actor": {
+          "type": "string"
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "at": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d",
+          "description": "when it happened; absent only on events upgraded from logs written before events had identity (actor 'legacy')"
+        },
+        "work": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "renamedFrom": {
+          "const": "flare"
+        },
+        "t": {
+          "const": "unbind"
+        },
+        "chamber": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "required": [
+        "id",
+        "actor",
+        "seq",
+        "t",
+        "name"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "actor": {
+          "type": "string"
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "at": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d",
+          "description": "when it happened; absent only on events upgraded from logs written before events had identity (actor 'legacy')"
+        },
+        "work": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "renamedFrom": {
+          "const": "flare"
+        },
+        "t": {
+          "const": "policy"
+        },
+        "name": {
+          "enum": [
+            "reading",
+            "prereq",
+            "threads",
+            "bound"
+          ]
+        }
+      }
+    },
+    {
+      "type": "object",
+      "required": [
+        "id",
+        "actor",
+        "seq",
+        "t",
+        "chamber"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "actor": {
+          "type": "string"
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "at": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d",
+          "description": "when it happened; absent only on events upgraded from logs written before events had identity (actor 'legacy')"
+        },
+        "work": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "renamedFrom": {
+          "const": "flare"
+        },
+        "t": {
+          "const": "read"
+        },
+        "chamber": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "required": [
+        "id",
+        "actor",
+        "seq",
+        "t",
+        "policy",
+        "stops"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "actor": {
+          "type": "string"
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "at": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d",
+          "description": "when it happened; absent only on events upgraded from logs written before events had identity (actor 'legacy')"
+        },
+        "work": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "renamedFrom": {
+          "const": "flare"
+        },
+        "t": {
+          "const": "cruise"
+        },
+        "policy": {
+          "type": "string"
+        },
+        "stops": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "type": "object",
+      "required": [
+        "id",
+        "actor",
+        "seq",
+        "t",
+        "why"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "actor": {
+          "type": "string"
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "at": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d",
+          "description": "when it happened; absent only on events upgraded from logs written before events had identity (actor 'legacy')"
+        },
+        "work": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "renamedFrom": {
+          "const": "flare"
+        },
+        "t": {
+          "const": "cruise-stop"
+        },
+        "why": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "required": [
+        "id",
+        "actor",
+        "seq",
+        "t",
+        "from_work",
+        "to_work",
+        "to_chamber"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "actor": {
+          "type": "string"
+        },
+        "seq": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "at": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d",
+          "description": "when it happened; absent only on events upgraded from logs written before events had identity (actor 'legacy')"
+        },
+        "work": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "renamedFrom": {
+          "const": "flare"
+        },
+        "t": {
+          "const": "jump"
+        },
+        "from_work": {
+          "type": "string"
+        },
+        "from_chamber": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "to_work": {
+          "type": "string"
+        },
+        "to_chamber": {
+          "type": "string"
+        },
+        "lane": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "the lane key; null means a warp, recorded as such"
+        }
+      }
+    }
+  ]
+}

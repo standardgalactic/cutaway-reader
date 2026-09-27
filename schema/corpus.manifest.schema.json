@@ -1,0 +1,142 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://standardgalactic.github.io/cutaway/schema/corpus.manifest.schema.json",
+  "title": "Corpus manifest (corpus.json)",
+  "description": "What the author declares: works and their editions, series, lanes, views. Written by hand or by corpus.py add/link/series.",
+  "type": "object",
+  "required": [
+    "works"
+  ],
+  "properties": {
+    "corpus": {
+      "type": "string",
+      "description": "stable id: the reader log is keyed by it"
+    },
+    "title": {
+      "type": "string"
+    },
+    "works": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "editions"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*$"
+          },
+          "editions": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "canonical": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "series": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "series": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "order"
+        ],
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "order": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9-]*$"
+            }
+          }
+        }
+      }
+    },
+    "lanes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "from",
+          "to"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "from": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*$"
+          },
+          "to": {
+            "type": "string"
+          },
+          "from_chamber": {
+            "type": "string",
+            "description": "chamber id, label or heading"
+          },
+          "to_label": {
+            "type": "string"
+          },
+          "oneway": {
+            "type": "boolean"
+          },
+          "note": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "views": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "group": {
+            "enum": [
+              "series"
+            ]
+          },
+          "sort": {
+            "enum": [
+              "-words"
+            ]
+          },
+          "select": {
+            "enum": [
+              "threads",
+              "unvisited"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

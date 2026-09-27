@@ -1,0 +1,173 @@
+{
+  "version": 2,
+  "galaxy_id": "g-f945a7779a85",
+  "works": {
+    "memorable-interfaces": {
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "status": "active",
+      "first_seen": "2026-09-27T07:12:25",
+      "placed_near": [],
+      "conflicts": []
+    },
+    "document-repositories": {
+      "pos": [
+        -167.97,
+        -46.0,
+        -86.58
+      ],
+      "status": "active",
+      "first_seen": "2026-09-27T07:12:25",
+      "placed_near": [
+        {
+          "work": "memorable-interfaces",
+          "similarity": 0.044
+        }
+      ],
+      "conflicts": []
+    },
+    "two-games": {
+      "pos": [
+        -148.03,
+        9.15,
+        133.32
+      ],
+      "status": "active",
+      "first_seen": "2026-09-27T07:12:25",
+      "placed_near": [
+        {
+          "work": "memorable-interfaces",
+          "similarity": 0.057
+        },
+        {
+          "work": "document-repositories",
+          "similarity": 0.054
+        }
+      ],
+      "conflicts": []
+    },
+    "automap-spec": {
+      "pos": [
+        36.96,
+        -33.58,
+        -116.53
+      ],
+      "status": "active",
+      "first_seen": "2026-09-27T07:12:25",
+      "placed_near": [
+        {
+          "work": "memorable-interfaces",
+          "similarity": 0.107
+        },
+        {
+          "work": "two-games",
+          "similarity": 0.041
+        },
+        {
+          "work": "document-repositories",
+          "similarity": 0.012
+        }
+      ],
+      "conflicts": []
+    }
+  },
+  "editions": {
+    "memorable-interfaces": {
+      "chosen": "works/memorable-interfaces.tex",
+      "how": "only",
+      "at": "2026-09-27T07:12:25",
+      "alternatives": []
+    },
+    "document-repositories": {
+      "chosen": "works/document-repositories.tex",
+      "how": "only",
+      "at": "2026-09-27T07:12:25",
+      "alternatives": []
+    },
+    "two-games": {
+      "chosen": "works/two-games.tex",
+      "how": "only",
+      "at": "2026-09-27T07:12:25",
+      "alternatives": []
+    },
+    "automap-spec": {
+      "chosen": "works/automap-spec.tex",
+      "how": "decided",
+      "at": "2026-09-27T07:12:25",
+      "alternatives": [
+        "works/automap-spec-draft0.tex"
+      ]
+    }
+  },
+  "history": [
+    {
+      "at": "2026-09-27T07:12:25",
+      "edition": "memorable-interfaces",
+      "chosen": "works/memorable-interfaces.tex",
+      "how": "only"
+    },
+    {
+      "at": "2026-09-27T07:12:25",
+      "edition": "document-repositories",
+      "chosen": "works/document-repositories.tex",
+      "how": "only"
+    },
+    {
+      "at": "2026-09-27T07:12:25",
+      "edition": "two-games",
+      "chosen": "works/two-games.tex",
+      "how": "only"
+    },
+    {
+      "at": "2026-09-27T07:12:25",
+      "edition": "automap-spec",
+      "chosen": "works/automap-spec.tex",
+      "how": "proposed"
+    },
+    {
+      "at": "2026-09-27T07:12:25",
+      "placed": "memorable-interfaces",
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "at": "2026-09-27T07:12:25",
+      "placed": "document-repositories",
+      "pos": [
+        -167.97,
+        -46.0,
+        -86.58
+      ]
+    },
+    {
+      "at": "2026-09-27T07:12:25",
+      "placed": "two-games",
+      "pos": [
+        -148.03,
+        9.15,
+        133.32
+      ]
+    },
+    {
+      "at": "2026-09-27T07:12:25",
+      "placed": "automap-spec",
+      "pos": [
+        36.96,
+        -33.58,
+        -116.53
+      ]
+    },
+    {
+      "at": "2026-09-27T07:12:25",
+      "edition": "automap-spec",
+      "chosen": "works/automap-spec.tex",
+      "how": "decided"
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://standardgalactic.github.io/cutaway/schema/corpus.ledger.schema.json",
+  "title": "Corpus ledger",
+  "description": "The galaxy's remembered place: append-only. A placed work never moves; disagreements between copies are kept as conflicts until a person resolves them.",
+  "type": "object",
+  "required": [
+    "version",
+    "galaxy_id",
+    "works",
+    "editions",
+    "history"
+  ],
+  "properties": {
+    "version": {
+      "type": "integer"
+    },
+    "galaxy_id": {
+      "type": "string",
+      "pattern": "^g-[0-9a-f]{12}$"
+    },
+    "works": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "pos",
+          "status",
+          "conflicts"
+        ],
+        "properties": {
+          "pos": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 3,
+            "maxItems": 3
+          },
+          "status": {
+            "enum": [
+              "active",
+              "withdrawn"
+            ]
+          },
+          "first_seen": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d"
+          },
+          "placed_near": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "work",
+                "similarity"
+              ]
+            }
+          },
+          "conflicts": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        }
+      }
+    },
+    "editions": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "chosen",
+          "how"
+        ],
+        "properties": {
+          "chosen": {
+            "type": "string"
+          },
+          "how": {
+            "enum": [
+              "only",
+              "declared",
+              "decided",
+              "proposed"
+            ]
+          },
+          "at": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d"
+          },
+          "alternatives": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "at"
+        ]
+      }
+    }
+  }
+}

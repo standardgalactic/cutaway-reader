@@ -1,0 +1,270 @@
+{
+  "work": "memorable-interfaces",
+  "version": 1,
+  "nodes": {
+    "L:sec:intro": {
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 6.77,
+      "title": "Introduction",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:12:25",
+      "last_seen": "2026-09-27T09:11:17"
+    },
+    "L:sec:prelim": {
+      "pos": [
+        0.0,
+        -40.0,
+        0.0
+      ],
+      "radius": 6.33,
+      "title": "Preliminaries and Notation",
+      "role": "foundation",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:12:25",
+      "last_seen": "2026-09-27T09:11:17"
+    },
+    "L:sub:chambers": {
+      "pos": [
+        20.0,
+        -40.0,
+        0.0
+      ],
+      "radius": 4.0,
+      "title": "Chambers",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:prelim",
+      "status": "active",
+      "first_seen": "2026-09-27T07:12:25",
+      "last_seen": "2026-09-27T09:11:17"
+    },
+    "G:passages": {
+      "pos": [
+        -19.7,
+        -40.0,
+        0.0
+      ],
+      "radius": 3.8,
+      "title": "Passages",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:prelim",
+      "status": "active",
+      "first_seen": "2026-09-27T07:12:25",
+      "last_seen": "2026-09-27T09:11:17"
+    },
+    "L:sec:cutaway": {
+      "pos": [
+        0.0,
+        0.0,
+        40.0
+      ],
+      "radius": 6.57,
+      "title": "The Cutaway Map",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:12:25",
+      "last_seen": "2026-09-27T09:11:17"
+    },
+    "L:sec:routes": {
+      "pos": [
+        0.0,
+        0.0,
+        80.0
+      ],
+      "radius": 6.08,
+      "title": "Route Persistence",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:12:25",
+      "last_seen": "2026-09-27T09:11:17"
+    },
+    "L:sec:thesis": {
+      "pos": [
+        0.0,
+        0.0,
+        120.0
+      ],
+      "radius": 7.05,
+      "title": "Supervisory Memory",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:12:25",
+      "last_seen": "2026-09-27T09:11:17"
+    },
+    "L:sec:obj": {
+      "pos": [
+        40.0,
+        0.0,
+        120.0
+      ],
+      "radius": 6.23,
+      "title": "Objections from Search",
+      "role": "comparison",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:12:25",
+      "last_seen": "2026-09-27T09:11:17"
+    },
+    "L:sec:apps": {
+      "pos": [
+        0.0,
+        40.0,
+        120.0
+      ],
+      "radius": 6.33,
+      "title": "Applications to an Essay Corpus",
+      "role": "consequence",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:12:25",
+      "last_seen": "2026-09-27T09:11:17"
+    },
+    "L:sec:concl": {
+      "pos": [
+        0.0,
+        0.0,
+        160.0
+      ],
+      "radius": 6.2,
+      "title": "Closing",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:12:25",
+      "last_seen": "2026-09-27T09:11:17"
+    },
+    "L:app:formal": {
+      "pos": [
+        0.0,
+        -40.0,
+        160.0
+      ],
+      "radius": 5.98,
+      "title": "Formal Model",
+      "role": "appendix",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:12:25",
+      "last_seen": "2026-09-27T09:11:17"
+    },
+    "L:app:controls": {
+      "pos": [
+        0.0,
+        -80.0,
+        160.0
+      ],
+      "radius": 6.06,
+      "title": "Control Table",
+      "role": "appendix",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:12:25",
+      "last_seen": "2026-09-27T09:11:17"
+    }
+  },
+  "labels": {
+    "sec:intro": "L:sec:intro",
+    "sec:prelim": "L:sec:prelim",
+    "sub:chambers": "L:sub:chambers",
+    "sec:cutaway": "L:sec:cutaway",
+    "sec:routes": "L:sec:routes",
+    "sec:thesis": "L:sec:thesis",
+    "sec:obj": "L:sec:obj",
+    "sec:apps": "L:sec:apps",
+    "sec:concl": "L:sec:concl",
+    "app:formal": "L:app:formal",
+    "app:controls": "L:app:controls"
+  },
+  "aliases": {
+    "section||introduction": [
+      "L:sec:intro"
+    ],
+    "section||preliminaries-and-notation": [
+      "L:sec:prelim"
+    ],
+    "subsection|L:sec:prelim|chambers": [
+      "L:sub:chambers"
+    ],
+    "subsection|L:sec:prelim|passages": [
+      "G:passages"
+    ],
+    "section||the-cutaway-map": [
+      "L:sec:cutaway"
+    ],
+    "section||route-persistence": [
+      "L:sec:routes"
+    ],
+    "section||supervisory-memory": [
+      "L:sec:thesis"
+    ],
+    "section||objections-from-search": [
+      "L:sec:obj"
+    ],
+    "section||applications-to-an-essay-corpus": [
+      "L:sec:apps"
+    ],
+    "section||closing": [
+      "L:sec:concl"
+    ],
+    "section||formal-model": [
+      "L:app:formal"
+    ],
+    "section||control-table": [
+      "L:app:controls"
+    ]
+  },
+  "history": [
+    {
+      "at": "2026-09-27T07:12:25",
+      "added": [
+        "L:sec:intro",
+        "L:sec:prelim",
+        "L:sub:chambers",
+        "G:passages",
+        "L:sec:cutaway",
+        "L:sec:routes",
+        "L:sec:thesis",
+        "L:sec:obj",
+        "L:sec:apps",
+        "L:sec:concl",
+        "L:app:formal",
+        "L:app:controls"
+      ],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:12:25",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T09:11:17",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    }
+  ]
+}

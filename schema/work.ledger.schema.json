@@ -1,0 +1,154 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://standardgalactic.github.io/cutaway/schema/work.ledger.schema.json",
+  "title": "Work ledger",
+  "description": "One work's remembered place: append-only. A chamber, once dug, keeps its position forever; a removed heading is withdrawn, never erased.",
+  "type": "object",
+  "required": [
+    "work",
+    "version",
+    "nodes",
+    "labels",
+    "aliases",
+    "history"
+  ],
+  "properties": {
+    "work": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "version": {
+      "type": "integer"
+    },
+    "nodes": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "pattern": "^(G|L):.+"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "pos",
+          "radius",
+          "title",
+          "role",
+          "level",
+          "status",
+          "first_seen"
+        ],
+        "properties": {
+          "pos": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 3,
+            "maxItems": 3
+          },
+          "radius": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "title": {
+            "type": "string"
+          },
+          "role": {
+            "enum": [
+              "main",
+              "foundation",
+              "consequence",
+              "comparison",
+              "appendix",
+              "alcove"
+            ]
+          },
+          "level": {
+            "enum": [
+              "section",
+              "subsection"
+            ]
+          },
+          "parent": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "status": {
+            "enum": [
+              "active",
+              "withdrawn"
+            ]
+          },
+          "first_seen": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d"
+          },
+          "last_seen": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d"
+          }
+        }
+      }
+    },
+    "labels": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^(G|L):.+"
+      },
+      "description": "\\label -> chamber id; a label wins over a renamed heading"
+    },
+    "aliases": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "pattern": "^(G|L):.+"
+        }
+      },
+      "description": "level|parent|heading-slug -> chamber ids, in order of occurrence"
+    },
+    "history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "at",
+          "added",
+          "extended",
+          "withdrawn"
+        ],
+        "properties": {
+          "at": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d"
+          },
+          "added": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^(G|L):.+"
+            }
+          },
+          "extended": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^(G|L):.+"
+            }
+          },
+          "withdrawn": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^(G|L):.+"
+            }
+          }
+        }
+      }
+    }
+  }
+}

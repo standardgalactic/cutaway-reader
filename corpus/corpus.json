@@ -1,0 +1,21 @@
+{
+  "corpus": "cutaway-notes",
+  "title": "Cutaway notes",
+  "series": {
+    "cutaway": { "title": "The Cutaway Reader", "order": ["memorable-interfaces", "automap-spec", "two-games"] }
+  },
+  "works": [
+    { "id": "memorable-interfaces", "editions": ["works/memorable-interfaces.tex"], "series": "cutaway" },
+    { "id": "document-repositories", "editions": ["works/document-repositories.tex"],
+      "source": "Jonathan Mackenzie, Document Repositories, BYTE 20(4), April 1995, 131-138" },
+    { "id": "two-games", "editions": ["works/two-games.tex"], "series": "cutaway" },
+    { "id": "automap-spec", "editions": ["works/automap-spec-draft0.tex", "works/automap-spec.tex"], "series": "cutaway" }
+  ],
+  "views": [
+    { "id": "galaxy", "title": "Galaxy" },
+    { "id": "series", "title": "By series", "group": "series" },
+    { "id": "size", "title": "By length", "sort": "-words" },
+    { "id": "threads", "title": "Open threads", "select": "threads" },
+    { "id": "unexplored", "title": "Not yet visited", "select": "unvisited" }
+  ]
+}

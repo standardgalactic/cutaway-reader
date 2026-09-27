@@ -1,0 +1,3 @@
+# Only the tests need these. The tools themselves use the Python standard library and Node.
+playwright>=1.40      # test_viewer.py (then: python3 -m playwright install chromium)
+jsonschema>=4.18      # optional second opinion in test_schema.py

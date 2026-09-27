@@ -1,0 +1,122 @@
+{
+  "graph": {
+    "work": "test-level",
+    "nodes": [
+      {
+        "id": "L:sec:intro",
+        "level": "section",
+        "order": 0,
+        "text": ["Introduction"],
+        "threads": []
+      },
+      {
+        "id": "L:sec:cutaway",
+        "level": "section",
+        "order": 1,
+        "text": ["Cutaway"],
+        "threads": []
+      },
+      {
+        "id": "L:sec:routes",
+        "level": "section",
+        "order": 2,
+        "text": ["Routes"],
+        "threads": []
+      },
+      {
+        "id": "L:sec:thesis",
+        "level": "section",
+        "order": 3,
+        "text": ["Thesis"],
+        "threads": [],
+        "thesis": true
+      },
+      {
+        "id": "L:sec:obj",
+        "level": "section",
+        "order": 4,
+        "text": ["Object"],
+        "threads": []
+      }
+    ],
+    "edges": [
+      {
+        "from": "L:sec:intro",
+        "to": "L:sec:cutaway",
+        "kind": "sequence"
+      },
+      {
+        "from": "L:sec:cutaway",
+        "to": "L:sec:routes",
+        "kind": "sequence"
+      },
+      {
+        "from": "L:sec:routes",
+        "to": "L:sec:thesis",
+        "kind": "sequence"
+      },
+      {
+        "from": "L:sec:thesis",
+        "to": "L:sec:obj",
+        "kind": "sequence"
+      },
+      {
+        "from": "L:sec:routes",
+        "to": "L:sec:obj",
+        "kind": "reference",
+        "door": true
+      }
+    ]
+  },
+  "ledger": {
+    "version": 1,
+    "nodes": {
+      "L:sec:intro": {
+        "title": "Introduction",
+        "role": "main",
+        "level": "section",
+        "parent": null,
+        "pos": [0, 0, 0],
+        "radius": 10,
+        "status": "active"
+      },
+      "L:sec:cutaway": {
+        "title": "Cutaway",
+        "role": "main",
+        "level": "section",
+        "parent": null,
+        "pos": [20, 0, 0],
+        "radius": 10,
+        "status": "active"
+      },
+      "L:sec:routes": {
+        "title": "Routes",
+        "role": "main",
+        "level": "section",
+        "parent": null,
+        "pos": [40, 0, 0],
+        "radius": 10,
+        "status": "active"
+      },
+      "L:sec:thesis": {
+        "title": "Thesis",
+        "role": "main",
+        "level": "section",
+        "parent": null,
+        "pos": [60, 0, 0],
+        "radius": 10,
+        "status": "active"
+      },
+      "L:sec:obj": {
+        "title": "Object",
+        "role": "aside",
+        "level": "section",
+        "parent": null,
+        "pos": [40, 20, 0],
+        "radius": 8,
+        "status": "active"
+      }
+    },
+    "history": []
+  }
+}

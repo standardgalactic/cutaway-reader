@@ -1,0 +1,113 @@
+{
+  "corpus": "mem8-trial",
+  "title": "Flyxion trial",
+  "series": {
+    "mem8": {
+      "title": "MEM|8",
+      "order": [
+        "mem8-monograph",
+        "mem8-conscious-gaia"
+      ]
+    }
+  },
+  "works": [
+    {
+      "id": "mem8-monograph",
+      "editions": [
+        "works/mem8-monograph/abc4fc9a52.tex"
+      ],
+      "series": "mem8"
+    },
+    {
+      "id": "mem8-conscious-gaia",
+      "editions": [
+        "works/mem8-conscious-gaia/d9e8d617b0.tex",
+        "works/mem8-conscious-gaia/ac80748d01.tex",
+        "works/mem8-conscious-gaia/ef0d9f4573.tex",
+        "works/mem8-conscious-gaia/db189d364a.tex",
+        "works/mem8-conscious-gaia/1518ea39d4.tex",
+        "works/mem8-conscious-gaia/9efe5ae514.tex",
+        "works/mem8-conscious-gaia/b2f7155234.tex",
+        "works/mem8-conscious-gaia/acd628d21a.tex"
+      ],
+      "series": "mem8"
+    },
+    {
+      "id": "cosmological-memory",
+      "editions": [
+        "works/cosmological-memory/ec1624aa36.tex",
+        "works/cosmological-memory/e8a91f2973.tex",
+        "works/cosmological-memory/458d5a43c2.tex"
+      ]
+    },
+    {
+      "id": "spherepop",
+      "editions": [
+        "works/spherepop/061aaaa34e.tex"
+      ]
+    },
+    {
+      "id": "joy-of-spherepop",
+      "editions": [
+        "works/joy-of-spherepop/eba530ea8b.tex",
+        "works/joy-of-spherepop/0e8b97d482.tex"
+      ]
+    },
+    {
+      "id": "spherepop-os",
+      "editions": [
+        "works/spherepop-os/9e4a7995fc.tex"
+      ]
+    },
+    {
+      "id": "portable-warrant",
+      "editions": [
+        "works/portable-warrant/1aabbe7871/portable-warrant.tex"
+      ]
+    },
+    {
+      "id": "arranged-conditions",
+      "editions": [
+        "works/arranged-conditions/d920fc30bb.tex"
+      ]
+    },
+    {
+      "id": "what-probability-forgets",
+      "editions": [
+        "works/what-probability-forgets/ee6cbc8a3e.tex"
+      ]
+    },
+    {
+      "id": "forgotten-specification",
+      "editions": [
+        "works/forgotten-specification/890b1a4adb.tex"
+      ]
+    }
+  ],
+  "views": [
+    {
+      "id": "galaxy",
+      "title": "Galaxy"
+    },
+    {
+      "id": "series",
+      "title": "By series",
+      "group": "series"
+    },
+    {
+      "id": "size",
+      "title": "By length",
+      "sort": "-words"
+    },
+    {
+      "id": "threads",
+      "title": "Open threads",
+      "select": "threads"
+    },
+    {
+      "id": "unexplored",
+      "title": "Not yet visited",
+      "select": "unvisited"
+    }
+  ]
+}

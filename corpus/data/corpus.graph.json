@@ -1,0 +1,323 @@
+{
+  "corpus": "cutaway-notes",
+  "title": "Cutaway notes",
+  "series": {
+    "cutaway": {
+      "title": "The Cutaway Reader",
+      "order": [
+        "memorable-interfaces",
+        "automap-spec",
+        "two-games"
+      ]
+    }
+  },
+  "works": [
+    {
+      "id": "memorable-interfaces",
+      "title": "Memorable Interfaces",
+      "abstract": "Why an archive that keeps every page can still be impossible to remember, and what Descent's mines and cutaway map teach about building one that is not.",
+      "series": "cutaway",
+      "series_order": 0,
+      "provenance": {
+        "source": null,
+        "edition": "works/memorable-interfaces.tex",
+        "edition_how": "only",
+        "editions": [
+          {
+            "path": "works/memorable-interfaces.tex",
+            "sha256": "b1e7b3537b1890f73236698c01eb76b8a8da5b96548f96caeb2a52218217391e"
+          }
+        ]
+      },
+      "counts": {
+        "sections": 10,
+        "words": 529,
+        "threads": {
+          "evidence": 1,
+          "open": 1,
+          "missing": 1
+        },
+        "thesis": true
+      },
+      "start": "L:sec:intro",
+      "labels": [
+        "app:controls",
+        "app:formal",
+        "sec:apps",
+        "sec:concl",
+        "sec:cutaway",
+        "sec:intro",
+        "sec:obj",
+        "sec:prelim",
+        "sec:routes",
+        "sec:thesis",
+        "sub:chambers"
+      ],
+      "warnings": [],
+      "open_threads": [
+        {
+          "chamber": "L:sec:thesis",
+          "chamber_title": "Supervisory Memory",
+          "kind": "evidence",
+          "text": "needs a recall study with returning readers"
+        },
+        {
+          "chamber": "L:sec:obj",
+          "chamber_title": "Objections from Search",
+          "kind": "open",
+          "text": "whether instant retrieval erodes place memory is deliberately left open"
+        },
+        {
+          "chamber": "L:sec:apps",
+          "chamber_title": "Applications to an Essay Corpus",
+          "kind": "missing",
+          "text": "add series-level route examples"
+        }
+      ]
+    },
+    {
+      "id": "document-repositories",
+      "title": "Document Repositories",
+      "abstract": "A reading of Jonathan Mackenzie's 1995 BYTE article on Lotus Notes: documents as self-describing records, replication without a master copy, and what that design offers a spatial reader.",
+      "series": null,
+      "series_order": null,
+      "provenance": {
+        "source": "Jonathan Mackenzie, Document Repositories, BYTE 20(4), April 1995, 131-138",
+        "edition": "works/document-repositories.tex",
+        "edition_how": "only",
+        "editions": [
+          {
+            "path": "works/document-repositories.tex",
+            "sha256": "bd29cb732a98b7378b708a348df58cbc703ec4e5023315c8af5ac3bfdeff6659"
+          }
+        ]
+      },
+      "counts": {
+        "sections": 8,
+        "words": 460,
+        "threads": {
+          "evidence": 1
+        },
+        "thesis": true
+      },
+      "start": "L:sec:notes-intro",
+      "labels": [
+        "sec:notes-cases",
+        "sec:notes-cutaway",
+        "sec:notes-files",
+        "sec:notes-github",
+        "sec:notes-intro",
+        "sec:notes-limits",
+        "sec:notes-record",
+        "sec:notes-replication"
+      ],
+      "warnings": [],
+      "open_threads": [
+        {
+          "chamber": "L:sec:notes-replication",
+          "chamber_title": "Replication Without a Master",
+          "kind": "evidence",
+          "text": "compare conflict handling with later offline-first systems in detail"
+        }
+      ]
+    },
+    {
+      "id": "two-games",
+      "title": "Two Games in One Reader",
+      "abstract": "How Stars! and Descent became two layers of one reading interface, traced through earlier projects: Haplopraxis, Polyxan, the trajectory essays and the repeat-route notes.",
+      "series": "cutaway",
+      "series_order": 2,
+      "provenance": {
+        "source": null,
+        "edition": "works/two-games.tex",
+        "edition_how": "only",
+        "editions": [
+          {
+            "path": "works/two-games.tex",
+            "sha256": "fb2f6d15116cdc7928f88414a82a4c108963de1b74ef98c60818bbc175ea8d79"
+          }
+        ]
+      },
+      "counts": {
+        "sections": 7,
+        "words": 311,
+        "threads": {
+          "extension": 1
+        },
+        "thesis": true
+      },
+      "start": "L:sec:games-intro",
+      "labels": [
+        "sec:games-haplopraxis",
+        "sec:games-intro",
+        "sec:games-loops",
+        "sec:games-new",
+        "sec:games-polyxan",
+        "sec:games-routes",
+        "sec:games-trajectories"
+      ],
+      "warnings": [],
+      "open_threads": [
+        {
+          "chamber": "L:sec:games-new",
+          "chamber_title": "What Was New",
+          "kind": "extension",
+          "text": "trace the Plenum Ascent prototype as a separate lineage"
+        }
+      ]
+    },
+    {
+      "id": "automap-spec",
+      "title": "An Automap for Essays",
+      "abstract": "What the Descent automap does well, where its late levels turn into a thicket, and the rules an essay automap should follow instead.",
+      "series": "cutaway",
+      "series_order": 1,
+      "provenance": {
+        "source": null,
+        "edition": "works/automap-spec.tex",
+        "edition_how": "decided",
+        "editions": [
+          {
+            "path": "works/automap-spec-draft0.tex",
+            "sha256": "497981a58b91fb0f44967c63b4944782833d8ff85b035a80263c1f1adab0e90e"
+          },
+          {
+            "path": "works/automap-spec.tex",
+            "sha256": "29d7d5eecc343d5c77e3ddfd7df332f26dc5658471ca4797fc9e932f7c1047f5"
+          }
+        ]
+      },
+      "counts": {
+        "sections": 5,
+        "words": 235,
+        "threads": {
+          "open": 1
+        },
+        "thesis": true
+      },
+      "start": "L:sec:map-success",
+      "labels": [
+        "sec:map-colour",
+        "sec:map-depth",
+        "sec:map-ego",
+        "sec:map-states",
+        "sec:map-success"
+      ],
+      "warnings": [],
+      "open_threads": [
+        {
+          "chamber": "L:sec:map-states",
+          "chamber_title": "Three States of Discovery",
+          "kind": "open",
+          "text": "whether revealed structure should ever fade again is left open"
+        }
+      ]
+    }
+  ],
+  "lanes": [
+    {
+      "from": "memorable-interfaces",
+      "from_chamber": "L:sec:thesis",
+      "to": "two-games",
+      "to_label": null,
+      "kind": "exit",
+      "traversal": "two-way",
+      "from_chamber_title": "Supervisory Memory",
+      "to_chamber": "L:sec:games-intro"
+    },
+    {
+      "from": "memorable-interfaces",
+      "from_chamber": "L:sec:apps",
+      "to": "manufactured-necessity",
+      "to_label": null,
+      "kind": "exit",
+      "traversal": "two-way",
+      "uncharted": true,
+      "from_chamber_title": "Applications to an Essay Corpus"
+    },
+    {
+      "from": "memorable-interfaces",
+      "from_chamber": "L:sec:apps",
+      "to": "document-repositories",
+      "to_label": "sec:notes-cutaway",
+      "kind": "exit",
+      "traversal": "two-way",
+      "from_chamber_title": "Applications to an Essay Corpus",
+      "to_chamber": "L:sec:notes-cutaway"
+    },
+    {
+      "from": "document-repositories",
+      "from_chamber": "L:sec:notes-cutaway",
+      "to": "memorable-interfaces",
+      "to_label": "sec:thesis",
+      "kind": "exit",
+      "traversal": "two-way",
+      "from_chamber_title": "What It Offers the Cutaway Reader",
+      "to_chamber": "L:sec:thesis"
+    },
+    {
+      "from": "two-games",
+      "from_chamber": "L:sec:games-new",
+      "to": "memorable-interfaces",
+      "to_label": "sec:intro",
+      "kind": "exit",
+      "traversal": "two-way",
+      "from_chamber_title": "What Was New",
+      "to_chamber": "L:sec:intro"
+    },
+    {
+      "from": "automap-spec",
+      "from_chamber": "L:sec:map-depth",
+      "to": "two-games",
+      "to_label": "sec:games-loops",
+      "kind": "exit",
+      "traversal": "two-way",
+      "from_chamber_title": "Semantic Depth",
+      "to_chamber": "L:sec:games-loops"
+    },
+    {
+      "from": "memorable-interfaces",
+      "to": "automap-spec",
+      "kind": "series",
+      "series": "cutaway",
+      "traversal": "two-way",
+      "to_chamber": "L:sec:map-success"
+    },
+    {
+      "from": "automap-spec",
+      "to": "two-games",
+      "kind": "series",
+      "series": "cutaway",
+      "traversal": "two-way",
+      "to_chamber": "L:sec:games-intro"
+    }
+  ],
+  "views": [
+    {
+      "id": "galaxy",
+      "title": "Galaxy"
+    },
+    {
+      "id": "series",
+      "title": "By series",
+      "group": "series"
+    },
+    {
+      "id": "size",
+      "title": "By length",
+      "sort": "-words"
+    },
+    {
+      "id": "threads",
+      "title": "Open threads",
+      "select": "threads"
+    },
+    {
+      "id": "unexplored",
+      "title": "Not yet visited",
+      "select": "unvisited"
+    }
+  ],
+  "built": "2026-09-27T09:11:17",
+  "suggestions": []
+}

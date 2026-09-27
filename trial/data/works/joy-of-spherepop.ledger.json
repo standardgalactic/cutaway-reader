@@ -1,0 +1,3787 @@
+{
+  "work": "joy-of-spherepop",
+  "version": 1,
+  "nodes": {
+    "G:introduction": {
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 9.33,
+      "title": "Introduction",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-axiom-of-irreversibility": {
+      "pos": [
+        0.0,
+        -40.0,
+        0.0
+      ],
+      "radius": 8.52,
+      "title": "The Axiom of Irreversibility",
+      "role": "foundation",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-morphology-of-choice": {
+      "pos": [
+        0.0,
+        0.0,
+        40.0
+      ],
+      "radius": 9.49,
+      "title": "The Morphology of Choice",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-mechanics-of-commitment": {
+      "pos": [
+        0.0,
+        0.0,
+        80.0
+      ],
+      "radius": 9.07,
+      "title": "The Mechanics of Commitment",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:renormalization-through-collapse": {
+      "pos": [
+        0.0,
+        0.0,
+        120.0
+      ],
+      "radius": 9.23,
+      "title": "Renormalization through Collapse",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:psychocinema-and-the-limits-of-retroactive-meani": {
+      "pos": [
+        0.0,
+        0.0,
+        160.0
+      ],
+      "radius": 9.15,
+      "title": "Psychocinema and the Limits of Retroactive Meaning",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:from-calculus-to-visualization-nested-scopes-as-": {
+      "pos": [
+        0.0,
+        0.0,
+        200.0
+      ],
+      "radius": 9.72,
+      "title": "From Calculus to Visualization: Nested Scopes as Spatial Form",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:cognitive-agents-as-log-bound-processes": {
+      "pos": [
+        0.0,
+        0.0,
+        240.0
+      ],
+      "radius": 6.66,
+      "title": "Cognitive Agents as Log\u2013Bound Processes",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:agents-as-historical-processes": {
+      "pos": [
+        22.0,
+        0.0,
+        240.0
+      ],
+      "radius": 5.06,
+      "title": "Agents as Historical Processes",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:cognitive-agents-as-log-bound-processes",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:internal-cognition-as-event-simulation": {
+      "pos": [
+        -22.16,
+        0.0,
+        240.0
+      ],
+      "radius": 5.16,
+      "title": "Internal Cognition as Event Simulation",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:cognitive-agents-as-log-bound-processes",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:memory-as-causal-substrate": {
+      "pos": [
+        12.16,
+        14.85,
+        248.52
+      ],
+      "radius": 5.24,
+      "title": "Memory as Causal Substrate",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:cognitive-agents-as-log-bound-processes",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:action-as-joint-commitment": {
+      "pos": [
+        -11.86,
+        14.48,
+        248.31
+      ],
+      "radius": 4.87,
+      "title": "Action as Joint Commitment",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:cognitive-agents-as-log-bound-processes",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:refusal-and-stability-of-agency": {
+      "pos": [
+        11.89,
+        14.51,
+        231.68
+      ],
+      "radius": 4.9,
+      "title": "Refusal and Stability of Agency",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:cognitive-agents-as-log-bound-processes",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:collapse-and-concept-formation": {
+      "pos": [
+        -11.78,
+        14.38,
+        231.75
+      ],
+      "radius": 4.77,
+      "title": "Collapse and Concept Formation",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:cognitive-agents-as-log-bound-processes",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:visualizing-agent-cognition": {
+      "pos": [
+        14.36,
+        0.0,
+        254.36
+      ],
+      "radius": 4.88,
+      "title": "Visualizing Agent Cognition",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:cognitive-agents-as-log-bound-processes",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:worldhood-and-responsibility": {
+      "pos": [
+        -14.34,
+        0.0,
+        254.34
+      ],
+      "radius": 4.73,
+      "title": "Worldhood and Responsibility",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:cognitive-agents-as-log-bound-processes",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:summary": {
+      "pos": [
+        11.48,
+        -14.02,
+        248.04
+      ],
+      "radius": 4.41,
+      "title": "Summary",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:cognitive-agents-as-log-bound-processes",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-agent-as-endofunctor-and-parser": {
+      "pos": [
+        0.0,
+        0.0,
+        280.0
+      ],
+      "radius": 8.9,
+      "title": "The Agent as Endofunctor and Parser",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:summary-2": {
+      "pos": [
+        24.51,
+        0.0,
+        280.0
+      ],
+      "radius": 4.44,
+      "title": "Summary",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-agent-as-endofunctor-and-parser",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:sheaf-theoretic-interpretations-of-worldhood": {
+      "pos": [
+        0.0,
+        0.0,
+        320.0
+      ],
+      "radius": 9.12,
+      "title": "Sheaf-Theoretic Interpretations of Worldhood",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:summary-3": {
+      "pos": [
+        24.8,
+        0.0,
+        320.0
+      ],
+      "radius": 4.41,
+      "title": "Summary",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:sheaf-theoretic-interpretations-of-worldhood",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:conclusion-joy-in-a-finite-world": {
+      "pos": [
+        0.0,
+        0.0,
+        360.0
+      ],
+      "radius": 9.61,
+      "title": "Conclusion: Joy in a Finite World",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-meld-operator-convergent-synthesis-of-histor": {
+      "pos": [
+        0.0,
+        0.0,
+        400.0
+      ],
+      "radius": 6.79,
+      "title": "The meld Operator: Convergent Synthesis of Histories",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:motivation": {
+      "pos": [
+        22.04,
+        0.0,
+        400.0
+      ],
+      "radius": 4.9,
+      "title": "Motivation",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-meld-operator-convergent-synthesis-of-histor",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:formal-characterization": {
+      "pos": [
+        -21.39,
+        0.0,
+        400.0
+      ],
+      "radius": 4.47,
+      "title": "Formal Characterization",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-meld-operator-convergent-synthesis-of-histor",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:geometry-of-meld": {
+      "pos": [
+        11.98,
+        14.62,
+        408.39
+      ],
+      "radius": 4.83,
+      "title": "Geometry of Meld",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-meld-operator-convergent-synthesis-of-histor",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:accounting-semantics": {
+      "pos": [
+        -11.8,
+        14.41,
+        408.27
+      ],
+      "radius": 4.62,
+      "title": "Accounting Semantics",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-meld-operator-convergent-synthesis-of-histor",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:interaction-with-collapse": {
+      "pos": [
+        11.98,
+        14.62,
+        391.61
+      ],
+      "radius": 4.83,
+      "title": "Interaction with Collapse",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-meld-operator-convergent-synthesis-of-histor",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:examples": {
+      "pos": [
+        -11.57,
+        14.12,
+        391.9
+      ],
+      "radius": 4.33,
+      "title": "Examples",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-meld-operator-convergent-synthesis-of-histor",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:summary-4": {
+      "pos": [
+        14.13,
+        0.0,
+        414.13
+      ],
+      "radius": 4.34,
+      "title": "Summary",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-meld-operator-convergent-synthesis-of-histor",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:semantic-merge-policies-and-structured-synthesis": {
+      "pos": [
+        0.0,
+        0.0,
+        440.0
+      ],
+      "radius": 6.61,
+      "title": "Semantic Merge Policies and Structured Synthesis",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:motivation-2": {
+      "pos": [
+        21.62,
+        0.0,
+        440.0
+      ],
+      "radius": 4.8,
+      "title": "Motivation",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:semantic-merge-policies-and-structured-synthesis",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:policy-objects": {
+      "pos": [
+        -21.39,
+        0.0,
+        440.0
+      ],
+      "radius": 4.65,
+      "title": "Policy Objects",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:semantic-merge-policies-and-structured-synthesis",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:merge-actions": {
+      "pos": [
+        11.63,
+        14.2,
+        448.14
+      ],
+      "radius": 4.59,
+      "title": "Merge Actions",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:semantic-merge-policies-and-structured-synthesis",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:constraint-propagation": {
+      "pos": [
+        -11.59,
+        14.15,
+        448.12
+      ],
+      "radius": 4.54,
+      "title": "Constraint Propagation",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:semantic-merge-policies-and-structured-synthesis",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:failure-and-review": {
+      "pos": [
+        11.64,
+        14.21,
+        431.85
+      ],
+      "radius": 4.6,
+      "title": "Failure and Review",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:semantic-merge-policies-and-structured-synthesis",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:examples-2": {
+      "pos": [
+        -11.35,
+        13.86,
+        432.05
+      ],
+      "radius": 4.25,
+      "title": "Examples",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:semantic-merge-policies-and-structured-synthesis",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:summary-5": {
+      "pos": [
+        13.89,
+        0.0,
+        453.89
+      ],
+      "radius": 4.28,
+      "title": "Summary",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:semantic-merge-policies-and-structured-synthesis",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:writing-as-event-history": {
+      "pos": [
+        0.0,
+        0.0,
+        480.0
+      ],
+      "radius": 6.5,
+      "title": "Writing as Event\u2013History",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:drafts-as-parallel-histories": {
+      "pos": [
+        21.63,
+        0.0,
+        480.0
+      ],
+      "radius": 4.92,
+      "title": "Drafts as Parallel Histories",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:writing-as-event-history",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:revision-as-irreversible-action": {
+      "pos": [
+        -21.42,
+        0.0,
+        480.0
+      ],
+      "radius": 4.78,
+      "title": "Revision as Irreversible Action",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:writing-as-event-history",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:parsing-and-refinement": {
+      "pos": [
+        11.67,
+        14.25,
+        488.17
+      ],
+      "radius": 4.75,
+      "title": "Parsing and Refinement",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:writing-as-event-history",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:synthesis-and-meld": {
+      "pos": [
+        -11.62,
+        14.19,
+        488.14
+      ],
+      "radius": 4.69,
+      "title": "Synthesis and Meld",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:writing-as-event-history",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:tooling-and-ontology": {
+      "pos": [
+        11.67,
+        14.25,
+        471.83
+      ],
+      "radius": 4.75,
+      "title": "Tooling and Ontology",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:writing-as-event-history",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:implications": {
+      "pos": [
+        -11.67,
+        14.25,
+        471.83
+      ],
+      "radius": 4.75,
+      "title": "Implications",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:writing-as-event-history",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:summary-6": {
+      "pos": [
+        14.11,
+        0.0,
+        494.11
+      ],
+      "radius": 4.61,
+      "title": "Summary",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:writing-as-event-history",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:generative-spherepop-programs-and-minimal-commit": {
+      "pos": [
+        0.0,
+        0.0,
+        520.0
+      ],
+      "radius": 6.73,
+      "title": "Generative Spherepop Programs and Minimal Commitment Paths",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:programs-as-higher-order-histories": {
+      "pos": [
+        21.84,
+        0.0,
+        520.0
+      ],
+      "radius": 4.83,
+      "title": "Programs as Higher\u2013Order Histories",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:generative-spherepop-programs-and-minimal-commit",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:semantic-equivalence-and-target-objects": {
+      "pos": [
+        -21.71,
+        0.0,
+        520.0
+      ],
+      "radius": 4.74,
+      "title": "Semantic Equivalence and Target Objects",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:generative-spherepop-programs-and-minimal-commit",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:minimal-commitment-paths": {
+      "pos": [
+        12.17,
+        14.86,
+        528.52
+      ],
+      "radius": 5.13,
+      "title": "Minimal Commitment Paths",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:generative-spherepop-programs-and-minimal-commit",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:policy-selection-as-control": {
+      "pos": [
+        -11.89,
+        14.51,
+        528.32
+      ],
+      "radius": 4.78,
+      "title": "Policy Selection as Control",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:generative-spherepop-programs-and-minimal-commit",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:relation-to-parsing-and-authorship": {
+      "pos": [
+        11.82,
+        14.43,
+        511.72
+      ],
+      "radius": 4.7,
+      "title": "Relation to Parsing and Authorship",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:generative-spherepop-programs-and-minimal-commit",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:implications-2": {
+      "pos": [
+        -11.84,
+        14.45,
+        511.71
+      ],
+      "radius": 4.72,
+      "title": "Implications",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:generative-spherepop-programs-and-minimal-commit",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:summary-7": {
+      "pos": [
+        14.29,
+        0.0,
+        534.29
+      ],
+      "radius": 4.56,
+      "title": "Summary",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:generative-spherepop-programs-and-minimal-commit",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:semantic-manifolds-and-guided-generative-flow": {
+      "pos": [
+        0.0,
+        0.0,
+        560.0
+      ],
+      "radius": 6.55,
+      "title": "Semantic Manifolds and Guided Generative Flow",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:semantic-state-space": {
+      "pos": [
+        21.41,
+        0.0,
+        560.0
+      ],
+      "radius": 4.72,
+      "title": "Semantic State Space",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:semantic-manifolds-and-guided-generative-flow",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:guidance-as-tangent-restriction": {
+      "pos": [
+        -21.41,
+        0.0,
+        560.0
+      ],
+      "radius": 4.72,
+      "title": "Guidance as Tangent Restriction",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:semantic-manifolds-and-guided-generative-flow",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:local-coordination-and-context-selection": {
+      "pos": [
+        11.73,
+        14.32,
+        568.21
+      ],
+      "radius": 4.77,
+      "title": "Local Coordination and Context Selection",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:semantic-manifolds-and-guided-generative-flow",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:boundary-conditions-as-prompts": {
+      "pos": [
+        -11.59,
+        14.15,
+        568.12
+      ],
+      "radius": 4.6,
+      "title": "Boundary Conditions as Prompts",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:semantic-manifolds-and-guided-generative-flow",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:equivalence-to-guided-attention": {
+      "pos": [
+        11.66,
+        14.24,
+        551.83
+      ],
+      "radius": 4.69,
+      "title": "Equivalence to Guided Attention",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:semantic-manifolds-and-guided-generative-flow",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:relation-to-minimal-commitment": {
+      "pos": [
+        -13.5,
+        16.48,
+        550.55
+      ],
+      "radius": 6.93,
+      "title": "Relation to Minimal Commitment",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:semantic-manifolds-and-guided-generative-flow",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:sheaf-theoretic-chart-gluing-as-commitment": {
+      "pos": [
+        19.88,
+        0.0,
+        589.82
+      ],
+      "radius": 10.33,
+      "title": "Sheaf-Theoretic Chart Gluing as Commitment",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:semantic-manifolds-and-guided-generative-flow",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:summary-8": {
+      "pos": [
+        -14.17,
+        0.0,
+        574.17
+      ],
+      "radius": 4.62,
+      "title": "Summary",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:semantic-manifolds-and-guided-generative-flow",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:synthesis-world-construction-as-structured-seman": {
+      "pos": [
+        -20.0,
+        0.0,
+        600.0
+      ],
+      "radius": 9.38,
+      "title": "Synthesis: World Construction as Structured Semantic Flow",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "L:app:syntax": {
+      "pos": [
+        -20.0,
+        -40.0,
+        600.0
+      ],
+      "radius": 6.4,
+      "title": "Core Syntax",
+      "role": "appendix",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:design-principles": {
+      "pos": [
+        1.95,
+        -40.0,
+        600.0
+      ],
+      "radius": 5.23,
+      "title": "Design Principles",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:syntax",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:lexical-elements": {
+      "pos": [
+        -41.0,
+        -40.0,
+        600.0
+      ],
+      "radius": 4.6,
+      "title": "Lexical Elements",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:syntax",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:grammar": {
+      "pos": [
+        -8.45,
+        -25.9,
+        608.09
+      ],
+      "radius": 4.7,
+      "title": "Grammar",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:syntax",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:events": {
+      "pos": [
+        -31.84,
+        -25.54,
+        608.29
+      ],
+      "radius": 5.06,
+      "title": "Events",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:syntax",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:declarations": {
+      "pos": [
+        -8.63,
+        -26.12,
+        592.04
+      ],
+      "radius": 4.48,
+      "title": "Declarations",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:syntax",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:syntactic-irreversibility": {
+      "pos": [
+        -31.48,
+        -25.99,
+        591.96
+      ],
+      "radius": 4.61,
+      "title": "Syntactic Irreversibility",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:syntax",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:determinism-and-replay": {
+      "pos": [
+        -6.38,
+        -40.0,
+        613.62
+      ],
+      "radius": 4.22,
+      "title": "Determinism and Replay",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:syntax",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:minimality": {
+      "pos": [
+        -33.79,
+        -40.0,
+        613.79
+      ],
+      "radius": 4.39,
+      "title": "Minimality",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:syntax",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:summary-9": {
+      "pos": [
+        -8.65,
+        -53.86,
+        607.95
+      ],
+      "radius": 4.46,
+      "title": "Summary",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:syntax",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "L:app:ast": {
+      "pos": [
+        -20.0,
+        -80.0,
+        600.0
+      ],
+      "radius": 6.39,
+      "title": "Abstract Syntax and Denotational Semantics",
+      "role": "appendix",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:abstract-syntax-as-linear-structure": {
+      "pos": [
+        1.2,
+        -80.0,
+        600.0
+      ],
+      "radius": 4.74,
+      "title": "Abstract Syntax as Linear Structure",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:ast",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:event-nodes": {
+      "pos": [
+        -40.53,
+        -80.0,
+        600.0
+      ],
+      "radius": 4.3,
+      "title": "Event Nodes",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:ast",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:declaration-nodes": {
+      "pos": [
+        -8.61,
+        -93.9,
+        607.97
+      ],
+      "radius": 4.51,
+      "title": "Declaration Nodes",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:ast",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:the-semantic-category": {
+      "pos": [
+        -31.42,
+        -66.06,
+        608.0
+      ],
+      "radius": 4.55,
+      "title": "The Semantic Category",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:ast",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:interpretation-of-nodes": {
+      "pos": [
+        -9.03,
+        -66.61,
+        592.32
+      ],
+      "radius": 4.0,
+      "title": "Interpretation of Nodes",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:ast",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:compositional-semantics": {
+      "pos": [
+        -31.25,
+        -66.27,
+        592.12
+      ],
+      "radius": 4.34,
+      "title": "Compositional Semantics",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:ast",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:historical-sensitivity": {
+      "pos": [
+        -6.3,
+        -80.0,
+        613.7
+      ],
+      "radius": 4.31,
+      "title": "Historical Sensitivity",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:ast",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:idempotence-and-independence": {
+      "pos": [
+        -33.52,
+        -80.0,
+        613.52
+      ],
+      "radius": 4.13,
+      "title": "Idempotence and Independence",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:ast",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:determinism": {
+      "pos": [
+        7.63,
+        -80.0,
+        619.34
+      ],
+      "radius": 4.1,
+      "title": "Determinism",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:ast",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:summary-10": {
+      "pos": [
+        -31.3,
+        -93.79,
+        607.91
+      ],
+      "radius": 4.4,
+      "title": "Summary",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:ast",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "L:app:lagrangian": {
+      "pos": [
+        -20.0,
+        -120.0,
+        600.0
+      ],
+      "radius": 6.44,
+      "title": "Lagrangian Formulation",
+      "role": "appendix",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:configuration-variable-optionality": {
+      "pos": [
+        0.71,
+        -120.0,
+        600.0
+      ],
+      "radius": 4.37,
+      "title": "Configuration Variable: Optionality",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:lagrangian",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:local-lagrangian": {
+      "pos": [
+        -40.88,
+        -120.0,
+        600.0
+      ],
+      "radius": 4.48,
+      "title": "Local Lagrangian",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:lagrangian",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:action-of-a-history": {
+      "pos": [
+        -8.71,
+        -133.78,
+        607.9
+      ],
+      "radius": 4.34,
+      "title": "Action of a History",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:lagrangian",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:commitment-as-conjugate-momentum": {
+      "pos": [
+        -31.57,
+        -134.13,
+        608.1
+      ],
+      "radius": 4.69,
+      "title": "Commitment as Conjugate Momentum",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:lagrangian",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:hamiltonian-remaining-freedom": {
+      "pos": [
+        -8.51,
+        -105.97,
+        591.95
+      ],
+      "radius": 4.59,
+      "title": "Hamiltonian: Remaining Freedom",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:lagrangian",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:collapse-and-action-reduction": {
+      "pos": [
+        -31.42,
+        -106.06,
+        592.0
+      ],
+      "radius": 4.5,
+      "title": "Collapse and Action Reduction",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:lagrangian",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:discrete-equations-of-motion": {
+      "pos": [
+        -6.34,
+        -120.0,
+        613.66
+      ],
+      "radius": 4.22,
+      "title": "Discrete Equations of Motion",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:lagrangian",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:distinction-from-optimization": {
+      "pos": [
+        -33.95,
+        -120.0,
+        613.95
+      ],
+      "radius": 4.51,
+      "title": "Distinction from Optimization",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:lagrangian",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:summary-11": {
+      "pos": [
+        8.55,
+        -120.0,
+        619.99
+      ],
+      "radius": 4.5,
+      "title": "Summary",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:lagrangian",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "L:app:glossary": {
+      "pos": [
+        -20.0,
+        -160.0,
+        600.0
+      ],
+      "radius": 6.41,
+      "title": "Categorical Glossary",
+      "role": "appendix",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:option-space": {
+      "pos": [
+        1.05,
+        -160.0,
+        600.0
+      ],
+      "radius": 4.62,
+      "title": "Option\u2013Space",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:glossary",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:monotone-morphism": {
+      "pos": [
+        -40.49,
+        -160.0,
+        600.0
+      ],
+      "radius": 4.25,
+      "title": "Monotone Morphism",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:glossary",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:history": {
+      "pos": [
+        -8.81,
+        -173.66,
+        607.84
+      ],
+      "radius": 4.25,
+      "title": "History",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:glossary",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:collapse-and-quotient": {
+      "pos": [
+        -31.41,
+        -173.93,
+        607.99
+      ],
+      "radius": 4.52,
+      "title": "Collapse and Quotient",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:glossary",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:endofunctor": {
+      "pos": [
+        -8.69,
+        -146.19,
+        592.08
+      ],
+      "radius": 4.4,
+      "title": "Endofunctor",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:glossary",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:parser": {
+      "pos": [
+        -31.3,
+        -146.2,
+        592.08
+      ],
+      "radius": 4.39,
+      "title": "Parser",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:glossary",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:sheaf": {
+      "pos": [
+        -5.97,
+        -160.0,
+        614.03
+      ],
+      "radius": 4.62,
+      "title": "Sheaf",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:glossary",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:presheaf-and-sheafification": {
+      "pos": [
+        -33.77,
+        -160.0,
+        613.77
+      ],
+      "radius": 4.36,
+      "title": "Presheaf and Sheafification",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:glossary",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:view": {
+      "pos": [
+        8.04,
+        -160.0,
+        619.63
+      ],
+      "radius": 4.28,
+      "title": "View",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:glossary",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:accounting-functor": {
+      "pos": [
+        -47.77,
+        -160.0,
+        619.44
+      ],
+      "radius": 4.15,
+      "title": "Accounting Functor",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:glossary",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:worldhood": {
+      "pos": [
+        -8.71,
+        -173.78,
+        592.1
+      ],
+      "radius": 4.37,
+      "title": "Worldhood",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:glossary",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:summary-12": {
+      "pos": [
+        -31.28,
+        -173.77,
+        592.1
+      ],
+      "radius": 4.36,
+      "title": "Summary",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:glossary",
+      "status": "withdrawn",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:08:30"
+    },
+    "G:theorem-of-refusal": {
+      "pos": [
+        40.0,
+        0.0,
+        160.0
+      ],
+      "radius": 6.85,
+      "title": "Theorem of Refusal",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:conclusion-the-ethics-of-the-calculus": {
+      "pos": [
+        40.0,
+        0.0,
+        200.0
+      ],
+      "radius": 6.88,
+      "title": "Conclusion: The Ethics of the Calculus",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:sec:related-work": {
+      "pos": [
+        40.0,
+        0.0,
+        240.0
+      ],
+      "radius": 6.78,
+      "title": "Related Work",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:irreversibility-in-computation": {
+      "pos": [
+        63.34,
+        0.0,
+        240.0
+      ],
+      "radius": 5.78,
+      "title": "Irreversibility in Computation",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:related-work",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:event-based-semantics": {
+      "pos": [
+        24.64,
+        0.0,
+        216.96
+      ],
+      "radius": 5.58,
+      "title": "Event-Based Semantics",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:related-work",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:categorical-constraint-systems": {
+      "pos": [
+        52.5,
+        15.26,
+        248.75
+      ],
+      "radius": 5.48,
+      "title": "Categorical Constraint Systems",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:related-work",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:planning-binding-and-temporal-logic": {
+      "pos": [
+        27.51,
+        -15.25,
+        248.75
+      ],
+      "radius": 5.47,
+      "title": "Planning, Binding, and Temporal Logic",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:related-work",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:artificial-intelligence-and-the-absence-of-commi": {
+      "pos": [
+        52.53,
+        15.3,
+        231.22
+      ],
+      "radius": 5.52,
+      "title": "Artificial Intelligence and the Absence of Commitment",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:related-work",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:sec:syntax-semantics": {
+      "pos": [
+        40.0,
+        0.0,
+        260.0
+      ],
+      "radius": 6.51,
+      "title": "Syntax and Semantics",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:surface-syntax-and-histories": {
+      "pos": [
+        62.48,
+        0.0,
+        260.0
+      ],
+      "radius": 5.48,
+      "title": "Surface Syntax and Histories",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:syntax-semantics",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:abstract-syntax-tree": {
+      "pos": [
+        25.43,
+        14.57,
+        260.0
+      ],
+      "radius": 5.06,
+      "title": "Abstract Syntax Tree",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:syntax-semantics",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:denotational-semantics": {
+      "pos": [
+        51.96,
+        14.6,
+        268.37
+      ],
+      "radius": 5.09,
+      "title": "Denotational Semantics",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:syntax-semantics",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-accounting-functor": {
+      "pos": [
+        27.99,
+        -14.66,
+        268.41
+      ],
+      "radius": 5.15,
+      "title": "The Accounting Functor",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:syntax-semantics",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:correctness-properties": {
+      "pos": [
+        52.03,
+        -14.68,
+        251.58
+      ],
+      "radius": 5.17,
+      "title": "Correctness Properties",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:syntax-semantics",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:sec:spherepop-vs-llms": {
+      "pos": [
+        80.0,
+        0.0,
+        280.0
+      ],
+      "radius": 6.74,
+      "title": "Spherepop versus Large Language Models",
+      "role": "comparison",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-autoregressive-paradigm": {
+      "pos": [
+        103.04,
+        0.0,
+        280.0
+      ],
+      "radius": 5.62,
+      "title": "The Autoregressive Paradigm",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:spherepop-vs-llms",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:simulation-without-action": {
+      "pos": [
+        57.41,
+        0.0,
+        280.0
+      ],
+      "radius": 5.32,
+      "title": "Simulation Without Action",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:spherepop-vs-llms",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:hallucination-as-zero-cost-structure": {
+      "pos": [
+        92.25,
+        14.95,
+        288.57
+      ],
+      "radius": 5.21,
+      "title": "Hallucination as Zero-Cost Structure",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:spherepop-vs-llms",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:what-would-it-mean-for-an-ai-to-pop": {
+      "pos": [
+        67.68,
+        15.04,
+        288.63
+      ],
+      "radius": 5.3,
+      "title": "What Would It Mean for an AI to Pop?",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:spherepop-vs-llms",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:spherepop-as-a-design-constraint": {
+      "pos": [
+        92.21,
+        14.9,
+        271.45
+      ],
+      "radius": 5.16,
+      "title": "Spherepop as a Design Constraint",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:spherepop-vs-llms",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:sec:spherepop-os": {
+      "pos": [
+        40.0,
+        0.0,
+        300.0
+      ],
+      "radius": 6.59,
+      "title": "Spherepop OS: An Operating System for Event\u2013Historical Worlds",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:histories-as-the-primary-substrate": {
+      "pos": [
+        61.99,
+        0.0,
+        300.0
+      ],
+      "radius": 5.07,
+      "title": "Histories as the Primary Substrate",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:spherepop-os",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:processes-as-commitment-streams": {
+      "pos": [
+        18.17,
+        0.0,
+        300.0
+      ],
+      "radius": 4.96,
+      "title": "Processes as Commitment Streams",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:spherepop-os",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:files-memory-and-persistence": {
+      "pos": [
+        51.93,
+        14.56,
+        308.35
+      ],
+      "radius": 4.97,
+      "title": "Files, Memory, and Persistence",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:spherepop-os",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:scheduling-and-time": {
+      "pos": [
+        28.2,
+        14.4,
+        308.26
+      ],
+      "radius": 4.81,
+      "title": "Scheduling and Time",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:spherepop-os",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:security-and-authority": {
+      "pos": [
+        51.67,
+        14.25,
+        291.83
+      ],
+      "radius": 4.66,
+      "title": "Security and Authority",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:spherepop-os",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:sec:memory-first": {
+      "pos": [
+        40.0,
+        0.0,
+        340.0
+      ],
+      "radius": 6.43,
+      "title": "Memory\u2013First Cognitive Systems",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:reasoning-as-history-construction": {
+      "pos": [
+        61.38,
+        0.0,
+        340.0
+      ],
+      "radius": 4.82,
+      "title": "Reasoning as History Construction",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:memory-first",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:latent-memory-states-and-event-dynamics": {
+      "pos": [
+        18.73,
+        0.0,
+        340.0
+      ],
+      "radius": 4.75,
+      "title": "Latent Memory States and Event Dynamics",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:memory-first",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:refusal-as-cognitive-stabilization": {
+      "pos": [
+        51.65,
+        14.22,
+        348.16
+      ],
+      "radius": 4.79,
+      "title": "Refusal as Cognitive Stabilization",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:memory-first",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:collapse-and-abstraction": {
+      "pos": [
+        28.46,
+        14.09,
+        348.08
+      ],
+      "radius": 4.66,
+      "title": "Collapse and Abstraction",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:memory-first",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:action-and-worldhood": {
+      "pos": [
+        51.62,
+        14.18,
+        331.87
+      ],
+      "radius": 4.75,
+      "title": "Action and Worldhood",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:memory-first",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:interpretability-and-oversight": {
+      "pos": [
+        28.55,
+        13.98,
+        331.98
+      ],
+      "radius": 4.55,
+      "title": "Interpretability and Oversight",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:memory-first",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:sec:stratified-semantics": {
+      "pos": [
+        40.0,
+        0.0,
+        380.0
+      ],
+      "radius": 6.59,
+      "title": "Stratified Semantics: Calculus, Kernel, and View",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:three-semantic-layers": {
+      "pos": [
+        62.98,
+        0.0,
+        380.0
+      ],
+      "radius": 5.73,
+      "title": "Three Semantic Layers",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:stratified-semantics",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:functorial-relationships": {
+      "pos": [
+        17.77,
+        0.0,
+        380.0
+      ],
+      "radius": 5.23,
+      "title": "Functorial Relationships",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:stratified-semantics",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:authority-and-non-interference": {
+      "pos": [
+        51.8,
+        14.41,
+        388.27
+      ],
+      "radius": 4.82,
+      "title": "Authority and Non-Interference",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:stratified-semantics",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:why-stratification-matters": {
+      "pos": [
+        28.19,
+        14.42,
+        388.27
+      ],
+      "radius": 4.83,
+      "title": "Why Stratification Matters",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:stratified-semantics",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:sec:collapse-quotient": {
+      "pos": [
+        40.0,
+        0.0,
+        420.0
+      ],
+      "radius": 6.73,
+      "title": "Collapse, Merge, and Equivalence as Quotienting",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:collapse-in-the-calculus": {
+      "pos": [
+        62.22,
+        0.0,
+        420.0
+      ],
+      "radius": 5.08,
+      "title": "Collapse in the Calculus",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:collapse-quotient",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:merge-and-collapse-in-the-kernel": {
+      "pos": [
+        24.84,
+        15.16,
+        420.0
+      ],
+      "radius": 5.43,
+      "title": "Merge and Collapse in the Kernel",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:collapse-quotient",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:action-reduction-and-renormalization": {
+      "pos": [
+        52.26,
+        14.97,
+        428.59
+      ],
+      "radius": 5.24,
+      "title": "Action Reduction and Renormalization",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:collapse-quotient",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:confluence-and-order-independence": {
+      "pos": [
+        27.9,
+        -14.77,
+        428.47
+      ],
+      "radius": 5.04,
+      "title": "Confluence and Order Independence",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:collapse-quotient",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:collapse-versus-erasure": {
+      "pos": [
+        51.85,
+        14.47,
+        411.7
+      ],
+      "radius": 4.74,
+      "title": "Collapse versus Erasure",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:collapse-quotient",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:summary-13": {
+      "pos": [
+        28.25,
+        -14.34,
+        411.77
+      ],
+      "radius": 4.61,
+      "title": "Summary",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:collapse-quotient",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:sec:refusal-authority": {
+      "pos": [
+        40.0,
+        0.0,
+        460.0
+      ],
+      "radius": 6.6,
+      "title": "Refusal, Authority, and Non\u2013Interference",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:geometric-equivalence-and-normative-distinction": {
+      "pos": [
+        61.88,
+        0.0,
+        460.0
+      ],
+      "radius": 4.99,
+      "title": "Geometric Equivalence and Normative Distinction",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:refusal-authority",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:refusal-and-the-accounting-layer": {
+      "pos": [
+        25.39,
+        14.61,
+        460.0
+      ],
+      "radius": 5.01,
+      "title": "Refusal and the Accounting Layer",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:refusal-authority",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:authority-and-proposal-rejection": {
+      "pos": [
+        52.14,
+        14.82,
+        468.5
+      ],
+      "radius": 5.22,
+      "title": "Authority and Proposal Rejection",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:refusal-authority",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:non-interference-as-a-semantic-invariant": {
+      "pos": [
+        27.93,
+        -14.73,
+        468.45
+      ],
+      "radius": 5.13,
+      "title": "Non\u2013Interference as a Semantic Invariant",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:refusal-authority",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:commitment-without-coercion": {
+      "pos": [
+        51.64,
+        14.21,
+        451.85
+      ],
+      "radius": 4.61,
+      "title": "Commitment Without Coercion",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:refusal-authority",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:summary-14": {
+      "pos": [
+        28.44,
+        -14.11,
+        451.91
+      ],
+      "radius": 4.51,
+      "title": "Summary",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:refusal-authority",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:sec:psychocinema": {
+      "pos": [
+        80.0,
+        0.0,
+        460.0
+      ],
+      "radius": 6.92,
+      "title": "Spherepop and Psychoanalytic Time: A Comparison with Psychocinema",
+      "role": "comparison",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:lacanian-temporality-and-retroactive-meaning": {
+      "pos": [
+        102.95,
+        0.0,
+        460.0
+      ],
+      "radius": 5.38,
+      "title": "Lacanian Temporality and Retroactive Meaning",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:psychocinema",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:superficial-convergences": {
+      "pos": [
+        65.18,
+        0.0,
+        482.23
+      ],
+      "radius": 4.9,
+      "title": "Superficial Convergences",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:psychocinema",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:irreversibility-versus-retroactivity": {
+      "pos": [
+        92.6,
+        15.38,
+        468.82
+      ],
+      "radius": 5.46,
+      "title": "Irreversibility versus Retroactivity",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:psychocinema",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:absence-as-lack-versus-absence-as-exclusion": {
+      "pos": [
+        67.54,
+        -15.21,
+        468.72
+      ],
+      "radius": 5.29,
+      "title": "Absence as Lack versus Absence as Exclusion",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:psychocinema",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:cinema-spectatorship-and-worldhood": {
+      "pos": [
+        92.37,
+        15.1,
+        451.34
+      ],
+      "radius": 5.18,
+      "title": "Cinema, Spectatorship, and Worldhood",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:psychocinema",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:from-psychoanalytic-narrative-to-formal-commitme": {
+      "pos": [
+        67.97,
+        14.69,
+        451.57
+      ],
+      "radius": 4.77,
+      "title": "From Psychoanalytic Narrative to Formal Commitment",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:psychocinema",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:summary-15": {
+      "pos": [
+        94.44,
+        0.0,
+        474.44
+      ],
+      "radius": 4.52,
+      "title": "Summary",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:psychocinema",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:option-spaces-as-regions": {
+      "pos": [
+        17.84,
+        0.0,
+        182.16
+      ],
+      "radius": 5.12,
+      "title": "Option\u2013Spaces as Regions",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:from-calculus-to-visualization-nested-scopes-as-",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:nested-scopes-and-worldhood": {
+      "pos": [
+        -26.49,
+        0.0,
+        200.0
+      ],
+      "radius": 4.94,
+      "title": "Nested Scopes and Worldhood",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:from-calculus-to-visualization-nested-scopes-as-",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:binding-as-relational-geometry": {
+      "pos": [
+        14.39,
+        17.57,
+        210.08
+      ],
+      "radius": 4.85,
+      "title": "Binding as Relational Geometry",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:from-calculus-to-visualization-nested-scopes-as-",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:collapse-as-boundary-identification": {
+      "pos": [
+        -21.77,
+        0.0,
+        215.25
+      ],
+      "radius": 5.0,
+      "title": "Collapse as Boundary Identification",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:from-calculus-to-visualization-nested-scopes-as-",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:refusal-and-protected-regions": {
+      "pos": [
+        14.35,
+        17.52,
+        189.95
+      ],
+      "radius": 4.8,
+      "title": "Refusal and Protected Regions",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:from-calculus-to-visualization-nested-scopes-as-",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:advantages-over-narrative-visualization": {
+      "pos": [
+        -21.55,
+        0.0,
+        184.91
+      ],
+      "radius": 4.82,
+      "title": "Advantages over Narrative Visualization",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:from-calculus-to-visualization-nested-scopes-as-",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:toward-an-executable-visual-language": {
+      "pos": [
+        17.63,
+        -17.63,
+        200.0
+      ],
+      "radius": 4.91,
+      "title": "Toward an Executable Visual Language",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:from-calculus-to-visualization-nested-scopes-as-",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:summary-16": {
+      "pos": [
+        -17.18,
+        17.18,
+        200.0
+      ],
+      "radius": 4.46,
+      "title": "Summary",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:from-calculus-to-visualization-nested-scopes-as-",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:endofunctorial-structure": {
+      "pos": [
+        -25.09,
+        0.0,
+        280.0
+      ],
+      "radius": 4.83,
+      "title": "Endofunctorial Structure",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-agent-as-endofunctor-and-parser",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:parsing-as-commitment": {
+      "pos": [
+        14.02,
+        17.12,
+        289.82
+      ],
+      "radius": 5.22,
+      "title": "Parsing as Commitment",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-agent-as-endofunctor-and-parser",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:functorial-identity-and-agency": {
+      "pos": [
+        -13.61,
+        16.61,
+        289.53
+      ],
+      "radius": 4.71,
+      "title": "Functorial Identity and Agency",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-agent-as-endofunctor-and-parser",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:local-worlds-and-covers": {
+      "pos": [
+        -25.24,
+        0.0,
+        320.0
+      ],
+      "radius": 4.71,
+      "title": "Local Worlds and Covers",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:sheaf-theoretic-interpretations-of-worldhood",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:gluing-as-commitment": {
+      "pos": [
+        13.93,
+        -17.01,
+        329.76
+      ],
+      "radius": 4.89,
+      "title": "Gluing as Commitment",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:sheaf-theoretic-interpretations-of-worldhood",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:collapse-as-sheafification": {
+      "pos": [
+        -13.7,
+        16.73,
+        329.6
+      ],
+      "radius": 4.61,
+      "title": "Collapse as Sheafification",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:sheaf-theoretic-interpretations-of-worldhood",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:views-as-sections": {
+      "pos": [
+        13.65,
+        -16.66,
+        310.44
+      ],
+      "radius": 4.54,
+      "title": "Views as Sections",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:sheaf-theoretic-interpretations-of-worldhood",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:worldhood-revisited": {
+      "pos": [
+        -13.8,
+        16.85,
+        310.34
+      ],
+      "radius": 4.73,
+      "title": "Worldhood Revisited",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:sheaf-theoretic-interpretations-of-worldhood",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:abstract-syntax-tree-2": {
+      "pos": [
+        2.26,
+        -80.0,
+        584.41
+      ],
+      "radius": 4.2,
+      "title": "Abstract Syntax Tree",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:ast",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:denotational-semantics-2": {
+      "pos": [
+        -41.9,
+        -80.0,
+        584.66
+      ],
+      "radius": 3.98,
+      "title": "Denotational Semantics",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:ast",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:configuration-variable": {
+      "pos": [
+        -52.12,
+        -120.0,
+        622.49
+      ],
+      "radius": 3.63,
+      "title": "Configuration Variable",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:lagrangian",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:action": {
+      "pos": [
+        1.18,
+        -120.0,
+        585.17
+      ],
+      "radius": 3.49,
+      "title": "Action",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:lagrangian",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:commitment-and-hamiltonian": {
+      "pos": [
+        -41.72,
+        -120.0,
+        584.79
+      ],
+      "radius": 3.82,
+      "title": "Commitment and Hamiltonian",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:lagrangian",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:collapse": {
+      "pos": [
+        -6.96,
+        -120.0,
+        573.92
+      ],
+      "radius": 3.6,
+      "title": "Collapse",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:lagrangian",
+      "status": "active",
+      "first_seen": "2026-09-27T09:33:44",
+      "last_seen": "2026-09-27T09:38:34"
+    }
+  },
+  "labels": {
+    "app:syntax": "L:app:syntax",
+    "app:ast": "L:app:ast",
+    "app:lagrangian": "L:app:lagrangian",
+    "app:glossary": "L:app:glossary",
+    "sec:related-work": "L:sec:related-work",
+    "sec:syntax-semantics": "L:sec:syntax-semantics",
+    "sec:spherepop-vs-llms": "L:sec:spherepop-vs-llms",
+    "sec:spherepop-os": "L:sec:spherepop-os",
+    "sec:memory-first": "L:sec:memory-first",
+    "sec:stratified-semantics": "L:sec:stratified-semantics",
+    "sec:collapse-quotient": "L:sec:collapse-quotient",
+    "sec:refusal-authority": "L:sec:refusal-authority",
+    "sec:psychocinema": "L:sec:psychocinema",
+    "sec:visual-language": "G:from-calculus-to-visualization-nested-scopes-as-",
+    "sec:log-bound-agents": "G:cognitive-agents-as-log-bound-processes",
+    "sec:endofunctor-agent": "G:the-agent-as-endofunctor-and-parser",
+    "sec:sheaf-worldhood": "G:sheaf-theoretic-interpretations-of-worldhood",
+    "sec:conclusion": "G:conclusion-joy-in-a-finite-world"
+  },
+  "aliases": {
+    "section||introduction": [
+      "G:introduction"
+    ],
+    "section||the-axiom-of-irreversibility": [
+      "G:the-axiom-of-irreversibility"
+    ],
+    "section||the-morphology-of-choice": [
+      "G:the-morphology-of-choice"
+    ],
+    "section||the-mechanics-of-commitment": [
+      "G:the-mechanics-of-commitment"
+    ],
+    "section||renormalization-through-collapse": [
+      "G:renormalization-through-collapse"
+    ],
+    "section||psychocinema-and-the-limits-of-retroactive-meani": [
+      "G:psychocinema-and-the-limits-of-retroactive-meani"
+    ],
+    "section||from-calculus-to-visualization-nested-scopes-as-": [
+      "G:from-calculus-to-visualization-nested-scopes-as-"
+    ],
+    "section||cognitive-agents-as-log-bound-processes": [
+      "G:cognitive-agents-as-log-bound-processes"
+    ],
+    "subsection|G:cognitive-agents-as-log-bound-processes|agents-as-historical-processes": [
+      "G:agents-as-historical-processes"
+    ],
+    "subsection|G:cognitive-agents-as-log-bound-processes|internal-cognition-as-event-simulation": [
+      "G:internal-cognition-as-event-simulation"
+    ],
+    "subsection|G:cognitive-agents-as-log-bound-processes|memory-as-causal-substrate": [
+      "G:memory-as-causal-substrate"
+    ],
+    "subsection|G:cognitive-agents-as-log-bound-processes|action-as-joint-commitment": [
+      "G:action-as-joint-commitment"
+    ],
+    "subsection|G:cognitive-agents-as-log-bound-processes|refusal-and-stability-of-agency": [
+      "G:refusal-and-stability-of-agency"
+    ],
+    "subsection|G:cognitive-agents-as-log-bound-processes|collapse-and-concept-formation": [
+      "G:collapse-and-concept-formation"
+    ],
+    "subsection|G:cognitive-agents-as-log-bound-processes|visualizing-agent-cognition": [
+      "G:visualizing-agent-cognition"
+    ],
+    "subsection|G:cognitive-agents-as-log-bound-processes|worldhood-and-responsibility": [
+      "G:worldhood-and-responsibility"
+    ],
+    "subsection|G:cognitive-agents-as-log-bound-processes|summary": [
+      "G:summary"
+    ],
+    "section||the-agent-as-endofunctor-and-parser": [
+      "G:the-agent-as-endofunctor-and-parser"
+    ],
+    "subsection|G:the-agent-as-endofunctor-and-parser|summary": [
+      "G:summary-2"
+    ],
+    "section||sheaf-theoretic-interpretations-of-worldhood": [
+      "G:sheaf-theoretic-interpretations-of-worldhood"
+    ],
+    "subsection|G:sheaf-theoretic-interpretations-of-worldhood|summary": [
+      "G:summary-3"
+    ],
+    "section||conclusion-joy-in-a-finite-world": [
+      "G:conclusion-joy-in-a-finite-world"
+    ],
+    "section||the-meld-operator-convergent-synthesis-of-histor": [
+      "G:the-meld-operator-convergent-synthesis-of-histor"
+    ],
+    "subsection|G:the-meld-operator-convergent-synthesis-of-histor|motivation": [
+      "G:motivation"
+    ],
+    "subsection|G:the-meld-operator-convergent-synthesis-of-histor|formal-characterization": [
+      "G:formal-characterization"
+    ],
+    "subsection|G:the-meld-operator-convergent-synthesis-of-histor|geometry-of-meld": [
+      "G:geometry-of-meld"
+    ],
+    "subsection|G:the-meld-operator-convergent-synthesis-of-histor|accounting-semantics": [
+      "G:accounting-semantics"
+    ],
+    "subsection|G:the-meld-operator-convergent-synthesis-of-histor|interaction-with-collapse": [
+      "G:interaction-with-collapse"
+    ],
+    "subsection|G:the-meld-operator-convergent-synthesis-of-histor|examples": [
+      "G:examples"
+    ],
+    "subsection|G:the-meld-operator-convergent-synthesis-of-histor|summary": [
+      "G:summary-4"
+    ],
+    "section||semantic-merge-policies-and-structured-synthesis": [
+      "G:semantic-merge-policies-and-structured-synthesis"
+    ],
+    "subsection|G:semantic-merge-policies-and-structured-synthesis|motivation": [
+      "G:motivation-2"
+    ],
+    "subsection|G:semantic-merge-policies-and-structured-synthesis|policy-objects": [
+      "G:policy-objects"
+    ],
+    "subsection|G:semantic-merge-policies-and-structured-synthesis|merge-actions": [
+      "G:merge-actions"
+    ],
+    "subsection|G:semantic-merge-policies-and-structured-synthesis|constraint-propagation": [
+      "G:constraint-propagation"
+    ],
+    "subsection|G:semantic-merge-policies-and-structured-synthesis|failure-and-review": [
+      "G:failure-and-review"
+    ],
+    "subsection|G:semantic-merge-policies-and-structured-synthesis|examples": [
+      "G:examples-2"
+    ],
+    "subsection|G:semantic-merge-policies-and-structured-synthesis|summary": [
+      "G:summary-5"
+    ],
+    "section||writing-as-event-history": [
+      "G:writing-as-event-history"
+    ],
+    "subsection|G:writing-as-event-history|drafts-as-parallel-histories": [
+      "G:drafts-as-parallel-histories"
+    ],
+    "subsection|G:writing-as-event-history|revision-as-irreversible-action": [
+      "G:revision-as-irreversible-action"
+    ],
+    "subsection|G:writing-as-event-history|parsing-and-refinement": [
+      "G:parsing-and-refinement"
+    ],
+    "subsection|G:writing-as-event-history|synthesis-and-meld": [
+      "G:synthesis-and-meld"
+    ],
+    "subsection|G:writing-as-event-history|tooling-and-ontology": [
+      "G:tooling-and-ontology"
+    ],
+    "subsection|G:writing-as-event-history|implications": [
+      "G:implications"
+    ],
+    "subsection|G:writing-as-event-history|summary": [
+      "G:summary-6"
+    ],
+    "section||generative-spherepop-programs-and-minimal-commit": [
+      "G:generative-spherepop-programs-and-minimal-commit"
+    ],
+    "subsection|G:generative-spherepop-programs-and-minimal-commit|programs-as-higher-order-histories": [
+      "G:programs-as-higher-order-histories"
+    ],
+    "subsection|G:generative-spherepop-programs-and-minimal-commit|semantic-equivalence-and-target-objects": [
+      "G:semantic-equivalence-and-target-objects"
+    ],
+    "subsection|G:generative-spherepop-programs-and-minimal-commit|minimal-commitment-paths": [
+      "G:minimal-commitment-paths"
+    ],
+    "subsection|G:generative-spherepop-programs-and-minimal-commit|policy-selection-as-control": [
+      "G:policy-selection-as-control"
+    ],
+    "subsection|G:generative-spherepop-programs-and-minimal-commit|relation-to-parsing-and-authorship": [
+      "G:relation-to-parsing-and-authorship"
+    ],
+    "subsection|G:generative-spherepop-programs-and-minimal-commit|implications": [
+      "G:implications-2"
+    ],
+    "subsection|G:generative-spherepop-programs-and-minimal-commit|summary": [
+      "G:summary-7"
+    ],
+    "section||semantic-manifolds-and-guided-generative-flow": [
+      "G:semantic-manifolds-and-guided-generative-flow"
+    ],
+    "subsection|G:semantic-manifolds-and-guided-generative-flow|semantic-state-space": [
+      "G:semantic-state-space"
+    ],
+    "subsection|G:semantic-manifolds-and-guided-generative-flow|guidance-as-tangent-restriction": [
+      "G:guidance-as-tangent-restriction"
+    ],
+    "subsection|G:semantic-manifolds-and-guided-generative-flow|local-coordination-and-context-selection": [
+      "G:local-coordination-and-context-selection"
+    ],
+    "subsection|G:semantic-manifolds-and-guided-generative-flow|boundary-conditions-as-prompts": [
+      "G:boundary-conditions-as-prompts"
+    ],
+    "subsection|G:semantic-manifolds-and-guided-generative-flow|equivalence-to-guided-attention": [
+      "G:equivalence-to-guided-attention"
+    ],
+    "subsection|G:semantic-manifolds-and-guided-generative-flow|relation-to-minimal-commitment": [
+      "G:relation-to-minimal-commitment"
+    ],
+    "subsection|G:semantic-manifolds-and-guided-generative-flow|sheaf-theoretic-chart-gluing-as-commitment": [
+      "G:sheaf-theoretic-chart-gluing-as-commitment"
+    ],
+    "subsection|G:semantic-manifolds-and-guided-generative-flow|summary": [
+      "G:summary-8"
+    ],
+    "section||synthesis-world-construction-as-structured-seman": [
+      "G:synthesis-world-construction-as-structured-seman"
+    ],
+    "section||core-syntax-and-surface-language": [
+      "L:app:syntax"
+    ],
+    "subsection|L:app:syntax|design-principles": [
+      "G:design-principles"
+    ],
+    "subsection|L:app:syntax|lexical-elements": [
+      "G:lexical-elements"
+    ],
+    "subsection|L:app:syntax|grammar": [
+      "G:grammar"
+    ],
+    "subsection|L:app:syntax|events": [
+      "G:events"
+    ],
+    "subsection|L:app:syntax|declarations": [
+      "G:declarations"
+    ],
+    "subsection|L:app:syntax|syntactic-irreversibility": [
+      "G:syntactic-irreversibility"
+    ],
+    "subsection|L:app:syntax|determinism-and-replay": [
+      "G:determinism-and-replay"
+    ],
+    "subsection|L:app:syntax|minimality": [
+      "G:minimality"
+    ],
+    "subsection|L:app:syntax|summary": [
+      "G:summary-9"
+    ],
+    "section||abstract-syntax-and-denotational-semantics": [
+      "L:app:ast"
+    ],
+    "subsection|L:app:ast|abstract-syntax-as-linear-structure": [
+      "G:abstract-syntax-as-linear-structure"
+    ],
+    "subsection|L:app:ast|event-nodes": [
+      "G:event-nodes"
+    ],
+    "subsection|L:app:ast|declaration-nodes": [
+      "G:declaration-nodes"
+    ],
+    "subsection|L:app:ast|the-semantic-category": [
+      "G:the-semantic-category"
+    ],
+    "subsection|L:app:ast|interpretation-of-nodes": [
+      "G:interpretation-of-nodes"
+    ],
+    "subsection|L:app:ast|compositional-semantics": [
+      "G:compositional-semantics"
+    ],
+    "subsection|L:app:ast|historical-sensitivity": [
+      "G:historical-sensitivity"
+    ],
+    "subsection|L:app:ast|idempotence-and-independence": [
+      "G:idempotence-and-independence"
+    ],
+    "subsection|L:app:ast|determinism": [
+      "G:determinism"
+    ],
+    "subsection|L:app:ast|summary": [
+      "G:summary-10"
+    ],
+    "section||lagrangian-and-hamiltonian-mechanics-of-commitme": [
+      "L:app:lagrangian"
+    ],
+    "subsection|L:app:lagrangian|configuration-variable-optionality": [
+      "G:configuration-variable-optionality"
+    ],
+    "subsection|L:app:lagrangian|local-lagrangian": [
+      "G:local-lagrangian"
+    ],
+    "subsection|L:app:lagrangian|action-of-a-history": [
+      "G:action-of-a-history"
+    ],
+    "subsection|L:app:lagrangian|commitment-as-conjugate-momentum": [
+      "G:commitment-as-conjugate-momentum"
+    ],
+    "subsection|L:app:lagrangian|hamiltonian-remaining-freedom": [
+      "G:hamiltonian-remaining-freedom"
+    ],
+    "subsection|L:app:lagrangian|collapse-and-action-reduction": [
+      "G:collapse-and-action-reduction"
+    ],
+    "subsection|L:app:lagrangian|discrete-equations-of-motion": [
+      "G:discrete-equations-of-motion"
+    ],
+    "subsection|L:app:lagrangian|distinction-from-optimization": [
+      "G:distinction-from-optimization"
+    ],
+    "subsection|L:app:lagrangian|summary": [
+      "G:summary-11"
+    ],
+    "section||categorical-and-sheaf-theoretic-glossary": [
+      "L:app:glossary"
+    ],
+    "subsection|L:app:glossary|option-space": [
+      "G:option-space"
+    ],
+    "subsection|L:app:glossary|monotone-morphism": [
+      "G:monotone-morphism"
+    ],
+    "subsection|L:app:glossary|history": [
+      "G:history"
+    ],
+    "subsection|L:app:glossary|collapse-and-quotient": [
+      "G:collapse-and-quotient"
+    ],
+    "subsection|L:app:glossary|endofunctor": [
+      "G:endofunctor"
+    ],
+    "subsection|L:app:glossary|parser": [
+      "G:parser"
+    ],
+    "subsection|L:app:glossary|sheaf": [
+      "G:sheaf"
+    ],
+    "subsection|L:app:glossary|presheaf-and-sheafification": [
+      "G:presheaf-and-sheafification"
+    ],
+    "subsection|L:app:glossary|view": [
+      "G:view"
+    ],
+    "subsection|L:app:glossary|accounting-functor": [
+      "G:accounting-functor"
+    ],
+    "subsection|L:app:glossary|worldhood": [
+      "G:worldhood"
+    ],
+    "subsection|L:app:glossary|summary": [
+      "G:summary-12"
+    ],
+    "section||theorem-of-refusal": [
+      "G:theorem-of-refusal"
+    ],
+    "section||conclusion-the-ethics-of-the-calculus": [
+      "G:conclusion-the-ethics-of-the-calculus"
+    ],
+    "section||related-work": [
+      "L:sec:related-work"
+    ],
+    "subsection|L:sec:related-work|irreversibility-in-computation": [
+      "G:irreversibility-in-computation"
+    ],
+    "subsection|L:sec:related-work|event-based-semantics": [
+      "G:event-based-semantics"
+    ],
+    "subsection|L:sec:related-work|categorical-constraint-systems": [
+      "G:categorical-constraint-systems"
+    ],
+    "subsection|L:sec:related-work|planning-binding-and-temporal-logic": [
+      "G:planning-binding-and-temporal-logic"
+    ],
+    "subsection|L:sec:related-work|artificial-intelligence-and-the-absence-of-commi": [
+      "G:artificial-intelligence-and-the-absence-of-commi"
+    ],
+    "section||syntax-and-semantics": [
+      "L:sec:syntax-semantics"
+    ],
+    "subsection|L:sec:syntax-semantics|surface-syntax-and-histories": [
+      "G:surface-syntax-and-histories"
+    ],
+    "subsection|L:sec:syntax-semantics|abstract-syntax-tree": [
+      "G:abstract-syntax-tree"
+    ],
+    "subsection|L:sec:syntax-semantics|denotational-semantics": [
+      "G:denotational-semantics"
+    ],
+    "subsection|L:sec:syntax-semantics|the-accounting-functor": [
+      "G:the-accounting-functor"
+    ],
+    "subsection|L:sec:syntax-semantics|correctness-properties": [
+      "G:correctness-properties"
+    ],
+    "section||spherepop-versus-large-language-models": [
+      "L:sec:spherepop-vs-llms"
+    ],
+    "subsection|L:sec:spherepop-vs-llms|the-autoregressive-paradigm": [
+      "G:the-autoregressive-paradigm"
+    ],
+    "subsection|L:sec:spherepop-vs-llms|simulation-without-action": [
+      "G:simulation-without-action"
+    ],
+    "subsection|L:sec:spherepop-vs-llms|hallucination-as-zero-cost-structure": [
+      "G:hallucination-as-zero-cost-structure"
+    ],
+    "subsection|L:sec:spherepop-vs-llms|what-would-it-mean-for-an-ai-to-pop": [
+      "G:what-would-it-mean-for-an-ai-to-pop"
+    ],
+    "subsection|L:sec:spherepop-vs-llms|spherepop-as-a-design-constraint": [
+      "G:spherepop-as-a-design-constraint"
+    ],
+    "section||spherepop-os-an-operating-system-for-event-histo": [
+      "L:sec:spherepop-os"
+    ],
+    "subsection|L:sec:spherepop-os|histories-as-the-primary-substrate": [
+      "G:histories-as-the-primary-substrate"
+    ],
+    "subsection|L:sec:spherepop-os|processes-as-commitment-streams": [
+      "G:processes-as-commitment-streams"
+    ],
+    "subsection|L:sec:spherepop-os|files-memory-and-persistence": [
+      "G:files-memory-and-persistence"
+    ],
+    "subsection|L:sec:spherepop-os|scheduling-and-time": [
+      "G:scheduling-and-time"
+    ],
+    "subsection|L:sec:spherepop-os|security-and-authority": [
+      "G:security-and-authority"
+    ],
+    "section||memory-first-cognitive-systems": [
+      "L:sec:memory-first"
+    ],
+    "subsection|L:sec:memory-first|reasoning-as-history-construction": [
+      "G:reasoning-as-history-construction"
+    ],
+    "subsection|L:sec:memory-first|latent-memory-states-and-event-dynamics": [
+      "G:latent-memory-states-and-event-dynamics"
+    ],
+    "subsection|L:sec:memory-first|refusal-as-cognitive-stabilization": [
+      "G:refusal-as-cognitive-stabilization"
+    ],
+    "subsection|L:sec:memory-first|collapse-and-abstraction": [
+      "G:collapse-and-abstraction"
+    ],
+    "subsection|L:sec:memory-first|action-and-worldhood": [
+      "G:action-and-worldhood"
+    ],
+    "subsection|L:sec:memory-first|interpretability-and-oversight": [
+      "G:interpretability-and-oversight"
+    ],
+    "section||stratified-semantics-calculus-kernel-and-view": [
+      "L:sec:stratified-semantics"
+    ],
+    "subsection|L:sec:stratified-semantics|three-semantic-layers": [
+      "G:three-semantic-layers"
+    ],
+    "subsection|L:sec:stratified-semantics|functorial-relationships": [
+      "G:functorial-relationships"
+    ],
+    "subsection|L:sec:stratified-semantics|authority-and-non-interference": [
+      "G:authority-and-non-interference"
+    ],
+    "subsection|L:sec:stratified-semantics|why-stratification-matters": [
+      "G:why-stratification-matters"
+    ],
+    "section||collapse-merge-and-equivalence-as-quotienting": [
+      "L:sec:collapse-quotient"
+    ],
+    "subsection|L:sec:collapse-quotient|collapse-in-the-calculus": [
+      "G:collapse-in-the-calculus"
+    ],
+    "subsection|L:sec:collapse-quotient|merge-and-collapse-in-the-kernel": [
+      "G:merge-and-collapse-in-the-kernel"
+    ],
+    "subsection|L:sec:collapse-quotient|action-reduction-and-renormalization": [
+      "G:action-reduction-and-renormalization"
+    ],
+    "subsection|L:sec:collapse-quotient|confluence-and-order-independence": [
+      "G:confluence-and-order-independence"
+    ],
+    "subsection|L:sec:collapse-quotient|collapse-versus-erasure": [
+      "G:collapse-versus-erasure"
+    ],
+    "subsection|L:sec:collapse-quotient|summary": [
+      "G:summary-13"
+    ],
+    "section||refusal-authority-and-non-interference": [
+      "L:sec:refusal-authority"
+    ],
+    "subsection|L:sec:refusal-authority|geometric-equivalence-and-normative-distinction": [
+      "G:geometric-equivalence-and-normative-distinction"
+    ],
+    "subsection|L:sec:refusal-authority|refusal-and-the-accounting-layer": [
+      "G:refusal-and-the-accounting-layer"
+    ],
+    "subsection|L:sec:refusal-authority|authority-and-proposal-rejection": [
+      "G:authority-and-proposal-rejection"
+    ],
+    "subsection|L:sec:refusal-authority|non-interference-as-a-semantic-invariant": [
+      "G:non-interference-as-a-semantic-invariant"
+    ],
+    "subsection|L:sec:refusal-authority|commitment-without-coercion": [
+      "G:commitment-without-coercion"
+    ],
+    "subsection|L:sec:refusal-authority|summary": [
+      "G:summary-14"
+    ],
+    "section||spherepop-and-psychoanalytic-time-a-comparison-w": [
+      "L:sec:psychocinema"
+    ],
+    "subsection|L:sec:psychocinema|lacanian-temporality-and-retroactive-meaning": [
+      "G:lacanian-temporality-and-retroactive-meaning"
+    ],
+    "subsection|L:sec:psychocinema|superficial-convergences": [
+      "G:superficial-convergences"
+    ],
+    "subsection|L:sec:psychocinema|irreversibility-versus-retroactivity": [
+      "G:irreversibility-versus-retroactivity"
+    ],
+    "subsection|L:sec:psychocinema|absence-as-lack-versus-absence-as-exclusion": [
+      "G:absence-as-lack-versus-absence-as-exclusion"
+    ],
+    "subsection|L:sec:psychocinema|cinema-spectatorship-and-worldhood": [
+      "G:cinema-spectatorship-and-worldhood"
+    ],
+    "subsection|L:sec:psychocinema|from-psychoanalytic-narrative-to-formal-commitme": [
+      "G:from-psychoanalytic-narrative-to-formal-commitme"
+    ],
+    "subsection|L:sec:psychocinema|summary": [
+      "G:summary-15"
+    ],
+    "subsection|G:from-calculus-to-visualization-nested-scopes-as-|option-spaces-as-regions": [
+      "G:option-spaces-as-regions"
+    ],
+    "subsection|G:from-calculus-to-visualization-nested-scopes-as-|nested-scopes-and-worldhood": [
+      "G:nested-scopes-and-worldhood"
+    ],
+    "subsection|G:from-calculus-to-visualization-nested-scopes-as-|binding-as-relational-geometry": [
+      "G:binding-as-relational-geometry"
+    ],
+    "subsection|G:from-calculus-to-visualization-nested-scopes-as-|collapse-as-boundary-identification": [
+      "G:collapse-as-boundary-identification"
+    ],
+    "subsection|G:from-calculus-to-visualization-nested-scopes-as-|refusal-and-protected-regions": [
+      "G:refusal-and-protected-regions"
+    ],
+    "subsection|G:from-calculus-to-visualization-nested-scopes-as-|advantages-over-narrative-visualization": [
+      "G:advantages-over-narrative-visualization"
+    ],
+    "subsection|G:from-calculus-to-visualization-nested-scopes-as-|toward-an-executable-visual-language": [
+      "G:toward-an-executable-visual-language"
+    ],
+    "subsection|G:from-calculus-to-visualization-nested-scopes-as-|summary": [
+      "G:summary-16"
+    ],
+    "subsection|G:the-agent-as-endofunctor-and-parser|endofunctorial-structure": [
+      "G:endofunctorial-structure"
+    ],
+    "subsection|G:the-agent-as-endofunctor-and-parser|parsing-as-commitment": [
+      "G:parsing-as-commitment"
+    ],
+    "subsection|G:the-agent-as-endofunctor-and-parser|functorial-identity-and-agency": [
+      "G:functorial-identity-and-agency"
+    ],
+    "subsection|G:sheaf-theoretic-interpretations-of-worldhood|local-worlds-and-covers": [
+      "G:local-worlds-and-covers"
+    ],
+    "subsection|G:sheaf-theoretic-interpretations-of-worldhood|gluing-as-commitment": [
+      "G:gluing-as-commitment"
+    ],
+    "subsection|G:sheaf-theoretic-interpretations-of-worldhood|collapse-as-sheafification": [
+      "G:collapse-as-sheafification"
+    ],
+    "subsection|G:sheaf-theoretic-interpretations-of-worldhood|views-as-sections": [
+      "G:views-as-sections"
+    ],
+    "subsection|G:sheaf-theoretic-interpretations-of-worldhood|worldhood-revisited": [
+      "G:worldhood-revisited"
+    ],
+    "subsection|L:app:ast|abstract-syntax-tree": [
+      "G:abstract-syntax-tree-2"
+    ],
+    "subsection|L:app:ast|denotational-semantics": [
+      "G:denotational-semantics-2"
+    ],
+    "subsection|L:app:lagrangian|configuration-variable": [
+      "G:configuration-variable"
+    ],
+    "subsection|L:app:lagrangian|action": [
+      "G:action"
+    ],
+    "subsection|L:app:lagrangian|commitment-and-hamiltonian": [
+      "G:commitment-and-hamiltonian"
+    ],
+    "subsection|L:app:lagrangian|collapse": [
+      "G:collapse"
+    ]
+  },
+  "history": [
+    {
+      "at": "2026-09-27T07:21:21",
+      "added": [
+        "G:introduction",
+        "G:the-axiom-of-irreversibility",
+        "G:the-morphology-of-choice",
+        "G:the-mechanics-of-commitment",
+        "G:renormalization-through-collapse",
+        "G:psychocinema-and-the-limits-of-retroactive-meani",
+        "G:from-calculus-to-visualization-nested-scopes-as-",
+        "G:cognitive-agents-as-log-bound-processes",
+        "G:agents-as-historical-processes",
+        "G:internal-cognition-as-event-simulation",
+        "G:memory-as-causal-substrate",
+        "G:action-as-joint-commitment",
+        "G:refusal-and-stability-of-agency",
+        "G:collapse-and-concept-formation",
+        "G:visualizing-agent-cognition",
+        "G:worldhood-and-responsibility",
+        "G:summary",
+        "G:the-agent-as-endofunctor-and-parser",
+        "G:summary-2",
+        "G:sheaf-theoretic-interpretations-of-worldhood",
+        "G:summary-3",
+        "G:conclusion-joy-in-a-finite-world",
+        "G:the-meld-operator-convergent-synthesis-of-histor",
+        "G:motivation",
+        "G:formal-characterization",
+        "G:geometry-of-meld",
+        "G:accounting-semantics",
+        "G:interaction-with-collapse",
+        "G:examples",
+        "G:summary-4",
+        "G:semantic-merge-policies-and-structured-synthesis",
+        "G:motivation-2",
+        "G:policy-objects",
+        "G:merge-actions",
+        "G:constraint-propagation",
+        "G:failure-and-review",
+        "G:examples-2",
+        "G:summary-5",
+        "G:writing-as-event-history",
+        "G:drafts-as-parallel-histories",
+        "G:revision-as-irreversible-action",
+        "G:parsing-and-refinement",
+        "G:synthesis-and-meld",
+        "G:tooling-and-ontology",
+        "G:implications",
+        "G:summary-6",
+        "G:generative-spherepop-programs-and-minimal-commit",
+        "G:programs-as-higher-order-histories",
+        "G:semantic-equivalence-and-target-objects",
+        "G:minimal-commitment-paths",
+        "G:policy-selection-as-control",
+        "G:relation-to-parsing-and-authorship",
+        "G:implications-2",
+        "G:summary-7",
+        "G:semantic-manifolds-and-guided-generative-flow",
+        "G:semantic-state-space",
+        "G:guidance-as-tangent-restriction",
+        "G:local-coordination-and-context-selection",
+        "G:boundary-conditions-as-prompts",
+        "G:equivalence-to-guided-attention",
+        "G:relation-to-minimal-commitment",
+        "G:sheaf-theoretic-chart-gluing-as-commitment",
+        "G:summary-8",
+        "G:synthesis-world-construction-as-structured-seman",
+        "L:app:syntax",
+        "G:design-principles",
+        "G:lexical-elements",
+        "G:grammar",
+        "G:events",
+        "G:declarations",
+        "G:syntactic-irreversibility",
+        "G:determinism-and-replay",
+        "G:minimality",
+        "G:summary-9",
+        "L:app:ast",
+        "G:abstract-syntax-as-linear-structure",
+        "G:event-nodes",
+        "G:declaration-nodes",
+        "G:the-semantic-category",
+        "G:interpretation-of-nodes",
+        "G:compositional-semantics",
+        "G:historical-sensitivity",
+        "G:idempotence-and-independence",
+        "G:determinism",
+        "G:summary-10",
+        "L:app:lagrangian",
+        "G:configuration-variable-optionality",
+        "G:local-lagrangian",
+        "G:action-of-a-history",
+        "G:commitment-as-conjugate-momentum",
+        "G:hamiltonian-remaining-freedom",
+        "G:collapse-and-action-reduction",
+        "G:discrete-equations-of-motion",
+        "G:distinction-from-optimization",
+        "G:summary-11",
+        "L:app:glossary",
+        "G:option-space",
+        "G:monotone-morphism",
+        "G:history",
+        "G:collapse-and-quotient",
+        "G:endofunctor",
+        "G:parser",
+        "G:sheaf",
+        "G:presheaf-and-sheafification",
+        "G:view",
+        "G:accounting-functor",
+        "G:worldhood",
+        "G:summary-12"
+      ],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:22:18",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:23:28",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:24:03",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:24:21",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:25:06",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T09:07:55",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T09:08:30",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T09:33:44",
+      "added": [
+        "G:theorem-of-refusal",
+        "G:conclusion-the-ethics-of-the-calculus",
+        "L:sec:related-work",
+        "G:irreversibility-in-computation",
+        "G:event-based-semantics",
+        "G:categorical-constraint-systems",
+        "G:planning-binding-and-temporal-logic",
+        "G:artificial-intelligence-and-the-absence-of-commi",
+        "L:sec:syntax-semantics",
+        "G:surface-syntax-and-histories",
+        "G:abstract-syntax-tree",
+        "G:denotational-semantics",
+        "G:the-accounting-functor",
+        "G:correctness-properties",
+        "L:sec:spherepop-vs-llms",
+        "G:the-autoregressive-paradigm",
+        "G:simulation-without-action",
+        "G:hallucination-as-zero-cost-structure",
+        "G:what-would-it-mean-for-an-ai-to-pop",
+        "G:spherepop-as-a-design-constraint",
+        "L:sec:spherepop-os",
+        "G:histories-as-the-primary-substrate",
+        "G:processes-as-commitment-streams",
+        "G:files-memory-and-persistence",
+        "G:scheduling-and-time",
+        "G:security-and-authority",
+        "L:sec:memory-first",
+        "G:reasoning-as-history-construction",
+        "G:latent-memory-states-and-event-dynamics",
+        "G:refusal-as-cognitive-stabilization",
+        "G:collapse-and-abstraction",
+        "G:action-and-worldhood",
+        "G:interpretability-and-oversight",
+        "L:sec:stratified-semantics",
+        "G:three-semantic-layers",
+        "G:functorial-relationships",
+        "G:authority-and-non-interference",
+        "G:why-stratification-matters",
+        "L:sec:collapse-quotient",
+        "G:collapse-in-the-calculus",
+        "G:merge-and-collapse-in-the-kernel",
+        "G:action-reduction-and-renormalization",
+        "G:confluence-and-order-independence",
+        "G:collapse-versus-erasure",
+        "G:summary-13",
+        "L:sec:refusal-authority",
+        "G:geometric-equivalence-and-normative-distinction",
+        "G:refusal-and-the-accounting-layer",
+        "G:authority-and-proposal-rejection",
+        "G:non-interference-as-a-semantic-invariant",
+        "G:commitment-without-coercion",
+        "G:summary-14",
+        "L:sec:psychocinema",
+        "G:lacanian-temporality-and-retroactive-meaning",
+        "G:superficial-convergences",
+        "G:irreversibility-versus-retroactivity",
+        "G:absence-as-lack-versus-absence-as-exclusion",
+        "G:cinema-spectatorship-and-worldhood",
+        "G:from-psychoanalytic-narrative-to-formal-commitme",
+        "G:summary-15",
+        "G:option-spaces-as-regions",
+        "G:nested-scopes-and-worldhood",
+        "G:binding-as-relational-geometry",
+        "G:collapse-as-boundary-identification",
+        "G:refusal-and-protected-regions",
+        "G:advantages-over-narrative-visualization",
+        "G:toward-an-executable-visual-language",
+        "G:summary-16",
+        "G:endofunctorial-structure",
+        "G:parsing-as-commitment",
+        "G:functorial-identity-and-agency",
+        "G:local-worlds-and-covers",
+        "G:gluing-as-commitment",
+        "G:collapse-as-sheafification",
+        "G:views-as-sections",
+        "G:worldhood-revisited",
+        "G:abstract-syntax-tree-2",
+        "G:denotational-semantics-2",
+        "G:configuration-variable",
+        "G:action",
+        "G:commitment-and-hamiltonian",
+        "G:collapse"
+      ],
+      "extended": [
+        "G:cognitive-agents-as-log-bound-processes",
+        "G:visualizing-agent-cognition",
+        "G:conclusion-joy-in-a-finite-world"
+      ],
+      "withdrawn": [
+        "G:psychocinema-and-the-limits-of-retroactive-meani",
+        "G:the-meld-operator-convergent-synthesis-of-histor",
+        "G:motivation",
+        "G:formal-characterization",
+        "G:geometry-of-meld",
+        "G:accounting-semantics",
+        "G:interaction-with-collapse",
+        "G:examples",
+        "G:summary-4",
+        "G:semantic-merge-policies-and-structured-synthesis",
+        "G:motivation-2",
+        "G:policy-objects",
+        "G:merge-actions",
+        "G:constraint-propagation",
+        "G:failure-and-review",
+        "G:examples-2",
+        "G:summary-5",
+        "G:writing-as-event-history",
+        "G:drafts-as-parallel-histories",
+        "G:revision-as-irreversible-action",
+        "G:parsing-and-refinement",
+        "G:synthesis-and-meld",
+        "G:tooling-and-ontology",
+        "G:implications",
+        "G:summary-6",
+        "G:generative-spherepop-programs-and-minimal-commit",
+        "G:programs-as-higher-order-histories",
+        "G:semantic-equivalence-and-target-objects",
+        "G:minimal-commitment-paths",
+        "G:policy-selection-as-control",
+        "G:relation-to-parsing-and-authorship",
+        "G:implications-2",
+        "G:summary-7",
+        "G:semantic-manifolds-and-guided-generative-flow",
+        "G:semantic-state-space",
+        "G:guidance-as-tangent-restriction",
+        "G:local-coordination-and-context-selection",
+        "G:boundary-conditions-as-prompts",
+        "G:equivalence-to-guided-attention",
+        "G:relation-to-minimal-commitment",
+        "G:sheaf-theoretic-chart-gluing-as-commitment",
+        "G:summary-8",
+        "G:synthesis-world-construction-as-structured-seman",
+        "G:design-principles",
+        "G:lexical-elements",
+        "G:events",
+        "G:declarations",
+        "G:determinism-and-replay",
+        "G:minimality",
+        "G:summary-9",
+        "G:abstract-syntax-as-linear-structure",
+        "G:event-nodes",
+        "G:declaration-nodes",
+        "G:the-semantic-category",
+        "G:interpretation-of-nodes",
+        "G:compositional-semantics",
+        "G:historical-sensitivity",
+        "G:idempotence-and-independence",
+        "G:determinism",
+        "G:summary-10",
+        "G:configuration-variable-optionality",
+        "G:action-of-a-history",
+        "G:commitment-as-conjugate-momentum",
+        "G:hamiltonian-remaining-freedom",
+        "G:collapse-and-action-reduction",
+        "G:discrete-equations-of-motion",
+        "G:distinction-from-optimization",
+        "G:summary-11",
+        "G:option-space",
+        "G:monotone-morphism",
+        "G:history",
+        "G:collapse-and-quotient",
+        "G:endofunctor",
+        "G:parser",
+        "G:sheaf",
+        "G:presheaf-and-sheafification",
+        "G:view",
+        "G:accounting-functor",
+        "G:worldhood",
+        "G:summary-12"
+      ]
+    },
+    {
+      "at": "2026-09-27T09:38:34",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    }
+  ]
+}

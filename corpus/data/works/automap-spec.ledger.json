@@ -1,0 +1,131 @@
+{
+  "work": "automap-spec",
+  "version": 1,
+  "nodes": {
+    "L:sec:map-success": {
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 6.47,
+      "title": "Where Descent's Map Succeeds",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:12:25",
+      "last_seen": "2026-09-27T09:11:17"
+    },
+    "L:sec:map-ego": {
+      "pos": [
+        0.0,
+        0.0,
+        40.0
+      ],
+      "radius": 6.36,
+      "title": "Egocentric Before Exhaustive",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:12:25",
+      "last_seen": "2026-09-27T09:11:17"
+    },
+    "L:sec:map-colour": {
+      "pos": [
+        0.0,
+        0.0,
+        80.0
+      ],
+      "radius": 6.31,
+      "title": "Sparse, Invariant Colour",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:12:25",
+      "last_seen": "2026-09-27T09:11:17"
+    },
+    "L:sec:map-states": {
+      "pos": [
+        0.0,
+        0.0,
+        120.0
+      ],
+      "radius": 6.2,
+      "title": "Three States of Discovery",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:12:25",
+      "last_seen": "2026-09-27T09:11:17"
+    },
+    "L:sec:map-depth": {
+      "pos": [
+        0.0,
+        0.0,
+        160.0
+      ],
+      "radius": 6.5,
+      "title": "Semantic Depth",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:12:25",
+      "last_seen": "2026-09-27T09:11:17"
+    }
+  },
+  "labels": {
+    "sec:map-success": "L:sec:map-success",
+    "sec:map-ego": "L:sec:map-ego",
+    "sec:map-colour": "L:sec:map-colour",
+    "sec:map-states": "L:sec:map-states",
+    "sec:map-depth": "L:sec:map-depth"
+  },
+  "aliases": {
+    "section||where-descent-s-map-succeeds": [
+      "L:sec:map-success"
+    ],
+    "section||egocentric-before-exhaustive": [
+      "L:sec:map-ego"
+    ],
+    "section||sparse-invariant-colour": [
+      "L:sec:map-colour"
+    ],
+    "section||three-states-of-discovery": [
+      "L:sec:map-states"
+    ],
+    "section||semantic-depth": [
+      "L:sec:map-depth"
+    ]
+  },
+  "history": [
+    {
+      "at": "2026-09-27T07:12:25",
+      "added": [
+        "L:sec:map-success",
+        "L:sec:map-ego",
+        "L:sec:map-colour",
+        "L:sec:map-states",
+        "L:sec:map-depth"
+      ],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:12:25",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T09:11:17",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    }
+  ]
+}

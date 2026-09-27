@@ -1,0 +1,5697 @@
+{
+  "work": "spherepop",
+  "version": 1,
+  "nodes": {
+    "G:abstract": {
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 9.1,
+      "title": "Abstract",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-passive-theory-of-notes-and-its-failure": {
+      "pos": [
+        0.0,
+        0.0,
+        40.0
+      ],
+      "radius": 9.08,
+      "title": "The Passive Theory of Notes and Its Failure",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-continuation-account": {
+      "pos": [
+        27.9,
+        0.0,
+        40.0
+      ],
+      "radius": 6.52,
+      "title": "The Continuation Account",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-passive-theory-of-notes-and-its-failure",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:notes-as-anti-collapse-artifacts": {
+      "pos": [
+        -27.18,
+        0.0,
+        40.0
+      ],
+      "radius": 6.04,
+      "title": "Notes as Anti-Collapse Artifacts",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-passive-theory-of-notes-and-its-failure",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-state-centric-assumption-and-its-consequence": {
+      "pos": [
+        0.0,
+        40.0,
+        40.0
+      ],
+      "radius": 5.53,
+      "title": "The State-Centric Assumption and Its Consequences",
+      "role": "consequence",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-standard-premise": {
+      "pos": [
+        20.22,
+        40.0,
+        40.0
+      ],
+      "radius": 4.95,
+      "title": "The Standard Premise",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-state-centric-assumption-and-its-consequence",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-state-illusion": {
+      "pos": [
+        -20.68,
+        40.0,
+        40.0
+      ],
+      "radius": 5.26,
+      "title": "The State Illusion",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-state-centric-assumption-and-its-consequence",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:sec:layered-world-model": {
+      "pos": [
+        12.96,
+        55.82,
+        49.07
+      ],
+      "radius": 7.29,
+      "title": "The Layered World Model",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-state-centric-assumption-and-its-consequence",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:consequences-for-language-design": {
+      "pos": [
+        -10.94,
+        53.35,
+        47.66
+      ],
+      "radius": 4.82,
+      "title": "Consequences for Language Design",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-state-centric-assumption-and-its-consequence",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-connection-to-notes": {
+      "pos": [
+        11.41,
+        26.07,
+        32.01
+      ],
+      "radius": 5.4,
+      "title": "The Connection to Notes",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-state-centric-assumption-and-its-consequence",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:ch:collapse-quotient": {
+      "pos": [
+        0.0,
+        0.0,
+        80.0
+      ],
+      "radius": 5.49,
+      "title": "Deriving the Operators",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-minimal-requirements": {
+      "pos": [
+        22.59,
+        0.0,
+        80.0
+      ],
+      "radius": 6.57,
+      "title": "The Minimal Requirements",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:ch:collapse-quotient",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-four-operators": {
+      "pos": [
+        -21.45,
+        0.0,
+        80.0
+      ],
+      "radius": 5.81,
+      "title": "The Four Operators",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:ch:collapse-quotient",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:sec:view-vs-collapse": {
+      "pos": [
+        11.98,
+        14.62,
+        88.39
+      ],
+      "radius": 6.13,
+      "title": "VIEW versus COLLAPSE",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:ch:collapse-quotient",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:why-these-four-and-no-others": {
+      "pos": [
+        -12.99,
+        15.86,
+        89.1
+      ],
+      "radius": 7.37,
+      "title": "Why These Four and No Others",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:ch:collapse-quotient",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:sec:boolean-completeness": {
+      "pos": [
+        13.85,
+        -16.91,
+        70.3
+      ],
+      "radius": 8.42,
+      "title": "A Genuine Completeness Result: Boolean Circuits",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:ch:collapse-quotient",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-conservation-law": {
+      "pos": [
+        -12.89,
+        -15.73,
+        70.98
+      ],
+      "radius": 7.24,
+      "title": "The Conservation Law",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:ch:collapse-quotient",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-algebra-of-histories": {
+      "pos": [
+        0.0,
+        0.0,
+        120.0
+      ],
+      "radius": 5.4,
+      "title": "The Algebra of Histories",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:histories-as-the-primary-objects": {
+      "pos": [
+        20.31,
+        0.0,
+        120.0
+      ],
+      "radius": 5.14,
+      "title": "Histories as the Primary Objects",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-algebra-of-histories",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-history-category": {
+      "pos": [
+        -21.24,
+        0.0,
+        120.0
+      ],
+      "radius": 5.76,
+      "title": "The History Category",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-algebra-of-histories",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:unique-factorisation": {
+      "pos": [
+        10.93,
+        13.34,
+        127.65
+      ],
+      "radius": 4.94,
+      "title": "Unique Factorisation",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-algebra-of-histories",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:sec:admissibility-set": {
+      "pos": [
+        -10.92,
+        13.33,
+        127.65
+      ],
+      "radius": 4.93,
+      "title": "Admissibility as a Set-Valued Function",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-algebra-of-histories",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:small-step-semantics": {
+      "pos": [
+        0.0,
+        0.0,
+        160.0
+      ],
+      "radius": 5.35,
+      "title": "Small-Step Semantics",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-transition-system": {
+      "pos": [
+        20.97,
+        0.0,
+        160.0
+      ],
+      "radius": 5.63,
+      "title": "The Transition System",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:small-step-semantics",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:big-step-semantics": {
+      "pos": [
+        -20.07,
+        0.0,
+        160.0
+      ],
+      "radius": 5.03,
+      "title": "Big-Step Semantics",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:small-step-semantics",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:multi-step-reduction": {
+      "pos": [
+        10.85,
+        13.24,
+        167.59
+      ],
+      "radius": 4.89,
+      "title": "Multi-Step Reduction",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:small-step-semantics",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:collapse-as-quotient": {
+      "pos": [
+        0.0,
+        0.0,
+        200.0
+      ],
+      "radius": 5.35,
+      "title": "Collapse as Quotient",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-insufficiency-of-unparameterized-collapse": {
+      "pos": [
+        21.81,
+        0.0,
+        200.0
+      ],
+      "radius": 6.19,
+      "title": "The Insufficiency of Unparameterized Collapse",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:collapse-as-quotient",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-four-canonical-rules": {
+      "pos": [
+        -20.13,
+        0.0,
+        200.0
+      ],
+      "radius": 5.07,
+      "title": "The Four Canonical Rules",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:collapse-as-quotient",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-collapse-functor": {
+      "pos": [
+        11.84,
+        14.45,
+        208.29
+      ],
+      "radius": 6.1,
+      "title": "The Collapse Functor",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:collapse-as-quotient",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-universal-property-of-collapse": {
+      "pos": [
+        -10.88,
+        13.28,
+        207.62
+      ],
+      "radius": 4.93,
+      "title": "The Universal Property of Collapse",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:collapse-as-quotient",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:types-as-admissibility-certificates": {
+      "pos": [
+        0.0,
+        0.0,
+        240.0
+      ],
+      "radius": 5.4,
+      "title": "Types as Admissibility Certificates",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-inadequacy-of-value-set-types": {
+      "pos": [
+        19.75,
+        0.0,
+        240.0
+      ],
+      "radius": 4.77,
+      "title": "The Inadequacy of Value-Set Types",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:types-as-admissibility-certificates",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-type-language": {
+      "pos": [
+        -19.93,
+        0.0,
+        240.0
+      ],
+      "radius": 4.89,
+      "title": "The Type Language",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:types-as-admissibility-certificates",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-type-rules": {
+      "pos": [
+        10.74,
+        13.11,
+        247.52
+      ],
+      "radius": 4.71,
+      "title": "The Type Rules",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:types-as-admissibility-certificates",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:open-worlds-and-closed-worlds": {
+      "pos": [
+        -11.39,
+        13.91,
+        247.98
+      ],
+      "radius": 5.51,
+      "title": "Open Worlds and Closed Worlds",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:types-as-admissibility-certificates",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:principal-theorems": {
+      "pos": [
+        11.3,
+        -13.8,
+        232.08
+      ],
+      "radius": 5.4,
+      "title": "Principal Theorems",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:types-as-admissibility-certificates",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:dependent-types-and-admissibility-lattices": {
+      "pos": [
+        0.0,
+        0.0,
+        280.0
+      ],
+      "radius": 5.45,
+      "title": "Dependent Types and Admissibility Lattices",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:dependent-process-types": {
+      "pos": [
+        20.22,
+        0.0,
+        280.0
+      ],
+      "radius": 5.03,
+      "title": "Dependent Process Types",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:dependent-types-and-admissibility-lattices",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:admissibility-lattices": {
+      "pos": [
+        -20.94,
+        0.0,
+        280.0
+      ],
+      "radius": 5.51,
+      "title": "Admissibility Lattices",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:dependent-types-and-admissibility-lattices",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:proof-carrying-refusal": {
+      "pos": [
+        11.43,
+        13.95,
+        288.0
+      ],
+      "radius": 5.5,
+      "title": "Proof-Carrying Refusal",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:dependent-types-and-admissibility-lattices",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-seven-note-classes-as-operator-realizations": {
+      "pos": [
+        0.0,
+        0.0,
+        320.0
+      ],
+      "radius": 6.23,
+      "title": "The Seven Note Classes as Operator Realizations",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-classification-principle": {
+      "pos": [
+        21.34,
+        0.0,
+        320.0
+      ],
+      "radius": 5.0,
+      "title": "The Classification Principle",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-seven-note-classes-as-operator-realizations",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:capture-notes": {
+      "pos": [
+        0.0,
+        0.0,
+        360.0
+      ],
+      "radius": 7.62,
+      "title": "Capture Notes",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:prospective-notes": {
+      "pos": [
+        0.0,
+        0.0,
+        400.0
+      ],
+      "radius": 7.5,
+      "title": "Prospective Notes",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:repair-refusal-and-generative-notes": {
+      "pos": [
+        0.0,
+        0.0,
+        440.0
+      ],
+      "radius": 5.45,
+      "title": "Repair, Refusal, and Generative Notes",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:repair-notes": {
+      "pos": [
+        20.85,
+        0.0,
+        440.0
+      ],
+      "radius": 5.45,
+      "title": "Repair Notes",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:repair-refusal-and-generative-notes",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:refusal-notes": {
+      "pos": [
+        -20.4,
+        0.0,
+        440.0
+      ],
+      "radius": 5.15,
+      "title": "Refusal Notes",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:repair-refusal-and-generative-notes",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:generative-notes": {
+      "pos": [
+        10.97,
+        13.39,
+        447.68
+      ],
+      "radius": 4.94,
+      "title": "Generative Notes",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:repair-refusal-and-generative-notes",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:collapse-notes-and-the-ephemerality-inversion": {
+      "pos": [
+        0.0,
+        0.0,
+        480.0
+      ],
+      "radius": 5.49,
+      "title": "Collapse Notes and the Ephemerality Inversion",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-hidden-class": {
+      "pos": [
+        21.78,
+        0.0,
+        480.0
+      ],
+      "radius": 6.03,
+      "title": "The Hidden Class",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:collapse-notes-and-the-ephemerality-inversion",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-ephemerality-inversion": {
+      "pos": [
+        -21.33,
+        0.0,
+        480.0
+      ],
+      "radius": 5.73,
+      "title": "The Ephemerality Inversion",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:collapse-notes-and-the-ephemerality-inversion",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:ch:compiler": {
+      "pos": [
+        0.0,
+        0.0,
+        520.0
+      ],
+      "radius": 5.57,
+      "title": "The Event IR and Compiler Correctness",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-failure-of-traditional-compiler-correctness": {
+      "pos": [
+        20.7,
+        0.0,
+        520.0
+      ],
+      "radius": 5.23,
+      "title": "The Failure of Traditional Compiler Correctness",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:ch:compiler",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:event-ir": {
+      "pos": [
+        -23.8,
+        0.0,
+        520.0
+      ],
+      "radius": 7.3,
+      "title": "Event IR",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:ch:compiler",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:garbage-collection-as-admissibility-guided-colla": {
+      "pos": [
+        0.0,
+        0.0,
+        560.0
+      ],
+      "radius": 5.49,
+      "title": "Garbage Collection as Admissibility-Guided Collapse",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-standard-problem": {
+      "pos": [
+        19.79,
+        0.0,
+        560.0
+      ],
+      "radius": 4.7,
+      "title": "The Standard Problem",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:garbage-collection-as-admissibility-guided-colla",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:history-segments-and-liveness": {
+      "pos": [
+        -19.91,
+        0.0,
+        560.0
+      ],
+      "radius": 4.78,
+      "title": "History Segments and Liveness",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:garbage-collection-as-admissibility-guided-colla",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:gc-as-collapse": {
+      "pos": [
+        11.45,
+        13.98,
+        568.02
+      ],
+      "radius": 5.49,
+      "title": "GC as Collapse",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:garbage-collection-as-admissibility-guided-colla",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:three-gc-strategies": {
+      "pos": [
+        -11.75,
+        14.35,
+        568.23
+      ],
+      "radius": 5.86,
+      "title": "Three GC Strategies",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:garbage-collection-as-admissibility-guided-colla",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:admissibility-certificates-and-gc-safety": {
+      "pos": [
+        11.38,
+        -13.89,
+        552.03
+      ],
+      "radius": 5.4,
+      "title": "Admissibility Certificates and GC Safety",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:garbage-collection-as-admissibility-guided-colla",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:error-correction-as-certified-refusal": {
+      "pos": [
+        0.0,
+        0.0,
+        600.0
+      ],
+      "radius": 5.45,
+      "title": "Error Correction as Certified Refusal",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-standard-approach-and-its-limits": {
+      "pos": [
+        20.27,
+        0.0,
+        600.0
+      ],
+      "radius": 5.06,
+      "title": "The Standard Approach and Its Limits",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:error-correction-as-certified-refusal",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:error-correction-codes-in-history-space": {
+      "pos": [
+        -20.49,
+        0.0,
+        600.0
+      ],
+      "radius": 5.21,
+      "title": "Error Correction Codes in History Space",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:error-correction-as-certified-refusal",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:typed-error-propagation": {
+      "pos": [
+        11.28,
+        13.77,
+        607.9
+      ],
+      "radius": 5.32,
+      "title": "Typed Error Propagation",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:error-correction-as-certified-refusal",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:recovery-as-certified-continuation": {
+      "pos": [
+        -11.53,
+        14.07,
+        608.07
+      ],
+      "radius": 5.62,
+      "title": "Recovery as Certified Continuation",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:error-correction-as-certified-refusal",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-observation-limit": {
+      "pos": [
+        0.0,
+        0.0,
+        640.0
+      ],
+      "radius": 5.35,
+      "title": "The Observation Limit",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-reviewer-s-challenge": {
+      "pos": [
+        20.49,
+        0.0,
+        640.0
+      ],
+      "radius": 5.31,
+      "title": "The Reviewer's Challenge",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-observation-limit",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-finite-observation-non-injectivity-theorem": {
+      "pos": [
+        -21.86,
+        0.0,
+        640.0
+      ],
+      "radius": 6.22,
+      "title": "The Finite Observation Non-injectivity Theorem",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-observation-limit",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:erasure-versus-illusion": {
+      "pos": [
+        11.2,
+        13.67,
+        647.84
+      ],
+      "radius": 5.32,
+      "title": "Erasure versus Illusion",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-observation-limit",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:rule-refinement-as-disambiguation": {
+      "pos": [
+        -11.07,
+        13.52,
+        647.75
+      ],
+      "radius": 5.17,
+      "title": "Rule Refinement as Disambiguation",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-observation-limit",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:category-theory-as-engine": {
+      "pos": [
+        0.0,
+        0.0,
+        680.0
+      ],
+      "radius": 7.07,
+      "title": "Category Theory as Engine",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-history-observation-adjunction": {
+      "pos": [
+        28.35,
+        0.0,
+        680.0
+      ],
+      "radius": 8.83,
+      "title": "The History-Observation Adjunction",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:category-theory-as-engine",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:collapse-rules-form-a-lattice": {
+      "pos": [
+        -22.21,
+        0.0,
+        680.0
+      ],
+      "radius": 4.74,
+      "title": "Collapse Rules Form a Lattice",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:category-theory-as-engine",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:sheaf-theoretic-semantics": {
+      "pos": [
+        12.77,
+        15.59,
+        688.94
+      ],
+      "radius": 5.52,
+      "title": "Sheaf-Theoretic Semantics",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:category-theory-as-engine",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:clio-projections-and-active-geodesic-inference": {
+      "pos": [
+        0.0,
+        0.0,
+        720.0
+      ],
+      "radius": 5.49,
+      "title": "CLIO Projections and Active Geodesic Inference",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:collapse-rules-as-clio-projections": {
+      "pos": [
+        20.31,
+        0.0,
+        720.0
+      ],
+      "radius": 5.05,
+      "title": "Collapse Rules as CLIO Projections",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:clio-projections-and-active-geodesic-inference",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-santoro-waghmare-panaretos-unification": {
+      "pos": [
+        -20.85,
+        0.0,
+        720.0
+      ],
+      "radius": 5.41,
+      "title": "The Santoro\u2013Waghmare\u2013Panaretos Unification",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:clio-projections-and-active-geodesic-inference",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:active-geodesic-inference": {
+      "pos": [
+        12.18,
+        14.87,
+        728.53
+      ],
+      "radius": 6.38,
+      "title": "Active Geodesic Inference",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:clio-projections-and-active-geodesic-inference",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:mem8-and-the-cognitive-substrate": {
+      "pos": [
+        0.0,
+        0.0,
+        760.0
+      ],
+      "radius": 5.45,
+      "title": "MEM8 and the Cognitive Substrate",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:memory-as-event-structure": {
+      "pos": [
+        20.89,
+        0.0,
+        760.0
+      ],
+      "radius": 5.48,
+      "title": "Memory as Event Structure",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:mem8-and-the-cognitive-substrate",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:repair-theory-and-civilizational-collapse": {
+      "pos": [
+        0.0,
+        0.0,
+        800.0
+      ],
+      "radius": 5.45,
+      "title": "Repair Theory and Civilizational Collapse",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:repair-as-pre-emptive-refusal": {
+      "pos": [
+        20.12,
+        0.0,
+        800.0
+      ],
+      "radius": 4.96,
+      "title": "Repair as Pre-emptive Refusal",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:repair-theory-and-civilizational-collapse",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:civilizational-scale": {
+      "pos": [
+        -21.5,
+        0.0,
+        800.0
+      ],
+      "radius": 5.88,
+      "title": "Civilizational Scale",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:repair-theory-and-civilizational-collapse",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:observational-entropy-and-reconstruction-cost": {
+      "pos": [
+        0.0,
+        0.0,
+        840.0
+      ],
+      "radius": 5.45,
+      "title": "Observational Entropy and Reconstruction Cost",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:from-observation-to-reconstruction": {
+      "pos": [
+        22.04,
+        0.0,
+        840.0
+      ],
+      "radius": 6.24,
+      "title": "From Observation to Reconstruction",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:observational-entropy-and-reconstruction-cost",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:continuation-value-and-note-leverage": {
+      "pos": [
+        -20.71,
+        0.0,
+        840.0
+      ],
+      "radius": 5.36,
+      "title": "Continuation Value and Note Leverage",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:observational-entropy-and-reconstruction-cost",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-reconstruction-complexity-hierarchy": {
+      "pos": [
+        10.99,
+        13.42,
+        847.7
+      ],
+      "radius": 4.97,
+      "title": "The Reconstruction Complexity Hierarchy",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:observational-entropy-and-reconstruction-cost",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-geometry-of-refusal": {
+      "pos": [
+        0.0,
+        0.0,
+        880.0
+      ],
+      "radius": 5.4,
+      "title": "The Geometry of Refusal",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:refusal-as-geometric-excision": {
+      "pos": [
+        20.68,
+        0.0,
+        880.0
+      ],
+      "radius": 5.39,
+      "title": "Refusal as Geometric Excision",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-geometry-of-refusal",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:refusal-monotonicity": {
+      "pos": [
+        -19.21,
+        0.0,
+        880.0
+      ],
+      "radius": 4.41,
+      "title": "Refusal Monotonicity",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-geometry-of-refusal",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:refusal-curvature": {
+      "pos": [
+        11.44,
+        13.97,
+        888.01
+      ],
+      "radius": 5.57,
+      "title": "Refusal Curvature",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-geometry-of-refusal",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-galois-connection-between-history-growth-and": {
+      "pos": [
+        -11.27,
+        13.76,
+        887.89
+      ],
+      "radius": 5.36,
+      "title": "The Galois Connection Between History Growth and Admissibility Contraction",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-geometry-of-refusal",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:notes-as-externalized-adjoints": {
+      "pos": [
+        0.0,
+        0.0,
+        920.0
+      ],
+      "radius": 5.4,
+      "title": "Notes as Externalized Adjoints",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-reconstruction-gap": {
+      "pos": [
+        19.37,
+        0.0,
+        920.0
+      ],
+      "radius": 4.51,
+      "title": "The Reconstruction Gap",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:notes-as-externalized-adjoints",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-note-reconstruction-functor": {
+      "pos": [
+        -21.24,
+        0.0,
+        920.0
+      ],
+      "radius": 5.76,
+      "title": "The Note Reconstruction Functor",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:notes-as-externalized-adjoints",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:examples-of-note-adjunctions": {
+      "pos": [
+        11.18,
+        13.65,
+        927.83
+      ],
+      "radius": 5.25,
+      "title": "Examples of Note Adjunctions",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:notes-as-externalized-adjoints",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-completeness-spectrum": {
+      "pos": [
+        -11.01,
+        13.44,
+        927.71
+      ],
+      "radius": 5.04,
+      "title": "The Completeness Spectrum",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:notes-as-externalized-adjoints",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-topology-of-repair": {
+      "pos": [
+        0.0,
+        0.0,
+        960.0
+      ],
+      "radius": 5.4,
+      "title": "The Topology of Repair",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:repair-as-a-morphism-in-the-history-category": {
+      "pos": [
+        21.02,
+        0.0,
+        960.0
+      ],
+      "radius": 5.61,
+      "title": "Repair as a Morphism in the History Category",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-topology-of-repair",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:examples-of-repair-classes": {
+      "pos": [
+        -20.82,
+        0.0,
+        960.0
+      ],
+      "radius": 5.48,
+      "title": "Examples of Repair Classes",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-topology-of-repair",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:repair-cohomology": {
+      "pos": [
+        11.64,
+        14.21,
+        968.15
+      ],
+      "radius": 5.81,
+      "title": "Repair Cohomology",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-topology-of-repair",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-noun-fallacy-revisited": {
+      "pos": [
+        0.0,
+        0.0,
+        1000.0
+      ],
+      "radius": 5.4,
+      "title": "The Noun Fallacy Revisited",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:objects-as-stable-quotients": {
+      "pos": [
+        20.01,
+        0.0,
+        1000.0
+      ],
+      "radius": 4.94,
+      "title": "Objects as Stable Quotients",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-noun-fallacy-revisited",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:object-emergence": {
+      "pos": [
+        -19.82,
+        0.0,
+        1000.0
+      ],
+      "radius": 4.81,
+      "title": "Object Emergence",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-noun-fallacy-revisited",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-noun-fallacy": {
+      "pos": [
+        11.66,
+        14.24,
+        1008.17
+      ],
+      "radius": 5.84,
+      "title": "The Noun Fallacy",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-noun-fallacy-revisited",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:reality-as-reachable-history": {
+      "pos": [
+        -11.54,
+        14.09,
+        1008.08
+      ],
+      "radius": 5.69,
+      "title": "Reality as Reachable History",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-noun-fallacy-revisited",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-hilbert-space-of-histories": {
+      "pos": [
+        0.0,
+        0.0,
+        1040.0
+      ],
+      "radius": 5.45,
+      "title": "The Hilbert Space of Histories",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:motivation": {
+      "pos": [
+        20.54,
+        0.0,
+        1040.0
+      ],
+      "radius": 5.24,
+      "title": "Motivation",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-hilbert-space-of-histories",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-l-2-history-space": {
+      "pos": [
+        -20.54,
+        0.0,
+        1040.0
+      ],
+      "radius": 5.24,
+      "title": "The L^2 History Space",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-hilbert-space-of-histories",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:orthogonal-projection-as-collapse": {
+      "pos": [
+        10.94,
+        13.36,
+        1047.66
+      ],
+      "radius": 4.91,
+      "title": "Orthogonal Projection as Collapse",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-hilbert-space-of-histories",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-orthogonality-condition-as-state-illusion": {
+      "pos": [
+        -11.25,
+        13.73,
+        1047.88
+      ],
+      "radius": 5.28,
+      "title": "The Orthogonality Condition as State Illusion",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-hilbert-space-of-histories",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-algebraic-laws-as-geometry": {
+      "pos": [
+        0.0,
+        0.0,
+        1080.0
+      ],
+      "radius": 5.45,
+      "title": "The Algebraic Laws as Geometry",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-tower-property-as-nested-collapse": {
+      "pos": [
+        20.85,
+        0.0,
+        1080.0
+      ],
+      "radius": 5.45,
+      "title": "The Tower Property as Nested Collapse",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-algebraic-laws-as-geometry",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-observational-lattice-as-inclusion-of-subspa": {
+      "pos": [
+        -20.01,
+        0.0,
+        1080.0
+      ],
+      "radius": 4.89,
+      "title": "The Observational Lattice as Inclusion of Subspaces",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-algebraic-laws-as-geometry",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:eve-s-law-as-the-pythagorean-theorem": {
+      "pos": [
+        11.48,
+        14.01,
+        1088.04
+      ],
+      "radius": 5.56,
+      "title": "Eve's Law as the Pythagorean Theorem",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-algebraic-laws-as-geometry",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:sigma-algebras-as-observational-frameworks": {
+      "pos": [
+        0.0,
+        -40.0,
+        1080.0
+      ],
+      "radius": 5.45,
+      "title": "Sigma-Algebras as Observational Frameworks",
+      "role": "foundation",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:information-as-geometry": {
+      "pos": [
+        20.5,
+        -40.0,
+        1080.0
+      ],
+      "radius": 5.22,
+      "title": "Information as Geometry",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:sigma-algebras-as-observational-frameworks",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:collapse-rules-and-sub-sigma-algebras": {
+      "pos": [
+        -20.1,
+        -40.0,
+        1080.0
+      ],
+      "radius": 4.95,
+      "title": "Collapse Rules and Sub-Sigma-Algebras",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:sigma-algebras-as-observational-frameworks",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-radon-nikodym-theorem-as-universal-note": {
+      "pos": [
+        11.25,
+        -26.27,
+        1087.88
+      ],
+      "radius": 5.28,
+      "title": "The Radon-Nikodym Theorem as Universal Note",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:sigma-algebras-as-observational-frameworks",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:variance-as-continuous-observational-entropy": {
+      "pos": [
+        -11.59,
+        -25.85,
+        1088.12
+      ],
+      "radius": 5.7,
+      "title": "Variance as Continuous Observational Entropy",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:sigma-algebras-as-observational-frameworks",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-inverse-problem-and-observational-completene": {
+      "pos": [
+        0.0,
+        0.0,
+        1120.0
+      ],
+      "radius": 5.49,
+      "title": "The Inverse Problem and Observational Completeness",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:when-does-observational-equivalence-imply-histor": {
+      "pos": [
+        20.62,
+        0.0,
+        1120.0
+      ],
+      "radius": 5.26,
+      "title": "When Does Observational Equivalence Imply History Equivalence?",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-inverse-problem-and-observational-completene",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:open-problems": {
+      "pos": [
+        -21.99,
+        0.0,
+        1120.0
+      ],
+      "radius": 6.17,
+      "title": "Open Problems",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-inverse-problem-and-observational-completene",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-coda-implementation-as-philosophical-argumen": {
+      "pos": [
+        0.0,
+        0.0,
+        1160.0
+      ],
+      "radius": 8.28,
+      "title": "The Coda: Implementation as Philosophical Argument",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:why-spherepop-needs-the-calculus-of-construction": {
+      "pos": [
+        0.0,
+        0.0,
+        1200.0
+      ],
+      "radius": 5.53,
+      "title": "Why Spherepop Needs the Calculus of Constructions",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-limits-of-simple-types": {
+      "pos": [
+        21.38,
+        0.0,
+        1200.0
+      ],
+      "radius": 5.72,
+      "title": "The Limits of Simple Types",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:why-spherepop-needs-the-calculus-of-construction",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-pure-type-system-perspective": {
+      "pos": [
+        -21.06,
+        0.0,
+        1200.0
+      ],
+      "radius": 5.51,
+      "title": "The Pure Type System Perspective",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:why-spherepop-needs-the-calculus-of-construction",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-spherepop-coc-correspondence": {
+      "pos": [
+        11.54,
+        14.09,
+        1208.08
+      ],
+      "radius": 5.56,
+      "title": "The Spherepop-CoC Correspondence",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:why-spherepop-needs-the-calculus-of-construction",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:implementing-coc-for-spherepop": {
+      "pos": [
+        0.0,
+        0.0,
+        1240.0
+      ],
+      "radius": 5.4,
+      "title": "Implementing CoC for Spherepop",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-universe-hierarchy": {
+      "pos": [
+        21.03,
+        0.0,
+        1240.0
+      ],
+      "radius": 5.62,
+      "title": "The Universe Hierarchy",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:implementing-coc-for-spherepop",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-type-checker": {
+      "pos": [
+        -21.57,
+        0.0,
+        1240.0
+      ],
+      "radius": 5.98,
+      "title": "The Type Checker",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:implementing-coc-for-spherepop",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:definitional-equality-and-normalization": {
+      "pos": [
+        11.88,
+        14.5,
+        1248.32
+      ],
+      "radius": 6.1,
+      "title": "Definitional Equality and Normalization",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:implementing-coc-for-spherepop",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:identity-types-and-history-equality": {
+      "pos": [
+        -11.39,
+        13.91,
+        1247.98
+      ],
+      "radius": 5.51,
+      "title": "Identity Types and History Equality",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:implementing-coc-for-spherepop",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-curry-howard-correspondence-for-spherepop": {
+      "pos": [
+        10.77,
+        -13.15,
+        1232.46
+      ],
+      "radius": 4.75,
+      "title": "The Curry-Howard Correspondence for Spherepop",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:implementing-coc-for-spherepop",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:why-grammar-beats-circuits-and-code": {
+      "pos": [
+        0.0,
+        0.0,
+        1280.0
+      ],
+      "radius": 5.49,
+      "title": "Why Grammar Beats Circuits and Code",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-problem-of-notation": {
+      "pos": [
+        20.34,
+        0.0,
+        1280.0
+      ],
+      "radius": 5.07,
+      "title": "The Problem of Notation",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:why-grammar-beats-circuits-and-code",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:a-brief-history-of-bnf": {
+      "pos": [
+        -20.78,
+        0.0,
+        1280.0
+      ],
+      "radius": 5.36,
+      "title": "A Brief History of BNF",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:why-grammar-beats-circuits-and-code",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:bnf-versus-circuit-diagrams": {
+      "pos": [
+        12.56,
+        15.33,
+        1288.79
+      ],
+      "radius": 6.84,
+      "title": "BNF Versus Circuit Diagrams",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:why-grammar-beats-circuits-and-code",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:bnf-versus-programming-language-syntax": {
+      "pos": [
+        -11.84,
+        14.45,
+        1288.29
+      ],
+      "radius": 5.96,
+      "title": "BNF Versus Programming Language Syntax",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:why-grammar-beats-circuits-and-code",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-spherepop-bnf-as-computational-universal": {
+      "pos": [
+        11.89,
+        -14.52,
+        1271.67
+      ],
+      "radius": 6.03,
+      "title": "The Spherepop BNF as Computational Universal",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:why-grammar-beats-circuits-and-code",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:bnf-as-anti-collapse-artifact": {
+      "pos": [
+        -12.23,
+        -14.93,
+        1271.44
+      ],
+      "radius": 6.44,
+      "title": "BNF as Anti-Collapse Artifact",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:why-grammar-beats-circuits-and-code",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:grammar-circuits-and-the-efficiency-hierarchy": {
+      "pos": [
+        0.0,
+        0.0,
+        1320.0
+      ],
+      "radius": 5.49,
+      "title": "Grammar, Circuits, and the Efficiency Hierarchy",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:measuring-expressiveness-per-symbol": {
+      "pos": [
+        21.3,
+        0.0,
+        1320.0
+      ],
+      "radius": 5.71,
+      "title": "Measuring Expressiveness Per Symbol",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:grammar-circuits-and-the-efficiency-hierarchy",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-readability-spectrum": {
+      "pos": [
+        -20.04,
+        0.0,
+        1320.0
+      ],
+      "radius": 4.87,
+      "title": "The Readability Spectrum",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:grammar-circuits-and-the-efficiency-hierarchy",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:grammar-as-the-missing-level-of-abstraction": {
+      "pos": [
+        11.63,
+        14.2,
+        1328.14
+      ],
+      "radius": 5.71,
+      "title": "Grammar as the Missing Level of Abstraction",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:grammar-circuits-and-the-efficiency-hierarchy",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:literate-grammar-and-documentation": {
+      "pos": [
+        -11.27,
+        13.76,
+        1327.89
+      ],
+      "radius": 5.27,
+      "title": "Literate Grammar and Documentation",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:grammar-circuits-and-the-efficiency-hierarchy",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:derivation-compendium": {
+      "pos": [
+        0.0,
+        0.0,
+        1360.0
+      ],
+      "radius": 6.02,
+      "title": "Derivation Compendium",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:chapter-1-notes-increase-reachability": {
+      "pos": [
+        20.61,
+        0.0,
+        1360.0
+      ],
+      "radius": 4.72,
+      "title": "Chapter 1: Notes Increase Reachability",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:derivation-compendium",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:chapter-2-state-as-quotient": {
+      "pos": [
+        -19.98,
+        0.0,
+        1360.0
+      ],
+      "radius": 4.3,
+      "title": "Chapter 2: State as Quotient",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:derivation-compendium",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:chapter-3-operator-minimality": {
+      "pos": [
+        11.55,
+        14.1,
+        1368.09
+      ],
+      "radius": 5.08,
+      "title": "Chapter 3: Operator Minimality",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:derivation-compendium",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:chapter-4-free-category": {
+      "pos": [
+        -11.16,
+        13.62,
+        1367.81
+      ],
+      "radius": 4.6,
+      "title": "Chapter 4: Free Category",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:derivation-compendium",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:chapter-5-small-step-determinacy": {
+      "pos": [
+        10.97,
+        13.39,
+        1352.32
+      ],
+      "radius": 4.37,
+      "title": "Chapter 5: Small-Step Determinacy",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:derivation-compendium",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:chapter-6-collapse-entropy-monotonicity": {
+      "pos": [
+        -11.2,
+        13.67,
+        1352.16
+      ],
+      "radius": 4.65,
+      "title": "Chapter 6: Collapse Entropy Monotonicity",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:derivation-compendium",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:chapter-7-type-soundness": {
+      "pos": [
+        13.39,
+        0.0,
+        1346.61
+      ],
+      "radius": 4.37,
+      "title": "Chapter 7: Type Soundness",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:derivation-compendium",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:chapter-8-lattice-collapse-threshold": {
+      "pos": [
+        -13.42,
+        -13.42,
+        1360.0
+      ],
+      "radius": 4.4,
+      "title": "Chapter 8: Lattice Collapse Threshold",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:derivation-compendium",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:note-composition-theory": {
+      "pos": [
+        11.68,
+        -14.26,
+        1368.18
+      ],
+      "radius": 5.24,
+      "title": "Note Composition Theory",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:derivation-compendium",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:note-class-derivations": {
+      "pos": [
+        -24.92,
+        0.0,
+        1377.45
+      ],
+      "radius": 6.19,
+      "title": "Note Class Derivations",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:derivation-compendium",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:compilation-and-gc-derivations": {
+      "pos": [
+        11.57,
+        -21.2,
+        1351.9
+      ],
+      "radius": 5.11,
+      "title": "Compilation and GC Derivations",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:derivation-compendium",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:error-correction-derivation": {
+      "pos": [
+        -22.43,
+        0.0,
+        1344.3
+      ],
+      "radius": 4.67,
+      "title": "Error Correction Derivation",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:derivation-compendium",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:category-theory-derivations": {
+      "pos": [
+        15.05,
+        0.0,
+        1382.58
+      ],
+      "radius": 6.03,
+      "title": "Category Theory Derivations",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:derivation-compendium",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:sheaf-derivations": {
+      "pos": [
+        -13.57,
+        27.14,
+        1360.0
+      ],
+      "radius": 4.55,
+      "title": "Sheaf Derivations",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:derivation-compendium",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:clio-derivation": {
+      "pos": [
+        32.41,
+        0.0,
+        1382.7
+      ],
+      "radius": 4.17,
+      "title": "CLIO Derivation",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:derivation-compendium",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:active-geodesic-derivation": {
+      "pos": [
+        -11.21,
+        -27.38,
+        1367.85
+      ],
+      "radius": 4.67,
+      "title": "Active Geodesic Derivation",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:derivation-compendium",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:mem8-locality-derivation": {
+      "pos": [
+        28.01,
+        0.0,
+        1340.38
+      ],
+      "radius": 4.66,
+      "title": "MEM8 Locality Derivation",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:derivation-compendium",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:civilizational-collapse-derivation": {
+      "pos": [
+        -10.89,
+        -26.6,
+        1352.37
+      ],
+      "radius": 4.28,
+      "title": "Civilizational Collapse Derivation",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:derivation-compendium",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:inverse-problem-derivation": {
+      "pos": [
+        39.51,
+        0.0,
+        1360.0
+      ],
+      "radius": 4.15,
+      "title": "Inverse Problem Derivation",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:derivation-compendium",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:final-unification-theorem": {
+      "pos": [
+        -38.2,
+        0.0,
+        1360.0
+      ],
+      "radius": 6.26,
+      "title": "Final Unification Theorem",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:derivation-compendium",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:spherepop-as-a-process-algebra": {
+      "pos": [
+        0.0,
+        0.0,
+        1400.0
+      ],
+      "radius": 5.4,
+      "title": "Spherepop as a Process Algebra",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:motivation-2": {
+      "pos": [
+        20.55,
+        0.0,
+        1400.0
+      ],
+      "radius": 5.3,
+      "title": "Motivation",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:spherepop-as-a-process-algebra",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:parallel-composition": {
+      "pos": [
+        -20.73,
+        0.0,
+        1400.0
+      ],
+      "radius": 5.42,
+      "title": "Parallel Composition",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:spherepop-as-a-process-algebra",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:synchronization-via-bind": {
+      "pos": [
+        11.17,
+        13.63,
+        1407.82
+      ],
+      "radius": 5.23,
+      "title": "Synchronization via Bind",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:spherepop-as-a-process-algebra",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:race-conditions-as-non-deterministic-collapse": {
+      "pos": [
+        -11.3,
+        13.79,
+        1407.91
+      ],
+      "radius": 5.39,
+      "title": "Race Conditions as Non-Deterministic Collapse",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:spherepop-as-a-process-algebra",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:deadlock-as-inadmissibility-cycle": {
+      "pos": [
+        11.3,
+        20.7,
+        1392.08
+      ],
+      "radius": 5.4,
+      "title": "Deadlock as Inadmissibility Cycle",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:spherepop-as-a-process-algebra",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-process-calculus-of-spherepop": {
+      "pos": [
+        0.0,
+        0.0,
+        1440.0
+      ],
+      "radius": 5.45,
+      "title": "The Process Calculus of Spherepop",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:terms-and-their-meanings": {
+      "pos": [
+        20.82,
+        0.0,
+        1440.0
+      ],
+      "radius": 5.43,
+      "title": "Terms and Their Meanings",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-process-calculus-of-spherepop",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:reduction-rules-for-processes": {
+      "pos": [
+        -19.56,
+        0.0,
+        1440.0
+      ],
+      "radius": 4.59,
+      "title": "Reduction Rules for Processes",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-process-calculus-of-spherepop",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:bisimulation-and-behavioral-equivalence": {
+      "pos": [
+        11.08,
+        13.53,
+        1447.76
+      ],
+      "radius": 5.08,
+      "title": "Bisimulation and Behavioral Equivalence",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-process-calculus-of-spherepop",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:distributed-spherepop": {
+      "pos": [
+        0.0,
+        0.0,
+        1480.0
+      ],
+      "radius": 5.28,
+      "title": "Distributed Spherepop",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:multiple-worlds-and-consistency": {
+      "pos": [
+        21.16,
+        0.0,
+        1480.0
+      ],
+      "radius": 5.83,
+      "title": "Multiple Worlds and Consistency",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:distributed-spherepop",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:crdts-as-admissibility-preserving-merges": {
+      "pos": [
+        -21.33,
+        0.0,
+        1480.0
+      ],
+      "radius": 5.94,
+      "title": "CRDTs as Admissibility-Preserving Merges",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:distributed-spherepop",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-complete-proof-system": {
+      "pos": [
+        0.0,
+        0.0,
+        1520.0
+      ],
+      "radius": 5.4,
+      "title": "The Complete Proof System",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:motivation-3": {
+      "pos": [
+        19.35,
+        0.0,
+        1520.0
+      ],
+      "radius": 4.5,
+      "title": "Motivation",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-complete-proof-system",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:canonical-forms": {
+      "pos": [
+        -20.92,
+        0.0,
+        1520.0
+      ],
+      "radius": 5.55,
+      "title": "Canonical Forms",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-complete-proof-system",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:structural-lemmas": {
+      "pos": [
+        11.66,
+        14.24,
+        1528.17
+      ],
+      "radius": 5.84,
+      "title": "Structural Lemmas",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-complete-proof-system",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:full-progress-and-preservation": {
+      "pos": [
+        -12.25,
+        14.95,
+        1528.57
+      ],
+      "radius": 6.55,
+      "title": "Full Progress and Preservation",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-complete-proof-system",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:admissibility-preservation-theorem": {
+      "pos": [
+        10.99,
+        -13.42,
+        1512.3
+      ],
+      "radius": 5.02,
+      "title": "Admissibility Preservation Theorem",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-complete-proof-system",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:extended-type-examples-and-applications": {
+      "pos": [
+        0.0,
+        40.0,
+        1520.0
+      ],
+      "radius": 5.45,
+      "title": "Extended Type Examples and Applications",
+      "role": "consequence",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:typing-file-system-operations": {
+      "pos": [
+        20.76,
+        40.0,
+        1520.0
+      ],
+      "radius": 5.39,
+      "title": "Typing File System Operations",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:extended-type-examples-and-applications",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:typing-memory-safety": {
+      "pos": [
+        -20.48,
+        40.0,
+        1520.0
+      ],
+      "radius": 5.2,
+      "title": "Typing Memory Safety",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:extended-type-examples-and-applications",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:typing-cryptographic-operations": {
+      "pos": [
+        11.32,
+        53.82,
+        1527.93
+      ],
+      "radius": 5.37,
+      "title": "Typing Cryptographic Operations",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:extended-type-examples-and-applications",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:histories-as-paths-through-possibility-space": {
+      "pos": [
+        0.0,
+        0.0,
+        1560.0
+      ],
+      "radius": 5.49,
+      "title": "Histories as Paths Through Possibility Space",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-action-functional": {
+      "pos": [
+        20.01,
+        0.0,
+        1560.0
+      ],
+      "radius": 4.85,
+      "title": "The Action Functional",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:histories-as-paths-through-possibility-space",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:discrete-euler-lagrange-equations": {
+      "pos": [
+        -21.46,
+        0.0,
+        1560.0
+      ],
+      "radius": 5.82,
+      "title": "Discrete Euler-Lagrange Equations",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:histories-as-paths-through-possibility-space",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:least-action-computation": {
+      "pos": [
+        11.6,
+        14.16,
+        1568.12
+      ],
+      "radius": 5.67,
+      "title": "Least-Action Computation",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:histories-as-paths-through-possibility-space",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:information-theoretic-properties-of-histories": {
+      "pos": [
+        0.0,
+        0.0,
+        1600.0
+      ],
+      "radius": 5.45,
+      "title": "Information-Theoretic Properties of Histories",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:history-entropy": {
+      "pos": [
+        22.16,
+        0.0,
+        1600.0
+      ],
+      "radius": 6.32,
+      "title": "History Entropy",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:information-theoretic-properties-of-histories",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:hamming-distance-on-histories": {
+      "pos": [
+        -21.63,
+        0.0,
+        1600.0
+      ],
+      "radius": 5.97,
+      "title": "Hamming Distance on Histories",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:information-theoretic-properties-of-histories",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:kolmogorov-complexity-and-history-compression": {
+      "pos": [
+        11.74,
+        14.33,
+        1608.22
+      ],
+      "radius": 5.88,
+      "title": "Kolmogorov Complexity and History Compression",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:information-theoretic-properties-of-histories",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:event-sourcing-and-database-theory": {
+      "pos": [
+        0.0,
+        0.0,
+        1640.0
+      ],
+      "radius": 5.45,
+      "title": "Event Sourcing and Database Theory",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:event-sourcing-as-spherepop": {
+      "pos": [
+        23.52,
+        0.0,
+        1640.0
+      ],
+      "radius": 7.23,
+      "title": "Event Sourcing as Spherepop",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:event-sourcing-and-database-theory",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:provenance-semirings": {
+      "pos": [
+        -20.57,
+        0.0,
+        1640.0
+      ],
+      "radius": 5.26,
+      "title": "Provenance Semirings",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:event-sourcing-and-database-theory",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-differential-privacy-connection": {
+      "pos": [
+        11.17,
+        13.63,
+        1647.82
+      ],
+      "radius": 5.18,
+      "title": "The Differential Privacy Connection",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:event-sourcing-and-database-theory",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:programming-language-theory-connections": {
+      "pos": [
+        0.0,
+        0.0,
+        1680.0
+      ],
+      "radius": 5.4,
+      "title": "Programming Language Theory Connections",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:denotational-semantics-as-view": {
+      "pos": [
+        21.2,
+        0.0,
+        1680.0
+      ],
+      "radius": 5.73,
+      "title": "Denotational Semantics as VIEW",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:programming-language-theory-connections",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:hoare-logic-as-admissibility-typing": {
+      "pos": [
+        -20.43,
+        0.0,
+        1680.0
+      ],
+      "radius": 5.22,
+      "title": "Hoare Logic as Admissibility Typing",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:programming-language-theory-connections",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:separation-logic-and-bind": {
+      "pos": [
+        11.08,
+        13.53,
+        1687.76
+      ],
+      "radius": 5.13,
+      "title": "Separation Logic and Bind",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:programming-language-theory-connections",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:connections-to-cognitive-science-and-mem8": {
+      "pos": [
+        0.0,
+        0.0,
+        1720.0
+      ],
+      "radius": 5.49,
+      "title": "Connections to Cognitive Science and MEM8",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-spherepop-model-of-memory-retrieval": {
+      "pos": [
+        22.25,
+        0.0,
+        1720.0
+      ],
+      "radius": 6.34,
+      "title": "The Spherepop Model of Memory Retrieval",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:connections-to-cognitive-science-and-mem8",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:forgetting-as-controlled-collapse": {
+      "pos": [
+        -20.54,
+        0.0,
+        1720.0
+      ],
+      "radius": 5.2,
+      "title": "Forgetting as Controlled Collapse",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:connections-to-cognitive-science-and-mem8",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:priming-as-pre-emptive-admissibility-adjustment": {
+      "pos": [
+        11.43,
+        13.95,
+        1728.0
+      ],
+      "radius": 5.46,
+      "title": "Priming as Pre-emptive Admissibility Adjustment",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:connections-to-cognitive-science-and-mem8",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:connections-to-physics-and-complex-systems": {
+      "pos": [
+        0.0,
+        0.0,
+        1760.0
+      ],
+      "radius": 5.49,
+      "title": "Connections to Physics and Complex Systems",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:thermodynamic-interpretation-of-collapse": {
+      "pos": [
+        21.53,
+        0.0,
+        1760.0
+      ],
+      "radius": 5.86,
+      "title": "Thermodynamic Interpretation of Collapse",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:connections-to-physics-and-complex-systems",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:phase-transitions-in-note-infrastructure": {
+      "pos": [
+        -21.51,
+        0.0,
+        1760.0
+      ],
+      "radius": 5.85,
+      "title": "Phase Transitions in Note Infrastructure",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:connections-to-physics-and-complex-systems",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:ontology-of-process-versus-substance": {
+      "pos": [
+        40.0,
+        0.0,
+        1760.0
+      ],
+      "radius": 5.45,
+      "title": "Ontology of Process Versus Substance",
+      "role": "comparison",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-substance-tradition": {
+      "pos": [
+        61.39,
+        0.0,
+        1760.0
+      ],
+      "radius": 5.81,
+      "title": "The Substance Tradition",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:ontology-of-process-versus-substance",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:process-philosophy-formalized": {
+      "pos": [
+        25.69,
+        0.0,
+        1781.46
+      ],
+      "radius": 5.86,
+      "title": "Process Philosophy Formalized",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:ontology-of-process-versus-substance",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:identity-through-change": {
+      "pos": [
+        51.12,
+        13.57,
+        1767.78
+      ],
+      "radius": 5.12,
+      "title": "Identity Through Change",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:ontology-of-process-versus-substance",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:language-meaning-and-semantic-collapse": {
+      "pos": [
+        0.0,
+        0.0,
+        1800.0
+      ],
+      "radius": 5.45,
+      "title": "Language, Meaning, and Semantic Collapse",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:meaning-as-reachability": {
+      "pos": [
+        21.53,
+        0.0,
+        1800.0
+      ],
+      "radius": 5.9,
+      "title": "Meaning as Reachability",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:language-meaning-and-semantic-collapse",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:translation-as-approximate-adjoint": {
+      "pos": [
+        -20.1,
+        0.0,
+        1800.0
+      ],
+      "radius": 4.95,
+      "title": "Translation as Approximate Adjoint",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:language-meaning-and-semantic-collapse",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:ethics-institutions-and-civilizational-responsib": {
+      "pos": [
+        0.0,
+        0.0,
+        1840.0
+      ],
+      "radius": 5.45,
+      "title": "Ethics, Institutions, and Civilizational Responsibility",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:moral-obligations-as-coordination-notes": {
+      "pos": [
+        21.36,
+        0.0,
+        1840.0
+      ],
+      "radius": 5.79,
+      "title": "Moral Obligations as Coordination Notes",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:ethics-institutions-and-civilizational-responsib",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:institutional-failure-as-note-collapse": {
+      "pos": [
+        -21.46,
+        0.0,
+        1840.0
+      ],
+      "radius": 5.86,
+      "title": "Institutional Failure as Note Collapse",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:ethics-institutions-and-civilizational-responsib",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-spherepop-interpreter-in-full": {
+      "pos": [
+        0.0,
+        0.0,
+        1880.0
+      ],
+      "radius": 5.45,
+      "title": "The Spherepop Interpreter in Full",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:architecture-overview": {
+      "pos": [
+        25.26,
+        0.0,
+        1880.0
+      ],
+      "radius": 8.39,
+      "title": "Architecture Overview",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-spherepop-interpreter-in-full",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-evaluation-engine": {
+      "pos": [
+        -22.37,
+        0.0,
+        1880.0
+      ],
+      "radius": 6.46,
+      "title": "The Evaluation Engine",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-spherepop-interpreter-in-full",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-observable-state-derivation": {
+      "pos": [
+        11.75,
+        14.34,
+        1888.23
+      ],
+      "radius": 5.89,
+      "title": "The Observable State Derivation",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-spherepop-interpreter-in-full",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-compiler-and-virtual-machine": {
+      "pos": [
+        0.0,
+        0.0,
+        1920.0
+      ],
+      "radius": 5.45,
+      "title": "The Compiler and Virtual Machine",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-event-ir": {
+      "pos": [
+        19.65,
+        0.0,
+        1920.0
+      ],
+      "radius": 4.65,
+      "title": "The Event IR",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-compiler-and-virtual-machine",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-compiler": {
+      "pos": [
+        -20.48,
+        0.0,
+        1920.0
+      ],
+      "radius": 5.2,
+      "title": "The Compiler",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-compiler-and-virtual-machine",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-virtual-machine": {
+      "pos": [
+        12.13,
+        14.81,
+        1928.49
+      ],
+      "radius": 6.36,
+      "title": "The Virtual Machine",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-compiler-and-virtual-machine",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:replay-equivalence-test-suite": {
+      "pos": [
+        -11.84,
+        14.46,
+        1928.29
+      ],
+      "radius": 6.01,
+      "title": "Replay Equivalence Test Suite",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-compiler-and-virtual-machine",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-spherepop-type-checker-as-its-own-subject": {
+      "pos": [
+        0.0,
+        0.0,
+        1960.0
+      ],
+      "radius": 5.57,
+      "title": "The Spherepop Type Checker as Its Own Subject",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:self-application": {
+      "pos": [
+        20.79,
+        0.0,
+        1960.0
+      ],
+      "radius": 5.29,
+      "title": "Self-Application",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-spherepop-type-checker-as-its-own-subject",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:proof-checking-as-admissibility-verification": {
+      "pos": [
+        -21.06,
+        0.0,
+        1960.0
+      ],
+      "radius": 5.47,
+      "title": "Proof Checking as Admissibility Verification",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-spherepop-type-checker-as-its-own-subject",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:historical-case-studies": {
+      "pos": [
+        0.0,
+        0.0,
+        2000.0
+      ],
+      "radius": 5.35,
+      "title": "Historical Case Studies",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-library-of-alexandria-as-note-collapse": {
+      "pos": [
+        21.22,
+        0.0,
+        2000.0
+      ],
+      "radius": 5.8,
+      "title": "The Library of Alexandria as Note Collapse",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:historical-case-studies",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:git-as-a-note-infrastructure": {
+      "pos": [
+        -21.32,
+        0.0,
+        2000.0
+      ],
+      "radius": 5.86,
+      "title": "Git as a Note Infrastructure",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:historical-case-studies",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:spherepop-programs-as-executable-specifications": {
+      "pos": [
+        0.0,
+        0.0,
+        2040.0
+      ],
+      "radius": 5.45,
+      "title": "Spherepop Programs as Executable Specifications",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-dining-philosophers-in-spherepop": {
+      "pos": [
+        21.36,
+        0.0,
+        2040.0
+      ],
+      "radius": 5.79,
+      "title": "The Dining Philosophers in Spherepop",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:spherepop-programs-as-executable-specifications",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:a-blockchain-as-spherepop-history": {
+      "pos": [
+        -21.12,
+        0.0,
+        2040.0
+      ],
+      "radius": 5.63,
+      "title": "A Blockchain as Spherepop History",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:spherepop-programs-as-executable-specifications",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:possibility-as-a-computational-resource": {
+      "pos": [
+        0.0,
+        0.0,
+        2080.0
+      ],
+      "radius": 5.4,
+      "title": "Possibility as a Computational Resource",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:possibility-entropy": {
+      "pos": [
+        22.98,
+        0.0,
+        2080.0
+      ],
+      "radius": 6.92,
+      "title": "Possibility Entropy",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:possibility-as-a-computational-resource",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:admissibility-entropy": {
+      "pos": [
+        -20.54,
+        0.0,
+        2080.0
+      ],
+      "radius": 5.29,
+      "title": "Admissibility Entropy",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:possibility-as-a-computational-resource",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:possibility-debt": {
+      "pos": [
+        11.79,
+        14.39,
+        2088.25
+      ],
+      "radius": 5.99,
+      "title": "Possibility Debt",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:possibility-as-a-computational-resource",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:reversible-and-irreversible-computation": {
+      "pos": [
+        -11.45,
+        13.98,
+        2088.02
+      ],
+      "radius": 5.58,
+      "title": "Reversible and Irreversible Computation",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:possibility-as-a-computational-resource",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:collapse-curvature-and-fiber-geometry": {
+      "pos": [
+        0.0,
+        0.0,
+        2120.0
+      ],
+      "radius": 5.45,
+      "title": "Collapse Curvature and Fiber Geometry",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:collapse-curvature": {
+      "pos": [
+        21.69,
+        0.0,
+        2120.0
+      ],
+      "radius": 6.01,
+      "title": "Collapse Curvature",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:collapse-curvature-and-fiber-geometry",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:fiber-structure-of-histories": {
+      "pos": [
+        -20.91,
+        0.0,
+        2120.0
+      ],
+      "radius": 5.49,
+      "title": "Fiber Structure of Histories",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:collapse-curvature-and-fiber-geometry",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:fiber-dimension-and-geometry": {
+      "pos": [
+        11.05,
+        13.49,
+        2127.74
+      ],
+      "radius": 5.04,
+      "title": "Fiber Dimension and Geometry",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:collapse-curvature-and-fiber-geometry",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-prefix-topology-and-history-metrics": {
+      "pos": [
+        0.0,
+        0.0,
+        2160.0
+      ],
+      "radius": 5.49,
+      "title": "The Prefix Topology and History Metrics",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:prefix-topology-on-histories": {
+      "pos": [
+        21.81,
+        0.0,
+        2160.0
+      ],
+      "radius": 6.05,
+      "title": "Prefix Topology on Histories",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-prefix-topology-and-history-metrics",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-prefix-ultrametric": {
+      "pos": [
+        -20.48,
+        0.0,
+        2160.0
+      ],
+      "radius": 5.16,
+      "title": "The Prefix Ultrametric",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-prefix-topology-and-history-metrics",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:geodesics-in-history-space": {
+      "pos": [
+        11.25,
+        13.73,
+        2167.88
+      ],
+      "radius": 5.24,
+      "title": "Geodesics in History Space",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-prefix-topology-and-history-metrics",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-full-semantics-of-bind": {
+      "pos": [
+        0.0,
+        0.0,
+        2200.0
+      ],
+      "radius": 5.45,
+      "title": "The Full Semantics of Bind",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:motivation-bind-has-syntax-but-no-ontology": {
+      "pos": [
+        20.75,
+        0.0,
+        2200.0
+      ],
+      "radius": 5.38,
+      "title": "Motivation: Bind Has Syntax but No Ontology",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-full-semantics-of-bind",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:dependency-graphs": {
+      "pos": [
+        -18.83,
+        0.0,
+        2200.0
+      ],
+      "radius": 4.1,
+      "title": "Dependency Graphs",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-full-semantics-of-bind",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:refusal-propagation": {
+      "pos": [
+        11.67,
+        14.25,
+        2208.17
+      ],
+      "radius": 5.8,
+      "title": "Refusal Propagation",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-full-semantics-of-bind",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:bind-symmetry-and-asymmetry": {
+      "pos": [
+        -11.15,
+        13.61,
+        2207.81
+      ],
+      "radius": 5.16,
+      "title": "Bind Symmetry and Asymmetry",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-full-semantics-of-bind",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:bind-as-coordination-the-multi-agent-case": {
+      "pos": [
+        10.91,
+        -13.32,
+        2192.36
+      ],
+      "radius": 4.87,
+      "title": "Bind as Coordination: the Multi-Agent Case",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-full-semantics-of-bind",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:reconstruction-geometry-and-cost-models": {
+      "pos": [
+        0.0,
+        0.0,
+        2240.0
+      ],
+      "radius": 5.45,
+      "title": "Reconstruction Geometry and Cost Models",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:defining-reconstruction-cost-formally": {
+      "pos": [
+        21.38,
+        0.0,
+        2240.0
+      ],
+      "radius": 5.8,
+      "title": "Defining Reconstruction Cost Formally",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:reconstruction-geometry-and-cost-models",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:reconstruction-distance": {
+      "pos": [
+        -20.34,
+        0.0,
+        2240.0
+      ],
+      "radius": 5.11,
+      "title": "Reconstruction Distance",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:reconstruction-geometry-and-cost-models",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-reachability-leverage-spectrum": {
+      "pos": [
+        10.96,
+        13.38,
+        2247.67
+      ],
+      "radius": 4.93,
+      "title": "The Reachability Leverage Spectrum",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:reconstruction-geometry-and-cost-models",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:refusal-logic-and-the-algebra-of-inadmissibility": {
+      "pos": [
+        0.0,
+        0.0,
+        2280.0
+      ],
+      "radius": 5.53,
+      "title": "Refusal Logic and the Algebra of Inadmissibility",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:refusal-sets-as-a-monotone-structure": {
+      "pos": [
+        19.75,
+        0.0,
+        2280.0
+      ],
+      "radius": 4.64,
+      "title": "Refusal Sets as a Monotone Structure",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:refusal-logic-and-the-algebra-of-inadmissibility",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:refusal-algebra": {
+      "pos": [
+        -20.94,
+        0.0,
+        2280.0
+      ],
+      "radius": 5.43,
+      "title": "Refusal Algebra",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:refusal-logic-and-the-algebra-of-inadmissibility",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:repair-as-certified-transition": {
+      "pos": [
+        11.71,
+        14.29,
+        2288.2
+      ],
+      "radius": 5.76,
+      "title": "Repair as Certified Transition",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:refusal-logic-and-the-algebra-of-inadmissibility",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:partial-order-histories-and-true-concurrency": {
+      "pos": [
+        0.0,
+        0.0,
+        2320.0
+      ],
+      "radius": 5.49,
+      "title": "Partial-Order Histories and True Concurrency",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-limitation-of-total-order-histories": {
+      "pos": [
+        20.19,
+        0.0,
+        2320.0
+      ],
+      "radius": 4.97,
+      "title": "The Limitation of Total-Order Histories",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:partial-order-histories-and-true-concurrency",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:linearizations-and-the-linearization-theorem": {
+      "pos": [
+        -21.86,
+        0.0,
+        2320.0
+      ],
+      "radius": 6.08,
+      "title": "Linearizations and the Linearization Theorem",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:partial-order-histories-and-true-concurrency",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:partial-order-collapse-rules": {
+      "pos": [
+        12.0,
+        14.65,
+        2328.4
+      ],
+      "radius": 6.16,
+      "title": "Partial-Order Collapse Rules",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:partial-order-histories-and-true-concurrency",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:lamport-clocks-as-spherepop-events": {
+      "pos": [
+        -11.08,
+        13.53,
+        2327.76
+      ],
+      "radius": 5.04,
+      "title": "Lamport Clocks as Spherepop Events",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:partial-order-histories-and-true-concurrency",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-operator-representation-theorem": {
+      "pos": [
+        0.0,
+        0.0,
+        2360.0
+      ],
+      "radius": 5.4,
+      "title": "The Operator Representation Theorem",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:primitive-transformations-of-possibility-space": {
+      "pos": [
+        22.83,
+        0.0,
+        2360.0
+      ],
+      "radius": 6.82,
+      "title": "Primitive Transformations of Possibility Space",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-operator-representation-theorem",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:algebraic-properties-of-the-operators": {
+      "pos": [
+        -21.55,
+        0.0,
+        2360.0
+      ],
+      "radius": 5.97,
+      "title": "Algebraic Properties of the Operators",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-operator-representation-theorem",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:counterfactuals-and-causal-reasoning": {
+      "pos": [
+        0.0,
+        0.0,
+        2400.0
+      ],
+      "radius": 5.4,
+      "title": "Counterfactuals and Causal Reasoning",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:continuations-and-counterfactuals": {
+      "pos": [
+        21.93,
+        0.0,
+        2400.0
+      ],
+      "radius": 6.22,
+      "title": "Continuations and Counterfactuals",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:counterfactuals-and-causal-reasoning",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:causal-models-and-spherepop": {
+      "pos": [
+        -20.68,
+        0.0,
+        2400.0
+      ],
+      "radius": 5.39,
+      "title": "Causal Models and Spherepop",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:counterfactuals-and-causal-reasoning",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:notes-as-a-category": {
+      "pos": [
+        0.0,
+        0.0,
+        2440.0
+      ],
+      "radius": 5.35,
+      "title": "Notes as a Category",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:note-morphisms": {
+      "pos": [
+        20.07,
+        0.0,
+        2440.0
+      ],
+      "radius": 5.03,
+      "title": "Note Morphisms",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:notes-as-a-category",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:note-functors": {
+      "pos": [
+        -20.22,
+        0.0,
+        2440.0
+      ],
+      "radius": 5.13,
+      "title": "Note Functors",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:notes-as-a-category",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-reachability-value-of-knowledge": {
+      "pos": [
+        10.78,
+        13.16,
+        2447.55
+      ],
+      "radius": 4.81,
+      "title": "The Reachability Value of Knowledge",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:notes-as-a-category",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:libraries-archives-and-scientific-infrastructure": {
+      "pos": [
+        0.0,
+        0.0,
+        2480.0
+      ],
+      "radius": 5.45,
+      "title": "Libraries, Archives, and Scientific Infrastructure",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:libraries-as-continuation-reservoirs": {
+      "pos": [
+        20.4,
+        0.0,
+        2480.0
+      ],
+      "radius": 5.15,
+      "title": "Libraries as Continuation Reservoirs",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:libraries-archives-and-scientific-infrastructure",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:science-as-civilizational-refusal": {
+      "pos": [
+        -21.06,
+        0.0,
+        2480.0
+      ],
+      "radius": 5.59,
+      "title": "Science as Civilizational Refusal",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:libraries-archives-and-scientific-infrastructure",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:writing-systems-as-compression-infrastructure": {
+      "pos": [
+        11.57,
+        14.13,
+        2488.1
+      ],
+      "radius": 5.68,
+      "title": "Writing Systems as Compression Infrastructure",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:libraries-archives-and-scientific-infrastructure",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:programming-languages-as-generative-notes": {
+      "pos": [
+        -10.78,
+        13.16,
+        2487.55
+      ],
+      "radius": 4.71,
+      "title": "Programming Languages as Generative Notes",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:libraries-archives-and-scientific-infrastructure",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:legal-systems-as-constraint-ledgers": {
+      "pos": [
+        11.57,
+        -14.13,
+        2471.9
+      ],
+      "radius": 5.68,
+      "title": "Legal Systems as Constraint Ledgers",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:libraries-archives-and-scientific-infrastructure",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:markets-as-distributed-prospective-notes": {
+      "pos": [
+        -11.05,
+        -13.49,
+        2472.26
+      ],
+      "radius": 5.04,
+      "title": "Markets as Distributed Prospective Notes",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:libraries-archives-and-scientific-infrastructure",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:history-reachability-correspondence": {
+      "pos": [
+        0.0,
+        0.0,
+        2520.0
+      ],
+      "radius": 5.35,
+      "title": "History\u2013Reachability Correspondence",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:formal-statement": {
+      "pos": [
+        20.88,
+        0.0,
+        2520.0
+      ],
+      "radius": 5.57,
+      "title": "Formal Statement",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:history-reachability-correspondence",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-history-reachability-duality": {
+      "pos": [
+        -20.1,
+        0.0,
+        2520.0
+      ],
+      "radius": 5.05,
+      "title": "The History-Reachability Duality",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:history-reachability-correspondence",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-history-reachability-correspondence-theorem": {
+      "pos": [
+        11.67,
+        14.25,
+        2528.17
+      ],
+      "radius": 5.9,
+      "title": "The History-Reachability Correspondence Theorem",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:history-reachability-correspondence",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:theorem-status-table": {
+      "pos": [
+        0.0,
+        0.0,
+        2560.0
+      ],
+      "radius": 9.72,
+      "title": "Theorem Status Table",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:20",
+      "last_seen": "2026-09-27T09:38:34"
+    }
+  },
+  "labels": {
+    "sec:layered-world-model": "L:sec:layered-world-model",
+    "ch:collapse-quotient": "L:ch:collapse-quotient",
+    "sec:view-vs-collapse": "L:sec:view-vs-collapse",
+    "sec:boolean-completeness": "L:sec:boolean-completeness",
+    "sec:admissibility-set": "L:sec:admissibility-set",
+    "ch:compiler": "L:ch:compiler"
+  },
+  "aliases": {
+    "section||abstract": [
+      "G:abstract"
+    ],
+    "section||the-passive-theory-of-notes-and-its-failure": [
+      "G:the-passive-theory-of-notes-and-its-failure"
+    ],
+    "subsection|G:the-passive-theory-of-notes-and-its-failure|the-continuation-account": [
+      "G:the-continuation-account"
+    ],
+    "subsection|G:the-passive-theory-of-notes-and-its-failure|notes-as-anti-collapse-artifacts": [
+      "G:notes-as-anti-collapse-artifacts"
+    ],
+    "section||the-state-centric-assumption-and-its-consequence": [
+      "G:the-state-centric-assumption-and-its-consequence"
+    ],
+    "subsection|G:the-state-centric-assumption-and-its-consequence|the-standard-premise": [
+      "G:the-standard-premise"
+    ],
+    "subsection|G:the-state-centric-assumption-and-its-consequence|the-state-illusion": [
+      "G:the-state-illusion"
+    ],
+    "subsection|G:the-state-centric-assumption-and-its-consequence|the-layered-world-model": [
+      "L:sec:layered-world-model"
+    ],
+    "subsection|G:the-state-centric-assumption-and-its-consequence|consequences-for-language-design": [
+      "G:consequences-for-language-design"
+    ],
+    "subsection|G:the-state-centric-assumption-and-its-consequence|the-connection-to-notes": [
+      "G:the-connection-to-notes"
+    ],
+    "section||deriving-the-operators": [
+      "L:ch:collapse-quotient"
+    ],
+    "subsection|L:ch:collapse-quotient|the-minimal-requirements": [
+      "G:the-minimal-requirements"
+    ],
+    "subsection|L:ch:collapse-quotient|the-four-operators": [
+      "G:the-four-operators"
+    ],
+    "subsection|L:ch:collapse-quotient|view-versus-collapse": [
+      "L:sec:view-vs-collapse"
+    ],
+    "subsection|L:ch:collapse-quotient|why-these-four-and-no-others": [
+      "G:why-these-four-and-no-others"
+    ],
+    "subsection|L:ch:collapse-quotient|a-genuine-completeness-result-boolean-circuits": [
+      "L:sec:boolean-completeness"
+    ],
+    "subsection|L:ch:collapse-quotient|the-conservation-law": [
+      "G:the-conservation-law"
+    ],
+    "section||the-algebra-of-histories": [
+      "G:the-algebra-of-histories"
+    ],
+    "subsection|G:the-algebra-of-histories|histories-as-the-primary-objects": [
+      "G:histories-as-the-primary-objects"
+    ],
+    "subsection|G:the-algebra-of-histories|the-history-category": [
+      "G:the-history-category"
+    ],
+    "subsection|G:the-algebra-of-histories|unique-factorisation": [
+      "G:unique-factorisation"
+    ],
+    "subsection|G:the-algebra-of-histories|admissibility-as-a-set-valued-function": [
+      "L:sec:admissibility-set"
+    ],
+    "section||small-step-semantics": [
+      "G:small-step-semantics"
+    ],
+    "subsection|G:small-step-semantics|the-transition-system": [
+      "G:the-transition-system"
+    ],
+    "subsection|G:small-step-semantics|big-step-semantics": [
+      "G:big-step-semantics"
+    ],
+    "subsection|G:small-step-semantics|multi-step-reduction": [
+      "G:multi-step-reduction"
+    ],
+    "section||collapse-as-quotient": [
+      "G:collapse-as-quotient"
+    ],
+    "subsection|G:collapse-as-quotient|the-insufficiency-of-unparameterized-collapse": [
+      "G:the-insufficiency-of-unparameterized-collapse"
+    ],
+    "subsection|G:collapse-as-quotient|the-four-canonical-rules": [
+      "G:the-four-canonical-rules"
+    ],
+    "subsection|G:collapse-as-quotient|the-collapse-functor": [
+      "G:the-collapse-functor"
+    ],
+    "subsection|G:collapse-as-quotient|the-universal-property-of-collapse": [
+      "G:the-universal-property-of-collapse"
+    ],
+    "section||types-as-admissibility-certificates": [
+      "G:types-as-admissibility-certificates"
+    ],
+    "subsection|G:types-as-admissibility-certificates|the-inadequacy-of-value-set-types": [
+      "G:the-inadequacy-of-value-set-types"
+    ],
+    "subsection|G:types-as-admissibility-certificates|the-type-language": [
+      "G:the-type-language"
+    ],
+    "subsection|G:types-as-admissibility-certificates|the-type-rules": [
+      "G:the-type-rules"
+    ],
+    "subsection|G:types-as-admissibility-certificates|open-worlds-and-closed-worlds": [
+      "G:open-worlds-and-closed-worlds"
+    ],
+    "subsection|G:types-as-admissibility-certificates|principal-theorems": [
+      "G:principal-theorems"
+    ],
+    "section||dependent-types-and-admissibility-lattices": [
+      "G:dependent-types-and-admissibility-lattices"
+    ],
+    "subsection|G:dependent-types-and-admissibility-lattices|dependent-process-types": [
+      "G:dependent-process-types"
+    ],
+    "subsection|G:dependent-types-and-admissibility-lattices|admissibility-lattices": [
+      "G:admissibility-lattices"
+    ],
+    "subsection|G:dependent-types-and-admissibility-lattices|proof-carrying-refusal": [
+      "G:proof-carrying-refusal"
+    ],
+    "section||the-seven-note-classes-as-operator-realizations": [
+      "G:the-seven-note-classes-as-operator-realizations"
+    ],
+    "subsection|G:the-seven-note-classes-as-operator-realizations|the-classification-principle": [
+      "G:the-classification-principle"
+    ],
+    "section||capture-notes": [
+      "G:capture-notes"
+    ],
+    "section||prospective-notes": [
+      "G:prospective-notes"
+    ],
+    "section||repair-refusal-and-generative-notes": [
+      "G:repair-refusal-and-generative-notes"
+    ],
+    "subsection|G:repair-refusal-and-generative-notes|repair-notes": [
+      "G:repair-notes"
+    ],
+    "subsection|G:repair-refusal-and-generative-notes|refusal-notes": [
+      "G:refusal-notes"
+    ],
+    "subsection|G:repair-refusal-and-generative-notes|generative-notes": [
+      "G:generative-notes"
+    ],
+    "section||collapse-notes-and-the-ephemerality-inversion": [
+      "G:collapse-notes-and-the-ephemerality-inversion"
+    ],
+    "subsection|G:collapse-notes-and-the-ephemerality-inversion|the-hidden-class": [
+      "G:the-hidden-class"
+    ],
+    "subsection|G:collapse-notes-and-the-ephemerality-inversion|the-ephemerality-inversion": [
+      "G:the-ephemerality-inversion"
+    ],
+    "section||the-event-ir-and-compiler-correctness": [
+      "L:ch:compiler"
+    ],
+    "subsection|L:ch:compiler|the-failure-of-traditional-compiler-correctness": [
+      "G:the-failure-of-traditional-compiler-correctness"
+    ],
+    "subsection|L:ch:compiler|event-ir": [
+      "G:event-ir"
+    ],
+    "section||garbage-collection-as-admissibility-guided-colla": [
+      "G:garbage-collection-as-admissibility-guided-colla"
+    ],
+    "subsection|G:garbage-collection-as-admissibility-guided-colla|the-standard-problem": [
+      "G:the-standard-problem"
+    ],
+    "subsection|G:garbage-collection-as-admissibility-guided-colla|history-segments-and-liveness": [
+      "G:history-segments-and-liveness"
+    ],
+    "subsection|G:garbage-collection-as-admissibility-guided-colla|gc-as-collapse": [
+      "G:gc-as-collapse"
+    ],
+    "subsection|G:garbage-collection-as-admissibility-guided-colla|three-gc-strategies": [
+      "G:three-gc-strategies"
+    ],
+    "subsection|G:garbage-collection-as-admissibility-guided-colla|admissibility-certificates-and-gc-safety": [
+      "G:admissibility-certificates-and-gc-safety"
+    ],
+    "section||error-correction-as-certified-refusal": [
+      "G:error-correction-as-certified-refusal"
+    ],
+    "subsection|G:error-correction-as-certified-refusal|the-standard-approach-and-its-limits": [
+      "G:the-standard-approach-and-its-limits"
+    ],
+    "subsection|G:error-correction-as-certified-refusal|error-correction-codes-in-history-space": [
+      "G:error-correction-codes-in-history-space"
+    ],
+    "subsection|G:error-correction-as-certified-refusal|typed-error-propagation": [
+      "G:typed-error-propagation"
+    ],
+    "subsection|G:error-correction-as-certified-refusal|recovery-as-certified-continuation": [
+      "G:recovery-as-certified-continuation"
+    ],
+    "section||the-observation-limit": [
+      "G:the-observation-limit"
+    ],
+    "subsection|G:the-observation-limit|the-reviewer-s-challenge": [
+      "G:the-reviewer-s-challenge"
+    ],
+    "subsection|G:the-observation-limit|the-finite-observation-non-injectivity-theorem": [
+      "G:the-finite-observation-non-injectivity-theorem"
+    ],
+    "subsection|G:the-observation-limit|erasure-versus-illusion": [
+      "G:erasure-versus-illusion"
+    ],
+    "subsection|G:the-observation-limit|rule-refinement-as-disambiguation": [
+      "G:rule-refinement-as-disambiguation"
+    ],
+    "section||category-theory-as-engine": [
+      "G:category-theory-as-engine"
+    ],
+    "subsection|G:category-theory-as-engine|the-history-observation-adjunction": [
+      "G:the-history-observation-adjunction"
+    ],
+    "subsection|G:category-theory-as-engine|collapse-rules-form-a-lattice": [
+      "G:collapse-rules-form-a-lattice"
+    ],
+    "subsection|G:category-theory-as-engine|sheaf-theoretic-semantics": [
+      "G:sheaf-theoretic-semantics"
+    ],
+    "section||clio-projections-and-active-geodesic-inference": [
+      "G:clio-projections-and-active-geodesic-inference"
+    ],
+    "subsection|G:clio-projections-and-active-geodesic-inference|collapse-rules-as-clio-projections": [
+      "G:collapse-rules-as-clio-projections"
+    ],
+    "subsection|G:clio-projections-and-active-geodesic-inference|the-santoro-waghmare-panaretos-unification": [
+      "G:the-santoro-waghmare-panaretos-unification"
+    ],
+    "subsection|G:clio-projections-and-active-geodesic-inference|active-geodesic-inference": [
+      "G:active-geodesic-inference"
+    ],
+    "section||mem8-and-the-cognitive-substrate": [
+      "G:mem8-and-the-cognitive-substrate"
+    ],
+    "subsection|G:mem8-and-the-cognitive-substrate|memory-as-event-structure": [
+      "G:memory-as-event-structure"
+    ],
+    "section||repair-theory-and-civilizational-collapse": [
+      "G:repair-theory-and-civilizational-collapse"
+    ],
+    "subsection|G:repair-theory-and-civilizational-collapse|repair-as-pre-emptive-refusal": [
+      "G:repair-as-pre-emptive-refusal"
+    ],
+    "subsection|G:repair-theory-and-civilizational-collapse|civilizational-scale": [
+      "G:civilizational-scale"
+    ],
+    "section||observational-entropy-and-reconstruction-cost": [
+      "G:observational-entropy-and-reconstruction-cost"
+    ],
+    "subsection|G:observational-entropy-and-reconstruction-cost|from-observation-to-reconstruction": [
+      "G:from-observation-to-reconstruction"
+    ],
+    "subsection|G:observational-entropy-and-reconstruction-cost|continuation-value-and-note-leverage": [
+      "G:continuation-value-and-note-leverage"
+    ],
+    "subsection|G:observational-entropy-and-reconstruction-cost|the-reconstruction-complexity-hierarchy": [
+      "G:the-reconstruction-complexity-hierarchy"
+    ],
+    "section||the-geometry-of-refusal": [
+      "G:the-geometry-of-refusal"
+    ],
+    "subsection|G:the-geometry-of-refusal|refusal-as-geometric-excision": [
+      "G:refusal-as-geometric-excision"
+    ],
+    "subsection|G:the-geometry-of-refusal|refusal-monotonicity": [
+      "G:refusal-monotonicity"
+    ],
+    "subsection|G:the-geometry-of-refusal|refusal-curvature": [
+      "G:refusal-curvature"
+    ],
+    "subsection|G:the-geometry-of-refusal|the-galois-connection-between-history-growth-and": [
+      "G:the-galois-connection-between-history-growth-and"
+    ],
+    "section||notes-as-externalized-adjoints": [
+      "G:notes-as-externalized-adjoints"
+    ],
+    "subsection|G:notes-as-externalized-adjoints|the-reconstruction-gap": [
+      "G:the-reconstruction-gap"
+    ],
+    "subsection|G:notes-as-externalized-adjoints|the-note-reconstruction-functor": [
+      "G:the-note-reconstruction-functor"
+    ],
+    "subsection|G:notes-as-externalized-adjoints|examples-of-note-adjunctions": [
+      "G:examples-of-note-adjunctions"
+    ],
+    "subsection|G:notes-as-externalized-adjoints|the-completeness-spectrum": [
+      "G:the-completeness-spectrum"
+    ],
+    "section||the-topology-of-repair": [
+      "G:the-topology-of-repair"
+    ],
+    "subsection|G:the-topology-of-repair|repair-as-a-morphism-in-the-history-category": [
+      "G:repair-as-a-morphism-in-the-history-category"
+    ],
+    "subsection|G:the-topology-of-repair|examples-of-repair-classes": [
+      "G:examples-of-repair-classes"
+    ],
+    "subsection|G:the-topology-of-repair|repair-cohomology": [
+      "G:repair-cohomology"
+    ],
+    "section||the-noun-fallacy-revisited": [
+      "G:the-noun-fallacy-revisited"
+    ],
+    "subsection|G:the-noun-fallacy-revisited|objects-as-stable-quotients": [
+      "G:objects-as-stable-quotients"
+    ],
+    "subsection|G:the-noun-fallacy-revisited|object-emergence": [
+      "G:object-emergence"
+    ],
+    "subsection|G:the-noun-fallacy-revisited|the-noun-fallacy": [
+      "G:the-noun-fallacy"
+    ],
+    "subsection|G:the-noun-fallacy-revisited|reality-as-reachable-history": [
+      "G:reality-as-reachable-history"
+    ],
+    "section||the-hilbert-space-of-histories": [
+      "G:the-hilbert-space-of-histories"
+    ],
+    "subsection|G:the-hilbert-space-of-histories|motivation": [
+      "G:motivation"
+    ],
+    "subsection|G:the-hilbert-space-of-histories|the-l-2-history-space": [
+      "G:the-l-2-history-space"
+    ],
+    "subsection|G:the-hilbert-space-of-histories|orthogonal-projection-as-collapse": [
+      "G:orthogonal-projection-as-collapse"
+    ],
+    "subsection|G:the-hilbert-space-of-histories|the-orthogonality-condition-as-state-illusion": [
+      "G:the-orthogonality-condition-as-state-illusion"
+    ],
+    "section||the-algebraic-laws-as-geometry": [
+      "G:the-algebraic-laws-as-geometry"
+    ],
+    "subsection|G:the-algebraic-laws-as-geometry|the-tower-property-as-nested-collapse": [
+      "G:the-tower-property-as-nested-collapse"
+    ],
+    "subsection|G:the-algebraic-laws-as-geometry|the-observational-lattice-as-inclusion-of-subspa": [
+      "G:the-observational-lattice-as-inclusion-of-subspa"
+    ],
+    "subsection|G:the-algebraic-laws-as-geometry|eve-s-law-as-the-pythagorean-theorem": [
+      "G:eve-s-law-as-the-pythagorean-theorem"
+    ],
+    "section||sigma-algebras-as-observational-frameworks": [
+      "G:sigma-algebras-as-observational-frameworks"
+    ],
+    "subsection|G:sigma-algebras-as-observational-frameworks|information-as-geometry": [
+      "G:information-as-geometry"
+    ],
+    "subsection|G:sigma-algebras-as-observational-frameworks|collapse-rules-and-sub-sigma-algebras": [
+      "G:collapse-rules-and-sub-sigma-algebras"
+    ],
+    "subsection|G:sigma-algebras-as-observational-frameworks|the-radon-nikodym-theorem-as-universal-note": [
+      "G:the-radon-nikodym-theorem-as-universal-note"
+    ],
+    "subsection|G:sigma-algebras-as-observational-frameworks|variance-as-continuous-observational-entropy": [
+      "G:variance-as-continuous-observational-entropy"
+    ],
+    "section||the-inverse-problem-and-observational-completene": [
+      "G:the-inverse-problem-and-observational-completene"
+    ],
+    "subsection|G:the-inverse-problem-and-observational-completene|when-does-observational-equivalence-imply-histor": [
+      "G:when-does-observational-equivalence-imply-histor"
+    ],
+    "subsection|G:the-inverse-problem-and-observational-completene|open-problems": [
+      "G:open-problems"
+    ],
+    "section||the-coda-implementation-as-philosophical-argumen": [
+      "G:the-coda-implementation-as-philosophical-argumen"
+    ],
+    "section||why-spherepop-needs-the-calculus-of-construction": [
+      "G:why-spherepop-needs-the-calculus-of-construction"
+    ],
+    "subsection|G:why-spherepop-needs-the-calculus-of-construction|the-limits-of-simple-types": [
+      "G:the-limits-of-simple-types"
+    ],
+    "subsection|G:why-spherepop-needs-the-calculus-of-construction|the-pure-type-system-perspective": [
+      "G:the-pure-type-system-perspective"
+    ],
+    "subsection|G:why-spherepop-needs-the-calculus-of-construction|the-spherepop-coc-correspondence": [
+      "G:the-spherepop-coc-correspondence"
+    ],
+    "section||implementing-coc-for-spherepop": [
+      "G:implementing-coc-for-spherepop"
+    ],
+    "subsection|G:implementing-coc-for-spherepop|the-universe-hierarchy": [
+      "G:the-universe-hierarchy"
+    ],
+    "subsection|G:implementing-coc-for-spherepop|the-type-checker": [
+      "G:the-type-checker"
+    ],
+    "subsection|G:implementing-coc-for-spherepop|definitional-equality-and-normalization": [
+      "G:definitional-equality-and-normalization"
+    ],
+    "subsection|G:implementing-coc-for-spherepop|identity-types-and-history-equality": [
+      "G:identity-types-and-history-equality"
+    ],
+    "subsection|G:implementing-coc-for-spherepop|the-curry-howard-correspondence-for-spherepop": [
+      "G:the-curry-howard-correspondence-for-spherepop"
+    ],
+    "section||why-grammar-beats-circuits-and-code": [
+      "G:why-grammar-beats-circuits-and-code"
+    ],
+    "subsection|G:why-grammar-beats-circuits-and-code|the-problem-of-notation": [
+      "G:the-problem-of-notation"
+    ],
+    "subsection|G:why-grammar-beats-circuits-and-code|a-brief-history-of-bnf": [
+      "G:a-brief-history-of-bnf"
+    ],
+    "subsection|G:why-grammar-beats-circuits-and-code|bnf-versus-circuit-diagrams": [
+      "G:bnf-versus-circuit-diagrams"
+    ],
+    "subsection|G:why-grammar-beats-circuits-and-code|bnf-versus-programming-language-syntax": [
+      "G:bnf-versus-programming-language-syntax"
+    ],
+    "subsection|G:why-grammar-beats-circuits-and-code|the-spherepop-bnf-as-computational-universal": [
+      "G:the-spherepop-bnf-as-computational-universal"
+    ],
+    "subsection|G:why-grammar-beats-circuits-and-code|bnf-as-anti-collapse-artifact": [
+      "G:bnf-as-anti-collapse-artifact"
+    ],
+    "section||grammar-circuits-and-the-efficiency-hierarchy": [
+      "G:grammar-circuits-and-the-efficiency-hierarchy"
+    ],
+    "subsection|G:grammar-circuits-and-the-efficiency-hierarchy|measuring-expressiveness-per-symbol": [
+      "G:measuring-expressiveness-per-symbol"
+    ],
+    "subsection|G:grammar-circuits-and-the-efficiency-hierarchy|the-readability-spectrum": [
+      "G:the-readability-spectrum"
+    ],
+    "subsection|G:grammar-circuits-and-the-efficiency-hierarchy|grammar-as-the-missing-level-of-abstraction": [
+      "G:grammar-as-the-missing-level-of-abstraction"
+    ],
+    "subsection|G:grammar-circuits-and-the-efficiency-hierarchy|literate-grammar-and-documentation": [
+      "G:literate-grammar-and-documentation"
+    ],
+    "section||derivation-compendium": [
+      "G:derivation-compendium"
+    ],
+    "subsection|G:derivation-compendium|chapter-1-notes-increase-reachability": [
+      "G:chapter-1-notes-increase-reachability"
+    ],
+    "subsection|G:derivation-compendium|chapter-2-state-as-quotient": [
+      "G:chapter-2-state-as-quotient"
+    ],
+    "subsection|G:derivation-compendium|chapter-3-operator-minimality": [
+      "G:chapter-3-operator-minimality"
+    ],
+    "subsection|G:derivation-compendium|chapter-4-free-category": [
+      "G:chapter-4-free-category"
+    ],
+    "subsection|G:derivation-compendium|chapter-5-small-step-determinacy": [
+      "G:chapter-5-small-step-determinacy"
+    ],
+    "subsection|G:derivation-compendium|chapter-6-collapse-entropy-monotonicity": [
+      "G:chapter-6-collapse-entropy-monotonicity"
+    ],
+    "subsection|G:derivation-compendium|chapter-7-type-soundness": [
+      "G:chapter-7-type-soundness"
+    ],
+    "subsection|G:derivation-compendium|chapter-8-lattice-collapse-threshold": [
+      "G:chapter-8-lattice-collapse-threshold"
+    ],
+    "subsection|G:derivation-compendium|note-composition-theory": [
+      "G:note-composition-theory"
+    ],
+    "subsection|G:derivation-compendium|note-class-derivations": [
+      "G:note-class-derivations"
+    ],
+    "subsection|G:derivation-compendium|compilation-and-gc-derivations": [
+      "G:compilation-and-gc-derivations"
+    ],
+    "subsection|G:derivation-compendium|error-correction-derivation": [
+      "G:error-correction-derivation"
+    ],
+    "subsection|G:derivation-compendium|category-theory-derivations": [
+      "G:category-theory-derivations"
+    ],
+    "subsection|G:derivation-compendium|sheaf-derivations": [
+      "G:sheaf-derivations"
+    ],
+    "subsection|G:derivation-compendium|clio-derivation": [
+      "G:clio-derivation"
+    ],
+    "subsection|G:derivation-compendium|active-geodesic-derivation": [
+      "G:active-geodesic-derivation"
+    ],
+    "subsection|G:derivation-compendium|mem8-locality-derivation": [
+      "G:mem8-locality-derivation"
+    ],
+    "subsection|G:derivation-compendium|civilizational-collapse-derivation": [
+      "G:civilizational-collapse-derivation"
+    ],
+    "subsection|G:derivation-compendium|inverse-problem-derivation": [
+      "G:inverse-problem-derivation"
+    ],
+    "subsection|G:derivation-compendium|final-unification-theorem": [
+      "G:final-unification-theorem"
+    ],
+    "section||spherepop-as-a-process-algebra": [
+      "G:spherepop-as-a-process-algebra"
+    ],
+    "subsection|G:spherepop-as-a-process-algebra|motivation": [
+      "G:motivation-2"
+    ],
+    "subsection|G:spherepop-as-a-process-algebra|parallel-composition": [
+      "G:parallel-composition"
+    ],
+    "subsection|G:spherepop-as-a-process-algebra|synchronization-via-bind": [
+      "G:synchronization-via-bind"
+    ],
+    "subsection|G:spherepop-as-a-process-algebra|race-conditions-as-non-deterministic-collapse": [
+      "G:race-conditions-as-non-deterministic-collapse"
+    ],
+    "subsection|G:spherepop-as-a-process-algebra|deadlock-as-inadmissibility-cycle": [
+      "G:deadlock-as-inadmissibility-cycle"
+    ],
+    "section||the-process-calculus-of-spherepop": [
+      "G:the-process-calculus-of-spherepop"
+    ],
+    "subsection|G:the-process-calculus-of-spherepop|terms-and-their-meanings": [
+      "G:terms-and-their-meanings"
+    ],
+    "subsection|G:the-process-calculus-of-spherepop|reduction-rules-for-processes": [
+      "G:reduction-rules-for-processes"
+    ],
+    "subsection|G:the-process-calculus-of-spherepop|bisimulation-and-behavioral-equivalence": [
+      "G:bisimulation-and-behavioral-equivalence"
+    ],
+    "section||distributed-spherepop": [
+      "G:distributed-spherepop"
+    ],
+    "subsection|G:distributed-spherepop|multiple-worlds-and-consistency": [
+      "G:multiple-worlds-and-consistency"
+    ],
+    "subsection|G:distributed-spherepop|crdts-as-admissibility-preserving-merges": [
+      "G:crdts-as-admissibility-preserving-merges"
+    ],
+    "section||the-complete-proof-system": [
+      "G:the-complete-proof-system"
+    ],
+    "subsection|G:the-complete-proof-system|motivation": [
+      "G:motivation-3"
+    ],
+    "subsection|G:the-complete-proof-system|canonical-forms": [
+      "G:canonical-forms"
+    ],
+    "subsection|G:the-complete-proof-system|structural-lemmas": [
+      "G:structural-lemmas"
+    ],
+    "subsection|G:the-complete-proof-system|full-progress-and-preservation": [
+      "G:full-progress-and-preservation"
+    ],
+    "subsection|G:the-complete-proof-system|admissibility-preservation-theorem": [
+      "G:admissibility-preservation-theorem"
+    ],
+    "section||extended-type-examples-and-applications": [
+      "G:extended-type-examples-and-applications"
+    ],
+    "subsection|G:extended-type-examples-and-applications|typing-file-system-operations": [
+      "G:typing-file-system-operations"
+    ],
+    "subsection|G:extended-type-examples-and-applications|typing-memory-safety": [
+      "G:typing-memory-safety"
+    ],
+    "subsection|G:extended-type-examples-and-applications|typing-cryptographic-operations": [
+      "G:typing-cryptographic-operations"
+    ],
+    "section||histories-as-paths-through-possibility-space": [
+      "G:histories-as-paths-through-possibility-space"
+    ],
+    "subsection|G:histories-as-paths-through-possibility-space|the-action-functional": [
+      "G:the-action-functional"
+    ],
+    "subsection|G:histories-as-paths-through-possibility-space|discrete-euler-lagrange-equations": [
+      "G:discrete-euler-lagrange-equations"
+    ],
+    "subsection|G:histories-as-paths-through-possibility-space|least-action-computation": [
+      "G:least-action-computation"
+    ],
+    "section||information-theoretic-properties-of-histories": [
+      "G:information-theoretic-properties-of-histories"
+    ],
+    "subsection|G:information-theoretic-properties-of-histories|history-entropy": [
+      "G:history-entropy"
+    ],
+    "subsection|G:information-theoretic-properties-of-histories|hamming-distance-on-histories": [
+      "G:hamming-distance-on-histories"
+    ],
+    "subsection|G:information-theoretic-properties-of-histories|kolmogorov-complexity-and-history-compression": [
+      "G:kolmogorov-complexity-and-history-compression"
+    ],
+    "section||event-sourcing-and-database-theory": [
+      "G:event-sourcing-and-database-theory"
+    ],
+    "subsection|G:event-sourcing-and-database-theory|event-sourcing-as-spherepop": [
+      "G:event-sourcing-as-spherepop"
+    ],
+    "subsection|G:event-sourcing-and-database-theory|provenance-semirings": [
+      "G:provenance-semirings"
+    ],
+    "subsection|G:event-sourcing-and-database-theory|the-differential-privacy-connection": [
+      "G:the-differential-privacy-connection"
+    ],
+    "section||programming-language-theory-connections": [
+      "G:programming-language-theory-connections"
+    ],
+    "subsection|G:programming-language-theory-connections|denotational-semantics-as-view": [
+      "G:denotational-semantics-as-view"
+    ],
+    "subsection|G:programming-language-theory-connections|hoare-logic-as-admissibility-typing": [
+      "G:hoare-logic-as-admissibility-typing"
+    ],
+    "subsection|G:programming-language-theory-connections|separation-logic-and-bind": [
+      "G:separation-logic-and-bind"
+    ],
+    "section||connections-to-cognitive-science-and-mem8": [
+      "G:connections-to-cognitive-science-and-mem8"
+    ],
+    "subsection|G:connections-to-cognitive-science-and-mem8|the-spherepop-model-of-memory-retrieval": [
+      "G:the-spherepop-model-of-memory-retrieval"
+    ],
+    "subsection|G:connections-to-cognitive-science-and-mem8|forgetting-as-controlled-collapse": [
+      "G:forgetting-as-controlled-collapse"
+    ],
+    "subsection|G:connections-to-cognitive-science-and-mem8|priming-as-pre-emptive-admissibility-adjustment": [
+      "G:priming-as-pre-emptive-admissibility-adjustment"
+    ],
+    "section||connections-to-physics-and-complex-systems": [
+      "G:connections-to-physics-and-complex-systems"
+    ],
+    "subsection|G:connections-to-physics-and-complex-systems|thermodynamic-interpretation-of-collapse": [
+      "G:thermodynamic-interpretation-of-collapse"
+    ],
+    "subsection|G:connections-to-physics-and-complex-systems|phase-transitions-in-note-infrastructure": [
+      "G:phase-transitions-in-note-infrastructure"
+    ],
+    "section||ontology-of-process-versus-substance": [
+      "G:ontology-of-process-versus-substance"
+    ],
+    "subsection|G:ontology-of-process-versus-substance|the-substance-tradition": [
+      "G:the-substance-tradition"
+    ],
+    "subsection|G:ontology-of-process-versus-substance|process-philosophy-formalized": [
+      "G:process-philosophy-formalized"
+    ],
+    "subsection|G:ontology-of-process-versus-substance|identity-through-change": [
+      "G:identity-through-change"
+    ],
+    "section||language-meaning-and-semantic-collapse": [
+      "G:language-meaning-and-semantic-collapse"
+    ],
+    "subsection|G:language-meaning-and-semantic-collapse|meaning-as-reachability": [
+      "G:meaning-as-reachability"
+    ],
+    "subsection|G:language-meaning-and-semantic-collapse|translation-as-approximate-adjoint": [
+      "G:translation-as-approximate-adjoint"
+    ],
+    "section||ethics-institutions-and-civilizational-responsib": [
+      "G:ethics-institutions-and-civilizational-responsib"
+    ],
+    "subsection|G:ethics-institutions-and-civilizational-responsib|moral-obligations-as-coordination-notes": [
+      "G:moral-obligations-as-coordination-notes"
+    ],
+    "subsection|G:ethics-institutions-and-civilizational-responsib|institutional-failure-as-note-collapse": [
+      "G:institutional-failure-as-note-collapse"
+    ],
+    "section||the-spherepop-interpreter-in-full": [
+      "G:the-spherepop-interpreter-in-full"
+    ],
+    "subsection|G:the-spherepop-interpreter-in-full|architecture-overview": [
+      "G:architecture-overview"
+    ],
+    "subsection|G:the-spherepop-interpreter-in-full|the-evaluation-engine": [
+      "G:the-evaluation-engine"
+    ],
+    "subsection|G:the-spherepop-interpreter-in-full|the-observable-state-derivation": [
+      "G:the-observable-state-derivation"
+    ],
+    "section||the-compiler-and-virtual-machine": [
+      "G:the-compiler-and-virtual-machine"
+    ],
+    "subsection|G:the-compiler-and-virtual-machine|the-event-ir": [
+      "G:the-event-ir"
+    ],
+    "subsection|G:the-compiler-and-virtual-machine|the-compiler": [
+      "G:the-compiler"
+    ],
+    "subsection|G:the-compiler-and-virtual-machine|the-virtual-machine": [
+      "G:the-virtual-machine"
+    ],
+    "subsection|G:the-compiler-and-virtual-machine|replay-equivalence-test-suite": [
+      "G:replay-equivalence-test-suite"
+    ],
+    "section||the-spherepop-type-checker-as-its-own-subject": [
+      "G:the-spherepop-type-checker-as-its-own-subject"
+    ],
+    "subsection|G:the-spherepop-type-checker-as-its-own-subject|self-application": [
+      "G:self-application"
+    ],
+    "subsection|G:the-spherepop-type-checker-as-its-own-subject|proof-checking-as-admissibility-verification": [
+      "G:proof-checking-as-admissibility-verification"
+    ],
+    "section||historical-case-studies": [
+      "G:historical-case-studies"
+    ],
+    "subsection|G:historical-case-studies|the-library-of-alexandria-as-note-collapse": [
+      "G:the-library-of-alexandria-as-note-collapse"
+    ],
+    "subsection|G:historical-case-studies|git-as-a-note-infrastructure": [
+      "G:git-as-a-note-infrastructure"
+    ],
+    "section||spherepop-programs-as-executable-specifications": [
+      "G:spherepop-programs-as-executable-specifications"
+    ],
+    "subsection|G:spherepop-programs-as-executable-specifications|the-dining-philosophers-in-spherepop": [
+      "G:the-dining-philosophers-in-spherepop"
+    ],
+    "subsection|G:spherepop-programs-as-executable-specifications|a-blockchain-as-spherepop-history": [
+      "G:a-blockchain-as-spherepop-history"
+    ],
+    "section||possibility-as-a-computational-resource": [
+      "G:possibility-as-a-computational-resource"
+    ],
+    "subsection|G:possibility-as-a-computational-resource|possibility-entropy": [
+      "G:possibility-entropy"
+    ],
+    "subsection|G:possibility-as-a-computational-resource|admissibility-entropy": [
+      "G:admissibility-entropy"
+    ],
+    "subsection|G:possibility-as-a-computational-resource|possibility-debt": [
+      "G:possibility-debt"
+    ],
+    "subsection|G:possibility-as-a-computational-resource|reversible-and-irreversible-computation": [
+      "G:reversible-and-irreversible-computation"
+    ],
+    "section||collapse-curvature-and-fiber-geometry": [
+      "G:collapse-curvature-and-fiber-geometry"
+    ],
+    "subsection|G:collapse-curvature-and-fiber-geometry|collapse-curvature": [
+      "G:collapse-curvature"
+    ],
+    "subsection|G:collapse-curvature-and-fiber-geometry|fiber-structure-of-histories": [
+      "G:fiber-structure-of-histories"
+    ],
+    "subsection|G:collapse-curvature-and-fiber-geometry|fiber-dimension-and-geometry": [
+      "G:fiber-dimension-and-geometry"
+    ],
+    "section||the-prefix-topology-and-history-metrics": [
+      "G:the-prefix-topology-and-history-metrics"
+    ],
+    "subsection|G:the-prefix-topology-and-history-metrics|prefix-topology-on-histories": [
+      "G:prefix-topology-on-histories"
+    ],
+    "subsection|G:the-prefix-topology-and-history-metrics|the-prefix-ultrametric": [
+      "G:the-prefix-ultrametric"
+    ],
+    "subsection|G:the-prefix-topology-and-history-metrics|geodesics-in-history-space": [
+      "G:geodesics-in-history-space"
+    ],
+    "section||the-full-semantics-of-bind": [
+      "G:the-full-semantics-of-bind"
+    ],
+    "subsection|G:the-full-semantics-of-bind|motivation-bind-has-syntax-but-no-ontology": [
+      "G:motivation-bind-has-syntax-but-no-ontology"
+    ],
+    "subsection|G:the-full-semantics-of-bind|dependency-graphs": [
+      "G:dependency-graphs"
+    ],
+    "subsection|G:the-full-semantics-of-bind|refusal-propagation": [
+      "G:refusal-propagation"
+    ],
+    "subsection|G:the-full-semantics-of-bind|bind-symmetry-and-asymmetry": [
+      "G:bind-symmetry-and-asymmetry"
+    ],
+    "subsection|G:the-full-semantics-of-bind|bind-as-coordination-the-multi-agent-case": [
+      "G:bind-as-coordination-the-multi-agent-case"
+    ],
+    "section||reconstruction-geometry-and-cost-models": [
+      "G:reconstruction-geometry-and-cost-models"
+    ],
+    "subsection|G:reconstruction-geometry-and-cost-models|defining-reconstruction-cost-formally": [
+      "G:defining-reconstruction-cost-formally"
+    ],
+    "subsection|G:reconstruction-geometry-and-cost-models|reconstruction-distance": [
+      "G:reconstruction-distance"
+    ],
+    "subsection|G:reconstruction-geometry-and-cost-models|the-reachability-leverage-spectrum": [
+      "G:the-reachability-leverage-spectrum"
+    ],
+    "section||refusal-logic-and-the-algebra-of-inadmissibility": [
+      "G:refusal-logic-and-the-algebra-of-inadmissibility"
+    ],
+    "subsection|G:refusal-logic-and-the-algebra-of-inadmissibility|refusal-sets-as-a-monotone-structure": [
+      "G:refusal-sets-as-a-monotone-structure"
+    ],
+    "subsection|G:refusal-logic-and-the-algebra-of-inadmissibility|refusal-algebra": [
+      "G:refusal-algebra"
+    ],
+    "subsection|G:refusal-logic-and-the-algebra-of-inadmissibility|repair-as-certified-transition": [
+      "G:repair-as-certified-transition"
+    ],
+    "section||partial-order-histories-and-true-concurrency": [
+      "G:partial-order-histories-and-true-concurrency"
+    ],
+    "subsection|G:partial-order-histories-and-true-concurrency|the-limitation-of-total-order-histories": [
+      "G:the-limitation-of-total-order-histories"
+    ],
+    "subsection|G:partial-order-histories-and-true-concurrency|linearizations-and-the-linearization-theorem": [
+      "G:linearizations-and-the-linearization-theorem"
+    ],
+    "subsection|G:partial-order-histories-and-true-concurrency|partial-order-collapse-rules": [
+      "G:partial-order-collapse-rules"
+    ],
+    "subsection|G:partial-order-histories-and-true-concurrency|lamport-clocks-as-spherepop-events": [
+      "G:lamport-clocks-as-spherepop-events"
+    ],
+    "section||the-operator-representation-theorem": [
+      "G:the-operator-representation-theorem"
+    ],
+    "subsection|G:the-operator-representation-theorem|primitive-transformations-of-possibility-space": [
+      "G:primitive-transformations-of-possibility-space"
+    ],
+    "subsection|G:the-operator-representation-theorem|algebraic-properties-of-the-operators": [
+      "G:algebraic-properties-of-the-operators"
+    ],
+    "section||counterfactuals-and-causal-reasoning": [
+      "G:counterfactuals-and-causal-reasoning"
+    ],
+    "subsection|G:counterfactuals-and-causal-reasoning|continuations-and-counterfactuals": [
+      "G:continuations-and-counterfactuals"
+    ],
+    "subsection|G:counterfactuals-and-causal-reasoning|causal-models-and-spherepop": [
+      "G:causal-models-and-spherepop"
+    ],
+    "section||notes-as-a-category": [
+      "G:notes-as-a-category"
+    ],
+    "subsection|G:notes-as-a-category|note-morphisms": [
+      "G:note-morphisms"
+    ],
+    "subsection|G:notes-as-a-category|note-functors": [
+      "G:note-functors"
+    ],
+    "subsection|G:notes-as-a-category|the-reachability-value-of-knowledge": [
+      "G:the-reachability-value-of-knowledge"
+    ],
+    "section||libraries-archives-and-scientific-infrastructure": [
+      "G:libraries-archives-and-scientific-infrastructure"
+    ],
+    "subsection|G:libraries-archives-and-scientific-infrastructure|libraries-as-continuation-reservoirs": [
+      "G:libraries-as-continuation-reservoirs"
+    ],
+    "subsection|G:libraries-archives-and-scientific-infrastructure|science-as-civilizational-refusal": [
+      "G:science-as-civilizational-refusal"
+    ],
+    "subsection|G:libraries-archives-and-scientific-infrastructure|writing-systems-as-compression-infrastructure": [
+      "G:writing-systems-as-compression-infrastructure"
+    ],
+    "subsection|G:libraries-archives-and-scientific-infrastructure|programming-languages-as-generative-notes": [
+      "G:programming-languages-as-generative-notes"
+    ],
+    "subsection|G:libraries-archives-and-scientific-infrastructure|legal-systems-as-constraint-ledgers": [
+      "G:legal-systems-as-constraint-ledgers"
+    ],
+    "subsection|G:libraries-archives-and-scientific-infrastructure|markets-as-distributed-prospective-notes": [
+      "G:markets-as-distributed-prospective-notes"
+    ],
+    "section||history-reachability-correspondence": [
+      "G:history-reachability-correspondence"
+    ],
+    "subsection|G:history-reachability-correspondence|formal-statement": [
+      "G:formal-statement"
+    ],
+    "subsection|G:history-reachability-correspondence|the-history-reachability-duality": [
+      "G:the-history-reachability-duality"
+    ],
+    "subsection|G:history-reachability-correspondence|the-history-reachability-correspondence-theorem": [
+      "G:the-history-reachability-correspondence-theorem"
+    ],
+    "section||theorem-status-table": [
+      "G:theorem-status-table"
+    ]
+  },
+  "history": [
+    {
+      "at": "2026-09-27T07:21:20",
+      "added": [
+        "G:abstract",
+        "G:the-passive-theory-of-notes-and-its-failure",
+        "G:the-continuation-account",
+        "G:notes-as-anti-collapse-artifacts",
+        "G:the-state-centric-assumption-and-its-consequence",
+        "G:the-standard-premise",
+        "G:the-state-illusion",
+        "L:sec:layered-world-model",
+        "G:consequences-for-language-design",
+        "G:the-connection-to-notes",
+        "L:ch:collapse-quotient",
+        "G:the-minimal-requirements",
+        "G:the-four-operators",
+        "L:sec:view-vs-collapse",
+        "G:why-these-four-and-no-others",
+        "L:sec:boolean-completeness",
+        "G:the-conservation-law",
+        "G:the-algebra-of-histories",
+        "G:histories-as-the-primary-objects",
+        "G:the-history-category",
+        "G:unique-factorisation",
+        "L:sec:admissibility-set",
+        "G:small-step-semantics",
+        "G:the-transition-system",
+        "G:big-step-semantics",
+        "G:multi-step-reduction",
+        "G:collapse-as-quotient",
+        "G:the-insufficiency-of-unparameterized-collapse",
+        "G:the-four-canonical-rules",
+        "G:the-collapse-functor",
+        "G:the-universal-property-of-collapse",
+        "G:types-as-admissibility-certificates",
+        "G:the-inadequacy-of-value-set-types",
+        "G:the-type-language",
+        "G:the-type-rules",
+        "G:open-worlds-and-closed-worlds",
+        "G:principal-theorems",
+        "G:dependent-types-and-admissibility-lattices",
+        "G:dependent-process-types",
+        "G:admissibility-lattices",
+        "G:proof-carrying-refusal",
+        "G:the-seven-note-classes-as-operator-realizations",
+        "G:the-classification-principle",
+        "G:capture-notes",
+        "G:prospective-notes",
+        "G:repair-refusal-and-generative-notes",
+        "G:repair-notes",
+        "G:refusal-notes",
+        "G:generative-notes",
+        "G:collapse-notes-and-the-ephemerality-inversion",
+        "G:the-hidden-class",
+        "G:the-ephemerality-inversion",
+        "L:ch:compiler",
+        "G:the-failure-of-traditional-compiler-correctness",
+        "G:event-ir",
+        "G:garbage-collection-as-admissibility-guided-colla",
+        "G:the-standard-problem",
+        "G:history-segments-and-liveness",
+        "G:gc-as-collapse",
+        "G:three-gc-strategies",
+        "G:admissibility-certificates-and-gc-safety",
+        "G:error-correction-as-certified-refusal",
+        "G:the-standard-approach-and-its-limits",
+        "G:error-correction-codes-in-history-space",
+        "G:typed-error-propagation",
+        "G:recovery-as-certified-continuation",
+        "G:the-observation-limit",
+        "G:the-reviewer-s-challenge",
+        "G:the-finite-observation-non-injectivity-theorem",
+        "G:erasure-versus-illusion",
+        "G:rule-refinement-as-disambiguation",
+        "G:category-theory-as-engine",
+        "G:the-history-observation-adjunction",
+        "G:collapse-rules-form-a-lattice",
+        "G:sheaf-theoretic-semantics",
+        "G:clio-projections-and-active-geodesic-inference",
+        "G:collapse-rules-as-clio-projections",
+        "G:the-santoro-waghmare-panaretos-unification",
+        "G:active-geodesic-inference",
+        "G:mem8-and-the-cognitive-substrate",
+        "G:memory-as-event-structure",
+        "G:repair-theory-and-civilizational-collapse",
+        "G:repair-as-pre-emptive-refusal",
+        "G:civilizational-scale",
+        "G:observational-entropy-and-reconstruction-cost",
+        "G:from-observation-to-reconstruction",
+        "G:continuation-value-and-note-leverage",
+        "G:the-reconstruction-complexity-hierarchy",
+        "G:the-geometry-of-refusal",
+        "G:refusal-as-geometric-excision",
+        "G:refusal-monotonicity",
+        "G:refusal-curvature",
+        "G:the-galois-connection-between-history-growth-and",
+        "G:notes-as-externalized-adjoints",
+        "G:the-reconstruction-gap",
+        "G:the-note-reconstruction-functor",
+        "G:examples-of-note-adjunctions",
+        "G:the-completeness-spectrum",
+        "G:the-topology-of-repair",
+        "G:repair-as-a-morphism-in-the-history-category",
+        "G:examples-of-repair-classes",
+        "G:repair-cohomology",
+        "G:the-noun-fallacy-revisited",
+        "G:objects-as-stable-quotients",
+        "G:object-emergence",
+        "G:the-noun-fallacy",
+        "G:reality-as-reachable-history",
+        "G:the-hilbert-space-of-histories",
+        "G:motivation",
+        "G:the-l-2-history-space",
+        "G:orthogonal-projection-as-collapse",
+        "G:the-orthogonality-condition-as-state-illusion",
+        "G:the-algebraic-laws-as-geometry",
+        "G:the-tower-property-as-nested-collapse",
+        "G:the-observational-lattice-as-inclusion-of-subspa",
+        "G:eve-s-law-as-the-pythagorean-theorem",
+        "G:sigma-algebras-as-observational-frameworks",
+        "G:information-as-geometry",
+        "G:collapse-rules-and-sub-sigma-algebras",
+        "G:the-radon-nikodym-theorem-as-universal-note",
+        "G:variance-as-continuous-observational-entropy",
+        "G:the-inverse-problem-and-observational-completene",
+        "G:when-does-observational-equivalence-imply-histor",
+        "G:open-problems",
+        "G:the-coda-implementation-as-philosophical-argumen",
+        "G:why-spherepop-needs-the-calculus-of-construction",
+        "G:the-limits-of-simple-types",
+        "G:the-pure-type-system-perspective",
+        "G:the-spherepop-coc-correspondence",
+        "G:implementing-coc-for-spherepop",
+        "G:the-universe-hierarchy",
+        "G:the-type-checker",
+        "G:definitional-equality-and-normalization",
+        "G:identity-types-and-history-equality",
+        "G:the-curry-howard-correspondence-for-spherepop",
+        "G:why-grammar-beats-circuits-and-code",
+        "G:the-problem-of-notation",
+        "G:a-brief-history-of-bnf",
+        "G:bnf-versus-circuit-diagrams",
+        "G:bnf-versus-programming-language-syntax",
+        "G:the-spherepop-bnf-as-computational-universal",
+        "G:bnf-as-anti-collapse-artifact",
+        "G:grammar-circuits-and-the-efficiency-hierarchy",
+        "G:measuring-expressiveness-per-symbol",
+        "G:the-readability-spectrum",
+        "G:grammar-as-the-missing-level-of-abstraction",
+        "G:literate-grammar-and-documentation",
+        "G:derivation-compendium",
+        "G:chapter-1-notes-increase-reachability",
+        "G:chapter-2-state-as-quotient",
+        "G:chapter-3-operator-minimality",
+        "G:chapter-4-free-category",
+        "G:chapter-5-small-step-determinacy",
+        "G:chapter-6-collapse-entropy-monotonicity",
+        "G:chapter-7-type-soundness",
+        "G:chapter-8-lattice-collapse-threshold",
+        "G:note-composition-theory",
+        "G:note-class-derivations",
+        "G:compilation-and-gc-derivations",
+        "G:error-correction-derivation",
+        "G:category-theory-derivations",
+        "G:sheaf-derivations",
+        "G:clio-derivation",
+        "G:active-geodesic-derivation",
+        "G:mem8-locality-derivation",
+        "G:civilizational-collapse-derivation",
+        "G:inverse-problem-derivation",
+        "G:final-unification-theorem",
+        "G:spherepop-as-a-process-algebra",
+        "G:motivation-2",
+        "G:parallel-composition",
+        "G:synchronization-via-bind",
+        "G:race-conditions-as-non-deterministic-collapse",
+        "G:deadlock-as-inadmissibility-cycle",
+        "G:the-process-calculus-of-spherepop",
+        "G:terms-and-their-meanings",
+        "G:reduction-rules-for-processes",
+        "G:bisimulation-and-behavioral-equivalence",
+        "G:distributed-spherepop",
+        "G:multiple-worlds-and-consistency",
+        "G:crdts-as-admissibility-preserving-merges",
+        "G:the-complete-proof-system",
+        "G:motivation-3",
+        "G:canonical-forms",
+        "G:structural-lemmas",
+        "G:full-progress-and-preservation",
+        "G:admissibility-preservation-theorem",
+        "G:extended-type-examples-and-applications",
+        "G:typing-file-system-operations",
+        "G:typing-memory-safety",
+        "G:typing-cryptographic-operations",
+        "G:histories-as-paths-through-possibility-space",
+        "G:the-action-functional",
+        "G:discrete-euler-lagrange-equations",
+        "G:least-action-computation",
+        "G:information-theoretic-properties-of-histories",
+        "G:history-entropy",
+        "G:hamming-distance-on-histories",
+        "G:kolmogorov-complexity-and-history-compression",
+        "G:event-sourcing-and-database-theory",
+        "G:event-sourcing-as-spherepop",
+        "G:provenance-semirings",
+        "G:the-differential-privacy-connection",
+        "G:programming-language-theory-connections",
+        "G:denotational-semantics-as-view",
+        "G:hoare-logic-as-admissibility-typing",
+        "G:separation-logic-and-bind",
+        "G:connections-to-cognitive-science-and-mem8",
+        "G:the-spherepop-model-of-memory-retrieval",
+        "G:forgetting-as-controlled-collapse",
+        "G:priming-as-pre-emptive-admissibility-adjustment",
+        "G:connections-to-physics-and-complex-systems",
+        "G:thermodynamic-interpretation-of-collapse",
+        "G:phase-transitions-in-note-infrastructure",
+        "G:ontology-of-process-versus-substance",
+        "G:the-substance-tradition",
+        "G:process-philosophy-formalized",
+        "G:identity-through-change",
+        "G:language-meaning-and-semantic-collapse",
+        "G:meaning-as-reachability",
+        "G:translation-as-approximate-adjoint",
+        "G:ethics-institutions-and-civilizational-responsib",
+        "G:moral-obligations-as-coordination-notes",
+        "G:institutional-failure-as-note-collapse",
+        "G:the-spherepop-interpreter-in-full",
+        "G:architecture-overview",
+        "G:the-evaluation-engine",
+        "G:the-observable-state-derivation",
+        "G:the-compiler-and-virtual-machine",
+        "G:the-event-ir",
+        "G:the-compiler",
+        "G:the-virtual-machine",
+        "G:replay-equivalence-test-suite",
+        "G:the-spherepop-type-checker-as-its-own-subject",
+        "G:self-application",
+        "G:proof-checking-as-admissibility-verification",
+        "G:historical-case-studies",
+        "G:the-library-of-alexandria-as-note-collapse",
+        "G:git-as-a-note-infrastructure",
+        "G:spherepop-programs-as-executable-specifications",
+        "G:the-dining-philosophers-in-spherepop",
+        "G:a-blockchain-as-spherepop-history",
+        "G:possibility-as-a-computational-resource",
+        "G:possibility-entropy",
+        "G:admissibility-entropy",
+        "G:possibility-debt",
+        "G:reversible-and-irreversible-computation",
+        "G:collapse-curvature-and-fiber-geometry",
+        "G:collapse-curvature",
+        "G:fiber-structure-of-histories",
+        "G:fiber-dimension-and-geometry",
+        "G:the-prefix-topology-and-history-metrics",
+        "G:prefix-topology-on-histories",
+        "G:the-prefix-ultrametric",
+        "G:geodesics-in-history-space",
+        "G:the-full-semantics-of-bind",
+        "G:motivation-bind-has-syntax-but-no-ontology",
+        "G:dependency-graphs",
+        "G:refusal-propagation",
+        "G:bind-symmetry-and-asymmetry",
+        "G:bind-as-coordination-the-multi-agent-case",
+        "G:reconstruction-geometry-and-cost-models",
+        "G:defining-reconstruction-cost-formally",
+        "G:reconstruction-distance",
+        "G:the-reachability-leverage-spectrum",
+        "G:refusal-logic-and-the-algebra-of-inadmissibility",
+        "G:refusal-sets-as-a-monotone-structure",
+        "G:refusal-algebra",
+        "G:repair-as-certified-transition",
+        "G:partial-order-histories-and-true-concurrency",
+        "G:the-limitation-of-total-order-histories",
+        "G:linearizations-and-the-linearization-theorem",
+        "G:partial-order-collapse-rules",
+        "G:lamport-clocks-as-spherepop-events",
+        "G:the-operator-representation-theorem",
+        "G:primitive-transformations-of-possibility-space",
+        "G:algebraic-properties-of-the-operators",
+        "G:counterfactuals-and-causal-reasoning",
+        "G:continuations-and-counterfactuals",
+        "G:causal-models-and-spherepop",
+        "G:notes-as-a-category",
+        "G:note-morphisms",
+        "G:note-functors",
+        "G:the-reachability-value-of-knowledge",
+        "G:libraries-archives-and-scientific-infrastructure",
+        "G:libraries-as-continuation-reservoirs",
+        "G:science-as-civilizational-refusal",
+        "G:writing-systems-as-compression-infrastructure",
+        "G:programming-languages-as-generative-notes",
+        "G:legal-systems-as-constraint-ledgers",
+        "G:markets-as-distributed-prospective-notes",
+        "G:history-reachability-correspondence",
+        "G:formal-statement",
+        "G:the-history-reachability-duality",
+        "G:the-history-reachability-correspondence-theorem",
+        "G:theorem-status-table"
+      ],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:22:17",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:23:27",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:24:02",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:24:20",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:25:06",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T09:07:55",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T09:08:30",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T09:38:34",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    }
+  ]
+}

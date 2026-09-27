@@ -1,0 +1,731 @@
+{
+  "work": "what-probability-forgets",
+  "version": 1,
+  "nodes": {
+    "G:a-note-to-the-reader": {
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 8.35,
+      "title": "A Note to the Reader",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:the-honest-shadow": {
+      "pos": [
+        0.0,
+        0.0,
+        40.0
+      ],
+      "radius": 10.22,
+      "title": "The Honest Shadow",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:a-world-made-of-columns": {
+      "pos": [
+        0.0,
+        0.0,
+        80.0
+      ],
+      "radius": 10.54,
+      "title": "A World Made of Columns",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:the-lift-above-the-record": {
+      "pos": [
+        0.0,
+        0.0,
+        120.0
+      ],
+      "radius": 9.06,
+      "title": "The Lift Above the Record",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:why-probabilities-do-not-compose": {
+      "pos": [
+        0.0,
+        0.0,
+        160.0
+      ],
+      "radius": 9.11,
+      "title": "Why Probabilities Do Not Compose",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:interference-as-returning-memory": {
+      "pos": [
+        0.0,
+        0.0,
+        200.0
+      ],
+      "radius": 9.04,
+      "title": "Interference as Returning Memory",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:the-triangle-that-refuses-to-close": {
+      "pos": [
+        0.0,
+        0.0,
+        240.0
+      ],
+      "radius": 9.83,
+      "title": "The Triangle That Refuses to Close",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:trees-cycles-and-the-cost-of-agreement": {
+      "pos": [
+        0.0,
+        0.0,
+        280.0
+      ],
+      "radius": 11.38,
+      "title": "Trees, Cycles, and the Cost of Agreement",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:interlude-the-arithmetic-so-far": {
+      "pos": [
+        0.0,
+        0.0,
+        320.0
+      ],
+      "radius": 7.0,
+      "title": "Interlude: The Arithmetic So Far",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:the-vanishing-uncertainty": {
+      "pos": [
+        23.36,
+        0.0,
+        320.0
+      ],
+      "radius": 5.57,
+      "title": "The Vanishing Uncertainty",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:interlude-the-arithmetic-so-far",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:a-table-that-cannot-come-from-rotation": {
+      "pos": [
+        -23.4,
+        0.0,
+        320.0
+      ],
+      "radius": 5.6,
+      "title": "A Table That Cannot Come From Rotation",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:interlude-the-arithmetic-so-far",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:the-triangle-in-coordinates": {
+      "pos": [
+        12.74,
+        15.55,
+        328.92
+      ],
+      "radius": 5.55,
+      "title": "The Triangle in Coordinates",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:interlude-the-arithmetic-so-far",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:the-problem-of-two-systems": {
+      "pos": [
+        0.0,
+        0.0,
+        360.0
+      ],
+      "radius": 9.33,
+      "title": "The Problem of Two Systems",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:what-the-parts-cannot-see": {
+      "pos": [
+        0.0,
+        0.0,
+        400.0
+      ],
+      "radius": 9.71,
+      "title": "What the Parts Cannot See",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:why-complex-numbers-keep-returning": {
+      "pos": [
+        0.0,
+        0.0,
+        440.0
+      ],
+      "radius": 9.63,
+      "title": "Why Complex Numbers Keep Returning",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:the-field-is-not-the-theory": {
+      "pos": [
+        0.0,
+        0.0,
+        480.0
+      ],
+      "radius": 8.59,
+      "title": "The Field Is Not the Theory",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:interlude-two-systems-in-coordinates": {
+      "pos": [
+        0.0,
+        0.0,
+        520.0
+      ],
+      "radius": 6.61,
+      "title": "Interlude: Two Systems in Coordinates",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:nine-directions-or-ten": {
+      "pos": [
+        22.66,
+        0.0,
+        520.0
+      ],
+      "radius": 5.5,
+      "title": "Nine Directions or Ten",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:interlude-two-systems-in-coordinates",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:a-state-that-only-half-can-see": {
+      "pos": [
+        -22.3,
+        0.0,
+        520.0
+      ],
+      "radius": 5.26,
+      "title": "A State That Only Half Can See",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:interlude-two-systems-in-coordinates",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:the-same-numbers-two-verdicts": {
+      "pos": [
+        12.48,
+        15.23,
+        528.74
+      ],
+      "radius": 5.62,
+      "title": "The Same Numbers, Two Verdicts",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:interlude-two-systems-in-coordinates",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:a-state-is-not-yet-a-context": {
+      "pos": [
+        0.0,
+        0.0,
+        560.0
+      ],
+      "radius": 9.06,
+      "title": "A State Is Not Yet a Context",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:measurements-become-operators": {
+      "pos": [
+        0.0,
+        0.0,
+        600.0
+      ],
+      "radius": 9.53,
+      "title": "Measurements Become Operators",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:time-enters-late": {
+      "pos": [
+        0.0,
+        0.0,
+        640.0
+      ],
+      "radius": 8.47,
+      "title": "Time Enters Late",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:inside-the-birkhoff-polytope": {
+      "pos": [
+        0.0,
+        0.0,
+        680.0
+      ],
+      "radius": 9.69,
+      "title": "Inside the Birkhoff Polytope",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:the-cliff-at-three-dimensions": {
+      "pos": [
+        0.0,
+        0.0,
+        720.0
+      ],
+      "radius": 10.17,
+      "title": "The Cliff at Three Dimensions",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:drawing-the-forbidden-region": {
+      "pos": [
+        0.0,
+        0.0,
+        760.0
+      ],
+      "radius": 9.03,
+      "title": "Drawing the Forbidden Region",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:the-phase-retrieval-problem": {
+      "pos": [
+        0.0,
+        0.0,
+        800.0
+      ],
+      "radius": 9.08,
+      "title": "The Phase-Retrieval Problem",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:decoherence-and-the-routes-downward": {
+      "pos": [
+        0.0,
+        0.0,
+        840.0
+      ],
+      "radius": 9.31,
+      "title": "Decoherence and the Routes Downward",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:the-foundational-cost-ledger": {
+      "pos": [
+        0.0,
+        0.0,
+        880.0
+      ],
+      "radius": 9.63,
+      "title": "The Foundational Cost Ledger",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:witnesses-mechanisms-and-admissibility": {
+      "pos": [
+        0.0,
+        0.0,
+        920.0
+      ],
+      "radius": 9.55,
+      "title": "Witnesses, Mechanisms, and Admissibility",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:what-this-does-not-solve": {
+      "pos": [
+        0.0,
+        0.0,
+        960.0
+      ],
+      "radius": 9.02,
+      "title": "What This Does Not Solve",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:a-research-programme-in-the-shadow": {
+      "pos": [
+        0.0,
+        0.0,
+        1000.0
+      ],
+      "radius": 8.99,
+      "title": "A Research Programme in the Shadow",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:the-world-after-the-probability": {
+      "pos": [
+        0.0,
+        0.0,
+        1040.0
+      ],
+      "radius": 8.37,
+      "title": "The World After the Probability",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:a-guide-to-the-technical-monograph": {
+      "pos": [
+        0.0,
+        0.0,
+        1080.0
+      ],
+      "radius": 7.11,
+      "title": "A Guide to the Technical Monograph",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:further-reading": {
+      "pos": [
+        0.0,
+        0.0,
+        1120.0
+      ],
+      "radius": 7.08,
+      "title": "Further Reading",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    }
+  },
+  "labels": {},
+  "aliases": {
+    "section||a-note-to-the-reader": [
+      "G:a-note-to-the-reader"
+    ],
+    "section||the-honest-shadow": [
+      "G:the-honest-shadow"
+    ],
+    "section||a-world-made-of-columns": [
+      "G:a-world-made-of-columns"
+    ],
+    "section||the-lift-above-the-record": [
+      "G:the-lift-above-the-record"
+    ],
+    "section||why-probabilities-do-not-compose": [
+      "G:why-probabilities-do-not-compose"
+    ],
+    "section||interference-as-returning-memory": [
+      "G:interference-as-returning-memory"
+    ],
+    "section||the-triangle-that-refuses-to-close": [
+      "G:the-triangle-that-refuses-to-close"
+    ],
+    "section||trees-cycles-and-the-cost-of-agreement": [
+      "G:trees-cycles-and-the-cost-of-agreement"
+    ],
+    "section||interlude-the-arithmetic-so-far": [
+      "G:interlude-the-arithmetic-so-far"
+    ],
+    "subsection|G:interlude-the-arithmetic-so-far|the-vanishing-uncertainty": [
+      "G:the-vanishing-uncertainty"
+    ],
+    "subsection|G:interlude-the-arithmetic-so-far|a-table-that-cannot-come-from-rotation": [
+      "G:a-table-that-cannot-come-from-rotation"
+    ],
+    "subsection|G:interlude-the-arithmetic-so-far|the-triangle-in-coordinates": [
+      "G:the-triangle-in-coordinates"
+    ],
+    "section||the-problem-of-two-systems": [
+      "G:the-problem-of-two-systems"
+    ],
+    "section||what-the-parts-cannot-see": [
+      "G:what-the-parts-cannot-see"
+    ],
+    "section||why-complex-numbers-keep-returning": [
+      "G:why-complex-numbers-keep-returning"
+    ],
+    "section||the-field-is-not-the-theory": [
+      "G:the-field-is-not-the-theory"
+    ],
+    "section||interlude-two-systems-in-coordinates": [
+      "G:interlude-two-systems-in-coordinates"
+    ],
+    "subsection|G:interlude-two-systems-in-coordinates|nine-directions-or-ten": [
+      "G:nine-directions-or-ten"
+    ],
+    "subsection|G:interlude-two-systems-in-coordinates|a-state-that-only-half-can-see": [
+      "G:a-state-that-only-half-can-see"
+    ],
+    "subsection|G:interlude-two-systems-in-coordinates|the-same-numbers-two-verdicts": [
+      "G:the-same-numbers-two-verdicts"
+    ],
+    "section||a-state-is-not-yet-a-context": [
+      "G:a-state-is-not-yet-a-context"
+    ],
+    "section||measurements-become-operators": [
+      "G:measurements-become-operators"
+    ],
+    "section||time-enters-late": [
+      "G:time-enters-late"
+    ],
+    "section||inside-the-birkhoff-polytope": [
+      "G:inside-the-birkhoff-polytope"
+    ],
+    "section||the-cliff-at-three-dimensions": [
+      "G:the-cliff-at-three-dimensions"
+    ],
+    "section||drawing-the-forbidden-region": [
+      "G:drawing-the-forbidden-region"
+    ],
+    "section||the-phase-retrieval-problem": [
+      "G:the-phase-retrieval-problem"
+    ],
+    "section||decoherence-and-the-routes-downward": [
+      "G:decoherence-and-the-routes-downward"
+    ],
+    "section||the-foundational-cost-ledger": [
+      "G:the-foundational-cost-ledger"
+    ],
+    "section||witnesses-mechanisms-and-admissibility": [
+      "G:witnesses-mechanisms-and-admissibility"
+    ],
+    "section||what-this-does-not-solve": [
+      "G:what-this-does-not-solve"
+    ],
+    "section||a-research-programme-in-the-shadow": [
+      "G:a-research-programme-in-the-shadow"
+    ],
+    "section||the-world-after-the-probability": [
+      "G:the-world-after-the-probability"
+    ],
+    "section||a-guide-to-the-technical-monograph": [
+      "G:a-guide-to-the-technical-monograph"
+    ],
+    "section||further-reading": [
+      "G:further-reading"
+    ]
+  },
+  "history": [
+    {
+      "at": "2026-09-27T07:21:21",
+      "added": [
+        "G:a-note-to-the-reader",
+        "G:the-honest-shadow",
+        "G:a-world-made-of-columns",
+        "G:the-lift-above-the-record",
+        "G:why-probabilities-do-not-compose",
+        "G:interference-as-returning-memory",
+        "G:the-triangle-that-refuses-to-close",
+        "G:trees-cycles-and-the-cost-of-agreement",
+        "G:interlude-the-arithmetic-so-far",
+        "G:the-vanishing-uncertainty",
+        "G:a-table-that-cannot-come-from-rotation",
+        "G:the-triangle-in-coordinates",
+        "G:the-problem-of-two-systems",
+        "G:what-the-parts-cannot-see",
+        "G:why-complex-numbers-keep-returning",
+        "G:the-field-is-not-the-theory",
+        "G:interlude-two-systems-in-coordinates",
+        "G:nine-directions-or-ten",
+        "G:a-state-that-only-half-can-see",
+        "G:the-same-numbers-two-verdicts",
+        "G:a-state-is-not-yet-a-context",
+        "G:measurements-become-operators",
+        "G:time-enters-late",
+        "G:inside-the-birkhoff-polytope",
+        "G:the-cliff-at-three-dimensions",
+        "G:drawing-the-forbidden-region",
+        "G:the-phase-retrieval-problem",
+        "G:decoherence-and-the-routes-downward",
+        "G:the-foundational-cost-ledger",
+        "G:witnesses-mechanisms-and-admissibility",
+        "G:what-this-does-not-solve",
+        "G:a-research-programme-in-the-shadow",
+        "G:the-world-after-the-probability",
+        "G:a-guide-to-the-technical-monograph",
+        "G:further-reading"
+      ],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:22:18",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:23:28",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:24:03",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:24:21",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:25:07",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T09:07:56",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T09:08:30",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T09:38:35",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    }
+  ]
+}

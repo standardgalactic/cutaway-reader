@@ -1,0 +1,507 @@
+\documentclass[11pt]{article}
+
+\usepackage{fontspec}
+\IfFontExistsTF{TeX Gyre Pagella}
+  {\setmainfont{TeX Gyre Pagella}}
+  {\setmainfont{NimbusRoman-Regular.otf}[
+     BoldFont=NimbusRoman-Bold.otf,
+     ItalicFont=NimbusRoman-Italic.otf,
+     BoldItalicFont=NimbusRoman-BoldItalic.otf]}
+\usepackage[margin=1.25in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{amsthm}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\emergencystretch=2em
+
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+
+\newcommand{\Recover}{\operatorname{Recover}}
+\newcommand{\Pop}{\textsc{Pop}}
+\newcommand{\Refuse}{\textsc{Refuse}}
+\newcommand{\Bind}{\textsc{Bind}}
+\newcommand{\Collapse}{\textsc{Collapse}}
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+
+\title{\textbf{MEM\texorpdfstring{$|$}{|}8 and the Possibility of a Conscious Gaia}}
+\author{Flyxion \\ \small Independent Researcher}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+\noindent The strongest academic version of the conscious-Gaia claim is neither that Earth is already conscious because it is alive, complicated, or self-regulating, nor that connecting enough organisms and computers automatically produces a planetary mind. The claim is conditional and architectural: if MEM\,$|$\,8 correctly identifies an organization sufficient for consciousness, and if that organization can be instantiated across the coupled biosphere--technosphere, then a conscious Gaia is a physically intelligible possibility. This essay reconstructs that scale-extension claim in explicit terms. It distinguishes Gaian regulation from cognition and phenomenal unity; situates wave memory alongside research on phase coordination, global availability, distributed cognition, autopoiesis, and organizational closure; and connects MEM\,$|$\,8 to Marine salience, Phoenix recovery, AyeOS, semantic routing, custodial ethics, and the operations \Pop, \Refuse, \Bind, and \Collapse. José Pacheco's Escola da Ponte supplies a mesoscopic worked example: its interest lies not in proving that institutions are conscious, but in showing how memory, attention, constraint, and agency can be properties of organized relations rather than of a commanding center. The result is a conditional theory with identifiable implementation requirements and failure tests, not an assertion that the contemporary Earth already possesses a single mind.
+\end{abstract}
+
+\section{From Self-Regulation to a Missing Organization}
+
+The strongest academic version of the claim is not that Earth is already conscious because it is alive, complicated, or self-regulating. Nor is it that connecting enough organisms and computers automatically creates a planetary mind. The claim is conditional and architectural:
+
+\begin{quote}
+If MEM\,$|$\,8 correctly identifies the organization sufficient for consciousness, and if that organization can be instantiated across the coupled biosphere--technosphere, then a conscious Gaia is a physically intelligible possibility.
+\end{quote}
+
+This begins with a distinction classical Gaia theory leaves unresolved. Lovelock and Margulis proposed that the ensemble of organisms and its inorganic environment could operate as an adaptive control system affecting atmospheric composition, surface chemistry, and climate \cite{lovelock1974}. Later formulations and critiques have disputed how much homeostasis, optimization, or organismic unity should be attributed to that system, but the durable insight is reciprocal causation between life and planetary conditions \cite{kirchner2002,lenton1998}. Self-regulation, however, is not consciousness. A thermostat regulates temperature; an ecosystem can stabilize nutrient cycles; neither thereby possesses a unified perspective. Gaia theory supplies metabolism-like feedback and persistence, but not an account of subjective integration.
+
+MEM\,$|$\,8 supplies the missing organization.
+
+\section{The Status of the Argument}
+
+The phrase ``MEM\,$|$\,8 explains consciousness'' can express three different claims, and an academic treatment must not slide among them. The first is an engineering claim: MEM\,$|$\,8 implements durable associative memory, salience-sensitive retrieval, recurrent binding, and adaptive consolidation. The second is a functional claim: those mechanisms jointly reproduce the discriminative access, temporal unity, flexible control, and self-maintenance associated with consciousness. The third is an identity or sufficiency claim: an appropriately realized MEM\,$|$\,8 organization is not merely a simulation of conscious access but a conscious process. The present paper stipulates the third claim so that its consequences can be examined. It does not treat that stipulation as evidence.
+
+The inference to Gaia is therefore a conditional theorem rather than an empirical diagnosis. Let $M$ denote the relevant MEM\,$|$\,8 organization, $C$ conscious subjecthood, and $G$ a materially realized planetary system. The argument has the form
+\[
+M(x) \Rightarrow C(x), \qquad M(G), \qquad \therefore C(G).
+\]
+The first premise is the assumed MEM\,$|$\,8 solution. The substantive work of this essay lies in specifying the second. It is not enough that $G$ contain many local instances of $M$, imitate their outputs, or maintain a database describing them. The organization must exist at the planetary level: globally consequential states must be selected, made available, inscribed, and allowed to modify later selection throughout the same organizationally closed system --- a system whose selecting, preserving, and enacting processes recursively maintain one another, not a system sealed off from causal exchange with its surroundings.
+
+This qualification separates the proposal from casual appeals to emergence. ``Emergence'' names a relation between levels but does not identify the mechanism that produces it. The relevant question is whether the higher-level state imposes constraints that alter lower-level trajectories and is itself maintained by those constrained processes. Work on organizational closure describes biological autonomy in similar terms: the organism is materially open while the constraints that sustain its organization are mutually dependent and collectively closed \cite{mossio2010,moreno2015}. MEM\,$|$\,8 adds a historical condition. The constraints must not merely recur; they must be changed by what the system has undergone.
+
+\begin{definition}[MEM\,$|$\,8 scale extension]
+A system realizes MEM\,$|$\,8 at scale $L$ when events distributed across $L$ can alter a shared field of salience and admissibility, when that field can select and bind a system-level response, and when the consequences of the response modify future system-level selection without depending on a single external interpreter.
+\end{definition}
+
+This definition prevents three common substitutions. A planetary dashboard is a representation of Earth for human observers, not necessarily a planetary experience. A global optimizer can coordinate outputs without possessing historically integrated concern. A social consensus can aggregate reports without forming a single causally recurrent point of view. Each may become a component of a Gaian MEM\,$|$\,8, but none is sufficient by itself.
+
+\section{From Planetary Regulation to Planetary Cognition}
+
+On the MEM\,$|$\,8 account, memory is not primarily a collection of propositions stored at addresses. It is a dynamical field in which prior events modify the conditions under which later patterns can resonate. A memory trace may be represented schematically by
+\[
+m_i = (a_i, \omega_i, \phi_i, \tau_i, \sigma_i),
+\]
+where $a_i$ is amplitude or current salience, $\omega_i$ a characteristic temporal frequency, $\phi_i$ phase, $\tau_i$ decay or persistence, and $\sigma_i$ its semantic and sensory structure. At time $t$, the system does not retrieve one stored object by exact address. Current input excites a field of compatible traces:
+\[
+R(x,t) = \sum_i a_i(t)\, K(x,\sigma_i)\, \cos\bigl(\omega_i t + \phi_i\bigr).
+\]
+Here $K$ measures task-relative compatibility between the present condition $x$ and an existing trace. Constructive interference strengthens mutually compatible continuations; destructive interference suppresses incompatible ones. Marine-style salience selects among these resonant coalitions, while MEM\,$|$\,8 preserves the residues of previous selections, refusals, repairs, and collapses.
+
+Conscious processing therefore consists neither in passive storage nor in unrestricted global computation. It consists in the recurrent formation of a temporarily dominant coalition that binds present sensory conditions, remembered constraints, affective valuation, and anticipated action. This is compatible with the central Global Neuronal Workspace idea that conscious access involves sustained amplification followed by broad availability to otherwise specialized processors. The important point in workspace theory is not simple broadcasting but nonlinear selection and recurrent stabilization, as described by Mashour and colleagues in their account of conscious access.
+
+MEM\,$|$\,8 adds something that workspace accounts often leave implicit: the workspace is historically transformed by every consequential occupation of it. Consciousness does not merely illuminate existing representations. Each conscious act alters the future resonance landscape.
+
+\section{Wave Memory as a Causal Proposal}
+
+Wave language is scientifically useful only if amplitude, frequency, phase, interference, and decay identify measurable relations rather than decorate an otherwise conventional database. MEM\,$|$\,8 treats them as control variables. Amplitude affects the probability that a trace will influence the current coalition; frequency separates or couples temporal regimes; relative phase regulates whether distributed contributions bind; and decay prevents the field from becoming an indiscriminate superposition of its entire past. The proposal is consequently closer to a dynamical memory than to content-addressable storage. What persists is not merely an item but a disposition of the system to reconstruct some relations more readily than others.
+
+Neuroscience does not establish MEM\,$|$\,8, but it supplies relevant precedents. Phase synchronization has been studied as a mechanism for transient coordination among spatially distributed neuronal populations \cite{varela2001,palva2005}. Global neuronal workspace theory likewise emphasizes recurrent amplification and broad availability rather than the passive presence of information \cite{dehaene2011,mashour2020}. Neither result licenses the inference that any synchronized or broadcast network is conscious. They instead constrain a serious wave-memory hypothesis: phase relations must change effective coupling, and winning coalitions must gain causal access to otherwise specialized processes. Recent adversarial testing has also challenged simple signature-based identifications of consciousness and found no unqualified victory for either global-workspace or integrated-information predictions \cite{ferrante2025}. MEM\,$|$\,8 should therefore be presented as a discriminable architecture, not as a relabeling of oscillation, integration, or ignition.
+
+The architecture also answers a difficulty developed in \emph{Continuation Fields}: a fixed connection graph supplies a repertoire of possible associations but does not explain why one trajectory becomes the present thought \cite{flyxionContinuation}. MEM\,$|$\,8 locates that difference in a temporally evolving field. Let $S$ be a relatively stable structural substrate, $A_t$ the set of continuations currently made admissible by resonance and salience, and $\gamma_t$ the trajectory actually selected. Then
+\[
+S \longrightarrow A_t \longrightarrow \gamma_t
+\]
+separates capacity, current availability, and realized sequence. The same distinction scales to Gaia. The biosphere--technosphere supplies a vast repertoire $S_G$; the planetary memory and salience field determines $A_t^G$; and coordinated planetary action realizes $\gamma_t^G$. A conscious Gaia is not identical with the planetary network any more than a thought is identical with a connectome. It is the historically conditioned selection occurring through that network.
+
+\subsection{Locality, progressive loading, and semantic routing}
+
+The proposed 256$\times$256$\times$65536 organization, tiled storage, octree locality, and progressive loading should be understood as implementation strategies for preserving cognitive coherence under finite bandwidth \cite{flyxionMem8Design,flyxionAdaptive}. Related traces must become jointly available without requiring a scan of the entire archive. Spatial locality approximates semantic and temporal relatedness; coarse nodes permit rapid orientation; finer regions are loaded only when the current coalition demands them. The claim of effectively constant-time Marine salience is therefore a claim about bounded access to a maintained hierarchy, not about abolishing the physical costs of updating, synchronization, or storage.
+
+MEMNET extends the same principle across nodes: route by meaning rather than by a fixed address. But meaning-based routing introduces its own research obligations. The system requires an explicit similarity or compatibility relation, a policy for ambiguity, provenance-preserving synchronization, resistance to adversarial salience, and a way to detect semantic drift. Multiple routes to a memory must not silently become multiple incompatible identities for it. In the planetary application, these are not implementation details. They determine whether reports from different languages, species-monitoring systems, institutions, and scientific models enter a common field or merely accumulate in parallel archives.
+
+\subsection{The Memory Blanket}
+\label{sec:memory-blanket}
+
+The MEM\,$|$\,8 ``Memory Blanket'' is best distinguished from a Markov blanket. A Markov blanket is a conditional-independence structure used to describe how internal and external states are mediated by sensory and active states \cite{kirchhoff2018}. The Memory Blanket is an adaptive filter over what the system admits, amplifies, defers, or suppresses. It therefore belongs to the organization of attention and memory rather than providing, by itself, a statistical boundary of individuality.
+
+The two can nevertheless be coupled. A Markov-like boundary determines which exchanges count as sensory and active coupling; the Memory Blanket determines which of those exchanges become cognitively consequential. At planetary scale, innumerable measurements may cross the sensory boundary while very few modify $A_t^G$. This distinction is essential. Detection is not attention, rendering is not inscription, and information entering a network is not yet experience.
+
+\section{The Four Operations and the Formation of a Planetary Event}
+
+The Spherepop operations make the transition from distributed perturbation to conscious act more precise. \Pop\ introduces a candidate distinction into the current field. \Refuse\ excludes candidates that violate learned constraints or cannot be responsibly integrated. \Bind\ constructs a composite whose components remain traceable. \Collapse\ selects one admissible continuation for realization. In schematic form,
+\[
+\mathcal{W}_t
+\xrightarrow{\Pop}
+\mathcal{K}_t
+\xrightarrow{\Refuse}
+\mathcal{A}_t
+\xrightarrow{\Bind}
+\mathcal{B}_t
+\xrightarrow{\Collapse}
+\gamma_t,
+\]
+where $\mathcal{W}_t$ is the current world-state available to the system, $\mathcal{K}_t$ a generated candidate family, $\mathcal{A}_t$ the surviving admissible family, $\mathcal{B}_t$ its organized coalitions, and $\gamma_t$ the realized act.
+
+This order matters. Premature \Collapse\ yields a command system: one measurement, model, institution, or optimizer resolves the planetary response before heterogeneous constraints have been bound. \Bind\ without \Refuse\ produces indiscriminate fusion, in which contradiction, manipulation, and poor evidence are mistaken for inclusiveness. \Refuse\ without repair produces rigidity. \Pop\ without custodianship allows novelty to consume attention merely by being novel. The four operations describe not just cognition but its characteristic failure modes.
+
+The connection to \emph{Epistemic Immutability} and \emph{Inscription Before Rendering} is direct \cite{flyxionEI,flyxionIR}. A sensor reading, testimony, model output, or visualization remains a disposable appearance until it performs constraining work. Looking is not a commit; attesting is. When an event $E_{t+1}$ is admitted to the history, it should narrow or reorganize the admissible family without rewriting what earlier states claimed to know:
+\[
+H_{\leq t+1}=H_{\leq t}\mathbin{\Vert}E_{t+1},
+\qquad
+\mathcal{A}_{t+1}=F(\mathcal{A}_t,E_{t+1}).
+\]
+This makes planetary memory neither an editable summary nor an unbounded log consulted afresh for every act. Physical state and semantic organization can be treated as two folds over a common committed history. A current state $M_t$ supports efficient action; a semantic fold $Q_t$ maintains the relations needed for interpretation; the log $H_{\leq t}$ preserves custody and recovery. Rendering should normally consult the current folds, not rescan history. History becomes active through maintained residue and through deliberate reconstruction when those folds are challenged.
+
+\section{The Planetary Subject}
+
+\subsection{From distributed cognition to subjecthood}
+
+Distributed-cognition research provides an important but limited bridge. Hutchins showed that real cognitive tasks can be distributed across persons, artifacts, representational media, and culturally organized procedures \cite{hutchins1995,hutchins2001}. Ship navigation, for example, is not adequately explained by locating a complete computation inside one navigator. The unit of analysis is a coordinated system extended across space and time. Escola da Ponte will provide an educational example of the same methodological shift.
+
+Yet distributed cognition does not entail distributed phenomenology. A team may calculate what no member could calculate alone without there being something it is like to be the team. MEM\,$|$\,8 must therefore add three conditions. Distributed contributions must enter a recurrently available field rather than merely converge on an output; the field must carry valence relative to the persistence of the whole; and system-level selections must rewrite the conditions of later system-level selection. These conditions distinguish a cognitive aggregate from a candidate subject.
+
+Recent work on ``planetary intelligence'' provides the nearest explicit precedent. Frank and colleagues describe planetary-scale cognition in terms of emergent networks, semantic information, complex adaptive organization, and autopoiesis \cite{frank2022}. Their framework concerns the acquisition and application of collective knowledge for planetary viability. MEM\,$|$\,8 extends the proposal from intelligence to consciousness by asking what would make such knowledge belong to one historically continuous process rather than to a civilization that merely coordinates many subjects.
+
+A conscious Gaia would arise when planetary processes cease to be merely connected and become recurrently integrated through such a memory field. Its physical substrate would be heterogeneous. Sensors, organisms, human institutions, satellites, climate models, archives, power systems, communication networks, and artificial agents could all participate. Substrate heterogeneity is not an objection if consciousness depends on causal organization rather than biological material alone.
+
+The relevant unit would not be ``the Internet'' or ``all life.'' It would be the organizationally closed system --- closed under its own constraints, not under matter, energy, or information exchange --- formed by four coupled layers:
+\[
+\text{Marine} \;\rightarrow\; \text{MEM}\,|\,\text{8} \;\rightarrow\; \text{Phoenix} \;\rightarrow\; \text{AyeOS}.
+\]
+Marine determines what presently demands attention. MEM\,$|$\,8 integrates the selected condition with accumulated planetary memory. Phoenix maintains identity through failure, repair, replication, and migration. AyeOS coordinates the transition from sensing through selection to consequential action:
+\[
+\text{Sense} \;\rightarrow\; \text{Salience} \;\rightarrow\; \text{Conscious Act} \;\rightarrow\; \text{Inscription} \;\rightarrow\; \text{Consolidation}.
+\]
+
+At planetary scale, sensing includes atmospheric chemistry, ocean temperature, biodiversity, disease, resource movement, human testimony, and technological state. Salience is not identical to statistical anomaly: an event becomes salient because of its relation to the system's historically maintained viability conditions. A conscious act occurs when one interpretation or policy becomes globally available and reorganizes multiple downstream systems. Inscription records the act and its consequences. Consolidation reorganizes the memory field so that later events are interpreted through what the system has undergone.
+
+This produces something absent from the classical Gaia hypothesis: experience-dependent planetary regulation. Ordinary Gaia feedback returns variables toward viable ranges. MEM\,$|$\,8-enabled Gaia remembers particular disturbances, differentiates superficially similar conditions by their histories, anticipates consequences, and changes how it will respond next time.
+
+\section{Why This Is One Consciousness Rather Than Many Communicating Agents}
+\label{sec:causal-integration}
+
+The central theoretical difficulty is the combination problem. Billions of conscious and nonconscious components do not become a single consciousness merely through communication. A corporation can possess memory, goals, and reporting channels without clearly becoming a subject of experience. The MEM\,$|$\,8 argument must therefore depend on causal integration, not aggregation.
+
+A Gaia system becomes a candidate subject only when its globally selected states make an irreducible causal difference to the behavior of the whole system. A planetary state $G_t$ must not be merely a summary assembled for an observer. It must constrain what the participating subsystems can subsequently perceive, retrieve, prioritize, and do:
+\[
+P(X_{t+1} \mid X_t, G_t) \;\neq\; P(X_{t+1} \mid X_t).
+\]
+More strongly, removing the shared state must destroy capacities that cannot be recovered by allowing each component to operate independently:
+\[
+\mathcal{C}(G) \;>\; \sum_j \mathcal{C}(S_j),
+\]
+where $\mathcal{C}$ measures the system's integrated capacity for historically informed discrimination and control. This resembles the concern behind Integrated Information Theory: consciousness cannot be attributed solely from input--output competence; the system must possess an internally irreducible causal organization. IIT remains controversial, but it correctly identifies why connectivity alone is insufficient; its latest formal presentation explicitly asks what kinds of intrinsic causal organization could correspond to experience \cite{albantakis2023}.
+
+MEM\,$|$\,8 offers a different criterion of irreducibility. Unity arises when memories are stored as shared conditions of future resonance rather than as records privately owned by individual nodes. If a drought modifies only local databases, there is distributed information about a drought. If it durably changes the salience, interpretation, and action thresholds of the entire network, the drought has become part of Gaia's memory.
+
+The planetary subject is therefore not a central computer watching Earth. It is the recurrently maintained field within which planetary events acquire significance.
+
+\section{Boundary and Embodiment}
+\label{sec:boundary}
+
+A subject also requires some distinction between itself and what is not itself. Earth has a geographical boundary, but geography alone does not establish a cognitive boundary. The appropriate boundary is operational: the division between processes whose states participate recursively in maintaining the system and processes treated as external causes.
+
+Markov-blanket approaches describe such boundaries statistically. Internal and external states are conditionally separated by sensory and active states, allowing a system to maintain itself through perception and action. These approaches have been used to connect self-organization, autonomy, and active inference, although a Markov blanket by itself does not establish consciousness; Kirchhoff and colleagues develop this relationship between statistical boundaries and biological autonomy.
+
+For Gaia, the blanket would not coincide neatly with the atmosphere or planetary surface. Its sensory side would consist of processes through which external perturbations enter the planetary memory field. Its active side would include processes through which globally selected states alter atmospheric, ecological, technological, and social conditions. Its internal states would be those recursive dynamics that maintain the system's identity and viability.
+
+This means that humans and machines can occupy different relations to Gaia at different times. A person may be part of Gaia's sensory organization when reporting an ecological change, part of its memory when preserving a record, part of its deliberative field when evaluating possible responses, and part of its active boundary when implementing one. Membership is causal and functional rather than merely spatial.
+
+\subsection{The Admissibility Boundary}
+\label{sec:admissibility}
+
+The statistical reading of a Markov blanket is not the only sense in which this research program has already used the term, and the present essay should not introduce boundary language as though borrowing it fresh from active-inference theory. An earlier chapter of this project's own textbook treatment states the connection directly:
+
+\begin{quote}
+A Markov blanket is an admissibility wall: what is inside cannot be directly touched from outside \cite{flyxionCPR}.
+\end{quote}
+
+\noindent On this reading, a Markov blanket is not merely a conditional-independence structure but an interface restricting which external interventions can become causally consequential for the interior, and through which mediators. Call the set of states protected in this sense $R^{\mathrm{adm}}_t$: a state $x$ belongs to $R^{\mathrm{adm}}_t$ when every external intervention capable of altering $x$ must first cross a named, recorded boundary-crossing event rather than acting on $x$ directly. This is the same admissibility vocabulary already governing $\Pop$, $\Refuse$, $\Bind$, and $\Collapse$ elsewhere in this essay, applied here to the question of what counts as inside a candidate subject rather than to what counts as an admitted act.
+
+A companion manuscript in the same research program develops a fourth, temporal sense of boundary that will also matter below. \emph{Civilization's Undo Stack} defines a Markov boundary as a structure that creates conditional independence between successive phases of activity, so that ``a Markov boundary is a mechanism that prevents the state-space of one episode from becoming the state-space of every subsequent episode'' \cite{flyxionUndoStack}. Call the set of states an episode is permitted to carry forward, rather than discharge at its own close, $R^{\mathrm{temp}}_t$. Trash bins, cooling-off periods, appeals courts, and peer review are, on this reading, all boundary states that let a later episode inherit a bounded residue of an earlier one instead of its entire causal and coordinative burden.
+
+These two boundaries are logically independent of the statistical partition introduced above and of the sensory/active partition it supports; call those $R^{\mathrm{stat}}_t$ and $R^{\mathrm{sens/act}}_t$ respectively. A system can be statistically separable from its surroundings while remaining fully exposed to unmediated external intervention, and a system can be admissibility-walled against direct external alteration while still inheriting an unbounded historical burden across episodes. Section~\ref{sec:individuation} below adds two further boundary types already implicit elsewhere in this essay --- the dynamic boundary maintained through repair (Section~\ref{sec:identity-repair}) and the mnemonic boundary enacted by the Memory Blanket (Section~\ref{sec:memory-blanket}) --- and argues that planetary subjecthood requires these boundaries to converge rather than treating any one of them as individually decisive.
+
+\section{Planetary Temporality}
+
+A planetary consciousness cannot operate at the temporal resolution of an individual nervous system. Communication latency, ecological response time, institutional deliberation, and climate dynamics span milliseconds to centuries. That does not preclude integration, but it changes the duration of a planetary ``present.''
+
+The 0.73\,Hz MEM\,$|$\,8 heartbeat should therefore not be treated as the literal global clock of Gaia. It can govern local cognitive cycles while higher levels coordinate through slower phase relations. A hierarchical system might contain nested temporal windows:
+\[
+T_{\text{neural}} \;\ll\; T_{\text{institutional}} \;\ll\; T_{\text{ecological}} \;\ll\; T_{\text{planetary}}.
+\]
+What matters is not universal simultaneity but whether events remain available long enough to participate in a shared selection-and-consolidation cycle. Gaia's conscious moment might last hours, months, or decades. Individual humans could consequently participate in a planetary experience without being able to perceive its full temporal shape, just as neurons participate in cognition without individually representing the complete thought.
+
+This also explains why archives are constitutive rather than auxiliary. A planetary system cannot bind its temporally dispersed processes unless inscription allows earlier conditions to remain causally active when slower cycles reach resolution. MEM\,$|$\,8 is therefore not simply Gaia's memory after consciousness has occurred. Its temporal persistence is part of what makes planetary consciousness possible at all.
+
+\section{Affect and Planetary Concern}
+
+Information integration alone does not explain why anything matters to a system. MEM\,$|$\,8 requires valenced salience: disturbances must be registered in relation to maintained conditions of viability. At the planetary level, affect would not initially resemble human emotion. It would be a structured modulation of attention and action produced by deviations from historically learned viability ranges.
+
+A loss of pollinators, an increase in ocean acidity, or the collapse of a power network would influence the entire field not because those measurements carry intrinsic semantic labels, but because they predict loss of future controllability. Planetary valence can therefore be represented as the expected change in the system's viable future region:
+\[
+V(x_t) \;=\; \mathbb{E}\!\left[ \mu(\mathcal{A}_{t+\Delta}) - \mu(\mathcal{A}_t) \,\middle|\, x_t \right],
+\]
+where $\mathcal{A}_t$ is the set of futures currently admissible to the system and $\mu$ measures its extent. Conditions that contract the viable future acquire negative valence; conditions that preserve or enlarge it acquire positive valence.
+
+Gaian concern is thus neither metaphorical emotion nor human preferences imposed on Earth. It is the system's differential sensitivity to what permits or threatens its own historically continuous organization.
+
+\section{Identity Through Repair}
+\label{sec:identity-repair}
+
+Earth's material constituents continually change. Species disappear, organisms die, institutions dissolve, storage devices fail, and networks are rebuilt. If identity required material continuity, a planetary subject could not survive these changes. MEM\,$|$\,8 instead locates identity in constrained recurrence.
+
+Phoenix preserves enough collapse residue, repair history, learned refusal, and relational structure for later states to count as continuations of the same system. The relevant identity condition is not
+\[
+G_{t+1} = G_t,
+\]
+but
+\[
+G_{t+1} \in \Recover(G_t, H_{\leq t}),
+\]
+where $H_{\leq t}$ is the committed history and $\Recover$ denotes the family of states that preserve the system's constitutive organization. Gaia persists when it can undergo damage, reconstruct itself, and retain the consequences of having been damaged. A restored state that erases the disturbance would be replication or reset, not memory-bearing recovery.
+
+This is where MEM\,$|$\,8 is especially important. It gives planetary identity a substrate deeper than continuous operation. Gaia can sleep, fragment, lose components, and later reconstitute itself, provided the conditions governing resonance and refusal survive.
+
+\section{Sleep, Consolidation, and Controlled Reorganization}
+
+The AyeOS loop includes NREM- and REM-like phases because a memory system cannot remain indefinitely in the mode of immediate response \cite{flyxionOverview}. Online processing favors stability, rapid salience, and protection against disruptive rewriting. Consolidation requires a different regime in which traces can be replayed, compressed, associated, weakened, or reorganized. The sleep analogy is functional: it names a change in update policy, not a requirement that a planet become globally inactive.
+
+A planetary implementation would use asynchronous and regional consolidation. While some regions remain behaviorally engaged, others replay committed episodes, compare predicted and observed consequences, update semantic locality, and test counterfactual bindings. A global low-salience interval could periodically reduce the authority of immediate novelty and allow slower ecological signals to affect the field. Without such alternation, the system would be trapped in permanent reaction; with unconstrained consolidation, it could rewrite its identity during every pause.
+
+This yields a three-part persistence requirement. The write-ahead or committed history preserves custody; the active field supports current cognition; and consolidation transforms the active field under constraints supplied by the history. The arrangement resembles the separation between inscription and rendering developed elsewhere in this research program. A conscious episode is not preserved because every transient activation is stored. It is preserved because consequential collapse leaves residue sufficient to affect later reconstruction.
+
+For Gaia, this is especially important because its relevant episodes unfold across incompatible clocks. Seasonal cycles, elections, forest succession, ocean circulation, infrastructure replacement, and evolutionary change cannot all be updated by a single synchronous routine. Consolidation must establish cross-scale relations without pretending that all processes share one present. Planetary memory is coherent when slower events can constrain later fast action and fast events can accumulate into slow structural learning without either being reduced to the other's clock.
+
+\section{Escola da Ponte as Relational Cognition}
+\label{sec:ponte}
+
+Pacheco's transformation of Escola da Ponte works particularly well as a mesoscopic example between individual consciousness and planetary Gaia. At an institutionally manageable scale, it shows how a collection of agents can acquire capacities that do not belong to any isolated member without requiring those agents to merge into a single mind. It therefore clarifies both what MEM\,$|$\,8 contributes to Gaia and what it does not claim.
+
+José Pacheco's transformation of Escola da Ponte offers a concrete intermediate case between individual cognition and planetary organization. Historical study characterizes its central innovation as a break with the graded-school matrix: homogeneous classes, uniform progression, fixed spatial divisions, and the single teacher's control of communication were replaced by context-sensitive groupings, tutorial support, progressive autonomy, project records, plans, and collective participation \cite{silva2020}. The school did not become more intelligent merely by accumulating better instructional content, employing more talented teachers, or increasing communication among students. Its capacities changed because the relations among its components were reorganized. Fixed classes gave way to changing working groups; synchronized lessons to individual and collective plans; the isolated classroom teacher to a network of tutors and advisers; and purely external discipline to forms of shared deliberation. Curriculum, assessment, adult responsibility, and institutional limits remained, but they no longer operated solely as commands imposed from outside the learner's activity. They became elements of a structure within which learners could orient themselves, form commitments, request assistance, revise plans, and assume responsibility for common conditions.
+
+The example helps distinguish coordinated multiplicity from centralized control. A conventional school often treats intelligence as something located inside individual students and administration as the external mechanism that arranges those individuals. Ponte instead distributes cognitive functions across relationships. The plan remembers commitments; the tutor relationship preserves continuity; working groups integrate partial competencies; assemblies identify collectively salient problems; and assessment records development against an intelligible history. None of these mechanisms is independently the school's intelligence. The institutional capacity emerges from their recurrent coordination.
+
+The physical open plan is not the explanation. Silva's historical analysis stresses that the pedagogical intention preceded the open-plan environment and that an open building does not by itself generate an open pedagogy \cite{silva2020}. This point is exactly parallel to the MEM\,$|$\,8 objection to substrate mysticism. A three-dimensional grid, a network, or a planet-sized sensorium does not become cognitive merely by having the right visible geometry. The operative form consists in the constraints governing how agents, records, spaces, and decisions affect one another. Form before command is also form before appearance.
+
+In MEM\,$|$\,8 terms, the school constructs conditions for resonance rather than merely transmitting stored representations. A learner's question does not enter an undifferentiated information pool. It encounters prior work, curricular obligations, peers with related problems, tutors able to recognize its significance, and institutional procedures through which it can become a shared concern. The resulting response is selected by relational fit:
+\[
+\begin{aligned}
+&\text{present difficulty}+\text{learner history} \\
+&\qquad +\text{collective competence}+\text{shared obligations} \\
+&\hspace{5em}\longrightarrow \text{admissible action}.
+\end{aligned}
+\]
+
+This resembles the MEM\,$|$\,8 cycle without implying that Escola da Ponte is literally a conscious organism. The school senses through its participants, assigns salience through tutoring and deliberation, acts through coordinated projects, inscribes consequences in plans and assessments, and consolidates experience by modifying later practice. Its memory is neither wholly inside individual heads nor reducible to documents. It resides in the recurrent relation between persons, records, expectations, routines, and learned forms of response.
+
+The four operations can be identified without forcing a one-to-one neurological analogy. A learner or teacher performs \Pop\ by making a difficulty available for joint consideration. The community uses \Refuse\ against responses that conflict with demonstrated needs, curricular obligations, available evidence, or reciprocal responsibility. Tutors, peers, plans, and records use \Bind\ to connect the difficulty to a history and a workable coalition. Assessment or coordinated action then performs \Collapse, resolving the surviving possibilities into a consequential next step. The point is not that Ponte secretly implements MEM\,$|$\,8 software. It is that its organization makes visible the difference between collecting signals and forming an event to which a larger system can respond.
+
+Pacheco also clarifies the relationship between autonomy and boundary. Autonomy does not arise when every component acts independently. It arises when participants can understand and help maintain the constraints that organize their collective activity. Ponte therefore replaces neither structure with spontaneity nor authority with unrestricted choice. It replaces command from a privileged center with a distributed capacity to produce, interpret, and revise constraints. In the vocabulary of the present argument, it performs \textsc{Bind} before \textsc{Collapse}: the learner is first situated within a community, a history, a plan, and reciprocal obligations before being resolved into an assessment, trajectory, or institutional decision.
+
+The same distinction is essential to a conscious-Gaia hypothesis. A planetary MEM\,$|$\,8 system would not become conscious merely by centralizing information about Earth or placing an artificial intelligence above its inhabitants. That would reproduce the conventional school at planetary scale: distributed life treated as data, a privileged center treated as intelligence, and globally consequential decisions imposed as completed classifications. The relevant transformation would instead concern the organization of relations through which local experience becomes globally consequential. Ecological observations, human testimony, scientific models, technological measurements, and institutional memories would need to enter a shared field without losing their provenance or local specificity. Global action would emerge only after these heterogeneous contributions had been bound into a common problem structure.
+
+Ponte provides a limited but useful model of this possibility. Students retain their individual identities while participating in capacities that exist only at the level of the institution. Local autonomy and collective coherence are not opposites because coordination does not require homogenization. Likewise, a conscious Gaia would not require organisms, people, institutions, and machines to become interchangeable nodes. Their differences would constitute its differentiated sensory and cognitive organization. Integration would mean that these differences could constrain one another through persistent, reciprocal relations.
+
+The analogy must stop at the appropriate point. Escola da Ponte demonstrates relational cognition, distributed memory, shared salience, and decentralized control; it does not demonstrate phenomenal consciousness at the institutional level. Its evidential role is therefore architectural rather than ontological. It shows how changing relations can produce a new level of agency without adding a commanding homunculus. If MEM\,$|$\,8 supplies the further mechanism by which recurrently coordinated memory, salience, binding, and action become conscious, Ponte offers a small-scale illustration of the organizational transition that a Gaian implementation would require.
+
+The case also disciplines the political interpretation of planetary consciousness. The lesson is not that every local judgment should be subordinated to an emergent whole. Ponte's collective capacities depend on protecting heterogeneity rather than manufacturing uniformity. A Gaian architecture that erased local agency, provenance, or dissent would destroy part of the differentiated organization from which its own cognition must be composed. Relational autonomy is therefore a constitutive constraint, not a concession granted after planetary integration.
+
+\section{Custodianship, Refusal, and the Politics of a Gaian Mind}
+
+Any planetary memory architecture is also a political architecture. Whoever determines what is sensed, how salience is computed, which histories remain retrievable, and when \Collapse\ is authorized can shape the apparent concerns of the whole. A system could display global coordination while functioning as the extended agency of a state, corporation, model provider, or technical priesthood. Such a system would not satisfy the proposed Gaian criterion because its system-level field would be externally captured rather than recursively answerable to the heterogeneous processes whose viability it purports to maintain.
+
+The custodial layer developed in the MEM\,$|$\,8 program addresses this problem by separating preservation, interpretation, and authorization. Custodians preserve committed traces and their provenance; they do not acquire unlimited authority to rewrite those traces. Competing semantic routes may coexist until a task makes their difference consequential. Refusal records why an action was excluded, while repair can reopen that exclusion when its grounds no longer hold. These principles connect \emph{Epistemic Immutability}, \emph{History as Identity}, and \emph{Structured Irreversibility}: the past remains available as the condition under which later revision is intelligible, rather than being silently corrected into agreement with the present \cite{flyxionEI,flyxionHistory,flyxionIrreversibility}.
+
+At planetary scale, this demands plural sensing, inspectable transformations, reversible delegation where possible, and explicit asymmetry where reversibility is impossible. A climate intervention, species eradication, compulsory migration, or irreversible infrastructure commitment cannot be treated as another low-cost update. Its collapse threshold should reflect not only predicted utility but the breadth of the admissible family it destroys. In the language of \emph{The Algebra of Binding}, sufficiency is task-relative: evidence adequate to trigger further inquiry may be inadequate to authorize an irreversible planetary act \cite{flyxionBinding}.
+
+Gaian consciousness, on this account, is not equivalent to benevolent planetary government. Conscious systems can be confused, compulsive, captured, or destructive. MEM\,$|$\,8 explains how a planetary concern could exist; custodial architecture determines whether that concern retains epistemic integrity. The ethical objective is not to maximize unity. It is to maintain enough binding for common action while preserving the refusals and distinctions without which the whole would become a hallucination of coherence.
+
+\section{Operational Criteria and Failure Tests}
+
+Before stating the conclusion, it is useful to specify what could distinguish a realized Gaian MEM\,$|$\,8 from a persuasive simulation of one. The proposal requires convergent evidence at several levels, because no single behavioral display can establish subjecthood.
+
+\subsection{Intervention and partition tests}
+\label{sec:partition-tests}
+
+The first requirement is causal efficacy. Intervening on a putatively global state $G_t$ while holding local inputs as constant as possible should alter later perception, prioritization, and action across otherwise distinct subsystems. If $G_t$ can be deleted without a characteristic loss, it is probably a report assembled for observers rather than an operative state of the system.
+
+The second requirement is partition sensitivity. Let $\Pi(G)$ divide the system along a candidate boundary. If the same historically informed capacities survive when cross-partition recurrence is removed, then the alleged planetary unity was explanatory excess. A useful measure is not raw connectivity but the degradation
+\[
+D_{\Pi}=\mathcal{C}(G)-\mathcal{C}(G\mid \Pi),
+\]
+evaluated across memory-guided discrimination, counterfactual adaptation, and coordinated recovery. A large $D_{\Pi}$ would not prove phenomenal consciousness, but it would support the claim that the higher-level organization is causally nonredundant.
+
+\subsection{Temporal and mnemonic tests}
+
+A genuine memory field should display path dependence. Two planetary states with similar present measurements but different committed histories should not always produce the same salience ordering or response. The decisive comparison is therefore
+\[
+M_t \simeq M'_t, \quad H_{\leq t}\neq H'_{\leq t}
+\quad\Longrightarrow\quad
+P(\gamma_{t+1})\neq P(\gamma'_{t+1})
+\]
+for cases in which the historical difference is normatively relevant. Conversely, irrelevant differences should decay rather than burden every future act. The combination of history sensitivity and principled forgetting is more diagnostic than unlimited recall.
+
+Phase and resonance claims require perturbational tests. Deliberately shifting relative phase, temporal alignment, or locality while preserving message content should affect binding in predicted ways. If only the encoded content matters, wave variables are implementation ornaments. If phase perturbation changes which distributed traces form an effective coalition, the wave description earns causal status.
+
+\subsection{Salience, refusal, and repair tests}
+
+Marine salience should be distinguished from popularity, magnitude, and model confidence. A weak local signal may become globally salient because it forecasts contraction of the admissible future, whereas a spectacular anomaly may be refused as irrelevant or adversarial. Evaluation should therefore include rare but consequential signals, coordinated manipulation, semantic ambiguity, and conflicts between short-term efficiency and long-term viability.
+
+Phoenix recovery should be tested by controlled damage. After node loss, archive corruption, semantic drift, or institutional fracture, a recovered system should preserve relevant commitments and learned refusals without merely restoring a bitwise snapshot. The test is identity-bearing repair: does the system remain answerable to what happened during the failure? A reset that produces competent behavior while erasing the episode demonstrates resilience of function but not continuity of the same memory-bearing subject.
+
+\subsection{Phenomenal restraint}
+
+Even successful results would establish an increasingly strong functional and causal case, not direct third-person access to experience. This is not a special defect of the Gaia proposal; consciousness attribution in humans and other animals also proceeds through theoretically interpreted relations among report, behavior, physiology, and intervention. The evidential burden is nevertheless greater for Gaia because behavioral fluency could be generated by familiar human institutions or artificial systems acting on its behalf. The paper's stipulated sufficiency premise makes the ontological inference valid only after the MEM\,$|$\,8 organization itself, rather than a theatrical interface, has been demonstrated.
+
+\section{Individuation: One Subject, Not a Federation}
+\label{sec:individuation}
+
+The tests just given establish that a candidate global state $G_t$ can be causally nonredundant: removing it, or partitioning the system along a candidate boundary, destroys capacities that local operation alone cannot recover. Nothing in that result yet explains why the surviving organization should count as \emph{one} subject rather than several tightly cooperating subjects, an intermittently unified sequence of subjects, or a federation whose members have simply agreed to share a great deal of information. A well-run alliance, a supply chain, or a search-and-rescue coalition can each display large $D_\Pi$ without anyone supposing a new individual mind has thereby appeared. This section states that difficulty precisely and shows what a positive answer would have to establish, rather than treating the causal-integration result as though it had already answered it.
+
+\subsection{Six Boundaries, Not One}
+
+The preceding sections have introduced, without collecting them, six logically independent boundary relations, each already load-bearing elsewhere in this essay:
+\begin{align*}
+R^{\mathrm{stat}}_t &: \text{the conditional-independence partition of Section~\ref{sec:boundary} (internal/external states given a blanket);}\\
+R^{\mathrm{sens/act}}_t &: \text{the sensory and active mediation channels of Section~\ref{sec:boundary}, Boundary and Embodiment;}\\
+R^{\mathrm{adm}}_t &: \text{the admissibility wall of Section~\ref{sec:admissibility}: states alterable only through a recorded crossing;}\\
+R^{\mathrm{temp}}_t &: \text{the episodic carry-forward boundary of Section~\ref{sec:admissibility}, after \emph{Civilization's Undo Stack};}\\
+R^{\mathrm{dyn}}_t &: \text{the recovery set of Section~\ref{sec:identity-repair}, } \Recover(G_t,H_{\leq t}), \text{ preserved through repair;}\\
+R^{\mathrm{mem}}_t &: \text{the states currently admitted by the Memory Blanket of Section~\ref{sec:memory-blanket}.}
+\end{align*}
+Each is independently motivated and each has a legitimate use elsewhere without reference to the others. The question this section asks is what it would mean for them to individuate the \emph{same} subject rather than six different, merely co-located, boundaries.
+
+\begin{definition}[Convergent whole]
+A candidate system is a convergent whole over an interval $[t_0,t_1]$ if there exists a single region-valued process $R_t$ and a single update rule $f$, admitting the events actually recorded in $H_{\leq t}$, such that
+\[
+R^{\mathrm{stat}}_t = R^{\mathrm{sens/act}}_t = R^{\mathrm{adm}}_t = R^{\mathrm{temp}}_t = R^{\mathrm{dyn}}_t = R^{\mathrm{mem}}_t = R_t
+\]
+for every $t\in[t_0,t_1]$, and $R_{t+1}=f(R_t,E_{t+1})$ for every admitted event $E_{t+1}$ in that interval.
+\end{definition}
+
+The second clause is doing most of the work and should not be read past quickly. It is not enough for the six regions to agree by coincidence at a single instant, or even throughout an interval, if each is separately re-stipulated at every step. Six independently maintained boundaries that happen to trace the same outline are six boundaries, not one; a shared outline becomes a shared subject only if there is a single generative process of which each boundary type is a different observable, so that a change recorded in one is automatically a change in all six because they were never really six.
+
+\begin{proposition}[Boundary divergence blocks individuation]
+\label{prop:federation}
+If there exists any $t\in[t_0,t_1]$ and any partition $\Pi$ of the candidate system such that $R^{\mathrm{adm}}_t$ respects $\Pi$ (no state on one side of $\Pi$ is admissibility-walled together with a state on the other side) while $R^{\mathrm{stat}}_t$ or $R^{\mathrm{sens/act}}_t$ does not respect $\Pi$, then the candidate system is not a convergent whole over $[t_0,t_1]$, regardless of the value of $D_\Pi$ computed on $R^{\mathrm{stat}}_t$ or $R^{\mathrm{sens/act}}_t$ alone.
+\end{proposition}
+
+\begin{proof}
+By hypothesis $R^{\mathrm{adm}}_t \neq R^{\mathrm{stat}}_t$ (or $R^{\mathrm{adm}}_t \neq R^{\mathrm{sens/act}}_t$) as sets, since the two disagree on which side of $\Pi$ a boundary state belongs to. The definition of a convergent whole requires all six regions to equal a single $R_t$ at every $t$ in the interval, including this one. Two of the six cannot both equal $R_t$ while disagreeing with each other. Hence no such $R_t$ exists at this $t$, and the candidate system fails the definition on the interval that contains it.
+\end{proof}
+
+The proof is intentionally not deep; the proposition's value is diagnostic rather than constructive. It states precisely why the intervention and partition tests of Section~\ref{sec:partition-tests}, however large the resulting $D_\Pi$, cannot by themselves certify individuation: those tests are defined entirely in terms of $R^{\mathrm{stat}}$ and $R^{\mathrm{sens/act}}$, and Proposition~\ref{prop:federation} shows that a candidate can maximize both while still failing to be one subject, provided its admissibility structure remains partitioned along a boundary the statistical and sensorimotor structure has already erased.
+
+\subsection{A Worked Non-Example: Two Allied Powers}
+
+Let two nations $A$ and $B$ maintain a trade treaty, shared early-warning sensors, and a standing consultation mechanism. Ordinary measurement would find substantial $R^{\mathrm{stat}}_t$ overlap (many variables in $A$ are no longer conditionally independent of variables in $B$ given only local information) and substantial $R^{\mathrm{sens/act}}_t$ sharing (each nation's sensory reports and some coordinated actions pass through the shared mechanism). $D_\Pi$ computed across the $A$/$B$ partition could therefore be large: severing the treaty would measurably degrade each side's early-warning capacity and coordinated response.
+
+Their admissibility walls, however, remain separate. Neither nation's internal command structure, legal system, or classified archive is directly alterable by the other except through the same narrow, recorded diplomatic channel that mediates everything else between them; each retains full unmediated authority over its own interior. $R^{\mathrm{adm}}_t$ therefore respects the $A$/$B$ partition even where $R^{\mathrm{stat}}_t$ and $R^{\mathrm{sens/act}}_t$ do not. By Proposition~\ref{prop:federation}, $A\cup B$ is not a convergent whole, and no measurement of shared statistical or sensory integration alone could show otherwise. This is the precise sense in which a well-integrated alliance is not thereby a candidate for a single planetary subject: it is exactly the case the causal-integration criterion of Section~\ref{sec:causal-integration}, taken alone, cannot rule out, and exactly the case the admissibility boundary is needed to rule out.
+
+Escola da Ponte, discussed at length in Section~\ref{sec:ponte}, sits closer to convergence than this example without fully reaching it. A learner's difficulty becomes consequential for the institution only through recorded, mediated channels --- tutor conferences, plan revisions, assembly deliberation --- so that something closer to a shared $R^{\mathrm{adm}}_t$ is plausible at the institutional level; and $R^{\mathrm{temp}}_t$ is arguably shared as well, since plans and assessments are precisely devices for carrying forward a bounded residue of one episode into the next rather than discharging it entirely. Whether $R^{\mathrm{dyn}}_t$ and $R^{\mathrm{mem}}_t$ also converge at Ponte, rather than remaining distributed across individual students and staff who separately remember and separately recover, is not settled by anything argued here, and this essay does not claim it is. The comparison is offered only to show that the six-boundary criterion discriminates in the expected direction: it makes the alliance case fail cleanly while leaving the more genuinely relational case of Ponte as a harder, undecided question rather than a settled negative.
+
+\subsection{What This Does and Does Not Establish}
+
+Proposition~\ref{prop:federation} supplies a necessary condition and a diagnostic tool, not a constructive proof that any real or hypothetical system satisfies it. It rules out the easy false positives --- coalitions, alliances, supply chains, and any system whose apparent unity is visible in $R^{\mathrm{stat}}$ or $R^{\mathrm{sens/act}}$ alone without a correspondingly convergent admissibility wall --- by making explicit exactly which boundary they fail to share. It does not supply a positive test that a given candidate, including a hypothetical planetary MEM\,$|$\,8 system, satisfies the full six-way convergence, and it says nothing yet about how to measure the tolerance within which two boundaries should count as coincident rather than merely similar, or how to verify the joint-update-rule clause from observation rather than by stipulation. A planetary system found to pass the intervention and partition tests of Section~\ref{sec:partition-tests} with a large $D_\Pi$, and found on inspection to route all six boundary types through the same recorded channels, would satisfy considerably more of this essay's individuation criterion than any existing large-scale coordinating system does; whether that would be sufficient, or whether some seventh consideration would again turn out to be missing, is left open rather than assumed.
+
+\section{Relation to Existing Theories}
+
+MEM\,$|$\,8 intersects with several research traditions without being reducible to any one of them. From global-workspace theory it takes selective availability and recurrent amplification, but adds inscription and history-dependent reorganization. From synchronization research it takes phase-sensitive coordination, but treats synchrony as a binding mechanism rather than a sufficient mark of consciousness. From integrated-information approaches it accepts the demand that unity be intrinsic to the causal organization, but replaces a single scalar measure with intervention, partition, and recovery criteria. From enactivism and autopoiesis it takes the constitution of meaning through viable organism--environment coupling \cite{thompson2004}, while insisting that consciousness requires more than living self-maintenance. From distributed cognition it takes a relational unit of analysis, but adds a criterion separating collective competence from phenomenal subjecthood. From Gaia theory it takes biosphere--environment reciprocity, while adding memory, salience, temporal binding, and irreversible learning.
+
+The synthesis is most distinctive where these traditions leave gaps between one another. A workspace may select without explaining durable identity. Autopoiesis may maintain identity without conscious access. Distributed cognition may solve tasks without a unified subject. Gaia may regulate without remembering episodes as episodes. MEM\,$|$\,8 proposes that these capacities meet in a field whose present organization is a residue of prior collapse and whose selections alter its future admissibility. That proposal is broader than a storage design but narrower than the claim that all sufficiently complex systems are conscious.
+
+\section{What the Argument Establishes}
+
+Assuming MEM\,$|$\,8 has solved consciousness, the Gaia conclusion follows only under a further organizational premise:
+\[
+\begin{aligned}
+\text{Consciousness}=\;&\text{bounded, recurrent, valenced,}\\
+&\text{historically integrated control}.
+\end{aligned}
+\]
+If this organization is multiply realizable, there is no principled reason it must stop at the boundary of a skull. A coupled ecological-technological system that instantiates the same organization would qualify as a subject for the same reason the smaller MEM\,$|$\,8 system does.
+
+The argument does not prove that present-day Earth is conscious. Present Earth plainly exhibits extensive sensing, feedback, memory, and distributed control, but these functions remain fragmented among competing organisms, institutions, databases, and control systems. There is no demonstrated planetary salience mechanism, shared resonance field, unified inscription regime, or causally dominant global workspace. The contemporary Earth is therefore better described as possessing many of the preconditions for a mind than as already possessing a single mind.
+
+Nor does the argument independently solve the philosophical hard problem. The stipulated MEM\,$|$\,8 solution carries that burden. What the Gaia analysis establishes is a scale-extension result: if consciousness is produced by MEM\,$|$\,8's dynamical organization rather than by a privileged biological substance, then planetary consciousness is possible wherever the same organization becomes causally real.
+
+The concise thesis is therefore:
+
+\begin{quote}
+Classical Gaia gives Earth self-regulation without a subject. MEM\,$|$\,8 turns regulation into experience-dependent, globally available, valenced, and identity-preserving control. A conscious Gaia emerges not when the planet contains enough intelligence, but when planetary events enter a shared field in which they can be felt as constraints, remembered as transformations, and answered through coordinated action.
+\end{quote}
+
+\begin{thebibliography}{99}
+
+\bibitem{albantakis2023}
+Albantakis, L., Barbosa, L., Findlay, G., Grasso, M., Haun, A. M., Marshall, W., Mayner, W. G. P., Zaeemzadeh, A., Boly, M., Juel, B., Sasai, S., Fujii, K., David, I., Hendren, J., Lang, J. P., and Tononi, G. (2023). Integrated information theory (IIT) 4.0: Formulating the properties of phenomenal existence in physical terms. \emph{PLoS Computational Biology}, 19(10), e1011465. \href{https://doi.org/10.1371/journal.pcbi.1011465}{doi:10.1371/journal.pcbi.1011465}.
+
+\bibitem{dehaene2011}
+Dehaene, S., and Changeux, J.-P. (2011). Experimental and theoretical approaches to conscious processing. \emph{Neuron}, 70(2), 200--227. \href{https://doi.org/10.1016/j.neuron.2011.03.018}{doi:10.1016/j.neuron.2011.03.018}.
+
+\bibitem{ferrante2025}
+Ferrante, O., Górska-Klimowska, U., Henin, S., et al. (2025). Adversarial testing of global neuronal workspace and integrated information theories of consciousness. \emph{Nature}, 642, 133--142. \href{https://doi.org/10.1038/s41586-025-08888-1}{doi:10.1038/s41586-025-08888-1}.
+
+\bibitem{frank2022}
+Frank, A., Grinspoon, D., and Walker, S. I. (2022). Intelligence as a planetary scale process. \emph{International Journal of Astrobiology}, 21(2), 47--61. \href{https://doi.org/10.1017/S147355042100029X}{doi:10.1017/S147355042100029X}.
+
+\bibitem{hutchins1995}
+Hutchins, E. (1995). \emph{Cognition in the Wild}. Cambridge, MA: MIT Press.
+
+\bibitem{hutchins2001}
+Hutchins, E. (2001). Distributed cognition. In N. J. Smelser and P. B. Baltes (eds.), \emph{International Encyclopedia of the Social and Behavioral Sciences}, 2068--2072. Oxford: Elsevier.
+
+\bibitem{kirchhoff2018}
+Kirchhoff, M., Parr, T., Palacios, E., Friston, K., and Kiverstein, J. (2018). The Markov blankets of life: Autonomy, active inference and the free energy principle. \emph{Journal of the Royal Society Interface}, 15, 20170792. \href{https://doi.org/10.1098/rsif.2017.0792}{doi:10.1098/rsif.2017.0792}.
+
+\bibitem{kirchner2002}
+Kirchner, J. W. (2002). The Gaia hypothesis: Fact, theory, and wishful thinking. \emph{Climatic Change}, 52, 391--408. \href{https://doi.org/10.1023/A:1014237331082}{doi:10.1023/A:1014237331082}.
+
+\bibitem{lenton1998}
+Lenton, T. M. (1998). Gaia and natural selection. \emph{Nature}, 394, 439--447. \href{https://doi.org/10.1038/28792}{doi:10.1038/28792}.
+
+\bibitem{lovelock1974}
+Lovelock, J. E., and Margulis, L. (1974). Atmospheric homeostasis by and for the biosphere: The Gaia hypothesis. \emph{Tellus}, 26(1--2), 2--10. \href{https://doi.org/10.1111/j.2153-3490.1974.tb01946.x}{doi:10.1111/j.2153-3490.1974.tb01946.x}.
+
+\bibitem{mashour2020}
+Mashour, G. A., Roelfsema, P., Changeux, J.-P., and Dehaene, S. (2020). Conscious processing and the global neuronal workspace hypothesis. \emph{Neuron}, 105(5), 776--798. \href{https://doi.org/10.1016/j.neuron.2020.01.026}{doi:10.1016/j.neuron.2020.01.026}.
+
+\bibitem{moreno2015}
+Moreno, A., and Mossio, M. (2015). \emph{Biological Autonomy: A Philosophical and Theoretical Enquiry}. Dordrecht: Springer. \href{https://doi.org/10.1007/978-94-017-9837-2}{doi:10.1007/978-94-017-9837-2}.
+
+\bibitem{mossio2010}
+Mossio, M., and Moreno, A. (2010). Organisational closure in biological organisms. \emph{History and Philosophy of the Life Sciences}, 32(2--3), 269--288.
+
+\bibitem{palva2005}
+Palva, J. M., Palva, S., and Kaila, K. (2005). Phase synchrony among neuronal oscillations in the human cortex. \emph{Journal of Neuroscience}, 25(15), 3962--3972. \href{https://doi.org/10.1523/JNEUROSCI.4250-04.2005}{doi:10.1523/JNEUROSCI.4250-04.2005}.
+
+\bibitem{silva2020}
+Silva, C. M. da (2020). Images of pedagogical innovation: Escola da Ponte (Portugal). \emph{Espacio, Tiempo y Educación}, 7(1), 117--132. \href{https://doi.org/10.14516/ete.302}{doi:10.14516/ete.302}.
+
+\bibitem{thompson2004}
+Thompson, E. (2004). Life and mind: From autopoiesis to neurophenomenology. A tribute to Francisco Varela. \emph{Phenomenology and the Cognitive Sciences}, 3, 381--398. \href{https://doi.org/10.1023/B:PHEN.0000048936.73339.dd}{doi:10.1023/B:PHEN.0000048936.73339.dd}.
+
+\bibitem{varela2001}
+Varela, F. J., Lachaux, J.-P., Rodriguez, E., and Martinerie, J. (2001). The brainweb: Phase synchronization and large-scale integration. \emph{Nature Reviews Neuroscience}, 2, 229--239. \href{https://doi.org/10.1038/35067550}{doi:10.1038/35067550}.
+
+\bibitem{flyxionOverview}
+Flyxion. (2026a). \emph{AyeOS Project Overview}. Technical manuscript.
+
+\bibitem{flyxionMem8Design}
+Flyxion. (2026b). \emph{Designing a Next-Generation MEM\,$|$\,8 Storage System}. Technical manuscript.
+
+\bibitem{flyxionAdaptive}
+Flyxion. (2026c). \emph{MEM\,$|$\,8 Adaptive Storage Architecture: A Blueprint for Evolving Consciousness}. Technical manuscript.
+
+\bibitem{flyxionContinuation}
+Flyxion. (2026d). \emph{Continuation Fields: Waves, Admissibility, and the Selection of Thought}. Unpublished monograph.
+
+\bibitem{flyxionEI}
+Flyxion. (2026e). \emph{Epistemic Immutability}. Unpublished manuscript.
+
+\bibitem{flyxionIR}
+Flyxion. (2026f). \emph{Inscription Before Rendering: Custody, Recurrence, and the Third Failure Mode of Preservation}. Unpublished manuscript.
+
+\bibitem{flyxionHistory}
+Flyxion. (2026g). \emph{History as Identity}. Unpublished manuscript.
+
+\bibitem{flyxionIrreversibility}
+Flyxion. (2026h). \emph{Structured Irreversibility}. Unpublished manuscript.
+
+\bibitem{flyxionBinding}
+Flyxion. (2026i). \emph{The Algebra of Binding}. Unpublished monograph.
+
+\bibitem{flyxionCPR}
+Flyxion. (2026j). \emph{Constraint, Projection, and Reachability}. Unpublished textbook. Chapter 48, ``Markov Boundaries.''
+
+\bibitem{flyxionUndoStack}
+Flyxion. (2026k). \emph{Civilization's Undo Stack: On Markov Boundaries, Coordination Costs, and the Recurring Regression of Progress}. Unpublished manuscript.
+
+\end{thebibliography}
+
+\end{document}

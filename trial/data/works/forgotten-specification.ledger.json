@@ -1,0 +1,335 @@
+{
+  "work": "forgotten-specification",
+  "version": 1,
+  "nodes": {
+    "G:a-design-decision-presented-as-destiny": {
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 8.85,
+      "title": "A Design Decision Presented as Destiny",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:instruments-that-do-not-resemble-their-users": {
+      "pos": [
+        0.0,
+        0.0,
+        40.0
+      ],
+      "radius": 9.46,
+      "title": "Instruments That Do Not Resemble Their Users",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "L:sec:objectives": {
+      "pos": [
+        0.0,
+        0.0,
+        80.0
+      ],
+      "radius": 7.89,
+      "title": "Two Objectives",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:capability-gain-is-not-continuation-gain": {
+      "pos": [
+        0.0,
+        0.0,
+        120.0
+      ],
+      "radius": 10.3,
+      "title": "Capability Gain Is Not Continuation Gain",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "L:sec:factory": {
+      "pos": [
+        0.0,
+        0.0,
+        160.0
+      ],
+      "radius": 9.35,
+      "title": "The Factory as Topology",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:the-party-as-topology": {
+      "pos": [
+        0.0,
+        0.0,
+        200.0
+      ],
+      "radius": 9.79,
+      "title": "The Party as Topology",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:one-transformation-three-times": {
+      "pos": [
+        0.0,
+        0.0,
+        240.0
+      ],
+      "radius": 6.92,
+      "title": "One Transformation, Three Times",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:from-fiction-to-infrastructure": {
+      "pos": [
+        0.0,
+        0.0,
+        280.0
+      ],
+      "radius": 10.62,
+      "title": "From Fiction to Infrastructure",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:the-political-instance": {
+      "pos": [
+        31.96,
+        0.0,
+        280.0
+      ],
+      "radius": 7.69,
+      "title": "The political instance",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:from-fiction-to-infrastructure",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:specification-by-organization": {
+      "pos": [
+        0.0,
+        0.0,
+        320.0
+      ],
+      "radius": 9.74,
+      "title": "Specification by Organization",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:persistence-of-form-failure-of-continuation": {
+      "pos": [
+        0.0,
+        0.0,
+        360.0
+      ],
+      "radius": 9.56,
+      "title": "Persistence of Form, Failure of Continuation",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:what-pro-worker-ai-means-when-formalized": {
+      "pos": [
+        0.0,
+        -40.0,
+        360.0
+      ],
+      "radius": 8.21,
+      "title": "What Pro-Worker AI Means When Formalized",
+      "role": "foundation",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:limits": {
+      "pos": [
+        0.0,
+        0.0,
+        400.0
+      ],
+      "radius": 9.12,
+      "title": "Limits",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    },
+    "G:conclusion": {
+      "pos": [
+        0.0,
+        0.0,
+        440.0
+      ],
+      "radius": 7.63,
+      "title": "Conclusion",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:35"
+    }
+  },
+  "labels": {
+    "sec:objectives": "L:sec:objectives",
+    "sec:factory": "L:sec:factory"
+  },
+  "aliases": {
+    "section||a-design-decision-presented-as-destiny": [
+      "G:a-design-decision-presented-as-destiny"
+    ],
+    "section||instruments-that-do-not-resemble-their-users": [
+      "G:instruments-that-do-not-resemble-their-users"
+    ],
+    "section||two-objectives": [
+      "L:sec:objectives"
+    ],
+    "section||capability-gain-is-not-continuation-gain": [
+      "G:capability-gain-is-not-continuation-gain"
+    ],
+    "section||the-factory-as-topology": [
+      "L:sec:factory"
+    ],
+    "section||the-party-as-topology": [
+      "G:the-party-as-topology"
+    ],
+    "section||one-transformation-three-times": [
+      "G:one-transformation-three-times"
+    ],
+    "section||from-fiction-to-infrastructure": [
+      "G:from-fiction-to-infrastructure"
+    ],
+    "subsection|G:from-fiction-to-infrastructure|the-political-instance": [
+      "G:the-political-instance"
+    ],
+    "section||specification-by-organization": [
+      "G:specification-by-organization"
+    ],
+    "section||persistence-of-form-failure-of-continuation": [
+      "G:persistence-of-form-failure-of-continuation"
+    ],
+    "section||what-pro-worker-ai-means-when-formalized": [
+      "G:what-pro-worker-ai-means-when-formalized"
+    ],
+    "section||limits": [
+      "G:limits"
+    ],
+    "section||conclusion": [
+      "G:conclusion"
+    ]
+  },
+  "history": [
+    {
+      "at": "2026-09-27T07:21:21",
+      "added": [
+        "G:a-design-decision-presented-as-destiny",
+        "G:instruments-that-do-not-resemble-their-users",
+        "L:sec:objectives",
+        "G:capability-gain-is-not-continuation-gain",
+        "L:sec:factory",
+        "G:the-party-as-topology",
+        "G:one-transformation-three-times",
+        "G:from-fiction-to-infrastructure",
+        "G:the-political-instance",
+        "G:specification-by-organization",
+        "G:persistence-of-form-failure-of-continuation",
+        "G:what-pro-worker-ai-means-when-formalized",
+        "G:limits",
+        "G:conclusion"
+      ],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:22:18",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:23:28",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:24:03",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:24:21",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:25:07",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T09:07:56",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T09:08:30",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T09:38:35",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    }
+  ]
+}

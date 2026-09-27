@@ -1,0 +1,454 @@
+{
+  "version": 2,
+  "galaxy_id": "g-4958c13346b5",
+  "works": {
+    "mem8-monograph": {
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "placed_near": [],
+      "conflicts": []
+    },
+    "mem8-conscious-gaia": {
+      "pos": [
+        44.97,
+        37.18,
+        171.17
+      ],
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "placed_near": [
+        {
+          "work": "mem8-monograph",
+          "similarity": 0.083
+        }
+      ],
+      "conflicts": []
+    },
+    "cosmological-memory": {
+      "pos": [
+        -137.35,
+        20.73,
+        -35.0
+      ],
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "placed_near": [
+        {
+          "work": "mem8-conscious-gaia",
+          "similarity": 0.028
+        },
+        {
+          "work": "mem8-monograph",
+          "similarity": 0.019
+        }
+      ],
+      "conflicts": []
+    },
+    "spherepop": {
+      "pos": [
+        -32.91,
+        156.93,
+        56.55
+      ],
+      "status": "active",
+      "first_seen": "2026-09-27T07:23:27",
+      "placed_near": [
+        {
+          "work": "mem8-monograph",
+          "similarity": 0.115
+        },
+        {
+          "work": "mem8-conscious-gaia",
+          "similarity": 0.076
+        },
+        {
+          "work": "cosmological-memory",
+          "similarity": 0.043
+        }
+      ],
+      "conflicts": []
+    },
+    "joy-of-spherepop": {
+      "pos": [
+        88.58,
+        162.46,
+        48.59
+      ],
+      "status": "active",
+      "first_seen": "2026-09-27T07:23:27",
+      "placed_near": [
+        {
+          "work": "spherepop",
+          "similarity": 0.252
+        },
+        {
+          "work": "mem8-conscious-gaia",
+          "similarity": 0.084
+        },
+        {
+          "work": "mem8-monograph",
+          "similarity": 0.053
+        }
+      ],
+      "conflicts": []
+    },
+    "spherepop-os": {
+      "pos": [
+        20.24,
+        227.93,
+        172.7
+      ],
+      "status": "active",
+      "first_seen": "2026-09-27T07:23:27",
+      "placed_near": [
+        {
+          "work": "spherepop",
+          "similarity": 0.182
+        },
+        {
+          "work": "joy-of-spherepop",
+          "similarity": 0.154
+        },
+        {
+          "work": "mem8-conscious-gaia",
+          "similarity": 0.05
+        }
+      ],
+      "conflicts": []
+    },
+    "portable-warrant": {
+      "pos": [
+        -2.04,
+        328.32,
+        8.92
+      ],
+      "status": "active",
+      "first_seen": "2026-09-27T07:23:27",
+      "placed_near": [
+        {
+          "work": "spherepop",
+          "similarity": 0.084
+        },
+        {
+          "work": "joy-of-spherepop",
+          "similarity": 0.048
+        },
+        {
+          "work": "spherepop-os",
+          "similarity": 0.047
+        }
+      ],
+      "conflicts": []
+    },
+    "arranged-conditions": {
+      "pos": [
+        -123.57,
+        108.44,
+        212.51
+      ],
+      "status": "active",
+      "first_seen": "2026-09-27T07:23:27",
+      "placed_near": [
+        {
+          "work": "spherepop",
+          "similarity": 0.066
+        },
+        {
+          "work": "mem8-conscious-gaia",
+          "similarity": 0.064
+        },
+        {
+          "work": "spherepop-os",
+          "similarity": 0.054
+        }
+      ],
+      "conflicts": []
+    },
+    "what-probability-forgets": {
+      "pos": [
+        55.55,
+        113.63,
+        217.79
+      ],
+      "status": "active",
+      "first_seen": "2026-09-27T07:23:27",
+      "placed_near": [
+        {
+          "work": "spherepop",
+          "similarity": 0.08
+        },
+        {
+          "work": "arranged-conditions",
+          "similarity": 0.074
+        },
+        {
+          "work": "joy-of-spherepop",
+          "similarity": 0.067
+        }
+      ],
+      "conflicts": []
+    },
+    "forgotten-specification": {
+      "pos": [
+        -52.66,
+        0.77,
+        330.78
+      ],
+      "status": "active",
+      "first_seen": "2026-09-27T07:23:27",
+      "placed_near": [
+        {
+          "work": "arranged-conditions",
+          "similarity": 0.1
+        },
+        {
+          "work": "mem8-conscious-gaia",
+          "similarity": 0.057
+        },
+        {
+          "work": "what-probability-forgets",
+          "similarity": 0.047
+        }
+      ],
+      "conflicts": []
+    }
+  },
+  "editions": {
+    "mem8-monograph": {
+      "chosen": "works/mem8-monograph/abc4fc9a52.tex",
+      "how": "only",
+      "at": "2026-09-27T07:13:58",
+      "alternatives": []
+    },
+    "mem8-conscious-gaia": {
+      "chosen": "works/mem8-conscious-gaia/acd628d21a.tex",
+      "how": "proposed",
+      "at": "2026-09-27T07:13:58",
+      "alternatives": [
+        "works/mem8-conscious-gaia/d9e8d617b0.tex",
+        "works/mem8-conscious-gaia/ac80748d01.tex",
+        "works/mem8-conscious-gaia/ef0d9f4573.tex",
+        "works/mem8-conscious-gaia/db189d364a.tex",
+        "works/mem8-conscious-gaia/1518ea39d4.tex",
+        "works/mem8-conscious-gaia/9efe5ae514.tex",
+        "works/mem8-conscious-gaia/b2f7155234.tex"
+      ]
+    },
+    "cosmological-memory": {
+      "chosen": "works/cosmological-memory/458d5a43c2.tex",
+      "how": "proposed",
+      "at": "2026-09-27T07:13:58",
+      "alternatives": [
+        "works/cosmological-memory/ec1624aa36.tex",
+        "works/cosmological-memory/e8a91f2973.tex"
+      ]
+    },
+    "spherepop": {
+      "chosen": "works/spherepop/061aaaa34e.tex",
+      "how": "only",
+      "at": "2026-09-27T07:23:27",
+      "alternatives": []
+    },
+    "joy-of-spherepop": {
+      "chosen": "works/joy-of-spherepop/eba530ea8b.tex",
+      "how": "decided",
+      "at": "2026-09-27T09:33:44",
+      "alternatives": [
+        "works/joy-of-spherepop/0e8b97d482.tex"
+      ]
+    },
+    "spherepop-os": {
+      "chosen": "works/spherepop-os/9e4a7995fc.tex",
+      "how": "only",
+      "at": "2026-09-27T07:23:27",
+      "alternatives": []
+    },
+    "portable-warrant": {
+      "chosen": "works/portable-warrant/1aabbe7871/portable-warrant.tex",
+      "how": "only",
+      "at": "2026-09-27T07:23:27",
+      "alternatives": []
+    },
+    "arranged-conditions": {
+      "chosen": "works/arranged-conditions/d920fc30bb.tex",
+      "how": "only",
+      "at": "2026-09-27T07:23:27",
+      "alternatives": []
+    },
+    "what-probability-forgets": {
+      "chosen": "works/what-probability-forgets/ee6cbc8a3e.tex",
+      "how": "only",
+      "at": "2026-09-27T07:23:27",
+      "alternatives": []
+    },
+    "forgotten-specification": {
+      "chosen": "works/forgotten-specification/890b1a4adb.tex",
+      "how": "only",
+      "at": "2026-09-27T07:23:27",
+      "alternatives": []
+    }
+  },
+  "history": [
+    {
+      "at": "2026-09-27T07:13:58",
+      "edition": "mem8-monograph",
+      "chosen": "works/mem8-monograph/abc4fc9a52.tex",
+      "how": "only"
+    },
+    {
+      "at": "2026-09-27T07:13:58",
+      "edition": "mem8-conscious-gaia",
+      "chosen": "works/mem8-conscious-gaia/acd628d21a.tex",
+      "how": "proposed"
+    },
+    {
+      "at": "2026-09-27T07:13:58",
+      "edition": "cosmological-memory",
+      "chosen": "works/cosmological-memory/458d5a43c2.tex",
+      "how": "proposed"
+    },
+    {
+      "at": "2026-09-27T07:13:58",
+      "placed": "mem8-monograph",
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "at": "2026-09-27T07:13:58",
+      "placed": "mem8-conscious-gaia",
+      "pos": [
+        44.97,
+        37.18,
+        171.17
+      ]
+    },
+    {
+      "at": "2026-09-27T07:13:58",
+      "placed": "cosmological-memory",
+      "pos": [
+        -137.35,
+        20.73,
+        -35.0
+      ]
+    },
+    {
+      "at": "2026-09-27T07:23:27",
+      "edition": "spherepop",
+      "chosen": "works/spherepop/061aaaa34e.tex",
+      "how": "only"
+    },
+    {
+      "at": "2026-09-27T07:23:27",
+      "edition": "joy-of-spherepop",
+      "chosen": "works/joy-of-spherepop/0e8b97d482.tex",
+      "how": "proposed"
+    },
+    {
+      "at": "2026-09-27T07:23:27",
+      "edition": "spherepop-os",
+      "chosen": "works/spherepop-os/9e4a7995fc.tex",
+      "how": "only"
+    },
+    {
+      "at": "2026-09-27T07:23:27",
+      "edition": "portable-warrant",
+      "chosen": "works/portable-warrant/1aabbe7871/portable-warrant.tex",
+      "how": "only"
+    },
+    {
+      "at": "2026-09-27T07:23:27",
+      "edition": "arranged-conditions",
+      "chosen": "works/arranged-conditions/d920fc30bb.tex",
+      "how": "only"
+    },
+    {
+      "at": "2026-09-27T07:23:27",
+      "edition": "what-probability-forgets",
+      "chosen": "works/what-probability-forgets/ee6cbc8a3e.tex",
+      "how": "only"
+    },
+    {
+      "at": "2026-09-27T07:23:27",
+      "edition": "forgotten-specification",
+      "chosen": "works/forgotten-specification/890b1a4adb.tex",
+      "how": "only"
+    },
+    {
+      "at": "2026-09-27T07:23:27",
+      "placed": "spherepop",
+      "pos": [
+        -32.91,
+        156.93,
+        56.55
+      ]
+    },
+    {
+      "at": "2026-09-27T07:23:27",
+      "placed": "joy-of-spherepop",
+      "pos": [
+        88.58,
+        162.46,
+        48.59
+      ]
+    },
+    {
+      "at": "2026-09-27T07:23:27",
+      "placed": "spherepop-os",
+      "pos": [
+        20.24,
+        227.93,
+        172.7
+      ]
+    },
+    {
+      "at": "2026-09-27T07:23:27",
+      "placed": "portable-warrant",
+      "pos": [
+        -2.04,
+        328.32,
+        8.92
+      ]
+    },
+    {
+      "at": "2026-09-27T07:23:27",
+      "placed": "arranged-conditions",
+      "pos": [
+        -123.57,
+        108.44,
+        212.51
+      ]
+    },
+    {
+      "at": "2026-09-27T07:23:27",
+      "placed": "what-probability-forgets",
+      "pos": [
+        55.55,
+        113.63,
+        217.79
+      ]
+    },
+    {
+      "at": "2026-09-27T07:23:27",
+      "placed": "forgotten-specification",
+      "pos": [
+        -52.66,
+        0.77,
+        330.78
+      ]
+    },
+    {
+      "at": "2026-09-27T09:33:44",
+      "edition": "joy-of-spherepop",
+      "chosen": "works/joy-of-spherepop/eba530ea8b.tex",
+      "how": "decided"
+    }
+  ]
+}

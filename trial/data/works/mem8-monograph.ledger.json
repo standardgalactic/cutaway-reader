@@ -1,0 +1,1121 @@
+{
+  "work": "mem8-monograph",
+  "version": 1,
+  "nodes": {
+    "G:preface": {
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 8.48,
+      "title": "Preface",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-storage-illusion": {
+      "pos": [
+        0.0,
+        0.0,
+        40.0
+      ],
+      "radius": 5.35,
+      "title": "The Storage Illusion",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:why-storage-cannot-be-primitive": {
+      "pos": [
+        22.34,
+        0.0,
+        40.0
+      ],
+      "radius": 6.54,
+      "title": "Why Storage Cannot Be Primitive",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-storage-illusion",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:what-survives-change": {
+      "pos": [
+        -20.38,
+        0.0,
+        40.0
+      ],
+      "radius": 5.24,
+      "title": "What Survives Change",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-storage-illusion",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:memory-as-reconstruction": {
+      "pos": [
+        0.0,
+        0.0,
+        80.0
+      ],
+      "radius": 5.35,
+      "title": "Memory as Reconstruction",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:reconstruction-operators": {
+      "pos": [
+        20.41,
+        0.0,
+        80.0
+      ],
+      "radius": 5.26,
+      "title": "Reconstruction Operators",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:memory-as-reconstruction",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:admissible-recovery": {
+      "pos": [
+        -20.14,
+        0.0,
+        80.0
+      ],
+      "radius": 5.08,
+      "title": "Admissible Recovery",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:memory-as-reconstruction",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-epistemic-necessity-of-memory": {
+      "pos": [
+        0.0,
+        0.0,
+        120.0
+      ],
+      "radius": 7.4,
+      "title": "The Epistemic Necessity of Memory",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:events-before-objects": {
+      "pos": [
+        0.0,
+        0.0,
+        160.0
+      ],
+      "radius": 5.35,
+      "title": "Events Before Objects",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-primacy-of-events": {
+      "pos": [
+        20.37,
+        0.0,
+        160.0
+      ],
+      "radius": 5.23,
+      "title": "The Primacy of Events",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:events-before-objects",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:histories-as-computational-structures": {
+      "pos": [
+        0.0,
+        0.0,
+        200.0
+      ],
+      "radius": 7.35,
+      "title": "Histories as Computational Structures",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-event-log-ontology": {
+      "pos": [
+        0.0,
+        0.0,
+        240.0
+      ],
+      "radius": 7.44,
+      "title": "The Event-Log Ontology",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:memory-as-recoverable-modal-structure": {
+      "pos": [
+        0.0,
+        0.0,
+        280.0
+      ],
+      "radius": 5.45,
+      "title": "Memory as Recoverable Modal Structure",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-memory-field": {
+      "pos": [
+        20.01,
+        0.0,
+        280.0
+      ],
+      "radius": 4.89,
+      "title": "The Memory Field",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:memory-as-recoverable-modal-structure",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:memory-is-not-substrate-identity": {
+      "pos": [
+        -20.41,
+        0.0,
+        280.0
+      ],
+      "radius": 5.16,
+      "title": "Memory Is Not Substrate Identity",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:memory-as-recoverable-modal-structure",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:ch:spectral": {
+      "pos": [
+        0.0,
+        0.0,
+        320.0
+      ],
+      "radius": 5.53,
+      "title": "Spectral Decomposition of Memory Fields",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-memory-operator": {
+      "pos": [
+        22.0,
+        0.0,
+        320.0
+      ],
+      "radius": 6.14,
+      "title": "The Memory Operator",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:ch:spectral",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:time-evolution-in-the-modal-basis": {
+      "pos": [
+        -20.66,
+        0.0,
+        320.0
+      ],
+      "radius": 5.24,
+      "title": "Time Evolution in the Modal Basis",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:ch:spectral",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-modal-persistence-theorem": {
+      "pos": [
+        12.07,
+        14.74,
+        328.45
+      ],
+      "radius": 6.21,
+      "title": "The Modal Persistence Theorem",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:ch:spectral",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:dimensional-amplification-and-witness-coordinate": {
+      "pos": [
+        0.0,
+        0.0,
+        360.0
+      ],
+      "radius": 5.45,
+      "title": "Dimensional Amplification and Witness Coordinates",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:witness-expansion": {
+      "pos": [
+        22.62,
+        0.0,
+        360.0
+      ],
+      "radius": 6.63,
+      "title": "Witness Expansion",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:dimensional-amplification-and-witness-coordinate",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:resonant-modal-recall": {
+      "pos": [
+        0.0,
+        0.0,
+        400.0
+      ],
+      "radius": 5.35,
+      "title": "Resonant Modal Recall",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:cue-coupling-and-modal-dynamics": {
+      "pos": [
+        20.23,
+        0.0,
+        400.0
+      ],
+      "radius": 5.14,
+      "title": "Cue Coupling and Modal Dynamics",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:resonant-modal-recall",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-recall-threshold": {
+      "pos": [
+        -20.27,
+        0.0,
+        400.0
+      ],
+      "radius": 5.16,
+      "title": "The Recall Threshold",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:resonant-modal-recall",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:forgetting-as-overdamping-repair-as-resonance-re": {
+      "pos": [
+        0.0,
+        0.0,
+        440.0
+      ],
+      "radius": 5.53,
+      "title": "Forgetting as Overdamping, Repair as Resonance Restoration",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:overdamped-modes": {
+      "pos": [
+        20.45,
+        0.0,
+        440.0
+      ],
+      "radius": 5.1,
+      "title": "Overdamped Modes",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:forgetting-as-overdamping-repair-as-resonance-re",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:repair-as-damping-reduction": {
+      "pos": [
+        -20.27,
+        0.0,
+        440.0
+      ],
+      "radius": 4.98,
+      "title": "Repair as Damping Reduction",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:forgetting-as-overdamping-repair-as-resonance-re",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:memory-outside-the-brain": {
+      "pos": [
+        0.0,
+        0.0,
+        480.0
+      ],
+      "radius": 5.4,
+      "title": "Memory Outside the Brain",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-ecological-extension": {
+      "pos": [
+        21.48,
+        0.0,
+        480.0
+      ],
+      "radius": 5.92,
+      "title": "The Ecological Extension",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:memory-outside-the-brain",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:habitat-versus-archive": {
+      "pos": [
+        -40.0,
+        0.0,
+        480.0
+      ],
+      "radius": 7.74,
+      "title": "Habitat Versus Archive",
+      "role": "comparison",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:memory-as-flux-maintenance": {
+      "pos": [
+        0.0,
+        0.0,
+        520.0
+      ],
+      "radius": 5.4,
+      "title": "Memory as Flux Maintenance",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:persistence-through-replacement": {
+      "pos": [
+        21.48,
+        0.0,
+        520.0
+      ],
+      "radius": 5.92,
+      "title": "Persistence Through Replacement",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:memory-as-flux-maintenance",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:two-transport-modes-circulation-and-capture": {
+      "pos": [
+        -21.38,
+        0.0,
+        520.0
+      ],
+      "radius": 5.85,
+      "title": "Two Transport Modes: Circulation and Capture",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:memory-as-flux-maintenance",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:forgetting-as-structural-deformation": {
+      "pos": [
+        0.0,
+        0.0,
+        560.0
+      ],
+      "radius": 6.88,
+      "title": "Forgetting as Structural Deformation",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:persistent-anomalies-and-scientific-memory": {
+      "pos": [
+        0.0,
+        0.0,
+        600.0
+      ],
+      "radius": 7.48,
+      "title": "Persistent Anomalies and Scientific Memory",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:memory-machines": {
+      "pos": [
+        0.0,
+        0.0,
+        640.0
+      ],
+      "radius": 7.5,
+      "title": "Memory Machines",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:event-log-computation-and-spherepop": {
+      "pos": [
+        0.0,
+        0.0,
+        680.0
+      ],
+      "radius": 7.68,
+      "title": "Event-Log Computation and Spherepop",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:ch:rust": {
+      "pos": [
+        0.0,
+        0.0,
+        720.0
+      ],
+      "radius": 5.57,
+      "title": "A Concrete Instantiation: The MEM|8 Rust Backend",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:from-theory-to-implementation": {
+      "pos": [
+        20.04,
+        0.0,
+        720.0
+      ],
+      "radius": 4.79,
+      "title": "From Theory to Implementation",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:ch:rust",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:wave-coordinates-as-witness-expansion": {
+      "pos": [
+        -21.21,
+        0.0,
+        720.0
+      ],
+      "radius": 5.57,
+      "title": "Wave Coordinates as Witness Expansion",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:ch:rust",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:query-region-as-ecphoric-activation": {
+      "pos": [
+        12.54,
+        15.31,
+        728.78
+      ],
+      "radius": 6.74,
+      "title": "query_region as Ecphoric Activation",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:ch:rust",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-storage-illusion-residue": {
+      "pos": [
+        -11.93,
+        14.56,
+        728.35
+      ],
+      "radius": 5.99,
+      "title": "The Storage Illusion Residue",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:ch:rust",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:toward-a-fully-theory-conformant-backend": {
+      "pos": [
+        11.62,
+        -14.18,
+        711.87
+      ],
+      "radius": 5.61,
+      "title": "Toward a Fully Theory-Conformant Backend",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:ch:rust",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-halting-problem-and-historical-persistence": {
+      "pos": [
+        0.0,
+        0.0,
+        760.0
+      ],
+      "radius": 7.41,
+      "title": "The Halting Problem and Historical Persistence",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:institutional-memory": {
+      "pos": [
+        0.0,
+        0.0,
+        800.0
+      ],
+      "radius": 7.13,
+      "title": "Institutional Memory",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:scientific-memory": {
+      "pos": [
+        0.0,
+        0.0,
+        840.0
+      ],
+      "radius": 7.29,
+      "title": "Scientific Memory",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:cultural-memory": {
+      "pos": [
+        0.0,
+        0.0,
+        880.0
+      ],
+      "radius": 7.12,
+      "title": "Cultural Memory",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:memory-before-representation": {
+      "pos": [
+        0.0,
+        0.0,
+        920.0
+      ],
+      "radius": 6.98,
+      "title": "Memory Before Representation",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:memory-before-identity": {
+      "pos": [
+        0.0,
+        0.0,
+        960.0
+      ],
+      "radius": 7.36,
+      "title": "Memory Before Identity",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:ch:prediction": {
+      "pos": [
+        0.0,
+        0.0,
+        1000.0
+      ],
+      "radius": 6.37,
+      "title": "Memory Before Prediction",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:prediction-as-forward-reconstruction": {
+      "pos": [
+        22.56,
+        0.0,
+        1000.0
+      ],
+      "radius": 5.67,
+      "title": "Prediction as Forward Reconstruction",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:ch:prediction",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:predictive-coding-as-memory-resonance": {
+      "pos": [
+        -22.48,
+        0.0,
+        1000.0
+      ],
+      "radius": 5.62,
+      "title": "Predictive Coding as Memory Resonance",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:ch:prediction",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:reservoir-computing-as-mem-8-instantiation": {
+      "pos": [
+        11.97,
+        14.61,
+        1008.38
+      ],
+      "radius": 5.24,
+      "title": "Reservoir Computing as MEM|8 Instantiation",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:ch:prediction",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-inversion": {
+      "pos": [
+        -11.75,
+        14.35,
+        1008.23
+      ],
+      "radius": 4.98,
+      "title": "The Inversion",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:ch:prediction",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:memory-before-time": {
+      "pos": [
+        0.0,
+        0.0,
+        1040.0
+      ],
+      "radius": 8.17,
+      "title": "Memory Before Time",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    }
+  },
+  "labels": {
+    "ch:spectral": "L:ch:spectral",
+    "ch:rust": "L:ch:rust",
+    "ch:prediction": "L:ch:prediction"
+  },
+  "aliases": {
+    "section||preface": [
+      "G:preface"
+    ],
+    "section||the-storage-illusion": [
+      "G:the-storage-illusion"
+    ],
+    "subsection|G:the-storage-illusion|why-storage-cannot-be-primitive": [
+      "G:why-storage-cannot-be-primitive"
+    ],
+    "subsection|G:the-storage-illusion|what-survives-change": [
+      "G:what-survives-change"
+    ],
+    "section||memory-as-reconstruction": [
+      "G:memory-as-reconstruction"
+    ],
+    "subsection|G:memory-as-reconstruction|reconstruction-operators": [
+      "G:reconstruction-operators"
+    ],
+    "subsection|G:memory-as-reconstruction|admissible-recovery": [
+      "G:admissible-recovery"
+    ],
+    "section||the-epistemic-necessity-of-memory": [
+      "G:the-epistemic-necessity-of-memory"
+    ],
+    "section||events-before-objects": [
+      "G:events-before-objects"
+    ],
+    "subsection|G:events-before-objects|the-primacy-of-events": [
+      "G:the-primacy-of-events"
+    ],
+    "section||histories-as-computational-structures": [
+      "G:histories-as-computational-structures"
+    ],
+    "section||the-event-log-ontology": [
+      "G:the-event-log-ontology"
+    ],
+    "section||memory-as-recoverable-modal-structure": [
+      "G:memory-as-recoverable-modal-structure"
+    ],
+    "subsection|G:memory-as-recoverable-modal-structure|the-memory-field": [
+      "G:the-memory-field"
+    ],
+    "subsection|G:memory-as-recoverable-modal-structure|memory-is-not-substrate-identity": [
+      "G:memory-is-not-substrate-identity"
+    ],
+    "section||spectral-decomposition-of-memory-fields": [
+      "L:ch:spectral"
+    ],
+    "subsection|L:ch:spectral|the-memory-operator": [
+      "G:the-memory-operator"
+    ],
+    "subsection|L:ch:spectral|time-evolution-in-the-modal-basis": [
+      "G:time-evolution-in-the-modal-basis"
+    ],
+    "subsection|L:ch:spectral|the-modal-persistence-theorem": [
+      "G:the-modal-persistence-theorem"
+    ],
+    "section||dimensional-amplification-and-witness-coordinate": [
+      "G:dimensional-amplification-and-witness-coordinate"
+    ],
+    "subsection|G:dimensional-amplification-and-witness-coordinate|witness-expansion": [
+      "G:witness-expansion"
+    ],
+    "section||resonant-modal-recall": [
+      "G:resonant-modal-recall"
+    ],
+    "subsection|G:resonant-modal-recall|cue-coupling-and-modal-dynamics": [
+      "G:cue-coupling-and-modal-dynamics"
+    ],
+    "subsection|G:resonant-modal-recall|the-recall-threshold": [
+      "G:the-recall-threshold"
+    ],
+    "section||forgetting-as-overdamping-repair-as-resonance-re": [
+      "G:forgetting-as-overdamping-repair-as-resonance-re"
+    ],
+    "subsection|G:forgetting-as-overdamping-repair-as-resonance-re|overdamped-modes": [
+      "G:overdamped-modes"
+    ],
+    "subsection|G:forgetting-as-overdamping-repair-as-resonance-re|repair-as-damping-reduction": [
+      "G:repair-as-damping-reduction"
+    ],
+    "section||memory-outside-the-brain": [
+      "G:memory-outside-the-brain"
+    ],
+    "subsection|G:memory-outside-the-brain|the-ecological-extension": [
+      "G:the-ecological-extension"
+    ],
+    "section||habitat-versus-archive": [
+      "G:habitat-versus-archive"
+    ],
+    "section||memory-as-flux-maintenance": [
+      "G:memory-as-flux-maintenance"
+    ],
+    "subsection|G:memory-as-flux-maintenance|persistence-through-replacement": [
+      "G:persistence-through-replacement"
+    ],
+    "subsection|G:memory-as-flux-maintenance|two-transport-modes-circulation-and-capture": [
+      "G:two-transport-modes-circulation-and-capture"
+    ],
+    "section||forgetting-as-structural-deformation": [
+      "G:forgetting-as-structural-deformation"
+    ],
+    "section||persistent-anomalies-and-scientific-memory": [
+      "G:persistent-anomalies-and-scientific-memory"
+    ],
+    "section||memory-machines": [
+      "G:memory-machines"
+    ],
+    "section||event-log-computation-and-spherepop": [
+      "G:event-log-computation-and-spherepop"
+    ],
+    "section||a-concrete-instantiation-the-mem-8-rust-backend": [
+      "L:ch:rust"
+    ],
+    "subsection|L:ch:rust|from-theory-to-implementation": [
+      "G:from-theory-to-implementation"
+    ],
+    "subsection|L:ch:rust|wave-coordinates-as-witness-expansion": [
+      "G:wave-coordinates-as-witness-expansion"
+    ],
+    "subsection|L:ch:rust|query-region-as-ecphoric-activation": [
+      "G:query-region-as-ecphoric-activation"
+    ],
+    "subsection|L:ch:rust|the-storage-illusion-residue": [
+      "G:the-storage-illusion-residue"
+    ],
+    "subsection|L:ch:rust|toward-a-fully-theory-conformant-backend": [
+      "G:toward-a-fully-theory-conformant-backend"
+    ],
+    "section||the-halting-problem-and-historical-persistence": [
+      "G:the-halting-problem-and-historical-persistence"
+    ],
+    "section||institutional-memory": [
+      "G:institutional-memory"
+    ],
+    "section||scientific-memory": [
+      "G:scientific-memory"
+    ],
+    "section||cultural-memory": [
+      "G:cultural-memory"
+    ],
+    "section||memory-before-representation": [
+      "G:memory-before-representation"
+    ],
+    "section||memory-before-identity": [
+      "G:memory-before-identity"
+    ],
+    "section||memory-before-prediction": [
+      "L:ch:prediction"
+    ],
+    "subsection|L:ch:prediction|prediction-as-forward-reconstruction": [
+      "G:prediction-as-forward-reconstruction"
+    ],
+    "subsection|L:ch:prediction|predictive-coding-as-memory-resonance": [
+      "G:predictive-coding-as-memory-resonance"
+    ],
+    "subsection|L:ch:prediction|reservoir-computing-as-mem-8-instantiation": [
+      "G:reservoir-computing-as-mem-8-instantiation"
+    ],
+    "subsection|L:ch:prediction|the-inversion": [
+      "G:the-inversion"
+    ],
+    "section||memory-before-time": [
+      "G:memory-before-time"
+    ]
+  },
+  "history": [
+    {
+      "at": "2026-09-27T07:13:58",
+      "added": [
+        "G:preface",
+        "G:the-storage-illusion",
+        "G:why-storage-cannot-be-primitive",
+        "G:what-survives-change",
+        "G:memory-as-reconstruction",
+        "G:reconstruction-operators",
+        "G:admissible-recovery",
+        "G:the-epistemic-necessity-of-memory",
+        "G:events-before-objects",
+        "G:the-primacy-of-events",
+        "G:histories-as-computational-structures",
+        "G:the-event-log-ontology",
+        "G:memory-as-recoverable-modal-structure",
+        "G:the-memory-field",
+        "G:memory-is-not-substrate-identity",
+        "L:ch:spectral",
+        "G:the-memory-operator",
+        "G:time-evolution-in-the-modal-basis",
+        "G:the-modal-persistence-theorem",
+        "G:dimensional-amplification-and-witness-coordinate",
+        "G:witness-expansion",
+        "G:resonant-modal-recall",
+        "G:cue-coupling-and-modal-dynamics",
+        "G:the-recall-threshold",
+        "G:forgetting-as-overdamping-repair-as-resonance-re",
+        "G:overdamped-modes",
+        "G:repair-as-damping-reduction",
+        "G:memory-outside-the-brain",
+        "G:the-ecological-extension",
+        "G:habitat-versus-archive",
+        "G:memory-as-flux-maintenance",
+        "G:persistence-through-replacement",
+        "G:two-transport-modes-circulation-and-capture",
+        "G:forgetting-as-structural-deformation",
+        "G:persistent-anomalies-and-scientific-memory",
+        "G:memory-machines",
+        "G:event-log-computation-and-spherepop",
+        "L:ch:rust",
+        "G:from-theory-to-implementation",
+        "G:wave-coordinates-as-witness-expansion",
+        "G:query-region-as-ecphoric-activation",
+        "G:the-storage-illusion-residue",
+        "G:toward-a-fully-theory-conformant-backend",
+        "G:the-halting-problem-and-historical-persistence",
+        "G:institutional-memory",
+        "G:scientific-memory",
+        "G:cultural-memory",
+        "G:memory-before-representation",
+        "G:memory-before-identity",
+        "L:ch:prediction",
+        "G:prediction-as-forward-reconstruction",
+        "G:predictive-coding-as-memory-resonance",
+        "G:reservoir-computing-as-mem-8-instantiation",
+        "G:the-inversion",
+        "G:memory-before-time"
+      ],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:21:20",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:22:17",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:23:27",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:24:02",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:24:20",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:25:06",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T09:07:55",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T09:08:29",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T09:38:34",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    }
+  ]
+}

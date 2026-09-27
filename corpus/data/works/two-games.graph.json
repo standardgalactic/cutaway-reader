@@ -1,0 +1,189 @@
+{
+  "work": "two-games",
+  "nodes": [
+    {
+      "id": "L:sec:games-intro",
+      "title": "A Long Convergence",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 34,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 0,
+      "text": [
+        "The idea of flying through a body of writing did not arrive at once. It gathered over several projects, each contributing one piece, until a concrete object could hold them together."
+      ]
+    },
+    {
+      "id": "L:sec:games-haplopraxis",
+      "title": "Haplopraxis",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 44,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 1,
+      "text": [
+        "The earliest form joined Stars!, Descent, typing drills and simulation in a single game. Stars! supplied colonies, research, trade routes and processes that ran unattended; Descent supplied embodied exploration. Even then the large persistent system was kept distinct from local action."
+      ]
+    },
+    {
+      "id": "L:sec:games-polyxan",
+      "title": "Polyxan and Semantic Space",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 48,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 2,
+      "text": [
+        "Polyxan moved the subject from games to knowledge: papers, simulations and essays with provenance, typed links and versioning that does not depend on files. Later notes projected embeddings into a navigable starspace with finite travel times and a local frame for each reader."
+      ]
+    },
+    {
+      "id": "L:sec:games-trajectories",
+      "title": "Navigation as Reasoning",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": true,
+      "part": null,
+      "words": 47,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 3,
+      "text": [
+        "Descent gives a pilot three translations and three rotations, and the pilot never computes a route. Simple local controls accumulate into whatever trajectory the task needs. The trajectory essays generalised this: inference is navigation, not lookup, and concepts are reached by shortened paths."
+      ]
+    },
+    {
+      "id": "L:sec:games-loops",
+      "title": "Two Loops",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 43,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 4,
+      "text": [
+        "The automap is a second perception-and-control loop. The first is local: wall, doorway, corridor. The second is topological: cycles, escape routes and shortcuts. A mine is remembered as a graph, not as a list of directions, see [sec:games-trajectories]."
+      ]
+    },
+    {
+      "id": "L:sec:games-routes",
+      "title": "Repeat Routes and Policies",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 48,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 5,
+      "text": [
+        "Stars! freighters on fixed routes, patrol limits and aggression settings describe a progression from direct control to repeatable routes, to bounded policies, to trusting the infrastructure while turns advance. Cruise in the reader is the second step; route policies are the third."
+      ]
+    },
+    {
+      "id": "L:sec:games-new",
+      "title": "What Was New",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 47,
+      "image": null,
+      "threads": [
+        {
+          "kind": "extension",
+          "text": "trace the Plenum Ascent prototype as a separate lineage"
+        }
+      ],
+      "cites": [],
+      "order": 6,
+      "text": [
+        "The generator was new: one level per essay, sections as chambers, references as tunnels, appendices as shafts, and fixed axes shared by every level. So were the reassigned verbs and the rule that revision may enlarge a mine but never rearrange it."
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "L:sec:games-intro",
+      "to": "L:sec:games-haplopraxis",
+      "kind": "sequence",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:games-haplopraxis",
+      "to": "L:sec:games-polyxan",
+      "kind": "sequence",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:games-polyxan",
+      "to": "L:sec:games-trajectories",
+      "kind": "sequence",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:games-trajectories",
+      "to": "L:sec:games-loops",
+      "kind": "sequence",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:games-loops",
+      "to": "L:sec:games-routes",
+      "kind": "sequence",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:games-routes",
+      "to": "L:sec:games-new",
+      "kind": "sequence",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:games-loops",
+      "to": "L:sec:games-trajectories",
+      "kind": "reference",
+      "label": "sec:games-trajectories",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:games-new",
+      "to": "work:memorable-interfaces#sec:intro",
+      "kind": "exit",
+      "traversal": "two-way"
+    }
+  ],
+  "title": "Two Games in One Reader",
+  "bibliography": {},
+  "sources": [
+    "two-games.tex"
+  ],
+  "warnings": [],
+  "source_sha256": "fb2f6d15116cdc7928f88414a82a4c108963de1b74ef98c60818bbc175ea8d79",
+  "miner": "7ed639c1b254"
+}

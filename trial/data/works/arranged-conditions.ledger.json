@@ -1,0 +1,932 @@
+{
+  "work": "arranged-conditions",
+  "version": 1,
+  "nodes": {
+    "G:the-argument-as-presented": {
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 9.53,
+      "title": "The Argument as Presented",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-strongest-point-attribution": {
+      "pos": [
+        0.0,
+        0.0,
+        40.0
+      ],
+      "radius": 8.53,
+      "title": "The Strongest Point: Attribution",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:where-the-functional-account-overreaches": {
+      "pos": [
+        0.0,
+        0.0,
+        80.0
+      ],
+      "radius": 8.77,
+      "title": "Where the Functional Account Overreaches",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:what-part-i-establishes": {
+      "pos": [
+        0.0,
+        0.0,
+        120.0
+      ],
+      "radius": 7.42,
+      "title": "What Part I Establishes",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:from-volition-to-admissible-continuation": {
+      "pos": [
+        0.0,
+        0.0,
+        160.0
+      ],
+      "radius": 8.22,
+      "title": "From Volition to Admissible Continuation",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-conditions-are-the-object": {
+      "pos": [
+        0.0,
+        0.0,
+        200.0
+      ],
+      "radius": 8.48,
+      "title": "The Conditions Are the Object",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:repair-not-reassurance": {
+      "pos": [
+        0.0,
+        0.0,
+        240.0
+      ],
+      "radius": 8.6,
+      "title": "Repair, Not Reassurance",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:a-better-reading-of-the-demonstrations": {
+      "pos": [
+        0.0,
+        0.0,
+        280.0
+      ],
+      "radius": 8.67,
+      "title": "A Better Reading of the Demonstrations",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:what-can-be-checked": {
+      "pos": [
+        0.0,
+        0.0,
+        320.0
+      ],
+      "radius": 9.12,
+      "title": "What Can Be Checked",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:a-worked-case-the-swarm": {
+      "pos": [
+        0.0,
+        0.0,
+        360.0
+      ],
+      "radius": 9.45,
+      "title": "A Worked Case: The Swarm",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:a-worked-case-the-disputed-result": {
+      "pos": [
+        0.0,
+        0.0,
+        400.0
+      ],
+      "radius": 8.64,
+      "title": "A Worked Case: The Disputed Result",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:present-harms-as-gate-failures": {
+      "pos": [
+        0.0,
+        0.0,
+        440.0
+      ],
+      "radius": 8.66,
+      "title": "Present Harms as Gate Failures",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:objections-and-replies": {
+      "pos": [
+        40.0,
+        0.0,
+        440.0
+      ],
+      "radius": 9.41,
+      "title": "Objections and Replies",
+      "role": "comparison",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:agreement-and-departure": {
+      "pos": [
+        0.0,
+        0.0,
+        480.0
+      ],
+      "radius": 7.86,
+      "title": "Agreement and Departure",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:conclusion": {
+      "pos": [
+        0.0,
+        0.0,
+        520.0
+      ],
+      "radius": 8.33,
+      "title": "Conclusion",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:app:A": {
+      "pos": [
+        0.0,
+        -40.0,
+        520.0
+      ],
+      "radius": 5.4,
+      "title": "Admissible Continuation Systems",
+      "role": "appendix",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:primitives": {
+      "pos": [
+        21.43,
+        -40.0,
+        520.0
+      ],
+      "radius": 5.89,
+      "title": "Primitives",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:A",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:trajectories-and-reachability": {
+      "pos": [
+        -20.04,
+        -40.0,
+        520.0
+      ],
+      "radius": 4.96,
+      "title": "Trajectories and reachability",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:A",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:consequence-classes-and-possibility-claims": {
+      "pos": [
+        11.39,
+        -26.1,
+        527.97
+      ],
+      "radius": 5.5,
+      "title": "Consequence classes and possibility claims",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:A",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-record": {
+      "pos": [
+        -10.68,
+        -26.96,
+        527.48
+      ],
+      "radius": 4.64,
+      "title": "The record",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:A",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:app:B": {
+      "pos": [
+        0.0,
+        -80.0,
+        520.0
+      ],
+      "radius": 5.45,
+      "title": "Attribution Across Composed Systems",
+      "role": "appendix",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:setup": {
+      "pos": [
+        20.68,
+        -80.0,
+        520.0
+      ],
+      "radius": 5.34,
+      "title": "Setup",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:B",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:attribution-functionals": {
+      "pos": [
+        -20.43,
+        -80.0,
+        520.0
+      ],
+      "radius": 5.17,
+      "title": "Attribution functionals",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:B",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:non-identifiability-of-sole-attribution": {
+      "pos": [
+        12.08,
+        -65.25,
+        528.46
+      ],
+      "radius": 6.3,
+      "title": "Non-identifiability of sole attribution",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:B",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:prop:B3": {
+      "pos": [
+        -11.24,
+        -66.28,
+        527.87
+      ],
+      "radius": 5.27,
+      "title": "Narrowing by interventions",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:B",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:valence-invariance": {
+      "pos": [
+        11.2,
+        -93.67,
+        512.16
+      ],
+      "radius": 5.22,
+      "title": "Valence invariance",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:B",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:app:C": {
+      "pos": [
+        0.0,
+        -120.0,
+        520.0
+      ],
+      "radius": 5.45,
+      "title": "Experimental-to-Deployment Correspondence",
+      "role": "appendix",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:configurations-and-the-correspondence-vector": {
+      "pos": [
+        21.15,
+        -120.0,
+        520.0
+      ],
+      "radius": 5.65,
+      "title": "Configurations and the correspondence vector",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:C",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:a-transfer-bound": {
+      "pos": [
+        -20.49,
+        -120.0,
+        520.0
+      ],
+      "radius": 5.21,
+      "title": "A transfer bound",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:C",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:estimating-the-sensitivities": {
+      "pos": [
+        11.12,
+        -106.42,
+        527.79
+      ],
+      "radius": 5.13,
+      "title": "Estimating the sensitivities",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:C",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:app:D": {
+      "pos": [
+        0.0,
+        -160.0,
+        520.0
+      ],
+      "radius": 5.4,
+      "title": "Reversibility and Commitment",
+      "role": "appendix",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:definitions": {
+      "pos": [
+        20.85,
+        -160.0,
+        520.0
+      ],
+      "radius": 5.5,
+      "title": "Definitions",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:D",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:prop:D2": {
+      "pos": [
+        -20.59,
+        -160.0,
+        520.0
+      ],
+      "radius": 5.33,
+      "title": "An irreducible floor",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:D",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:why-likelihood-alone-misranks": {
+      "pos": [
+        11.17,
+        -146.37,
+        527.82
+      ],
+      "radius": 5.23,
+      "title": "Why likelihood alone misranks",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:D",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:committing-uncertainty": {
+      "pos": [
+        -10.83,
+        -146.78,
+        527.58
+      ],
+      "radius": 4.82,
+      "title": "Committing uncertainty",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:D",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:app:E": {
+      "pos": [
+        0.0,
+        -200.0,
+        520.0
+      ],
+      "radius": 5.35,
+      "title": "Gate Composition",
+      "role": "appendix",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:conjunctive-architectures": {
+      "pos": [
+        20.97,
+        -200.0,
+        520.0
+      ],
+      "radius": 5.63,
+      "title": "Conjunctive architectures",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:E",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:correlated-gates": {
+      "pos": [
+        -22.07,
+        -200.0,
+        520.0
+      ],
+      "radius": 6.36,
+      "title": "Correlated gates",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:E",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:bypassable-gates": {
+      "pos": [
+        11.24,
+        -186.28,
+        527.87
+      ],
+      "radius": 5.37,
+      "title": "Bypassable gates",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:E",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:thm:E1": {
+      "pos": [
+        -11.26,
+        -186.26,
+        527.88
+      ],
+      "radius": 5.39,
+      "title": "When added oversight does not reduce risk",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:E",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:app:F": {
+      "pos": [
+        0.0,
+        -240.0,
+        520.0
+      ],
+      "radius": 5.45,
+      "title": "Falsifiability and Interval Claims",
+      "role": "appendix",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:bounded-claims": {
+      "pos": [
+        22.93,
+        -240.0,
+        520.0
+      ],
+      "radius": 6.84,
+      "title": "Bounded claims",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:F",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:prop:F2": {
+      "pos": [
+        -20.75,
+        -240.0,
+        520.0
+      ],
+      "radius": 5.38,
+      "title": "What frequency evidence can certify",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:F",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:terminal-consequence-classes": {
+      "pos": [
+        12.23,
+        -225.07,
+        528.56
+      ],
+      "radius": 6.48,
+      "title": "Terminal consequence classes",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:F",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:tiered-evidence-standards": {
+      "pos": [
+        -11.22,
+        -226.3,
+        527.86
+      ],
+      "radius": 5.25,
+      "title": "Tiered evidence standards",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:app:F",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    }
+  },
+  "labels": {
+    "app:A": "L:app:A",
+    "app:B": "L:app:B",
+    "prop:B3": "L:prop:B3",
+    "app:C": "L:app:C",
+    "app:D": "L:app:D",
+    "prop:D2": "L:prop:D2",
+    "app:E": "L:app:E",
+    "thm:E1": "L:thm:E1",
+    "app:F": "L:app:F",
+    "prop:F2": "L:prop:F2"
+  },
+  "aliases": {
+    "section||the-argument-as-presented": [
+      "G:the-argument-as-presented"
+    ],
+    "section||the-strongest-point-attribution": [
+      "G:the-strongest-point-attribution"
+    ],
+    "section||where-the-functional-account-overreaches": [
+      "G:where-the-functional-account-overreaches"
+    ],
+    "section||what-part-i-establishes": [
+      "G:what-part-i-establishes"
+    ],
+    "section||from-volition-to-admissible-continuation": [
+      "G:from-volition-to-admissible-continuation"
+    ],
+    "section||the-conditions-are-the-object": [
+      "G:the-conditions-are-the-object"
+    ],
+    "section||repair-not-reassurance": [
+      "G:repair-not-reassurance"
+    ],
+    "section||a-better-reading-of-the-demonstrations": [
+      "G:a-better-reading-of-the-demonstrations"
+    ],
+    "section||what-can-be-checked": [
+      "G:what-can-be-checked"
+    ],
+    "section||a-worked-case-the-swarm": [
+      "G:a-worked-case-the-swarm"
+    ],
+    "section||a-worked-case-the-disputed-result": [
+      "G:a-worked-case-the-disputed-result"
+    ],
+    "section||present-harms-as-gate-failures": [
+      "G:present-harms-as-gate-failures"
+    ],
+    "section||objections-and-replies": [
+      "G:objections-and-replies"
+    ],
+    "section||agreement-and-departure": [
+      "G:agreement-and-departure"
+    ],
+    "section||conclusion": [
+      "G:conclusion"
+    ],
+    "section||admissible-continuation-systems": [
+      "L:app:A"
+    ],
+    "subsection|L:app:A|primitives": [
+      "G:primitives"
+    ],
+    "subsection|L:app:A|trajectories-and-reachability": [
+      "G:trajectories-and-reachability"
+    ],
+    "subsection|L:app:A|consequence-classes-and-possibility-claims": [
+      "G:consequence-classes-and-possibility-claims"
+    ],
+    "subsection|L:app:A|the-record": [
+      "G:the-record"
+    ],
+    "section||attribution-across-composed-systems": [
+      "L:app:B"
+    ],
+    "subsection|L:app:B|setup": [
+      "G:setup"
+    ],
+    "subsection|L:app:B|attribution-functionals": [
+      "G:attribution-functionals"
+    ],
+    "subsection|L:app:B|non-identifiability-of-sole-attribution": [
+      "G:non-identifiability-of-sole-attribution"
+    ],
+    "subsection|L:app:B|narrowing-by-interventions": [
+      "L:prop:B3"
+    ],
+    "subsection|L:app:B|valence-invariance": [
+      "G:valence-invariance"
+    ],
+    "section||experimental-to-deployment-correspondence": [
+      "L:app:C"
+    ],
+    "subsection|L:app:C|configurations-and-the-correspondence-vector": [
+      "G:configurations-and-the-correspondence-vector"
+    ],
+    "subsection|L:app:C|a-transfer-bound": [
+      "G:a-transfer-bound"
+    ],
+    "subsection|L:app:C|estimating-the-sensitivities": [
+      "G:estimating-the-sensitivities"
+    ],
+    "section||reversibility-and-commitment": [
+      "L:app:D"
+    ],
+    "subsection|L:app:D|definitions": [
+      "G:definitions"
+    ],
+    "subsection|L:app:D|an-irreducible-floor": [
+      "L:prop:D2"
+    ],
+    "subsection|L:app:D|why-likelihood-alone-misranks": [
+      "G:why-likelihood-alone-misranks"
+    ],
+    "subsection|L:app:D|committing-uncertainty": [
+      "G:committing-uncertainty"
+    ],
+    "section||gate-composition": [
+      "L:app:E"
+    ],
+    "subsection|L:app:E|conjunctive-architectures": [
+      "G:conjunctive-architectures"
+    ],
+    "subsection|L:app:E|correlated-gates": [
+      "G:correlated-gates"
+    ],
+    "subsection|L:app:E|bypassable-gates": [
+      "G:bypassable-gates"
+    ],
+    "subsection|L:app:E|when-added-oversight-does-not-reduce-risk": [
+      "L:thm:E1"
+    ],
+    "section||falsifiability-and-interval-claims": [
+      "L:app:F"
+    ],
+    "subsection|L:app:F|bounded-claims": [
+      "G:bounded-claims"
+    ],
+    "subsection|L:app:F|what-frequency-evidence-can-certify": [
+      "L:prop:F2"
+    ],
+    "subsection|L:app:F|terminal-consequence-classes": [
+      "G:terminal-consequence-classes"
+    ],
+    "subsection|L:app:F|tiered-evidence-standards": [
+      "G:tiered-evidence-standards"
+    ]
+  },
+  "history": [
+    {
+      "at": "2026-09-27T07:21:21",
+      "added": [
+        "G:the-argument-as-presented",
+        "G:the-strongest-point-attribution",
+        "G:where-the-functional-account-overreaches",
+        "G:what-part-i-establishes",
+        "G:from-volition-to-admissible-continuation",
+        "G:the-conditions-are-the-object",
+        "G:repair-not-reassurance",
+        "G:a-better-reading-of-the-demonstrations",
+        "G:what-can-be-checked",
+        "G:a-worked-case-the-swarm",
+        "G:a-worked-case-the-disputed-result",
+        "G:present-harms-as-gate-failures",
+        "G:objections-and-replies",
+        "G:agreement-and-departure",
+        "G:conclusion",
+        "L:app:A",
+        "G:primitives",
+        "G:trajectories-and-reachability",
+        "G:consequence-classes-and-possibility-claims",
+        "G:the-record",
+        "L:app:B",
+        "G:setup",
+        "G:attribution-functionals",
+        "G:non-identifiability-of-sole-attribution",
+        "L:prop:B3",
+        "G:valence-invariance",
+        "L:app:C",
+        "G:configurations-and-the-correspondence-vector",
+        "G:a-transfer-bound",
+        "G:estimating-the-sensitivities",
+        "L:app:D",
+        "G:definitions",
+        "L:prop:D2",
+        "G:why-likelihood-alone-misranks",
+        "G:committing-uncertainty",
+        "L:app:E",
+        "G:conjunctive-architectures",
+        "G:correlated-gates",
+        "G:bypassable-gates",
+        "L:thm:E1",
+        "L:app:F",
+        "G:bounded-claims",
+        "L:prop:F2",
+        "G:terminal-consequence-classes",
+        "G:tiered-evidence-standards"
+      ],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:22:18",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:23:28",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:24:03",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:24:21",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:25:07",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T09:07:56",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T09:08:30",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T09:38:34",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    }
+  ]
+}

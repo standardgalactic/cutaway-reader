@@ -1,0 +1,28 @@
+\documentclass{article}
+\title{Document Repositories}
+\begin{document}
+\begin{abstract}
+A reading of Jonathan Mackenzie's 1995 BYTE article on Lotus Notes: documents as self-describing records, replication without a master copy, and what that design offers a spatial reader.
+\end{abstract}
+\section{A Deceptively Simple System}\label{sec:notes-intro}
+Mackenzie presents Lotus Notes as a way to build distributed document collections without commissioning a database application. An ordinary user sees forms, folders, views and documents. Beneath them sit replication, access control, application logic and conflict handling among computers that are only intermittently connected.
+\section{What a Document Was}\label{sec:notes-record}
+A Notes document is a self-describing record of indeterminate size. It can hold text and numbers, rich text, images, sound, spreadsheets, embedded files and links to other notes. A database carries these records together with the forms that display them, the views that sort them and the permissions that govern them, so the records and their interface travel together.
+\section{Replication Without a Master}\label{sec:notes-replication}
+% mine: thesis
+A Notes database can have many replicas and none of them is the master. Servers synchronise over a network and a laptop can dial in from a hotel. When two people edit the same note independently, Notes keeps both versions and marks the conflict for a person to resolve, much as offline-first systems do today.
+
+Deletions travel too. A replica passes on a notice that a note was removed, so absence is recorded rather than inferred.
+% thread[evidence]: compare conflict handling with later offline-first systems in detail
+\section{Files Inside Records}\label{sec:notes-files}
+A conventional file can be linked from where it lives, attached as a copy, or embedded as an object that opens in its own application and writes itself back. Linking breaks across intermittently connected machines; attachment is portable but awkward to edit; embedding is smoother. Field exchange can keep a title in a word-processing file and the title shown in a view in step.
+\section{Limits the Article Admits}\label{sec:notes-limits}
+Notes is not relational. Data is duplicated between notes, and keeping it consistent needs agents or an SQL server. Notes 3 cannot search inside attachments, so repositories need abstracts and metadata beside the file icons. It has no distributed locking.
+\section{Two Working Repositories}\label{sec:notes-cases}
+S. G. Warburg kept reusable paragraphs, charts and finished presentations in a shared repository. Coopers \& Lybrand ran audits through Notes, with distributed teams sharing templates, plans, outstanding issues and completed work. In both cases the repository is where the work is done, not where it is filed afterwards.
+\section{Comparison with GitHub}\label{sec:notes-github}
+GitHub is organised around version-controlled files, commits and branches. Notes was organised around semistructured records, replicated applications, forms and views. Both version, distribute and permit collaboration, but Notes stores the interface with the information while Git stores a history of file states.
+\section{What It Offers the Cutaway Reader}\label{sec:notes-cutaway}
+% mine: exit=memorable-interfaces#sec:thesis
+A work in the Cutaway Reader is already closer to a Notes database than to a directory: prose, illustrations, relations, routes and a reader history travel together, as in \ref{sec:notes-record}. The difference is that Notes presents its records through lists and forms, while the Cutaway Reader adds a stable geography as another view of the same records.
+\end{document}

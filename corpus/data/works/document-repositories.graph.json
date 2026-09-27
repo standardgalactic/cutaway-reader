@@ -1,0 +1,213 @@
+{
+  "work": "document-repositories",
+  "nodes": [
+    {
+      "id": "L:sec:notes-intro",
+      "title": "A Deceptively Simple System",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 48,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 0,
+      "text": [
+        "Mackenzie presents Lotus Notes as a way to build distributed document collections without commissioning a database application. An ordinary user sees forms, folders, views and documents. Beneath them sit replication, access control, application logic and conflict handling among computers that are only intermittently connected."
+      ]
+    },
+    {
+      "id": "L:sec:notes-record",
+      "title": "What a Document Was",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 63,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 1,
+      "text": [
+        "A Notes document is a self-describing record of indeterminate size. It can hold text and numbers, rich text, images, sound, spreadsheets, embedded files and links to other notes. A database carries these records together with the forms that display them, the views that sort them and the permissions that govern them, so the records and their interface travel together."
+      ]
+    },
+    {
+      "id": "L:sec:notes-replication",
+      "title": "Replication Without a Master",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": true,
+      "part": null,
+      "words": 75,
+      "image": null,
+      "threads": [
+        {
+          "kind": "evidence",
+          "text": "compare conflict handling with later offline-first systems in detail"
+        }
+      ],
+      "cites": [],
+      "order": 2,
+      "text": [
+        "A Notes database can have many replicas and none of them is the master. Servers synchronise over a network and a laptop can dial in from a hotel. When two people edit the same note independently, Notes keeps both versions and marks the conflict for a person to resolve, much as offline-first systems do today.",
+        "Deletions travel too. A replica passes on a notice that a note was removed, so absence is recorded rather than inferred."
+      ]
+    },
+    {
+      "id": "L:sec:notes-files",
+      "title": "Files Inside Records",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 66,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 3,
+      "text": [
+        "A conventional file can be linked from where it lives, attached as a copy, or embedded as an object that opens in its own application and writes itself back. Linking breaks across intermittently connected machines; attachment is portable but awkward to edit; embedding is smoother. Field exchange can keep a title in a word-processing file and the title shown in a view in step."
+      ]
+    },
+    {
+      "id": "L:sec:notes-limits",
+      "title": "Limits the Article Admits",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 46,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 4,
+      "text": [
+        "Notes is not relational. Data is duplicated between notes, and keeping it consistent needs agents or an SQL server. Notes 3 cannot search inside attachments, so repositories need abstracts and metadata beside the file icons. It has no distributed locking."
+      ]
+    },
+    {
+      "id": "L:sec:notes-cases",
+      "title": "Two Working Repositories",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 51,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 5,
+      "text": [
+        "S. G. Warburg kept reusable paragraphs, charts and finished presentations in a shared repository. Coopers & Lybrand ran audits through Notes, with distributed teams sharing templates, plans, outstanding issues and completed work. In both cases the repository is where the work is done, not where it is filed afterwards."
+      ]
+    },
+    {
+      "id": "L:sec:notes-github",
+      "title": "Comparison with GitHub",
+      "level": "section",
+      "heading": "section",
+      "role": "comparison",
+      "thesis": false,
+      "part": null,
+      "words": 48,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 6,
+      "text": [
+        "GitHub is organised around version-controlled files, commits and branches. Notes was organised around semistructured records, replicated applications, forms and views. Both version, distribute and permit collaboration, but Notes stores the interface with the information while Git stores a history of file states."
+      ]
+    },
+    {
+      "id": "L:sec:notes-cutaway",
+      "title": "What It Offers the Cutaway Reader",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 63,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 7,
+      "text": [
+        "A work in the Cutaway Reader is already closer to a Notes database than to a directory: prose, illustrations, relations, routes and a reader history travel together, as in [sec:notes-record]. The difference is that Notes presents its records through lists and forms, while the Cutaway Reader adds a stable geography as another view of the same records."
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "L:sec:notes-intro",
+      "to": "L:sec:notes-record",
+      "kind": "sequence",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:notes-record",
+      "to": "L:sec:notes-replication",
+      "kind": "sequence",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:notes-replication",
+      "to": "L:sec:notes-files",
+      "kind": "sequence",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:notes-files",
+      "to": "L:sec:notes-limits",
+      "kind": "sequence",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:notes-limits",
+      "to": "L:sec:notes-cases",
+      "kind": "sequence",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:notes-cases",
+      "to": "L:sec:notes-cutaway",
+      "kind": "sequence",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:notes-cases",
+      "to": "L:sec:notes-github",
+      "kind": "branch",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:notes-cutaway",
+      "to": "L:sec:notes-record",
+      "kind": "reference",
+      "label": "sec:notes-record",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:notes-cutaway",
+      "to": "work:memorable-interfaces#sec:thesis",
+      "kind": "exit",
+      "traversal": "two-way"
+    }
+  ],
+  "title": "Document Repositories",
+  "bibliography": {},
+  "sources": [
+    "document-repositories.tex"
+  ],
+  "warnings": [],
+  "source_sha256": "bd29cb732a98b7378b708a348df58cbc703ec4e5023315c8af5ac3bfdeff6659",
+  "miner": "7ed639c1b254"
+}

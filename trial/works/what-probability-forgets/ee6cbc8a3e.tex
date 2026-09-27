@@ -1,0 +1,610 @@
+\documentclass[12pt,openany]{book}
+\usepackage[paperwidth=5.5in,paperheight=8.5in,inner=0.78in,outer=0.68in,top=0.72in,bottom=0.78in]{geometry}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{amsmath,amssymb}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{epigraph}
+\usepackage{lettrine}
+\usepackage{booktabs}
+\definecolor{inkblue}{HTML}{17324D}
+\hypersetup{colorlinks=true,linkcolor=inkblue,urlcolor=inkblue,citecolor=inkblue,pdftitle={What Probability Forgets},pdfauthor={Flyxion}}
+\setstretch{1.22}
+\setlength{\emergencystretch}{2em}
+\setlength{\parindent}{1.1em}
+\setlength{\parskip}{0.12em}
+\setcounter{secnumdepth}{0}
+\titleformat{\chapter}[display]{\normalfont\color{inkblue}}{\filleft\small\MakeUppercase{Chapter \thechapter}}{1ex}{\titlerule\vspace{1.4ex}\Huge\raggedright}[\vspace{1ex}\titlerule]
+\titleformat{\section}{\Large\color{inkblue}}{}{0pt}{}
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+\fancyhf{}
+\fancyhead[LE]{\small\scshape What Probability Forgets}
+\fancyhead[RO]{\small\scshape Chapter \thechapter}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\newenvironment{turningpoint}{\begin{quote}\small\itshape}{\end{quote}}
+\newenvironment{lowmath}{\begin{quote}\small\noindent\textbf{A little mathematics.}\ }{\end{quote}}
+
+\begin{document}
+\frontmatter
+\begin{titlepage}
+\centering
+\vspace*{1.1in}
+{\Huge\bfseries\color{inkblue} What Probability Forgets\par}
+\vspace{0.3in}
+{\Large Projection, Interference, and the Hidden Architecture of Quantum Theory\par}
+\vfill
+{\large Flyxion\par}
+\vspace{0.08in}
+{\small Independent Researcher\par}
+\vspace{0.6in}
+{\small A popular companion to \emph{Quantum Mechanics from Admissible Probabilistic Composition}\par}
+\end{titlepage}
+
+\chapter*{A Note to the Reader}
+This is a book about quantum mechanics, but it begins with a more ordinary problem: a record can be accurate and still leave out exactly what matters next.
+
+A scoreboard tells us who won, but not how the game unfolded. A map of airline traffic tells us where people arrived, but not which conversations occurred in transit. A probability tells us how often an outcome appears, but not necessarily how the process that produced it can be joined to another process. The missing information may remain harmless until we ask the system to continue. Then the omission returns as a surprise.
+
+The technical monograph behind this book studies that surprise using stochastic, bistochastic, orthostochastic, and unistochastic matrices. Those terms will appear here, but none is required at the door. The essential ideas are simpler: probabilities are projections of richer processes; projections may fail to preserve composition; locally acceptable descriptions may fail to fit together globally; and the mathematics of quantum theory can be approached as a disciplined response to those failures.
+
+This is not a claim that quantum mechanics follows from probability alone. It does not. The reconstruction begins with a consequential choice about which probabilistic transformations count as admissible. Later it adds further commitments about systems, states, measurements, and time. One purpose of this companion is to keep those costs visible. The result is not inevitability, but intelligibility: a view of quantum formalism as an architecture built to preserve coherence across transformations that probability alone cannot compose.
+
+Readers who want proofs should consult the technical monograph. Readers who want to know what the proofs mean, what they do not mean, and why the pattern matters beyond quantum foundations are in the right place.
+
+\tableofcontents
+
+\mainmatter
+\part{The Surface of Chance}
+
+\chapter{The Honest Shadow}
+\lettrine{A}{ probability} can be perfectly honest. It can be measured carefully, reported exactly, and confirmed a thousand times. Yet honesty is not completeness. The central mistake examined in this book is the assumption that because a probability faithfully records an outcome, it must also faithfully record the process that connects one outcome-producing situation to another.
+
+Imagine a machine with several labelled lamps. Feed it the same input many times and it illuminates one lamp on each trial. After enough trials we can construct a table: input one produces lamp A half the time and lamp B half the time; input two produces some other distribution. This table is operationally meaningful. It predicts frequencies. It can be checked without knowing anything about the inside of the machine.
+
+Now place two such machines in sequence. It is tempting to predict the final lamps by multiplying their probability tables. Sometimes that works. It works when each stage merely passes classical alternatives forward, as though a concealed but definite route were chosen at the first stage and inherited by the second. But there are other processes for which the first table is not a sufficient description of what the second machine receives. Two internal contributions that led to the same visible probability can later reinforce or cancel each other. The first table was not false. It was a shadow whose missing depth mattered only when the process continued.
+
+This is the conceptual location of quantum interference. Interference is often introduced as an alien property of microscopic objects, accompanied by waves that are particles and particles that are waves. That imagery can be useful, but it can also obscure the logical issue. The more basic fact is that the probability projection forgets relational information. When transformations are composed, the forgotten information affects the next probability distribution.
+
+The word \emph{projection} matters. A projection is not necessarily an error or an approximation. A photograph projects a three-dimensional scene onto two dimensions while remaining an exact photograph. Trouble begins only when we ask the photograph to answer a question whose answer depends on depth. Likewise, a transition-probability matrix may answer every question about a single observed transition while failing to determine the result of two transitions in sequence.
+
+The book's guiding question is therefore not, ``Why is nature probabilistic?'' It is narrower and, in some ways, stranger: \emph{What additional structure must survive behind probabilities if transformations are to compose coherently?} That question turns quantum mechanics from a catalogue of oddities into a problem of information preservation.
+
+\begin{turningpoint}
+An observable record can be sufficient for prediction at one stage and insufficient for continuation. Sufficiency is indexed to the operation we intend to perform next.
+\end{turningpoint}
+
+This shift also changes what counts as an explanation. A probability table is a witness: it records that some transformation occurred and summarizes its visible consequences. A mechanism is something stronger: it supports counterfactual continuation, tells us how transformations combine, and distinguishes processes that cast the same probabilistic shadow. Confusing the witness with the mechanism makes quantum interference look like probability behaving irrationally. Separating them reveals something more precise. Probability behaves exactly as promised; we asked it to retain information it was never designed to carry.
+
+Statisticians have a name for exactly this kind of task-relative sufficiency, and it predates quantum mechanics by decades. A sufficient statistic is a summary of data that loses nothing relevant to one particular question, typically the value of some parameter, while discarding everything else about the raw data. The average of a set of measurements can be a sufficient statistic for the true underlying value being measured, even though it throws away every individual reading. Nobody considers this throwing-away a scandal, because the statistic was never asked to answer any other question. The trouble in quantum mechanics is structurally the same and differs only in scale: a probability table is sufficient for one question, namely what happens if this transformation is used once and never composed with anything else, and insufficient for a different, entirely reasonable question, namely what happens if it is composed. Sufficiency was never a property of the data alone. It was always a property of the data relative to a stated use, and probability tables are no exception.
+
+\chapter{A World Made of Columns}
+The simplest probability space is a list of alternatives whose weights add to one. If there are three possible outcomes, the state of our uncertainty might be written as seventy percent, twenty percent, and ten percent. Geometrically, every such list occupies a point inside a triangle called a probability simplex. Nothing mystical is hidden here. The simplex is simply the space of all legal assignments of weight to mutually exclusive alternatives.
+
+A stochastic matrix moves one probability distribution to another. Each column says what happens to one initial alternative. The entries are nonnegative, and the relevant sums equal one. Classical probability theory becomes, in part, a study of these legal movements through the simplex.
+
+A smaller and more orderly class consists of bistochastic matrices. In a bistochastic matrix, both columns and rows sum to one. Such a transformation preserves the uniform distribution. It can mix distinctions but cannot create a preference for one label merely from uniform ignorance. Every bistochastic matrix is a weighted mixture of permutations: beneath the mixing lies a lottery over rearrangements.
+
+That fact is sometimes read too quickly. It does not say that every individual system secretly undergoes one definite permutation. It says that the matrix lies in the convex hull of permutation matrices. The geometry permits a classical mixture representation. Whether that representation names a physical mechanism is a separate question.
+
+Bistochastic transformations also organize probability distributions by majorization. A sharply concentrated distribution can be mixed into a flatter one, but a bistochastic map cannot turn a flatter distribution into a sharper one without some additional resource. Entropy therefore does not decrease under this kind of mixing. This gives the first important constraint in the reconstruction: admissible probability changes are not arbitrary. They preserve normalization, positivity, and a particular direction of informational mixing.
+
+Yet bistochasticity is still too broad to reproduce quantum structure. Quantum transition matrices belong to a more restricted class. They arise by taking a unitary matrix, a reversible transformation of amplitudes, and replacing every entry by its squared magnitude. Such matrices are called unistochastic.
+
+The definition is compact, but philosophically expensive. It says that a probability table counts as admissible when it can be lifted to a unitary amplitude transformation. This does not derive the unitary world from neutral probability. It chooses a probability class whose membership is certified by the existence of unitary structure. Much of the subsequent reconstruction then explores the consequences of taking this class seriously.
+
+That is not a defect if it is stated plainly. Scientific explanations often begin by identifying a constrained family and asking what follows from membership in it. The danger comes from forgetting that the constraint was selected. ``Unistochastic'' is not merely a technical adjective attached after the fact. It is the hinge of the project: probability is admitted only when a coherent reversible lift exists above it.
+
+The simplest two-outcome case conceals how strong this choice is. Every two-by-two bistochastic matrix has both a real orthogonal lift and a complex unitary lift. At this size, the visible table cannot distinguish the scalar field. With three outcomes the coincidence breaks. The uniform three-by-three matrix has a complex lift supplied by the discrete Fourier transform, but it has no real orthogonal lift. The obstruction is elementary: a real lift would require a three-by-three array of plus and minus signs whose distinct rows were mutually orthogonal, and no such array exists.
+
+Already we meet two kinds of absence. Sometimes a probability table admits many hidden lifts and therefore underdetermines the mechanism. Sometimes it admits a complex lift but no lift of the more restrictive real kind. The first absence is lost information. The second is failed admissibility. They will matter differently once systems are joined.
+
+There is a well-known picture, familiar to anyone who has seen a single quantum bit drawn as a small sphere, that makes the two-outcome coincidence easier to hold in mind. The full space of states available to one quantum bit is often drawn as a solid ball: every point inside or on its surface is a legitimate state, and the boundary surface itself is the special case of maximal information, a pure state. A bare two-outcome probability table, the kind discussed in this chapter, corresponds to knowing only how far a point sits from the ball's center along a single axis, nothing about the other two directions. At that resolution, real and complex descriptions of the same physical bit genuinely cannot be told apart, because the missing directions are exactly what a real orthogonal lift and a complex unitary lift would disagree about, and neither is visible in a single transition table between two outcomes. The disagreement becomes visible only once more than two outcomes, or more than one context, enters the picture, which is exactly the content of the next two chapters.
+
+\chapter{The Lift Above the Record}
+A lift is a richer object that projects down to the data we observe. Cartographers use lifts implicitly when several flat maps are understood as views of one curved surface. Computer graphics reconstructs three-dimensional scenes from two-dimensional images. In quantum theory, amplitudes play the role of the richer coordinates, while observed probabilities arise from their squared magnitudes.
+
+Why use amplitudes at all? One answer is historical: the formalism works. Another invokes waves: amplitudes interfere as waves do. The reconstruction pursued here offers a structural answer. Amplitudes carry precisely the kind of relational information that probability projection erases but composition requires.
+
+Consider two routes leading from an initial alternative to a final outcome. At the probability level, we might add the probability of route one to the probability of route two. At the amplitude level, we first add the contributions and then square the magnitude. Squaring a sum produces not only the separate squared terms but cross terms. These terms register the relation between the contributions. Depending on that relation, the same two magnitudes can reinforce one another or cancel.
+
+Calling the relation ``phase'' is useful but can make it sound like a decorative dial attached to a probability. Phase is better understood here as compositional memory. It records distinctions among processes that currently yield the same visible weights but will behave differently when combined with later transformations.
+
+This makes a lift neither a hidden classical trajectory nor an occult substance. It is a bookkeeping structure adequate to continuation. The quantum state need not be imagined as a tiny material wave sloshing through an inaccessible space. At minimum, it is the kind of representation in which transformations close under composition without discarding distinctions that future operations can reveal.
+
+There is an important caution. Many lifts can share the same projection. If every complex entry is replaced by its magnitude squared, signs and phases disappear. Observed probabilities therefore do not usually identify a unique amplitude transformation. The lift solves the problem of closure only after a compatible lift has been chosen. Probability data alone may not tell us which choice is correct.
+
+This gives rise to the next question. A single edge between two experimental contexts may possess an admissible lift. But if we assemble many such edges, can their lifts all belong to one common world? Local existence does not guarantee global compatibility. The issue is no longer whether each photograph could depict some three-dimensional scene. It is whether all the photographs could depict the same scene.
+
+\part{When Processes Continue}
+
+\chapter{Why Probabilities Do Not Compose}
+Suppose a transformation carries alternatives from context A to context B, and another carries them from B to C. At the amplitude level the two transformations multiply. Their product is again a valid transformation. Reversibility and normalization are preserved. The formalism is closed under continuation.
+
+Project each transformation separately into a probability table, however, and multiply those tables. In general the result differs from projecting the already-composed amplitude transformation. The order of operations matters: compose and then forget is not the same as forget and then compose.
+
+This noncommutation is the book's central engine. It is not a peculiarity confined to complex numbers. Real orthogonal amplitudes also produce cross terms, and their squared entries also fail to compose as ordinary stochastic matrices. Interference therefore does not by itself prove that amplitudes must be complex. What it proves is that probability-level description is not compositionally complete.
+
+A vivid example uses two transformations that each look maximally random when viewed alone. Every input has equal probability of producing either output. Classical multiplication predicts that two such stages remain maximally random. Yet suitable amplitude lifts can compose to the identity: after two apparently randomizing operations, the original alternative returns with certainty. The uncertainty was a feature of the projected description, not an irreversible destruction of structure.
+
+This resembles encrypting a message with a reversible cipher and then describing only the frequency of letters. The frequency table may look thoroughly mixed, but a second transformation equipped with the relevant relational structure can recover the original. Nothing supernatural occurred. The summary statistics ceased to be sufficient.
+
+The implication reaches beyond textbook interference experiments. Whenever we compress a process into observables and later attempt to compose those observables, we should ask whether the compression is a homomorphism: does it preserve the operation we care about? If not, apparent novelty at the composed level may be the return of discarded structure.
+
+This principle applies to scientific models, institutional records, and machine-learning representations. Averaging several measurements can preserve their mean while destroying covariance needed for a later prediction. Aggregating votes by district can preserve winners while destroying coalition structure needed to forecast a new election. Summarizing a conversation can preserve propositions while destroying the sequence that determines how a later remark will be understood. In each case the summary may be locally faithful and compositionally unfaithful.
+
+Quantum mechanics supplies an unusually exact instance. The lost terms can be written, manipulated, and tested. But the broader lesson is methodological: a representation should be judged not only by what it reports now, but by which future operations it allows us to perform without contradiction.
+
+\chapter{Interference as Returning Memory}
+Interference is often described as if alternatives literally knew about one another. A photon passing through one slit somehow responds to the presence of another slit; a particle takes all paths; observation reaches backward and changes what occurred. These stories attempt to translate a formal pattern into ordinary objects, sometimes at the cost of making the pattern less clear.
+
+The projection view begins elsewhere. Before measurement, the alternatives are represented within a structure that retains their relative orientation. Measurement produces a probability record that omits part of that orientation. If the alternatives are recombined before the final record is made, the retained relations affect the result. Interference is not the probability table changing its mind. It is evidence that the table was never the whole state of the process.
+
+The word \emph{memory} must be used carefully. Phase does not necessarily store a narrative of past events. It is memory in a minimal operational sense: two systems with the same present probability distribution can react differently to the same subsequent transformation. Their future dispositions depend on information not present in the probability vector. Something about the path into the present remains available to continuation.
+
+This is a useful criterion for state. A complete state description should screen off the relevant past: once the state is specified, no additional history should improve predictions of future behavior. A bare quantum probability distribution fails this test. The amplitude state can pass it for the transformations included in the theory. The state vector is therefore not merely a convenient encoding of current chances; it repairs a failure of probabilistic Markov sufficiency.
+
+The result also clarifies collapse. A measurement update is not simply the revelation of a probability that was already sitting in the system. It changes which compositional distinctions remain available. Some phase relations are rendered inaccessible relative to the subsequent measurement arrangement. From this perspective, collapse marks a change in the admissible continuation structure, whether that change is treated as physical, informational, relational, or effective.
+
+Nothing in this argument chooses among all interpretations of quantum mechanics. It does not decide whether the wavefunction is ontic, epistemic, relational, many-branched, or agent-relative. It establishes a pressure any interpretation must answer: the theory needs more than a current list of outcome probabilities because future experiments are sensitive to relations that list omits.
+
+Interpretations differ over what bears those relations and what measurement does to them. The compositional diagnosis comes first. It tells us why some additional structure is necessary before telling us what the structure ultimately is.
+
+\chapter{The Triangle That Refuses to Close}
+Pairwise compatibility is reassuring. If every pair of descriptions fits, we are tempted to assume the whole collection fits. This inference fails in many domains. Three maps can agree on overlapping streets yet assign incompatible orientations around a loop. Three witnesses can tell mutually consistent pairwise stories that cannot all occupy a single timeline. Three local coordinate charts can each be well formed while failing to glue into one global object.
+
+Measurement contexts exhibit the same distinction. Represent each context as a vertex of a graph and each observed transition as an edge. An edge is individually admissible when some lift realizes its probability table. A graph is globally realizable when a single assignment of frames to all vertices realizes every edge at once.
+
+On a tree, a connected graph with no loops, local admissibility is enough. Choose a starting frame and move outward. Each edge introduces a new vertex, and there is only one route to it. No alternative route can return with a conflicting demand.
+
+The first genuine test appears when an edge closes a cycle. Now a frame reached along one path must agree with the frame implied by another. At the amplitude level, transformations around a closed loop must compose to the identity, up to the appropriate gauge freedoms. After projection to probabilities, the information needed to verify that equality directly has been lost.
+
+In two real dimensions, three contexts form the smallest cycle. Each pair can have a perfectly valid real transition table, while the three tables together admit no common real assignment. A particularly sharp example asks for three pairwise mutually unbiased real bases. Any two such bases exist. All three do not. Complex two-dimensional space supplies the missing freedom and permits the familiar triple associated with the three Pauli measurements.
+
+This triangle is important because it separates two claims that are easily confused. There is no problem with any edge considered alone. The obstruction belongs to their attempted gluing. Complex structure is not introduced merely to decorate each local transition. It enlarges the space of globally compatible arrangements.
+
+The pattern can be phrased as an inheritance failure. Admissibility does not automatically pass from parts to wholes. Local witnesses do not inherit global consistency. A cycle asks a question no individual edge can answer: after moving through a sequence of perspectives, have we returned to the same frame?
+
+That question has geometric echoes in holonomy, gauge theory, and curvature. Carrying an orientation around a loop may return it altered, revealing structure invisible along any isolated segment. The monograph's context graphs are elementary compared with those theories, but they share the same conceptual grammar. Global information can live in the failure of local comparisons to close.
+
+Mutually unbiased bases are not merely foundational curiosities. They are resources in quantum state tomography and quantum cryptography, because information encoded sharply in one basis appears maximally uncertain when interrogated in another. The best-known cryptographic protocol, BB84, uses two such bases, a structure already available over the reals in two dimensions, since any two mutually unbiased bases can be found without needing a third. A later variant, the six-state protocol, uses the full triple of Pauli bases at once, which brings it much closer to the complex three-context geometry this chapter has been discussing. The real MUB obstruction does not, by itself, prove the security of either protocol. What it identifies is a structural resource available to the complex two-level theory, a genuine triple of mutually unbiased bases, that no globally real two-dimensional description can reproduce, whatever protocol is eventually built on top of it.
+
+\chapter{Trees, Cycles, and the Cost of Agreement}
+A tree is easy not because its edges are simple, but because it never demands reconciliation. Every new edge extends the existing assignment into untouched territory. A cycle is difficult because it creates a second account of something already assigned.
+
+This makes cycle rank a measure of independent agreement conditions. Begin with a spanning tree connecting all contexts. Every remaining edge closes one fundamental cycle. Each such edge asks whether the frame already implied by the tree predicts the observed transition. If the answer is no, no global realization exists for that choice of lifts.
+
+The test is shared, not edgewise. When several cycles overlap, one cannot choose phases or signs independently to satisfy each loop. The same tree lifts must satisfy all non-tree edges simultaneously. Global consistency is a coordination problem among constraints that reuse common structure.
+
+Under a natural model in two real dimensions, the effect is severe. Give each edge an independently chosen continuous transition angle. As soon as the graph contains a cycle, the probability of exact global real realizability is zero. The final edge of a loop must land on one of finitely many values determined by the earlier edges. A continuously drawn number hits that finite target set with probability zero.
+
+This does not mean that physical experiments almost surely contradict real quantum theory. Physical data are not generated by choosing every pairwise transition independently. If contexts arise from an underlying set of real frames, their edges are correlated by construction and every cycle closes. The measure-zero result instead exposes how much coordination a global model imposes. Realizability occupies a thin surface inside the much larger space of independently specifiable local data.
+
+The distinction between generated data and arbitrary data is crucial. A model may fit every dataset produced within itself while occupying a very special region of the logically possible observations. Calling that region ``fine-tuned'' may or may not be justified; what is justified is recognizing its codimension. Global coherence is purchased by correlations among local records.
+
+This also changes how one should think about experimental tests. A single transition can distinguish real from complex lifts in dimensions three and above, but not in dimension two. There, one needs a cycle: several contexts whose joint relations create an obstruction. The minimal test depends on a low-dimensional coincidence. Once dimension increases, the cheapest witness can collapse back to a single edge.
+
+At two dimensions specifically, the trees-versus-cycles distinction turns out to be a complete classification, not merely a useful rule of thumb, though the precise statement needs care. It is not that every labelling of a cyclic graph fails to be realized: correlated labellings generated from an underlying family of real frames realize perfectly well, since they were built to be consistent from the start. Rather, every individually admissible edge labelling is guaranteed to be globally real-realizable if and only if the graph is a forest. Once a graph contains a cycle, some admissible labellings fail to glue, and, as the earlier discussion of independently drawn edge angles showed, the labellings that do glue occupy only a measure-zero sliver of the labellings that could have been drawn. Cycles are therefore not graphs on which realization never occurs. They are exactly the graphs on which edgewise admissibility, by itself, stops being enough to guarantee it.
+
+\begin{lowmath}
+The mechanism that proves this is a stretching trick, and it is short enough to see directly. Take the mutually unbiased triangle on contexts $Z$, $X$, $Y$, with all three canonical angles set to $\pi/4$, the configuration already shown to admit no real realization. Now insert a new context $W$ directly along the edge between $Z$ and $Y$, and split that one edge into two: an edge from $Z$ to $W$ carrying angle zero, meaning $W$ is simply aligned with $Z$ and nothing changes there, and an edge from $W$ to $Y$ carrying the original angle of $\pi/4$ that used to sit on the edge from $Z$ to $Y$ directly. Nothing about the observed data has been altered; the composite transition from $Z$ through $W$ to $Y$ still amounts to exactly the same $\pi/4$ it always did, since composing an identity step with the original step changes nothing.
+
+The result is a four-cycle, $Z$ to $X$ to $Y$ to $W$ back to $Z$, carrying angles $\pi/4$, $\pi/4$, $\pi/4$, and zero. Suppose this four-cycle had a real realization after all. Restricting that same frame assignment to just $Z$, $X$, and $Y$ would then realize the original triangle too, because the zero-angle edge forces $W$'s frame to coincide exactly with $Z$'s, so nothing about a hypothetical solution to the larger cycle could have avoided also solving the smaller one. Since the triangle has no real solution, neither does the stretched square. The identical trick, applied again to any edge of the square, produces a failing pentagon, and repeating it produces a failing cycle of every length beyond that.
+
+So every cycle length inherits a genuinely unrealizable labelling from the original triangle, by nothing more than inserting harmless identity steps along one edge at a time. And once a cycle anywhere inside a larger graph carries such a labelling, the whole graph inherits the failure too: any global frame assignment realizing every edge of the full graph would, in particular, have to realize every edge of that one troublesome cycle sitting inside it, which has already been shown to be impossible. What happens on the rest of the graph, however large or however tamely behaved, cannot rescue a cycle that was built to fail on its own.
+\end{lowmath}
+
+Put the two directions together and the classification is exact. Trees never close a loop, so an admissible labelling on a tree always glues, with no exceptions, by the same argument used throughout this chapter. Any graph containing a cycle can be given a labelling, built by the stretching trick above, that individually passes every single edge test yet fails to glue as a whole. A two-dimensional context graph guarantees realizability for every admissible labelling exactly when it has no cycle to exploit in the first place, that is, exactly when it is a forest. This does not make cyclic graphs uniformly dangerous. It makes them exactly, and only, the graphs where danger is possible at all.
+
+The moral is not that cycles are universally quantum. It is that cycles convert continuation into consistency. Whenever local transformations are quotients of richer structure, loops are natural detectors of what the quotient forgot.
+
+\chapter{Interlude: The Arithmetic So Far}
+
+Everything claimed so far in this book can be checked directly, with nothing more than ordinary arithmetic. This interlude collects three such calculations, one for each of the last three chapters. None of it is required to follow the rest of the book, and a reader satisfied with the prose argument can turn straight to the next part, on joining separate systems together, without losing the thread. But for a reader who wants to see, in plain numbers, that these claims are not merely plausible but exact, the arithmetic is short enough to write out in full.
+
+\section{The Vanishing Uncertainty}
+
+\begin{lowmath}
+Take two very small transformations, each a two-by-two matrix built entirely from entries of size one over the square root of two, so that every single entry, squared, gives a fifty-fifty probability:
+\[
+U_1=\frac{1}{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix},\qquad
+U_2=\frac{1}{\sqrt2}\begin{pmatrix}1&1\\i&-i\end{pmatrix}.
+\]
+Multiply them together at the amplitude level, in the order $U_2U_1$, and every cross term collapses cleanly:
+\[
+U_2U_1=\begin{pmatrix}1&0\\0&i\end{pmatrix}.
+\]
+Squaring the magnitude of this product gives the identity probability table exactly: input one always produces output one, input two always produces output two, with no uncertainty left at all.
+
+Now compare this with what happens if the two probability tables are multiplied directly, ignoring the amplitudes. Squaring $U_1$ and $U_2$ entrywise gives the same fully mixed table for both, $\tfrac12\begin{pmatrix}1&1\\1&1\end{pmatrix}$, and this matrix is idempotent: multiplying it by itself returns the identical fully mixed matrix, never the identity. Two machines that look, on paper, like they each randomize their input completely compose, at the amplitude level, into a machine with no randomness whatsoever. The probability tables alone could never have predicted this.
+\end{lowmath}
+
+\section{A Table That Cannot Come From Rotation}
+
+\begin{lowmath}
+Let $\omega=e^{2\pi i/3}$ and consider the three-by-three discrete Fourier matrix
+\[
+U=\frac{1}{\sqrt3}\begin{pmatrix}1&1&1\\1&\omega&\omega^2\\1&\omega^2&\omega\end{pmatrix}.
+\]
+Every entry of $U$ has magnitude $1/\sqrt3$, so squaring every entry gives a probability table with every one of its nine entries equal to $1/3$: uniform, completely featureless at the level of probability. The question is whether some real orthogonal matrix $O$ could also square, entrywise, to this same uniform table. That would require every entry of $O$ to equal plus or minus $1/\sqrt3$, and orthogonality would then require every pair of distinct rows, each written as a sequence of three plus and minus signs, to be exactly balanced against each other. A three-by-three grid of signs with that balancing property is called a Hadamard matrix, and a short, complete check of all five hundred and twelve possible sign patterns across the full nine-entry grid turns up none that qualifies. Three is simply the wrong size for such a grid to exist. So this one uniform table, entirely ordinary as a probability table, has a complex origin and provably no real one.
+\end{lowmath}
+
+\section{The Triangle in Coordinates}
+
+\begin{lowmath}
+The three contexts of Chapter 5's triangle can be written out as actual vectors in two-dimensional complex space:
+\[
+Z=\left\{\begin{pmatrix}1\\0\end{pmatrix},\begin{pmatrix}0\\1\end{pmatrix}\right\},
+\]
+\[
+X=\frac{1}{\sqrt2}\left\{\begin{pmatrix}1\\1\end{pmatrix},\begin{pmatrix}1\\-1\end{pmatrix}\right\},
+\]
+\[
+Y=\frac{1}{\sqrt2}\left\{\begin{pmatrix}1\\i\end{pmatrix},\begin{pmatrix}1\\-i\end{pmatrix}\right\}.
+\]
+Every pair among these three bases is mutually unbiased: any vector from one basis overlaps every vector of another with probability exactly one half, the maximal possible mismatch. Try to reproduce this with three real lines in the ordinary plane instead. If $Z$ sits at angle zero and $X$ at forty-five degrees (the real angle giving fifty-fifty overlap with $Z$), then $Y$ must sit forty-five degrees from $Z$, which forces $Y$ to sit at either forty-five or negative forty-five degrees. But $Y$ must also sit forty-five degrees from $X$, which forces $Y$ to sit at either zero or ninety degrees. No single angle satisfies both demands at once. The complex vectors above have an extra freedom, the relative phase carried by $i$, that lets all three conditions be met simultaneously. Real lines in a flat plane simply run out of room.
+\end{lowmath}
+
+\part{Joining Worlds}
+
+\chapter{The Problem of Two Systems}
+So far the same system has been viewed through different contexts or carried through successive transformations. Quantum theory becomes more demanding when two systems are considered together. Composition now means more than doing one thing after another. It means constructing a joint state space whose local parts remain identifiable while new correlations become possible.
+
+Classically, the rule seems obvious. If system A has several distinguishable alternatives and system B has several, the joint alternatives are all ordered pairs. Probability distributions over those pairs include both independent states and correlations. The marginal state of A is obtained by summing over B, and vice versa.
+
+Quantum theory uses a tensor product. A basis for A combined with a basis for B produces a product basis for the composite. Product states describe independent preparations, while superpositions and mixtures generate richer joint states. The tensor product is so deeply built into the standard formalism that it can appear inevitable.
+
+It is not inevitable in the sense required by a foundational reconstruction. The ordinary Kronecker representation of the tensor product is a choice with powerful virtues, but recent real-number reconstructions show that equivalent empirical predictions can be organized using a different composition rule. Complex numbers may disappear from the visible scalar notation while the structural role ordinarily performed by multiplication by i migrates into the way composites are assembled.
+
+This is a textbook case of bottleneck migration. Removing a mathematical object from one location does not necessarily remove the work it performed. The constraint reappears elsewhere. A real formulation of complex quantum theory may replace complex scalars with larger real matrices, an auxiliary two-dimensional structure, a quotient, or a modified tensor operation. The representation changes; the invariant burden remains.
+
+The monograph uses ordinary Kronecker composition through its main comparison of real, complex, and quaternionic theories. Under that convention, the dimensions of their state spaces behave differently. Complex quantum theory possesses exactly the number of joint parameters predicted from local parameter counts. Real quantum theory has extra joint directions invisible to local measurements. A naive quaternionic theory has too few joint degrees of freedom relative to the same product count.
+
+This result is conditional but illuminating. It says that complex quantum mechanics is a fixed point of a particular demand: combine systems in the ordinary way and require the joint state to be completely determined by correlations among local measurements. The fixed point is not metaphysical proof that nature uses complex numbers. It is a precise agreement among scalar field, state-space dimension, and composition rule.
+
+The broader lesson is that a theory of parts is incomplete without a theory of combination. Two formalisms that look different at the level of isolated systems may become equivalent once their composition laws are compared. Conversely, two formalisms that agree locally may diverge only when independent systems are joined. Composition is not housekeeping performed after a theory has been built. It is part of the theory's empirical content.
+
+\chapter{What the Parts Cannot See}
+Local tomography is the principle that a joint state can be determined by statistics obtained from local measurements and their correlations. For ordinary complex quantum systems in finite dimensions, the parameter count works exactly. If we know enough about A, enough about B, and enough about how their local observables correlate, there is no additional joint parameter hiding outside that scheme.
+
+Real quantum theory, under ordinary tensor composition, contains an extra direction. For two two-level real systems, the locally generated symmetric observables span nine dimensions, while the full real symmetric state space has ten. One coefficient remains. It is represented by the product of two antisymmetric generators, conventionally written J times J.
+
+The striking feature of this direction is that it disappears under either partial trace. Inspect system A alone and it is gone. Inspect system B alone and it is gone. It belongs wholly to the relation between them, yet it cannot be reconstructed from the standard inventory of products of locally admissible real observables.
+
+This is not merely an abstract missing number. A family of valid positive states can vary continuously along this direction while keeping both marginals fixed. Except at its central point, the family is entangled when interpreted within real quantum theory. Reinterpret the same matrices within complex quantum theory, and the entire family becomes separable through an explicit decomposition into product states.
+
+Entanglement is therefore not intrinsic to a bare matrix. It is relative to the theory's admissible local states, effects, scalar field, and composition rule. The same array of numbers can mark an inseparable relation in one theory and an ordinary mixture in another.
+
+This should temper claims that a mathematical representation simply displays the ontology. A density matrix acquires physical meaning only within a larger grammar specifying which preparations count as local, which measurements are available, how systems combine, and which decompositions are admissible. Change the grammar and the classification can change while every entry in the matrix remains fixed.
+
+The word grammar is worth taking literally for a moment. Asking whether a matrix is entangled, relative to a fixed theory of composition, is closer to asking whether a sentence is grammatical than to asking whether a rock is heavy. The words on the page do not change depending on which language's rules a reader applies to them, and neither do the numbers in the matrix. But grammaticality is not a property of the words alone; it is a property of the words relative to a set of rules, and the same string of words can be well formed under one grammar and ill formed under another. Entanglement, on this reading, is a fact about fit between a state and a background theory, not a fact about the state read in isolation, and the fit can change even when nothing about the state itself does.
+
+The marginally invisible direction also echoes a recurrent theme in complex systems: some organization exists only at the level of relation and vanishes when either participant is examined alone. But the analogy must be disciplined. Not every emergent or relational property is a quantum correlation. The value of this example is that invisibility is exact. The partial trace annihilates the direction algebraically, and the field-relative separability test identifies precisely what the local theory cannot synthesize.
+
+What the parts cannot see may still be part of the whole. Yet whether it counts as irreducible depends on what operations the parts are allowed to perform.
+
+\chapter{Why Complex Numbers Keep Returning}
+Complex numbers combine two real coordinates with a rule for rotation. Multiplication by i turns one axis into the other and squares to minus one. In elementary geometry, the same action can be represented by a real two-by-two quarter-turn matrix. Nothing about this equivalence is uniquely quantum.
+
+Why, then, do complex numbers recur so persistently in quantum mechanics? Because they package magnitude and orientation into a form whose multiplication naturally composes scaling and rotation. They are an extraordinarily efficient language for the relational memory probabilities discard.
+
+One can translate complex vectors and matrices into larger real ones. The price is an added structural flag that records which real directions form a complex pair. Global complex phase becomes a coordinated real rotation in that auxiliary plane. The symbol i disappears, but its organizational role remains as an operator J satisfying J squared equals negative one.
+
+This distinction between symbol and structure prevents two opposite exaggerations. The first says that complex numbers must be literal ingredients of physical reality because quantum equations contain i. The second says that complex numbers are dispensable and therefore play no fundamental role. The realification shows that the notation is dispensable. It does not show that the rotation-like structure, phase relations, or compatible composition rules are dispensable.
+
+The right question is not "Are complex numbers real?" but "Which invariant work must any empirically adequate representation perform?" A successful real theory must preserve interference, tensorial composition, locality, measurement statistics, and phase redistribution. If it does so by moving complex structure into matrices or quotients, it has changed the location of the mechanism rather than eliminated it.
+
+The monograph calls rotation-scaling maps amplitwists. The name is useful at the popular level because it resists treating complex multiplication as an arbitrary algebraic spell. An amplitwist scales and turns. Composing amplitwists multiplies their scales and adds their turns. Complex multiplication is exactly this action written compactly.
+
+Once viewed this way, complex quantum mechanics becomes less mysterious but not less distinctive. Its amplitudes are not peculiar because they use numbers invented for square roots of negatives. They are powerful because they furnish a closed compositional language for orientations that remain invisible after squaring to probabilities.
+
+It is worth asking why quaternions, the further extension of complex numbers that adds two more independent square roots of minus one, do not simply improve on the same task rather than complex numbers. Under the ordinary way of counting parameters used later in this book, quaternionic composition fails in the opposite direction from real composition. Real composites, as the next part shows, contain joint directions that no product of local descriptions can reach: the local count comes up short. The naive quaternionic product runs the other way, supplying more local-product parameters than the proposed joint state space can independently hold: the local count overshoots. Complex Hermitian state spaces sit exactly at the point where neither failure occurs. This does not prove a quaternionic theory is impossible, since quaternionic composition involves further choices this book does not explore, but it does explain why simply adding more turning directions is not, by itself, an improvement: two extra turning directions do not fit any better than zero extra turning directions do. Only one extra turning direction fits exactly.
+
+\chapter{The Field Is Not the Theory}
+It is tempting to classify physical theories by their number systems: classical physics is real, quantum physics is complex, speculative alternatives may be quaternionic. This shorthand confuses a component with an architecture.
+
+A scalar field tells us how coefficients add and multiply. A physical theory also specifies a state space, transformations, effects, composition, equivalences, dynamics, and an interpretation linking formal objects to laboratory procedures. None of these is fixed by the scalar field alone.
+
+Real, complex, and quaternionic Hilbert spaces support different dimensions of Hermitian operators. Under a shared, naive composition convention, that difference creates a clean local-tomography comparison. But change the representation of composition and a real theory can reproduce complex quantum predictions. The empirical theory is carried by the whole network of constraints, not by the visible alphabet used for coefficients.
+
+This is why representation independence matters. When a derivation concludes that some familiar object is necessary, we should ask whether the result identifies an invariant structure or merely rules out alternatives within one coordinate convention. If a real matrix representation performs exactly the work of complex multiplication, a proof excluding entrywise-real amplitudes has not excluded all real encodings. It has excluded a narrower realization.
+
+The same discipline applies beyond number systems. A particular tensor product, basis, gauge, or state parametrization may be convenient without being forced. A reconstruction becomes stronger when it distinguishes what the data require from how one chosen formalism realizes the requirement.
+
+This does not make every representation equally illuminating. Some expose locality while others hide it. Some make composition transparent while others require cumbersome constraints. Some display symmetries directly. Explanatory economy is a legitimate virtue even when metaphysical uniqueness is unavailable.
+
+Complex Hilbert space may therefore be privileged without being ontologically mandatory. It can be the smallest, clearest, or most natural representation in which the relevant operations close and the local-to-global relations remain visible. That is a substantial claim, though different from saying the universe is made of complex numbers.
+
+\chapter{Interlude: Two Systems in Coordinates}
+
+As before, the claims of the last three chapters can be checked directly. The calculations below are slightly more involved than the earlier interlude, since two systems are now in play rather than one, but they use nothing beyond ordinary matrix multiplication and can again be skipped without loss by a reader who prefers to take the prose argument on trust.
+
+\section{Nine Directions or Ten}
+
+\begin{lowmath}
+A single real two-level system has exactly three independent real symmetric two-by-two matrices available to it as local observables:
+\[
+I=\begin{pmatrix}1&0\\0&1\end{pmatrix},\qquad
+X=\begin{pmatrix}0&1\\1&0\end{pmatrix},
+\]
+\[
+Z=\begin{pmatrix}1&0\\0&-1\end{pmatrix}.
+\]
+Products of these, one drawn from each of two separate systems, give nine independent joint observables, $\{I,X,Z\}\otimes\{I,X,Z\}$. But the full space of real symmetric four-by-four matrices, the space that a genuine composite state must live inside, has dimension ten, not nine. The fourth generator needed to complete a full basis of two-by-two real matrices is
+\[
+J=\begin{pmatrix}0&-1\\1&0\end{pmatrix},
+\]
+which is antisymmetric rather than symmetric, so it is not itself an admissible local observable in the real theory: no local measurement on a single real system corresponds to $J$. Yet the product $J\otimes J$ is symmetric, since flipping the sign twice cancels, and it turns out to be linearly independent of all nine products built from $\{I,X,Z\}$. This is the missing tenth direction, built from two individually forbidden ingredients whose combination is nonetheless a perfectly legitimate joint observable.
+\end{lowmath}
+
+\section{A State That Only Half Can See}
+
+\begin{lowmath}
+Consider the one-parameter family of candidate joint states
+\[
+\rho(c)=\frac{1}{4}\Big(I\otimes I+c\,J\otimes J\Big).
+\]
+Since $J^2=-I$, it follows that $(J\otimes J)^2=I\otimes I$, so $J\otimes J$ has eigenvalues plus and minus one, each occurring twice. The eigenvalues of $\rho(c)$ are therefore $\tfrac14(1+c)$ and $\tfrac14(1-c)$, each doubly degenerate, and both are nonnegative exactly when $c$ lies between negative one and positive one. Inside that entire range, $\rho(c)$ is a perfectly legitimate physical state.
+
+Now examine what either local observer, restricted to just one of the two systems, actually sees. Since $J$ is traceless, tracing out either system kills the $J\otimes J$ term completely, leaving both marginal descriptions equal to the featureless, maximally uncertain state $\tfrac12 I$, for every single value of $c$ in the entire allowed range. An entire interval of genuinely different joint states is completely indistinguishable from either system's own point of view.
+\end{lowmath}
+
+\section{The Same Numbers, Two Verdicts}
+
+\begin{lowmath}
+Within the real theory, no honest mixture of independent local states can ever produce a nonzero amount of $J\otimes J$: for any real symmetric local state $\rho_A$, the quantity $\mathrm{tr}(\rho_A J)$ is forced to zero by the antisymmetry of $J$ alone, so every product state, and hence every mixture of product states, contributes nothing along that direction. Since $\mathrm{tr}[\rho(c)(J\otimes J)]=c$, any nonzero $c$ is therefore entangled, by direct calculation, within real quantum theory.
+
+Within the complex theory, the very same matrix tells a different story. Since $J$ equals $-i$ times the ordinary complex Pauli matrix $\sigma_y$, the product $J\otimes J$ equals $-\sigma_y\otimes\sigma_y$, and $\rho(c)$ can be rewritten explicitly, entry for entry, as
+\[
+\rho(c)=\frac{1+c}{4}\,\big|{+_y,-_y}\big\rangle\big\langle{+_y,-_y}\big|
+\]
+\[
+{}+\frac{1+c}{4}\,\big|{-_y,+_y}\big\rangle\big\langle{-_y,+_y}\big|
+\]
+\[
+{}+\frac{1-c}{4}\,\big|{+_y,+_y}\big\rangle\big\langle{+_y,+_y}\big|
+\]
+\[
+{}+\frac{1-c}{4}\,\big|{-_y,-_y}\big\rangle\big\langle{-_y,-_y}\big|,
+\]
+a mixture of four ordinary complex product states with nonnegative weights summing to one, for every $c$ in the allowed range. The identical array of sixteen numbers is entangled under one theory's rules for admissible local states and separable under the other's. Nothing about the matrix changed between the two paragraphs above. Only the background theory of what a legitimate local state is allowed to be did.
+\end{lowmath}
+
+\part{Recovering the Familiar World}
+
+\chapter{A State Is Not Yet a Context}
+The early reconstruction concerns transitions between complete measurement contexts: entire orthonormal frames compared with one another. Standard quantum mechanics also speaks of an individual prepared state. Passing from a frame to a state requires a bridge.
+
+Mathematically, any normalized vector can be completed into an orthonormal basis. Operationally, however, identifying a preparation with one distinguished member of such a frame is an additional commitment. The technical monograph names it rather than allowing a routine linear-algebra fact to conceal the physical identification.
+
+Once the identification is accepted, the pure-state Born rule appears immediately. The probability of a measurement outcome is one entry in the transition matrix between the preparation frame and the measurement frame. That entry is the squared magnitude of their overlap.
+
+This is best called a recovery rather than an origin story. The squared-amplitude rule is already present in the definition of a unistochastic transition. Treating a state as a selected column transfers that rule from context-to-context comparisons to state-to-outcome probabilities. The achievement is architectural clarity: it shows exactly which bridge turns one use of squared amplitudes into the familiar Born formula.
+
+Classical mixtures then yield density operators. If a preparation procedure chooses among pure states with ordinary probabilities, outcome probabilities must average accordingly. Linearity packages the mixture into a positive, unit-trace operator, and the Born rule becomes a trace formula. Again, the step is not magic. It is the consequence of demanding affine consistency under classical uncertainty.
+
+This layered derivation helps prevent several conflations. A probability vector is not a state vector. A state vector is not an entire context. A pure-state Born rule is not yet the most general measurement rule. A density operator represents both classical mixing and quantum state structure, but different decompositions of the same density operator need not correspond to experimentally distinguishable ensembles.
+
+Popular accounts often collapse these levels into the phrase "the wavefunction gives probabilities." The reconstruction slows the sentence down. A context supplies a family of alternatives; a prepared pure state is represented as a designated vector completable into such a context; overlaps with a measurement context yield probabilities; mixtures extend the rule affinely; generalized measurements require a further dilation argument. Each transition has a cost.
+
+The reward for paying attention is not pedantry. It is the ability to ask where an interpretation enters. Is the state an individual physical condition, an equivalence class of preparations, a catalogue of expectations, or a relation between system and context? The mathematics does not answer automatically. It tells us what operational role the state must play once the bridges are chosen.
+
+\chapter{Measurements Become Operators}
+A laboratory measurement produces outcomes: detector clicks, pointer positions, spectral lines, recorded numbers. Quantum textbooks represent observables by Hermitian operators. Why should those two descriptions be equivalent?
+
+Begin with a sharp measurement, a collection of mutually exclusive projectors that together exhaust the possibilities. Attach a real number to each outcome. The operator formed by multiplying each projector by its label and adding the results is Hermitian. Conversely, the spectral theorem says that every finite-dimensional Hermitian operator can be decomposed into real eigenvalues and orthogonal projectors. The operator and the real-labelled sharp measurement contain the same data.
+
+The point is modest but clarifying. Hermiticity need not be announced as an independent metaphysical property possessed by observables. It follows from packaging mutually exclusive sharp outcomes carrying real labels. The hidden cost is the decision that recorded outcomes are real-valued. That is natural for quantities we compare and average, but it remains a modelling choice.
+
+The familiar eigenvalue rule follows as well. If a state lies entirely within one eigenspace, the corresponding projector returns probability one. "Measuring an observable in an eigenstate yields its eigenvalue with certainty" is not another disconnected axiom once the Born rule and spectral representation are in place.
+
+Generalized measurements require a larger step. A positive-operator-valued measure, or POVM, need not consist of mutually orthogonal projectors on the system's own space. Yet every finite POVM can be represented as a sharp projective measurement on a larger space containing an ancilla. This is Naimark dilation.
+
+Dilation exhibits a recurring architecture: enlarge the description until the operation becomes simple, perform the simple operation there, and then project or trace away the auxiliary structure. Mixed states arise by ignoring part of a larger pure system; generalized measurements arise by performing sharp measurements on a larger composite. What looks nonclassical or unsharp downstairs may be ordinary and sharp upstairs relative to a richer space.
+
+But mathematical dilation does not prove that every laboratory apparatus literally implements a unique hidden sharp measurement. Dilations are generally nonunique. They show representability, not ontology. Once again the witness-mechanism distinction applies: the POVM statistics witness that some dilation exists; they do not identify which physical enlargement, if any, should be regarded as the mechanism.
+
+The practical motivation for POVMs is worth making concrete, because it is easy to read this chapter as pure formalism. Real detectors are imperfect: a photon counter may fail to click even when a photon arrives, a Stern-Gerlach apparatus may be misaligned by some small angle, and an interferometer may leak a little light down the wrong arm. None of these situations is naturally described by a family of perfectly orthogonal projectors, because the apparatus genuinely cannot distinguish every pair of alternatives a sharp measurement would require. Representing such an apparatus by a POVM is not a mathematical convenience layered on top of the true, sharp description. It is often the only honest description available, and the dilation theorem is the guarantee that this honesty need not come at the cost of consistency: whatever the imperfect apparatus is doing, some larger, perfectly sharp measurement scheme would do the same thing, if only the relevant ancilla could be identified and included.
+
+\chapter{Time Enters Late}
+Many presentations begin quantum mechanics with Schrodinger's equation. In this reconstruction, time arrives near the end. This reversal is revealing because it separates the kinematics of admissible states and measurements from the dynamics that carry states through time.
+
+Assume that a closed system evolves reversibly, continuously, and consistently with temporal composition. Evolving for a duration s and then t must equal evolving for s plus t. The evolution operators form a continuous one-parameter unitary group.
+
+In finite dimensions, such a group has a Hermitian generator. Write the group as an exponential and its infinitesimal law is Schrodinger's equation. The equation is therefore the local differential form of continuous reversible composition.
+
+This derivation is mathematically standard, but its placement changes its meaning. Schrodinger's equation is not conjured as a separate law added to an otherwise complete probability calculus. It expresses how the coherent lift varies when the composition parameter is time.
+
+What the argument does not establish is equally important. The Hermitian generator is not automatically identified with physical energy. The constant placed beside it is not automatically Planck's constant. Those identifications require further physical bridges involving time translations, units, experiment, and the classical limit. Nor does the unitary group describe open systems, measurements, dissipation, or irreversible thermodynamic processes without enlargement or approximation.
+
+Continuity itself is assumed. Discrete time, stochastic dynamics, nonlinear evolution, and nonunitary fundamental laws are not eliminated merely because a continuous unitary assumption yields the standard equation elegantly. A reconstruction shows what follows from its premises; elegance does not retroactively derive the premises.
+
+Still, the result reinforces the book's central motif. Exact compositional closure lives upstairs. At the projected level, probabilities may appear to mix, spread, or lose information. At the amplitude level, closed evolution is reversible and group-like. Irreversibility enters through restriction, coarse-graining, environmental coupling, or an explicitly different dynamics.
+
+\part{The Geography of Admissibility}
+
+\chapter{Inside the Birkhoff Polytope}
+For a fixed number of alternatives, every bistochastic matrix lives inside a geometric body called the Birkhoff polytope. Its corners are permutation matrices: perfectly definite relabellings. Every other point is a weighted average of these corners. The polytope is therefore the complete landscape of classical mixing transformations that preserve the uniform distribution.
+
+Unistochastic matrices occupy a region inside this landscape. Each comes from a unitary matrix after all complex phases have been erased by taking squared magnitudes. Orthostochastic matrices form a still more restrictive region obtained from real orthogonal matrices.
+
+The direction of inclusion matters: orthostochastic matrices sit inside unistochastic matrices, which sit inside bistochastic matrices.
+
+Quantum admissibility does not fill gaps that classical bistochasticity cannot reach. The opposite is true at the level of individual transition matrices: classical normalization and mixing permit probability tables that cannot arise as transitions between orthonormal quantum contexts of the same dimension. Quantum coherence imposes additional geometric constraints.
+
+For two alternatives all three regions coincide. The Birkhoff polytope is merely a line segment, and every point on it has both a real and complex coherent lift. This is why two-by-two probability data cannot by itself reveal whether real or complex amplitudes lie behind it.
+
+At three alternatives the geometry becomes genuinely interesting. The bistochastic set has four dimensions. The unistochastic region is full-dimensional but does not occupy the whole polytope, and its boundary is curved rather than simply formed by flat faces. Orthostochastic matrices lie along a special subset of that boundary. The uniform matrix sits at the center and is unistochastic, realized by the three-dimensional Fourier matrix, yet it is not orthostochastic.
+
+This means there are two distinct geometrical questions. The first asks whether a point in the classical polytope has any unitary lift. The second asks how many inequivalent lifts it has and how those lifts fit together across paths and cycles. Membership and reconstruction are not the same problem.
+
+For three dimensions, unistochasticity can be tested through a triangle condition. After suitable normalization, orthogonality between two rows of a prospective unitary requires three complex contributions to close into a triangle. Their lengths are determined by products of matrix entries. If the largest length exceeds the sum of the other two, no choice of phases can close the figure and the bistochastic matrix is not unistochastic. At the boundary the triangle flattens. Inside, two mirror-image phase choices commonly remain.
+
+This is a rare gift to intuition: a hidden-phase existence problem becomes ordinary Euclidean closure. The probability entries determine lengths but not directions. Unitary admissibility asks whether directions can be assigned so the weighted contributions cancel exactly.
+
+For four or more alternatives no comparably simple complete picture is known. The unistochastic region is non-convex, its fibres can change dimension, and phase constraints couple many orthogonality equations. Averaging two unistochastic matrices need not produce another unistochastic matrix even though both and their average remain bistochastic. Coherent realizability is not stable under classical mixture at the level of transition matrices.
+
+The Birkhoff polytope should thus be understood as a possibility space, and the unistochastic region as an admissibility geography drawn inside it. Boundaries mark probability transitions at which a coherent lift appears, disappears, or becomes degenerate. Studying those boundaries can constrain possible experiments without requiring us to expand every state vector explicitly. Geometry performs part of the bookkeeping normally assigned to amplitudes.
+
+\chapter{The Cliff at Three Dimensions}
+
+The triangle of earlier chapters took real work to build. Three contexts, not two; a closed loop, not a single comparison; a careful argument about what a cycle can carry that no edge along it can carry alone. It is worth asking why the obstruction needed all of that machinery. The answer turns out to be a low-dimensional accident, and once it is named, an entire dimension's worth of extra structure collapses away.
+
+Recall the degenerate coincidence from early on: at two outcomes, every real orthogonal lift is automatically a legitimate unitary lift as well, and vice versa. A single transition table, at that size, simply cannot tell the two number systems apart. This is precisely why the triangle was needed. If no single edge can ever distinguish real from complex admissibility at two outcomes, the only place a difference could possibly show up is in how several edges fit together around a loop, and the earlier chapters went looking for exactly that.
+
+At three outcomes, this coincidence has already been shown to fail. The uniform three-by-three table, the one built from squaring the entries of the Fourier matrix, has a complex origin and provably no real one. That fact was established with nothing more than a single transition table and a short argument about the nonexistence of a certain sign pattern. No loop was involved. No second or third context was needed. One table, on its own, already refuses a real lift.
+
+Put these two facts side by side and something striking follows. At two outcomes, the cheapest possible demonstration that real and complex admissibility differ requires an entire closed loop of three contexts, because no single edge can show the difference at that size. At three outcomes and above, the cheapest possible demonstration is a single edge, because individual tables can already show the difference on their own. What collapses is not the witness itself but the graph-theoretic complexity needed to state one: from a closed loop with cycle rank one down to a graph with cycle rank zero, a single edge carrying one nontrivial label. The edge itself, the actual unistochastic table with no orthostochastic lift, still has to be exhibited; nothing about it comes for free. What disappears is the need to close a loop at all.
+
+This is worth restating plainly because it runs against the natural expectation that more outcomes should demand more elaborate machinery to say anything interesting. Here the opposite happens. The triangle earned its keep specifically because two-outcome tables are unusually uninformative about the underlying number system, an accident of that particular size rather than a general feature of how real and complex admissibility relate. Once that accident is no longer in force, the elaborate cycle-closing argument is no longer needed to settle the question the triangle was built to settle. A birthday-party magic trick that takes an elaborate setup to pull off at one table size turns out to have a one-line version at every larger table size, once the specific reason the setup was needed in the first place goes away.
+
+None of this makes the triangle's argument obsolete, and it does not make cycles uninteresting once outcomes number three or more. The triangle answers a narrower and, in its own way, harder question than mere existence of a difference: can data that individually passes every single test still fail once several tests are required to agree with one another simultaneously. That question is not touched by a single misbehaving table, however dramatic, because a single table is exactly what the cycle question sets aside from the start. Whether cycles built from individually well-behaved edges can still fail to glue once outcomes number three or more remains, at the time of writing, an open question, and answering it would require the triangle's style of argument rather than the single-table argument of this chapter. What has been settled is a cheaper, blunter question: does a difference between the two number systems exist at all, at this size. From three outcomes onward, one badly behaved table is already enough to answer yes.
+
+\chapter{Drawing the Forbidden Region}
+How might one map the unistochastic region in practice? The naive method samples unitary matrices, projects them to squared magnitudes, and plots the resulting points. This produces useful pictures in low-dimensional slices, but it cannot prove that an apparently empty region is truly forbidden. Rare or thin sets may simply be missed.
+
+A complementary method begins with bistochastic matrices and attempts phase retrieval. The magnitudes of the unitary entries are fixed as square roots of the given probabilities. Unknown phases are then adjusted to satisfy row and column orthogonality. The residual failure of those equations supplies a numerical distance from realizability, though global optimization is required because local minima can imitate obstructions.
+
+Semialgebraic methods offer a more exact route. Replace each complex phase with real and imaginary components constrained to the unit circle, write orthogonality as polynomial equations, and eliminate the hidden variables. The resulting inequalities describe the projection of the unitary group into probability space. In principle, quantifier elimination can characterize the boundary. In practice, its cost rises rapidly with dimension.
+
+Optimization provides another view. Given a bistochastic matrix, minimize the distance between it and the squared magnitudes of a candidate unitary. A zero minimum certifies unistochasticity up to numerical tolerance; a positive global lower bound certifies exclusion. Riemannian optimization on the unitary group respects the constraint surface more naturally than unconstrained adjustment of matrix entries.
+
+One can also search the boundary by monitoring the Jacobian of the projection from unitary parameters to bistochastic coordinates. Critical values indicate folds, cusps, and changes in the number of lifts. Rather than asking only whether a matrix is admissible, this approach studies how stable its admissibility is under perturbation.
+
+The most informative computational atlas would combine these methods. Sampling would reveal broad shape; phase optimization would classify candidate points; exact inequalities would certify selected slices; Jacobian analysis would locate singular boundaries; and continuation methods would follow boundary components as external parameters change.
+
+Such an atlas would not merely decorate the theory. It would distinguish robustly admissible transitions from those balanced precariously at the edge of coherent realizability. It could identify extremal matrices that separate real, complex, and quaternionic lifts, locate minimal witnesses for competing composition rules, and suggest experiments concentrated near regions where the theories disagree most strongly.
+
+The algorithmic challenge is itself an instance of what probability forgets. We are given the magnitudes and asked whether compatible orientations exist. The search space consists almost entirely of information deliberately removed by projection.
+
+\chapter{The Phase-Retrieval Problem}
+If a unitary matrix is projected to a unistochastic matrix, what can be recovered? At minimum, multiplying rows or columns by phases changes the unitary but not its squared magnitudes. These transformations are gauge freedoms relative to the transition probabilities. Complex conjugation also preserves all magnitudes. Beyond these obvious ambiguities, some probability matrices admit several inequivalent lifts, while exceptional points admit continuous families.
+
+Phase retrieval asks whether magnitudes determine a compatible object and, if so, how uniquely. Versions of the problem appear in crystallography, optics, signal processing, and astronomy. A detector often records intensity, proportional to the squared magnitude of a wave, while discarding its phase. Reconstructing the source then requires constraints, redundancy, multiple illuminations, or prior information.
+
+In quantum transitions, one probability matrix usually cannot reconstruct the full unitary. Additional contexts can help, but they introduce gluing constraints. Sequential experiments can reveal relative phases indirectly through interference. What was invisible in one projection becomes visible when the unknown transformation is composed with a known reference transformation.
+
+This gives a practical meaning to phase. Phase is not directly read from a single intensity record, but neither is it forever metaphysically inaccessible. It is relationally observable: change the experimental context so that phase affects a later magnitude. The hidden variable becomes manifest through controlled continuation.
+
+Some information, however, remains gauge. A global phase applied to a state changes no quantum prediction. More generally, phase conventions attached independently to basis vectors alter the matrix representation without altering the physical transition probabilities. The retrieval problem must therefore recover an equivalence class, not an absolute list of phases.
+
+This distinction is essential. Projection removes both genuine physical relations and arbitrary representational choices. A good reconstruction should recover the former without pretending to recover the latter. Gauge quotienting is not information loss in the same sense as erasing a relative phase that later affects interference. One removes redundant descriptions; the other merges operationally distinguishable continuations.
+
+The geometry of fibres, the collection of all unitaries projecting to the same probability matrix, organizes these possibilities. A small discrete fibre means the probabilities nearly determine the coherent lift after gauge is removed. A large fibre means substantial underdetermination. Singular fibres often occur at symmetric or boundary points and may signal enhanced freedom or instability.
+
+Thus the unistochastic matrix can serve as a primary object without becoming a complete one. Its geometry tells us which lifts are possible, how many remain, and where additional experiments are required. Treating the matrix as primary means beginning inquiry from observable constraints, not declaring that the observable shadow contains its own mechanism.
+
+\chapter{Decoherence and the Routes Downward}
+Closed quantum evolution is unitary, but laboratory systems are rarely closed. They interact with environments containing enormous numbers of degrees of freedom. The joint system may evolve coherently while the subsystem we observe follows an apparently irreversible, noisy trajectory.
+
+The basic operation is familiar from earlier chapters: enlarge, evolve, then forget. Prepare a system together with an environment, apply a joint unitary transformation, and trace over the environmental degrees of freedom. The resulting map on the system is a quantum channel. It need not be unitary or reversible.
+
+If we monitor only populations in a preferred basis, some channels induce ordinary stochastic evolution. Under special conditions the resulting population-transition matrix may be unistochastic: its entries are squared magnitudes of an effective unitary. But general open-system dynamics is broader. Coupling to an environment can produce channels whose population maps are merely stochastic, and the full channel acts on coherences as well as populations.
+
+Decoherence is the progressive loss of accessible phase relations into environmental correlations. It does not necessarily destroy information at the level of the global closed system. It redistributes information so widely that local interference becomes impractical or impossible to recover. The environment acquires records of alternatives, and those records suppress the cross terms visible to local measurements.
+
+This supplies a physical route from coherent amplitudes to classical-looking probabilities. Yet the route is not a simple replacement of quantum dynamics by a stochastic matrix. Different channels can induce the same population dynamics while treating coherence differently. A classical transition table may therefore conceal not only phases of a unitary but the entire manner in which coherence leaked into an environment.
+
+Entropy illustrates the distinction. A bistochastic map on a classical probability distribution cannot decrease Shannon entropy. A unital quantum channel likewise cannot decrease von Neumann entropy in the same unrestricted way, though the precise statements depend on dimension and assumptions. Non-unital channels, such as cooling or amplitude damping, can decrease the system's entropy by transferring it elsewhere. Entropy production is a property of the system-environment accounting, not merely of a local stochastic shadow.
+
+Connecting quantum uncertainty directly to classical mixing therefore requires care. Majorization gives exact ordering results for bistochastic maps. Decoherence can often be represented as movement toward more mixed reduced states. But thermodynamic entropy production also depends on energy, reservoirs, correlations, and what is counted as the system. A flattened probability distribution is evidence of mixing, not a complete thermodynamic balance sheet.
+
+The projection framework clarifies what must be tracked. At each downward step, unitary to channel, channel to populations, populations to coarse-grained records, new distinctions are discarded. Each projection has its own fibres, its own compositional failures, and its own conditions under which lost information can return. Decoherence is not one act of forgetting but a pathway through several layers of admissibility.
+
+\part{What the Reconstruction Means}
+
+\chapter{The Foundational Cost Ledger}
+A reconstruction earns trust not by having no assumptions, but by showing where each assumption enters and what it purchases. The technical monograph lists four explicit operational additions: local tomography; the representation of pure states as designated vectors completable into frames; real-valued measurement labels; and continuous reversible time evolution.
+
+Those four are real costs, but they are not the total cost of the reconstruction. They are the assumptions added after a framework has already been selected. The framework includes finite-dimensional probability spaces, bistochastic transitions, unistochastic admissibility, frame-based contexts, convex mixtures, finite-dimensional Hilbert-space machinery, and a chosen rule for composing systems.
+
+The distinction can be made cleanly by keeping a two-level ledger. Framework commitments define the arena and the meaning of admissibility. Operational bridge assumptions connect objects in that arena to preparations, measurements, composites, and time. Mathematical theorems then derive consequences conditional on both levels.
+
+This resolves a misleading tension. It is true that the Born rule, Hermitian-observable correspondence, eigenvalue rule, Schrodinger equation, and finite POVM dilation need not be postulated independently once the chosen architecture is in place. It is also true that the architecture contains quantum-shaped commitments, especially unistochastic admissibility. Both statements can stand without contradiction.
+
+The phrase "four assumptions" should therefore be read locally: four additional operational assumptions beyond the prior admissibility framework. Used as a total foundational count, it understates the premises. Used as a dependency claim, it is informative. It shows that several textbook postulates are interconnected consequences rather than isolated declarations.
+
+This style of auditing is itself a contribution. Reconstructions often slide between derivation, representation, equivalence, and empirical identification. A formula may be derived from definitions but still depend on a physical bridge connecting those definitions to the world. A structure may reproduce quantum predictions without being uniquely required. A familiar postulate may become a theorem only because an equally strong condition was placed upstream.
+
+None of these observations invalidates the reconstruction. They specify what kind of achievement it is. The book does not manufacture quantum mechanics from featureless chance. It begins from a constrained family of probabilistic shadows and reconstructs the coherent architecture capable of casting them and composing them.
+
+An ordinary, non-quantum example makes the two-tier ledger easier to hold onto. A building inspector who signs off on a house is not certifying that the house was built from nothing. The framework, foundation codes, wiring standards, material specifications, was already fixed by the jurisdiction long before the inspection began, and nobody lists the entire building code as a cost of any particular house. What the inspector's signature adds, on top of that fixed framework, are the specific, checkable facts about this house: the beam spans meet the load requirements, the outlets are grounded, the smoke detectors are present and wired correctly. Asked what the inspection cost, in the sense of what it specifically certified, the honest answer names those few checked items, not the whole code they were checked against. Asked what the house cost, in the sense of everything that had to be true for it to be a legal house at all, the honest answer includes the code as well. Both questions are legitimate. They are simply different questions, and the reconstruction's four assumptions answer the first one, not the second.
+
+\chapter{Witnesses, Mechanisms, and Admissibility}
+The monograph's implications extend beyond quantum foundations because its logical distinctions are portable. A witness is an observable pattern compatible with a process. A mechanism is a structure that generates the pattern and supports interventions and continuations. An admissibility condition specifies which candidate mechanisms are allowed.
+
+One witness may have many mechanisms. One mechanism may cast many witnesses in different contexts. A collection of individually valid witnesses may admit no single common mechanism. These three facts organize much of scientific inference.
+
+Moments of a distribution witness its shape without identifying the causal process that generated it. Neural activity may witness a perceptual distinction without establishing consciousness, unity, or subjecthood. A linguistic output may witness competent task performance without identifying the internal algorithm. A historical inscription may witness an event while omitting the social relations required to interpret it. In every case, projection preserves some claims and blocks others.
+
+The quantum example adds a sharper point: omitted structure can be operationally dormant at one stage and decisive at the next. We cannot judge sufficiency once and for all. A representation adequate for classification may fail for composition; one adequate for local prediction may fail for global gluing; one adequate for marginals may fail for entanglement; one adequate for populations may fail for decoherence.
+
+Admissibility is therefore task-relative without being arbitrary. The task specifies which operations must be preserved. If we need only reproduce a single probability table, many lifts may suffice. If we need sequential composition, relative phase matters. If we need a global family of contexts, cycle consistency matters. If we need composite systems, tensor structure and local tomography matter.
+
+This suggests a general research discipline: before claiming that a compressed statistic captures a phenomenon, state the operations under which it must remain sufficient. Then test whether the projection preserves those operations. Failures should not be dismissed as anomalies. They identify the missing structure.
+
+Across every worked case in this book, real or composite, single system or joint, the failure takes the same shape, and it is worth stating that shape once, plainly, now that all the pieces are in view. Something looks entirely fine examined locally: an edge, a marginal, a single probability table. Something breaks only when that local description is asked to compose, glue, or generalize: two transformations chained together, three contexts closed into a loop, two systems joined into one. The break is repaired by structure that was not visible in the local data and could not have been read off it. That repairing structure can typically be written down in more than one way, real or complex, one composition convention or another, and the different notations are not equally revealing even when they are equally correct. What ultimately matters is the invariant work the structure performs, the compositions it closes and the distinctions it preserves, not which alphabet happens to carry that work in a given presentation.
+
+Probability, in this sense, tells you the weights. It does not tell you the orientations. And orientations, again and again in this book, are exactly what determine how one thing connects to the next.
+
+Quantum mechanics becomes, on this reading, the most exact demonstration that continuation can reveal what observation forgot.
+
+\chapter{What This Does Not Solve}
+No reconstruction of formal structure automatically resolves the measurement problem. Showing why amplitudes are needed for compositional closure does not specify why one outcome is experienced, whether collapse is physical, or how probabilities should be interpreted. It constrains the arena in which those questions are asked.
+
+Nor does the reconstruction derive the complex field uniquely. Real and quaternionic alternatives can be compared under specified assumptions, and complex quantum theory enjoys striking compositional virtues. But empirically equivalent real formulations can relocate complex structure into representation and composition. The invariant requirement is stronger than bare real probability and weaker than literal complex-number ontology. On the quaternionic side, a structural bound now exists showing that quaternionic mutually unbiased bases could in principle outnumber complex ones by roughly a factor of two, but this is only an upper bound: nobody has yet exhibited a quaternionic configuration that actually exceeds the complex count, and even if one were found, translating it into a genuine separation witness of the kind this book builds elsewhere would take further work not yet done.
+
+The approach also remains finite-dimensional. Infinite-dimensional Hilbert spaces introduce domains of unbounded operators, topological subtleties, continuous spectra, and a genuinely nontrivial version of Stone's theorem. Quantum field theory adds locality, relativistic covariance, particle creation, inequivalent representations, and renormalization. Nothing in the finite matrix reconstruction should be silently promoted to a solution of those problems.
+
+The Birkhoff-polytope programme is incomplete in higher dimensions. Characterizing all unistochastic matrices, their boundaries, fibres, and extremal points remains difficult. The absence of a simple criterion is not a technical inconvenience peripheral to the thesis; it marks how complicated the relation between observable probabilities and coherent lifts becomes as alternatives multiply.
+
+Open systems require quantum channels rather than transition matrices alone. General measurements require instruments if post-measurement states matter, not merely POVM effects. Thermodynamic claims require an explicit accounting of energy and environment. The probability-shadow perspective organizes these extensions but does not replace them.
+
+Finally, structural explanation is not ontology. The fact that a coherent lift repairs composition does not decide whether the lift is a physical object, an informational device, a relation, or an equivalence class of experimental procedures. The framework tells us what any successful interpretation must preserve. It does not tell us which metaphysical vocabulary should win.
+
+These limits are productive. A theory becomes more credible when it knows the boundary of its own inheritance. Each unsolved problem identifies a bridge not yet earned.
+
+\chapter{A Research Programme in the Shadow}
+The immediate mathematical programme is to map admissibility more fully. In dimensions above three, this means combining exact algebra, numerical optimization, and topology to characterize the unistochastic region inside the Birkhoff polytope. Particular attention should go to boundary singularities, changes in fibre cardinality, and matrices separating scalar fields or composition rules. The cheapest possible witness separating real from complex admissibility is now known at every dimension, a single edge suffices from three outcomes upward, a full cycle only at two, but this leaves the harder cycle-gluing question at three outcomes and above entirely open: can individually well-behaved edges still fail to fit together globally once tables can no longer be told apart one at a time. Settling that question, not the easier existence question this book already closes, is where the real work above two dimensions remains.
+
+A second programme concerns graph-labelled transitions. Rather than studying a single matrix, one studies networks of contexts whose edges carry probability data. The central questions become minimal obstruction, forbidden subgraphs, robustness under noise, and the complexity of deciding global realizability. Approximate gluing is especially important experimentally: exact algebraic inconsistency must be replaced by quantitative distance from the nearest realizable model.
+
+A third programme tracks successive projections in open systems. Starting from a system-environment unitary, one can compare the information lost in forming a channel, in restricting to population dynamics, and in coarse-graining recorded outcomes. Different projections may destroy different composition laws. Their hierarchy could connect phase retrieval, decoherence, and entropy production without treating them as one undifferentiated loss.
+
+A fourth programme compares representations. If complex quantum theory can be recoded over real numbers using a modified tensor product or quotient, which properties remain manifest and which become nonlocal or cumbersome? Can the triangle and local-tomography obstructions be stated in representation-independent terms? Which categorical or operational invariants capture the surviving role of complex structure?
+
+A fifth programme is methodological. The witness-mechanism distinction can be applied wherever scientific practice compresses rich processes into statistics. One can ask of moments, embeddings, biomarkers, institutional metrics, and machine-learning benchmarks what was asked of transition probabilities: Which operations does the summary preserve? What distinctions lie in its fibre? Which cycles or compositions make those distinctions observable again?
+
+These projects share a single movement. Begin from the shadow, characterize the objects capable of casting it, and then test whether those objects remain compatible when the experiment continues.
+
+\chapter{The World After the Probability}
+Probability is among the most successful languages ever devised for reasoning under uncertainty. Nothing in this book diminishes it. The lesson is more exact: probability is a language of weights, and weights alone do not always contain the relations needed for composition.
+
+Quantum theory teaches this through interference. Two processes with the same visible probabilities can differ in how they combine. It teaches it again through context graphs. Pairwise admissible transitions can fail to belong to one global arrangement. It teaches it through composite systems. The same matrix can be entangled or separable depending on the local operations and scalar field that give it meaning. It teaches it through decoherence. Classical-looking trajectories can emerge when phase information flows into an environment beyond local reach.
+
+At each stage a record is truthful within its scope. The failure occurs when truth at one grain is inherited by another without a bridge. A single transition does not determine a sequence. Local consistency does not determine global consistency. Marginals do not determine every joint structure in every theory. Representation does not determine ontology.
+
+The value of a coherent lift is that it restores the operations the shadow cannot perform. But the lift is not free. We choose an admissibility class, a scalar organization, a composition law, and operational bridges. The honest reconstruction states those choices before celebrating what follows from them.
+
+Seen this way, quantum mechanics is neither a revolt against reason nor merely classical ignorance with unusual bookkeeping. It is a theory built around a precise refusal: do not identify the observable distribution with the complete compositional state.
+
+What probability forgets is not noise around the edges of reality. Sometimes it is the orientation by which one possible event meets the next.
+
+\backmatter
+\chapter*{A Guide to the Technical Monograph}
+The companion's first two parts correspond chiefly to Chapters 1 through 7 of Quantum Mechanics from Admissible Probabilistic Composition. The Cliff at Three Dimensions, in Part V, draws on Chapter 20; the forest-theorem capstone at the end of Trees, Cycles, and the Cost of Agreement draws on Chapter 22. The discussion of composite systems follows Chapters 8 through 12 and 19; the note on real reformulations follows section 18.4; the aside on quaternions in What This Does Not Solve draws on Chapters 21 and 24. The recovery of states, observables, dynamics, and generalized measurements follows Chapters 14 through 17. Readers interested in exact notation, proofs, and the assumption ledgers should use the technical text as the authoritative source.
+
+\chapter*{Further Reading}
+For standard quantum mechanics, see J. J. Sakurai and Jim Napolitano, Modern Quantum Mechanics. For the geometry of stochastic and unistochastic matrices, see work by Karol Zyczkowski, Marek Kus, Wojciech Slomczynski, and Hans-Jurgen Sommers. For stochastic-quantum correspondences, see Jacob Barandes. For operational reconstructions and local tomography, see work by Lucien Hardy and the earlier parameter-counting arguments associated with Huzihiro Araki and William Wootters. For real simulations and reformulations of complex quantum theory, consult the recent constructions discussed in section 18.4 of the technical monograph. For a geometric introduction to complex multiplication as rotation and scaling, see Tristan Needham, Visual Complex Analysis.
+
+\vfill
+\begin{center}
+\small\textit{End of companion manuscript.}
+\end{center}
+
+\end{document}

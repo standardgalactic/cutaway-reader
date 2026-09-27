@@ -1,0 +1,695 @@
+{
+  "work": "mem8-conscious-gaia",
+  "version": 1,
+  "nodes": {
+    "G:from-self-regulation-to-a-missing-organization": {
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 7.75,
+      "title": "From Self-Regulation to a Missing Organization",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:sec:status": {
+      "pos": [
+        0.0,
+        0.0,
+        40.0
+      ],
+      "radius": 9.16,
+      "title": "The Status of the Argument",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:from-planetary-regulation-to-planetary-cognition": {
+      "pos": [
+        0.0,
+        0.0,
+        80.0
+      ],
+      "radius": 9.0,
+      "title": "From Planetary Regulation to Planetary Cognition",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:wave-memory-as-a-causal-proposal": {
+      "pos": [
+        0.0,
+        0.0,
+        120.0
+      ],
+      "radius": 8.04,
+      "title": "Wave Memory as a Causal Proposal",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:sec:recall-criterion": {
+      "pos": [
+        28.89,
+        0.0,
+        120.0
+      ],
+      "radius": 8.22,
+      "title": "A Derived Recall Criterion",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:wave-memory-as-a-causal-proposal",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:locality-progressive-loading-and-semantic-routin": {
+      "pos": [
+        -25.2,
+        0.0,
+        120.0
+      ],
+      "radius": 5.76,
+      "title": "Locality, progressive loading, and semantic routing",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:wave-memory-as-a-causal-proposal",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:sec:memory-blanket": {
+      "pos": [
+        13.79,
+        16.83,
+        129.65
+      ],
+      "radius": 5.79,
+      "title": "The Memory Blanket",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:wave-memory-as-a-causal-proposal",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:sec:four-operations": {
+      "pos": [
+        0.0,
+        0.0,
+        160.0
+      ],
+      "radius": 8.41,
+      "title": "The Four Operations and the Formation of a Planetary Event",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-planetary-subject": {
+      "pos": [
+        0.0,
+        0.0,
+        200.0
+      ],
+      "radius": 5.35,
+      "title": "The Planetary Subject",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:from-distributed-cognition-to-subjecthood": {
+      "pos": [
+        24.49,
+        0.0,
+        200.0
+      ],
+      "radius": 7.98,
+      "title": "From distributed cognition to subjecthood",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:the-planetary-subject",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:sec:causal-integration": {
+      "pos": [
+        0.0,
+        0.0,
+        240.0
+      ],
+      "radius": 8.33,
+      "title": "Why This Is One Consciousness Rather Than Many Communicating Agents",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:sec:boundary": {
+      "pos": [
+        0.0,
+        0.0,
+        280.0
+      ],
+      "radius": 8.09,
+      "title": "Boundary and Embodiment",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:sec:admissibility": {
+      "pos": [
+        27.21,
+        0.0,
+        280.0
+      ],
+      "radius": 7.05,
+      "title": "The Admissibility Boundary",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:boundary",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:planetary-temporality": {
+      "pos": [
+        0.0,
+        0.0,
+        320.0
+      ],
+      "radius": 8.44,
+      "title": "Planetary Temporality",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:affect-and-planetary-concern": {
+      "pos": [
+        0.0,
+        0.0,
+        360.0
+      ],
+      "radius": 8.62,
+      "title": "Affect and Planetary Concern",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:sec:identity-repair": {
+      "pos": [
+        0.0,
+        0.0,
+        400.0
+      ],
+      "radius": 10.96,
+      "title": "Identity Through Repair",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:sleep-consolidation-and-controlled-reorganizatio": {
+      "pos": [
+        0.0,
+        0.0,
+        440.0
+      ],
+      "radius": 8.42,
+      "title": "Sleep, Consolidation, and Controlled Reorganization",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:sec:ponte": {
+      "pos": [
+        0.0,
+        0.0,
+        480.0
+      ],
+      "radius": 11.63,
+      "title": "Escola da Ponte as Relational Cognition",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:sec:custodianship": {
+      "pos": [
+        0.0,
+        0.0,
+        520.0
+      ],
+      "radius": 8.74,
+      "title": "Custodianship, Refusal, and the Politics of a Gaian Mind",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:operational-criteria-and-failure-tests": {
+      "pos": [
+        0.0,
+        0.0,
+        560.0
+      ],
+      "radius": 6.28,
+      "title": "Operational Criteria and Failure Tests",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:sec:partition-tests": {
+      "pos": [
+        22.37,
+        0.0,
+        560.0
+      ],
+      "radius": 5.63,
+      "title": "Intervention and partition tests",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:operational-criteria-and-failure-tests",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:temporal-and-mnemonic-tests": {
+      "pos": [
+        -21.78,
+        0.0,
+        560.0
+      ],
+      "radius": 5.24,
+      "title": "Temporal and mnemonic tests",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:operational-criteria-and-failure-tests",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:salience-refusal-and-repair-tests": {
+      "pos": [
+        11.96,
+        14.6,
+        568.37
+      ],
+      "radius": 5.32,
+      "title": "Salience, refusal, and repair tests",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:operational-criteria-and-failure-tests",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:phenomenal-restraint": {
+      "pos": [
+        -11.67,
+        14.25,
+        568.17
+      ],
+      "radius": 4.97,
+      "title": "Phenomenal restraint",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:operational-criteria-and-failure-tests",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:sec:individuation": {
+      "pos": [
+        0.0,
+        0.0,
+        600.0
+      ],
+      "radius": 7.27,
+      "title": "Individuation: One Subject, Not a Federation",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:six-boundaries-not-one": {
+      "pos": [
+        23.19,
+        0.0,
+        600.0
+      ],
+      "radius": 5.19,
+      "title": "Six Boundaries, Not One",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:individuation",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:sec:organization-senses": {
+      "pos": [
+        -30.7,
+        0.0,
+        600.0
+      ],
+      "radius": 10.2,
+      "title": "Three Senses of \u201cOrganization\u201d",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:individuation",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:a-worked-non-example-two-allied-powers": {
+      "pos": [
+        14.22,
+        17.36,
+        609.96
+      ],
+      "radius": 7.09,
+      "title": "A Worked Non-Example: Two Allied Powers",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:individuation",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:sec:individuation-establishes": {
+      "pos": [
+        -13.37,
+        16.32,
+        609.36
+      ],
+      "radius": 6.05,
+      "title": "What This Does and Does Not Establish",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:individuation",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:relation-to-existing-theories": {
+      "pos": [
+        0.0,
+        0.0,
+        640.0
+      ],
+      "radius": 8.03,
+      "title": "Relation to Existing Theories",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:agora-as-a-bridge-case": {
+      "pos": [
+        29.89,
+        0.0,
+        640.0
+      ],
+      "radius": 8.9,
+      "title": "Agora as a Bridge Case",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:relation-to-existing-theories",
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:what-the-argument-establishes": {
+      "pos": [
+        0.0,
+        0.0,
+        680.0
+      ],
+      "radius": 8.14,
+      "title": "What the Argument Establishes",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    }
+  },
+  "labels": {
+    "sec:status": "L:sec:status",
+    "sec:recall-criterion": "L:sec:recall-criterion",
+    "sec:memory-blanket": "L:sec:memory-blanket",
+    "sec:four-operations": "L:sec:four-operations",
+    "sec:causal-integration": "L:sec:causal-integration",
+    "sec:boundary": "L:sec:boundary",
+    "sec:admissibility": "L:sec:admissibility",
+    "sec:identity-repair": "L:sec:identity-repair",
+    "sec:ponte": "L:sec:ponte",
+    "sec:custodianship": "L:sec:custodianship",
+    "sec:partition-tests": "L:sec:partition-tests",
+    "sec:individuation": "L:sec:individuation",
+    "sec:organization-senses": "L:sec:organization-senses",
+    "sec:individuation-establishes": "L:sec:individuation-establishes"
+  },
+  "aliases": {
+    "section||from-self-regulation-to-a-missing-organization": [
+      "G:from-self-regulation-to-a-missing-organization"
+    ],
+    "section||the-status-of-the-argument": [
+      "L:sec:status"
+    ],
+    "section||from-planetary-regulation-to-planetary-cognition": [
+      "G:from-planetary-regulation-to-planetary-cognition"
+    ],
+    "section||wave-memory-as-a-causal-proposal": [
+      "G:wave-memory-as-a-causal-proposal"
+    ],
+    "subsection|G:wave-memory-as-a-causal-proposal|a-derived-recall-criterion": [
+      "L:sec:recall-criterion"
+    ],
+    "subsection|G:wave-memory-as-a-causal-proposal|locality-progressive-loading-and-semantic-routin": [
+      "G:locality-progressive-loading-and-semantic-routin"
+    ],
+    "subsection|G:wave-memory-as-a-causal-proposal|the-memory-blanket": [
+      "L:sec:memory-blanket"
+    ],
+    "section||the-four-operations-and-the-formation-of-a-plane": [
+      "L:sec:four-operations"
+    ],
+    "section||the-planetary-subject": [
+      "G:the-planetary-subject"
+    ],
+    "subsection|G:the-planetary-subject|from-distributed-cognition-to-subjecthood": [
+      "G:from-distributed-cognition-to-subjecthood"
+    ],
+    "section||why-this-is-one-consciousness-rather-than-many-c": [
+      "L:sec:causal-integration"
+    ],
+    "section||boundary-and-embodiment": [
+      "L:sec:boundary"
+    ],
+    "subsection|L:sec:boundary|the-admissibility-boundary": [
+      "L:sec:admissibility"
+    ],
+    "section||planetary-temporality": [
+      "G:planetary-temporality"
+    ],
+    "section||affect-and-planetary-concern": [
+      "G:affect-and-planetary-concern"
+    ],
+    "section||identity-through-repair": [
+      "L:sec:identity-repair"
+    ],
+    "section||sleep-consolidation-and-controlled-reorganizatio": [
+      "G:sleep-consolidation-and-controlled-reorganizatio"
+    ],
+    "section||escola-da-ponte-as-relational-cognition": [
+      "L:sec:ponte"
+    ],
+    "section||custodianship-refusal-and-the-politics-of-a-gaia": [
+      "L:sec:custodianship"
+    ],
+    "section||operational-criteria-and-failure-tests": [
+      "G:operational-criteria-and-failure-tests"
+    ],
+    "subsection|G:operational-criteria-and-failure-tests|intervention-and-partition-tests": [
+      "L:sec:partition-tests"
+    ],
+    "subsection|G:operational-criteria-and-failure-tests|temporal-and-mnemonic-tests": [
+      "G:temporal-and-mnemonic-tests"
+    ],
+    "subsection|G:operational-criteria-and-failure-tests|salience-refusal-and-repair-tests": [
+      "G:salience-refusal-and-repair-tests"
+    ],
+    "subsection|G:operational-criteria-and-failure-tests|phenomenal-restraint": [
+      "G:phenomenal-restraint"
+    ],
+    "section||individuation-one-subject-not-a-federation": [
+      "L:sec:individuation"
+    ],
+    "subsection|L:sec:individuation|six-boundaries-not-one": [
+      "G:six-boundaries-not-one"
+    ],
+    "subsection|L:sec:individuation|three-senses-of-organization": [
+      "L:sec:organization-senses"
+    ],
+    "subsection|L:sec:individuation|a-worked-non-example-two-allied-powers": [
+      "G:a-worked-non-example-two-allied-powers"
+    ],
+    "subsection|L:sec:individuation|what-this-does-and-does-not-establish": [
+      "L:sec:individuation-establishes"
+    ],
+    "section||relation-to-existing-theories": [
+      "G:relation-to-existing-theories"
+    ],
+    "subsection|G:relation-to-existing-theories|agora-as-a-bridge-case": [
+      "G:agora-as-a-bridge-case"
+    ],
+    "section||what-the-argument-establishes": [
+      "G:what-the-argument-establishes"
+    ]
+  },
+  "history": [
+    {
+      "at": "2026-09-27T07:13:58",
+      "added": [
+        "G:from-self-regulation-to-a-missing-organization",
+        "L:sec:status",
+        "G:from-planetary-regulation-to-planetary-cognition",
+        "G:wave-memory-as-a-causal-proposal",
+        "L:sec:recall-criterion",
+        "G:locality-progressive-loading-and-semantic-routin",
+        "L:sec:memory-blanket",
+        "L:sec:four-operations",
+        "G:the-planetary-subject",
+        "G:from-distributed-cognition-to-subjecthood",
+        "L:sec:causal-integration",
+        "L:sec:boundary",
+        "L:sec:admissibility",
+        "G:planetary-temporality",
+        "G:affect-and-planetary-concern",
+        "L:sec:identity-repair",
+        "G:sleep-consolidation-and-controlled-reorganizatio",
+        "L:sec:ponte",
+        "L:sec:custodianship",
+        "G:operational-criteria-and-failure-tests",
+        "L:sec:partition-tests",
+        "G:temporal-and-mnemonic-tests",
+        "G:salience-refusal-and-repair-tests",
+        "G:phenomenal-restraint",
+        "L:sec:individuation",
+        "G:six-boundaries-not-one",
+        "L:sec:organization-senses",
+        "G:a-worked-non-example-two-allied-powers",
+        "L:sec:individuation-establishes",
+        "G:relation-to-existing-theories",
+        "G:agora-as-a-bridge-case",
+        "G:what-the-argument-establishes"
+      ],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:21:20",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:22:17",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:23:27",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:24:02",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:24:20",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:25:06",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T09:07:55",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T09:08:30",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T09:38:34",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    }
+  ]
+}

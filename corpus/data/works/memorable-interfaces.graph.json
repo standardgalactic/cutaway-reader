@@ -1,0 +1,354 @@
+{
+  "work": "memorable-interfaces",
+  "nodes": [
+    {
+      "id": "L:sec:intro",
+      "title": "Introduction",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 78,
+      "image": "img/intro.png",
+      "threads": [],
+      "cites": [],
+      "order": 0,
+      "text": [
+        "An archive can preserve every page and still be impossible to remember. The magazine mosaic keeps each photograph of each page, yet a reader who closes it retains almost nothing about where anything was.",
+        "Descent solved a harder problem. Its mines have no reliable floor or ceiling, and players still learned them, because memory attached to topology and action together: the broad chamber with the vertical shaft that leads back toward the blue door."
+      ]
+    },
+    {
+      "id": "L:sec:prelim",
+      "title": "Preliminaries and Notation",
+      "level": "section",
+      "heading": "section",
+      "role": "foundation",
+      "thesis": false,
+      "part": null,
+      "words": 44,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 1,
+      "text": [
+        "A work is a set of units. Each section is a chamber with a stable identifier, each subsection an alcove, and each reference a passage.",
+        "The semantic graph records meaning. The spatial ledger records remembered location. A reader log records what one person actually did."
+      ]
+    },
+    {
+      "id": "L:sub:chambers",
+      "title": "Chambers",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 25,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 2,
+      "text": [
+        "A chamber keeps its identifier and coordinates for the life of the work. Revision may enlarge it or seal it, never move it."
+      ]
+    },
+    {
+      "id": "G:passages",
+      "title": "Passages",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 16,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 3,
+      "text": [
+        "A passage is physically two-way. The citation it realizes keeps its direction in the graph."
+      ]
+    },
+    {
+      "id": "L:sec:cutaway",
+      "title": "The Cutaway Map",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 62,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 4,
+      "text": [
+        "Using the notation of Section [sec:prelim], the automap removes texture, lighting and surface detail so that connectivity is all that remains.",
+        "It opens in the viewer's current orientation, centred on the present chamber, and discloses only what has been visited or revealed. Traversed passages are white; revealed ones are a faint blue envelope; the rest is absent."
+      ]
+    },
+    {
+      "id": "L:sec:routes",
+      "title": "Route Persistence",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 29,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 5,
+      "text": [
+        "A Stars! repeat route becomes a reproducible flight path. Cruise flies it with the same translations and rotations a pilot would make, and any key takes control back."
+      ]
+    },
+    {
+      "id": "L:sec:thesis",
+      "title": "Supervisory Memory",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": true,
+      "part": null,
+      "words": 105,
+      "image": null,
+      "threads": [
+        {
+          "kind": "evidence",
+          "text": "needs a recall study with returning readers"
+        }
+      ],
+      "cites": [],
+      "order": 6,
+      "text": [
+        "Orientation comes from invariants amid transformation, see [sub:chambers]. The reader may roll upside down and approach a chamber along another axis, but its connections stay where they were.",
+        "A second loop sits above the first. Routes declared in the strategic view are flown as real trajectories in the mine, and the log of what happened lets a reader return after days and resume where the argument was left. Policies extend this. A route can be declared once as a rule, such as prerequisites before dependents, and recomputed whenever the source or the reader's history changes, so the plan stays current without being redrawn by hand."
+      ]
+    },
+    {
+      "id": "L:sec:obj",
+      "title": "Objections from Search",
+      "level": "section",
+      "heading": "section",
+      "role": "comparison",
+      "thesis": false,
+      "part": null,
+      "words": 38,
+      "image": null,
+      "threads": [
+        {
+          "kind": "open",
+          "text": "whether instant retrieval erodes place memory is deliberately left open"
+        }
+      ],
+      "cites": [],
+      "order": 7,
+      "text": [
+        "Search reaches any point instantly, which is exactly why it produces no place memory. Retrieval answers where a phrase is; it says nothing about what surrounds it or how one arrived, contra [sec:thesis]."
+      ]
+    },
+    {
+      "id": "L:sec:apps",
+      "title": "Applications to an Essay Corpus",
+      "level": "section",
+      "heading": "section",
+      "role": "consequence",
+      "thesis": false,
+      "part": null,
+      "words": 44,
+      "image": null,
+      "threads": [
+        {
+          "kind": "missing",
+          "text": "add series-level route examples"
+        }
+      ],
+      "cites": [],
+      "order": 8,
+      "text": [
+        "Six hundred works become six hundred small levels, each generated from its own source, each learnable with the same axis rule. Illustrations hang on the far wall of the chamber they open."
+      ]
+    },
+    {
+      "id": "L:sec:concl",
+      "title": "Closing",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 36,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 9,
+      "text": [
+        "The test for the whole design is simple. After closing it for a day, can the reader say where an argument was, how they reached it, and which passage they meant to explore next?"
+      ]
+    },
+    {
+      "id": "L:app:formal",
+      "title": "Formal Model",
+      "level": "section",
+      "heading": "section",
+      "role": "appendix",
+      "thesis": false,
+      "part": null,
+      "words": 24,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 10,
+      "text": [
+        "Ledger invariants, per [sec:prelim]: identifiers are never reused, coordinates are never recomputed, and withdrawn chambers remain as sealed volumes."
+      ]
+    },
+    {
+      "id": "L:app:controls",
+      "title": "Control Table",
+      "level": "section",
+      "heading": "section",
+      "role": "appendix",
+      "thesis": false,
+      "part": null,
+      "words": 28,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 11,
+      "text": [
+        "Left hand translates: W and S surge, A and D strafe, R and F heave, Q and E roll. Right hand orients: H and L yaw, J and K pitch. Tab or semicolon opens the automap."
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "L:sec:intro",
+      "to": "L:sec:cutaway",
+      "kind": "sequence",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:cutaway",
+      "to": "L:sec:routes",
+      "kind": "sequence",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:routes",
+      "to": "L:sec:thesis",
+      "kind": "sequence",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:thesis",
+      "to": "L:sec:concl",
+      "kind": "sequence",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:intro",
+      "to": "L:sec:prelim",
+      "kind": "branch",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:thesis",
+      "to": "L:sec:obj",
+      "kind": "branch",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:thesis",
+      "to": "L:sec:apps",
+      "kind": "branch",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:concl",
+      "to": "L:app:formal",
+      "kind": "shaft",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:app:formal",
+      "to": "L:app:controls",
+      "kind": "shaft",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:prelim",
+      "to": "L:sub:chambers",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:prelim",
+      "to": "G:passages",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:cutaway",
+      "to": "L:sec:prelim",
+      "kind": "prerequisite",
+      "label": "sec:prelim",
+      "door": true,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:thesis",
+      "to": "L:sub:chambers",
+      "kind": "reference",
+      "label": "sub:chambers",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:thesis",
+      "to": "work:two-games",
+      "kind": "exit",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:obj",
+      "to": "L:sec:thesis",
+      "kind": "reference",
+      "label": "sec:thesis",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:apps",
+      "to": "work:manufactured-necessity",
+      "kind": "exit",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:apps",
+      "to": "work:document-repositories#sec:notes-cutaway",
+      "kind": "exit",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:app:formal",
+      "to": "L:sec:prelim",
+      "kind": "prerequisite",
+      "label": "sec:prelim",
+      "door": true,
+      "traversal": "two-way"
+    }
+  ],
+  "title": "Memorable Interfaces",
+  "bibliography": {},
+  "sources": [
+    "memorable-interfaces.tex"
+  ],
+  "warnings": [],
+  "source_sha256": "b1e7b3537b1890f73236698c01eb76b8a8da5b96548f96caeb2a52218217391e",
+  "miner": "7ed639c1b254"
+}

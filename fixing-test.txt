@@ -1,0 +1,243 @@
+38:  function build(data) {
+39-    const G = data.graph, L = data.ledger, gById = new Map(G.nodes.map((n) => [n.id, n]));
+40-    const nodes = new Map();
+41-    for (const [id, l] of Object.entries(L.nodes)) {
+42-      const g = gById.get(id) || {};
+43-      nodes.set(id, { id, title: l.title, role: l.role, level: l.level, parent: l.parent || null,
+44-        pos: l.pos.slice(), r: l.radius, status: l.status, thesis: !!g.thesis, threads: g.threads || [],
+45-        text: g.text || [], image: g.image || null, order: g.order ?? 999, part: g.part || null });
+46-    }
+47-    const tunnels = new Map();
+48-    for (const e of G.edges) {
+49-      if (e.kind === "exit") continue;
+50-      const A = nodes.get(e.from), B = nodes.get(e.to);
+51-      if (!A || !B || A.status !== "active" || B.status !== "active") continue;
+52-      const key = pairKey(e.from, e.to);
+53-      if (!tunnels.has(key)) {
+54-        const [a, b] = e.from < e.to ? [e.from, e.to] : [e.to, e.from];
+55-        // physical traversal is two-way for every internal edge; direction lives in `cites`
+56-        tunnels.set(key, { key, a, b, kinds: [], cites: [] });
+57-      }
+58-      const t = tunnels.get(key);
+59-      if (!t.kinds.includes(e.kind)) t.kinds.push(e.kind);
+60-      if (e.kind === "reference" || e.kind === "prerequisite") t.cites.push({ from: e.from, to: e.to, door: !!e.door });
+61-    }
+62-    const adj = new Map([...nodes.keys()].map((k) => [k, []]));
+63-    for (const t of tunnels.values()) { adj.get(t.a).push(t); adj.get(t.b).push(t); }
+64-    const exits = G.edges.filter((e) => e.kind === "exit" && nodes.get(e.from)?.status === "active")
+65-      .map((e) => ({ from: e.from, to: e.to.replace(/^work:/, ""), oneway: e.traversal === "one-way" }));
+66-    return { work: G.work, nodes, tunnels, adj, exits, history: L.history || [] };
+67-  }
+68-
+69-  const live = (m) => [...m.nodes.values()].filter((n) => n.status === "active");
+70-  const sections = (m) => live(m).filter((n) => n.level === "section");
+71-
+72-  function readingOrder(m) {
+73-    const s = sections(m), by = (a, b) => a.order - b.order;
+74-    return s.filter((n) => n.role !== "appendix").sort(by).concat(s.filter((n) => n.role === "appendix").sort(by)).map((n) => n.id);
+75-  }
+76-  function startChamber(m) { return readingOrder(m)[0]; }
+77-
+78-  function pathBetween(m, a, b) {
+79-    if (a === b) return [];
+80-    const prev = new Map([[a, null]]), q = [a];
+81-    while (q.length) {
+82-      const x = q.shift(); if (x === b) break;
+83-      for (const t of m.adj.get(x) || []) { const y = other(t, x); if (!prev.has(y)) { prev.set(y, { from: x, to: y, t }); q.push(y); } }
+84-    }
+85-    if (!prev.has(b)) return null;
+86-    const hops = []; let x = b;
+87-    while (prev.get(x)) { const s = prev.get(x); hops.unshift(s); x = s.from; }
+88-    return hops;
+89-  }
+90-
+91-  function relations(m, id) {
+92-    const outs = [], ins = [];
+93-    for (const t of m.adj.get(id) || []) for (const c of t.cites) {
+94-      if (c.from === id) outs.push(c.to); if (c.to === id) ins.push(c.from);
+95-    }
+96-    return { outs, ins };
+97-  }
+98-
+99-  /* ---------------- reader log: identity, ordering, union ---------------- */
+100-  function uuid() {
+101-    if (typeof crypto !== "undefined" && crypto.randomUUID) return crypto.randomUUID();
+102-    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
+103-      const r = (Math.random() * 16) | 0; return (c === "x" ? r : (r & 3) | 8).toString(16); });
+104-  }
+105-  function fnv(str) { // two 32-bit FNV-1a passes -> 16 hex chars
+106-    let h1 = 0x811c9dc5, h2 = 0x01000193 ^ 0x5bd1e995;
+107-    for (let i = 0; i < str.length; i++) { const c = str.charCodeAt(i); h1 = Math.imul(h1 ^ c, 16777619); h2 = Math.imul(h2 ^ c, 2246822519); }
+108-    return (h1 >>> 0).toString(16).padStart(8, "0") + (h2 >>> 0).toString(16).padStart(8, "0");
+109-  }
+110-  const newActor = () => "a-" + uuid().slice(0, 8);
+111-  const cmp = (x, y) => x.seq - y.seq || (x.actor < y.actor ? -1 : x.actor > y.actor ? 1 : 0) || (x.id < y.id ? -1 : x.id > y.id ? 1 : 0);
+112-
+113-  /** Give an event its identity. seq is a Lamport clock: one more than anything this actor has seen. */
+114-  function stamp(events, actor, body, at) {
+115-    for (const k of ["id", "actor", "seq", "at"]) if (k in body) throw new Error("event body may not set '" + k + "': identity belongs to the log");
+116-    const seq = events.reduce((m, e) => Math.max(m, e.seq || 0), 0) + 1;
+117-    return Object.assign({ id: uuid(), actor, seq, at: at || new Date().toISOString() }, body);
+118-  }
+119-  /** Set union by event id, in causal order. Nothing is ever replaced or dropped. */
+120-  function merge(a, b) {
+121-    const byId = new Map();
+122-    for (const e of a) if (e && e.id) byId.set(e.id, e);
+123-    for (const e of b) if (e && e.id && !byId.has(e.id)) byId.set(e.id, e);
+124-    return [...byId.values()].sort(cmp);
+125-  }
+126-  /** Old logs (before identity existed) get ids once, deterministically ordered as they were. */
+127-  function upgrade(events, actor) {
+128-    let seq = 0; const beaconByN = new Map(), out = [];
+129-    const isEarlyScan = (e) => e.t === "flare" && Array.isArray(e.pos) && !("text" in e) && !("inscription" in e);
+130-    for (const e0 of events) {
+131-      // Cutaway briefly called its 20-second glimpse a "flare". Same event, same id, correct name.
+132-      const e = isEarlyScan(e0) ? Object.assign({}, e0, { t: "scan", renamedFrom: "flare" }) : e0;
+133-      if (e.id && e.seq && e.actor) { out.push(e); if (e.t === "beacon") beaconByN.set(e.n, e.id); continue; }
+134-      // first-version events used `id` for the chamber; move it, then give the event its own identity
+135-      const x = Object.assign({}, e); delete x.id;
+136-      if (["enter", "bind", "unbind", "read"].includes(e.t) && e.id && !e.chamber) x.chamber = e.id;
+137-      // deterministic: upgrading the same legacy log twice yields the same ids, so merges stay idempotent
+138-      Object.assign(x, { id: "legacy-" + fnv(JSON.stringify(e) + "|" + seq), actor: "legacy", seq: ++seq });
+139-      if (x.t === "beacon") beaconByN.set(x.n, x.id);
+140-      if (x.t === "retire" && !x.ref && beaconByN.has(x.n)) x.ref = beaconByN.get(x.n);
+141-      out.push(x);
+142-    }
+143-    return out;
+144-  }
+145-
+146-  /* ---------------- derived reader state ---------------- */
+147-  function derive(m, events, nowMs) {
+148-    const now = nowMs ?? Date.now();
+149-    const S = { visited: new Set(), traversed: new Set(), revealed: new Set(), revealedT: new Set(),
+150-      glimpse: new Set(), glimpseT: new Set(), scansActive: 0, scanExpires: 0,
+151-      beacons: new Map(), route: [], policy: "reading", trail: [], here: null, prevSession: null, reads: [] };
+152-    const sessions = events.filter((e) => e.t === "session");
+153-    S.prevSession = sessions.length > 1 ? sessions[sessions.length - 2] : null;
+154-    for (const e of events) {
+155-      switch (e.t) {
+156-        case "enter": if (m.nodes.get(e.chamber)?.status === "active") { S.visited.add(e.chamber); S.here = e.chamber; } break;
+157-        case "traverse": if (m.tunnels.has(e.key)) { S.traversed.add(e.key); S.trail.push(e); } break;
+158-        case "scan": {
+--
+328:  function buildCorpus(bundle, opts) {
+329-    opts = opts || {};
+330-    const g = bundle.corpus.graph, l = bundle.corpus.ledger, works = new Map(), cache = new Map(), pending = new Map();
+331-    for (const w of g.works) {
+332-      const p = l.works[w.id] || {};
+333-      works.set(w.id, Object.assign({}, w, { pos: p.pos || [0, 0, 0], status: p.status || "active", conflicts: p.conflicts || [] }));
+334-    }
+335-    for (const [id, p] of Object.entries(l.works)) if (!works.has(id)) // withdrawn works stay as sealed systems
+336-      works.set(id, { id, title: id, abstract: "", series: null, counts: { sections: 0, words: 0, threads: {} }, pos: p.pos, status: p.status, conflicts: p.conflicts || [] });
+337-    const lanes = g.lanes.map((x, i) => Object.assign({ key: laneKey(x) }, x));
+338-    return { id: g.corpus, title: g.title, works, lanes, series: g.series || {}, views: g.views || [{ id: "galaxy", title: "Galaxy" }],
+339-      split: !!bundle.split,
+340-      has(id) { const w = works.get(id); return !!w && w.status === "active" && (!!bundle.works[id] || !!bundle.split); },
+341-      loaded(id) { return cache.has(id) || !!bundle.works[id]; },
+342-      model(id) {
+343-        if (!cache.has(id) && !bundle.works[id] && bundle.split && opts.load && works.has(id)) { const d = opts.load(id); if (d) bundle.works[id] = d; }
+344-        if (!cache.has(id) && bundle.works[id]) cache.set(id, build(bundle.works[id]));
+345-        return cache.get(id) || null; },
+346-      ensure(id) { // resolves to the model, fetching the work the first time it is needed; one request per work
+347-        if (this.loaded(id)) return Promise.resolve(this.model(id));
+348-        if (!bundle.split || !opts.fetch || !works.has(id)) return Promise.resolve(this.model(id));
+349-        if (!pending.has(id)) pending.set(id, opts.fetch(id).then((d) => { bundle.works[id] = d; pending.delete(id); return this.model(id); },
+350-          (err) => { pending.delete(id); throw err; }));
+351-        return pending.get(id); } };
+352-  }
+353-  /** A single work ({graph, ledger}) is a one-work corpus, so every interface has one code path. */
+354-  function asBundle(data) {
+355-    if (data.corpus && data.works) return data;
+356-    const g = data.graph, secs = g.nodes.filter((n) => n.level === "section");
+357-    const threads = {}; for (const n of g.nodes) for (const t of n.threads) threads[t.kind] = (threads[t.kind] || 0) + 1;
+358-    return { corpus: { graph: { corpus: g.work, title: g.work, series: {}, lanes: g.edges.filter((e) => e.kind === "exit").map((e) =>
+359-          ({ kind: "exit", from: g.work, from_chamber: e.from, to: e.to.replace(/^work:/, "").split("#")[0], to_label: null, traversal: e.traversal, uncharted: true })),
+360-        works: [{ id: g.work, title: g.work, abstract: "", series: null, counts: { sections: secs.length, words: g.nodes.reduce((a, n) => a + n.words, 0), threads } }],
+361-        views: [{ id: "galaxy", title: "Galaxy" }] },
+362-      ledger: { works: { [g.work]: { pos: [0, 0, 0], status: "active" } } } }, works: { [g.work]: data } };
+363-  }
+364-  function laneKey(x) { return x.kind + ":" + x.from + (x.from_chamber ? "@" + x.from_chamber : "") + ">" + x.to + (x.to_label ? "#" + x.to_label : ""); }
+365-  /** Where a lane lands. With the work loaded, from its live chambers; otherwise from the build's own answer
+366-   *  (the lane's to_chamber), which was computed the same way. */
+367-  function landing(C, wid, label, hint) {
+368-    const w = C.works.get(wid), m = C.loaded ? (C.loaded(wid) ? C.model(wid) : null) : C.model(wid);
+369-    if (!m) return hint || w?.start || null;
+370-    if (label && m.nodes.get("L:" + label)?.status === "active") return "L:" + label;
+371-    return startChamber(m) || w?.start || null;
+372-  }
+373-  /** Every way out of a work into another, with the chamber it opens from and where it lands.
+374-   *  Declared exits open where they were written; a two-way exit also opens a way back at its landing;
+375-   *  series lanes open from the work's first chamber. Uncharted exits are listed but lead nowhere yet. */
+376-  function portals(C, wid) {
+377-    const out = [], m = C.model(wid), start = m ? startChamber(m) : C.works.get(wid)?.start || null;
+378-    for (const x of C.lanes) {
+379-      const back = x.to === wid && x.from !== wid;
+380-      if (x.from !== wid && !back) continue;
+381-      const cites = x.kind === "cites-work", named = (id, t) => C.works.get(id)?.title || t || id;
+382-      if ((x.kind === "exit" || cites) && !back) out.push({ lane: x.key, chamber: x.from_chamber, to_work: x.to, to_chamber: x.uncharted ? null : landing(C, x.to, x.to_label, x.to_chamber),
+383-        to_title: named(x.to, x.to_title), dir: (cites ? "cites " : "exit to ") + named(x.to, x.to_title), oneway: x.traversal === "one-way",
+384-        uncharted: !!x.uncharted, inferred: !!x.inferred, kind: cites ? "cites-work" : "exit" });
+385-      else if ((x.kind === "exit" || cites) && back && x.traversal !== "one-way" && !x.uncharted) out.push({ lane: x.key, chamber: landing(C, wid, x.to_label, x.to_chamber), to_work: x.from, to_chamber: x.from_chamber,
+386-        to_title: named(x.from), dir: (cites ? "cited by " : "exit back to ") + named(x.from) + sectionOf(C, x.from, x.from_chamber, x.from_chamber_title), oneway: false, uncharted: false, inferred: !!x.inferred, kind: cites ? "cited-by" : "exit-back" });
+387-      else if (x.kind === "series") { const other = back ? x.from : x.to;
+388-        out.push({ lane: x.key, chamber: start, to_work: other, to_chamber: landing(C, other, null, back ? null : x.to_chamber), kind: "series",
+389-          dir: (back ? "previous" : "next") + " in series: " + (C.works.get(other)?.title || other), oneway: false, uncharted: false }); }
+390-    }
+391-    return out.filter((p) => p.chamber && C.works.get(p.to_work)?.status !== "withdrawn");
+392-  }
+393-  /** " (§ Section title)" for the chamber a way back leads to, so two ways back to one work stay distinguishable. */
+394-  function sectionOf(C, wid, chamber, known) {
+395-    const t = (C.loaded && !C.loaded(wid) ? null : C.model(wid)?.nodes.get(chamber)?.title) || known; return t ? " (§ " + t + ")" : ""; }
+396-  /** Crossing into another work: a jump, then an enter that belongs to the destination. */
+397-  ops.jump = (fromWork, fromChamber, portal) => [
+398-    { t: "jump", work: fromWork, from_work: fromWork, from_chamber: fromChamber, to_work: portal.to_work, to_chamber: portal.to_chamber, lane: portal.lane || null },
+399-    { t: "enter", work: portal.to_work, chamber: portal.to_chamber },
+400-  ];
+401-  /** Arriving in a work from outside any lane (a chosen system in the galaxy, a search). Recorded as a warp, honestly. */
+402-  ops.warp = (fromWork, fromChamber, toWork, toChamber) => ops.jump(fromWork, fromChamber, { to_work: toWork, to_chamber: toChamber, lane: null });
+403-
+404-  const workEvents = (events, wid) => events.filter((e) => !e.work || e.work === wid);
+405-  function deriveCorpus(C, events) {
+406-    const CS = { visited: new Set(), revealed: new Set(), lanesUsed: new Set(), here: null, hereChamber: null, jumps: [], warps: 0 };
+407-    for (const e of events) {
+408-      if (e.t === "enter" && e.work && C.works.has(e.work)) { CS.visited.add(e.work); CS.here = e.work; CS.hereChamber = e.chamber; }
+409-      else if (e.t === "jump") { CS.jumps.push(e); if (e.lane) CS.lanesUsed.add(e.lane); else CS.warps++; }
+410-    }
+411-    for (const w of CS.visited) { CS.revealed.add(w); for (const x of C.lanes) { if (x.from === w && !x.uncharted) CS.revealed.add(x.to); if (x.to === w) CS.revealed.add(x.from); } }
+412-    return CS;
+413-  }
+414-  const workState = (CS, id) => (CS.visited.has(id) ? "visited" : CS.revealed.has(id) ? "revealed" : "unexplored");
+415-
+416-  /** Declared views: sorts and filters over the same work records (Notes views, Stars! reports). */
+417-  function view(C, CS, id) {
+418-    const v = C.views.find((x) => x.id === id) || C.views[0];
+419-    const works = [...C.works.values()].filter((w) => w.status !== "withdrawn");
+420-    const here = C.works.get(CS.here);
+421-    const row = (w, extra) => Object.assign({ work: w.id, title: w.title, state: workState(CS, w.id),
+422-      sub: `${w.counts.sections} sections · ${w.counts.words} words` + (w.conflicts.length ? " · placement conflict" : "") }, extra || {});
+423-    let rows;
+424-    if (v.select === "threads") {
+425-      rows = [];
+426-      for (const w of works) { // from the record, so the view needs no work loaded; a loaded work speaks for itself
+427-        const m = C.loaded && !C.loaded(w.id) ? null : C.model(w.id);
+428-        const list = m ? live(m).flatMap((n) => n.threads.map((t) => ({ chamber: n.id, chamber_title: n.title, kind: t.kind, text: t.text })))
+429-                       : (w.open_threads || []);
+430-        for (const t of list) rows.push({ work: w.id, chamber: t.chamber, title: w.title, state: workState(CS, w.id),
+431-          group: THREAD_TEXT[t.kind], sub: t.text + " · " + t.chamber_title }); }
+432-      rows.sort((a, b) => a.group.localeCompare(b.group));
+433-    } else if (v.select === "unvisited") rows = works.filter((w) => !CS.visited.has(w.id)).map((w) => row(w));
+434-    else if (v.group === "series") {
+435-      rows = [];
+436-      for (const [sid, s] of Object.entries(C.series)) for (const id of s.order) { const w = C.works.get(id); if (w && w.status !== "withdrawn") rows.push(row(w, { group: s.title })); }
+437-      for (const w of works) if (!w.series) rows.push(row(w, { group: "Not in a series" }));
+438-    } else if (v.sort === "-words") rows = works.slice().sort((a, b) => b.counts.words - a.counts.words).map((w) => row(w));
+439-    else rows = works.slice().sort((a, b) => (here ? dist(a.pos, here.pos) - dist(b.pos, here.pos) : a.title.localeCompare(b.title)))
+440-      .map((w) => row(w, { sub: (here && w.id !== here.id ? Math.round(dist(w.pos, here.pos)) + " away · " : "") + `${w.counts.sections} sections` + (w.conflicts.length ? " · placement conflict" : "") }));
+441-    return { id: v.id, title: v.title, rows, views: C.views.map((x) => ({ id: x.id, title: x.title })) };
+442-  }
+443-  function corpusReachability(C) {
+444-    const ids = [...C.works.values()].filter((w) => w.status !== "withdrawn").map((w) => w.id);
+445-    const start = ids[0], seen = new Set([start]), q = [start];
+446-    while (q.length) { const x = q.shift();
+447-      for (const l of C.lanes) { if (l.uncharted) continue; const y = l.from === x ? l.to : (l.to === x && l.traversal !== "one-way" ? l.from : null);
+448-        if (y && !seen.has(y) && ids.includes(y)) { seen.add(y); q.push(y); } } }

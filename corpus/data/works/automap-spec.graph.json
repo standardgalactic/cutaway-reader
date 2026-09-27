@@ -1,0 +1,135 @@
+{
+  "work": "automap-spec",
+  "nodes": [
+    {
+      "id": "L:sec:map-success",
+      "title": "Where Descent's Map Succeeds",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 54,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 0,
+      "text": [
+        "In the simpler levels the wireframe gives an immediate topology: a central chamber, branches, a few loops, recognisable ends. In the dense late levels, drawing every edge at once becomes a thicket. The map stays usable there only because the pilot has already learned the space by moving through it."
+      ]
+    },
+    {
+      "id": "L:sec:map-ego",
+      "title": "Egocentric Before Exhaustive",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": true,
+      "part": null,
+      "words": 46,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 1,
+      "text": [
+        "The map should open in the reader's current orientation, centred on the present chamber, with the route just travelled highlighted and remote geometry dimmed. A local map with seven recognisable connections is easier to use than a truthful picture of a whole corpus."
+      ]
+    },
+    {
+      "id": "L:sec:map-colour",
+      "title": "Sparse, Invariant Colour",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 43,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 2,
+      "text": [
+        "White carries the skeleton. Colour marks what a reader can act on: the current route, exits to other works, prerequisite doors, open threads, beacons and the present chamber. Illustrations appear on the map only as simple landmark glyphs."
+      ]
+    },
+    {
+      "id": "L:sec:map-states",
+      "title": "Three States of Discovery",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 36,
+      "image": null,
+      "threads": [
+        {
+          "kind": "open",
+          "text": "whether revealed structure should ever fade again is left open"
+        }
+      ],
+      "cites": [],
+      "order": 3,
+      "text": [
+        "Unexplored structure is absent. Revealed but unvisited structure is a faint envelope. Traversed passages are solid. A brief scan may show more for a moment, but only being there makes it permanent."
+      ]
+    },
+    {
+      "id": "L:sec:map-depth",
+      "title": "Semantic Depth",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 56,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 4,
+      "text": [
+        "Viewing distance should change the representation, not only its size. Close in, the map shows the current section and its alcoves; further out, the part; further still, the whole work; beyond that, the work becomes one system among others. Geometry belongs only at the scale where it affects the next decision."
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "L:sec:map-success",
+      "to": "L:sec:map-ego",
+      "kind": "sequence",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:map-ego",
+      "to": "L:sec:map-colour",
+      "kind": "sequence",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:map-colour",
+      "to": "L:sec:map-states",
+      "kind": "sequence",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:map-states",
+      "to": "L:sec:map-depth",
+      "kind": "sequence",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:map-depth",
+      "to": "work:two-games#sec:games-loops",
+      "kind": "exit",
+      "traversal": "two-way"
+    }
+  ],
+  "title": "An Automap for Essays",
+  "bibliography": {},
+  "sources": [
+    "automap-spec.tex"
+  ],
+  "warnings": [],
+  "source_sha256": "29d7d5eecc343d5c77e3ddfd7df332f26dc5658471ca4797fc9e932f7c1047f5",
+  "miner": "7ed639c1b254"
+}

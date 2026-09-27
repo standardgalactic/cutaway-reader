@@ -1,0 +1,528 @@
+{
+  "work": "cosmological-memory",
+  "version": 1,
+  "nodes": {
+    "G:introduction-what-does-a-galaxy-retain": {
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 8.21,
+      "title": "Introduction: What Does a Galaxy Retain?",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:tidal-torque-theory-and-the-access-problem": {
+      "pos": [
+        0.0,
+        0.0,
+        40.0
+      ],
+      "radius": 8.13,
+      "title": "Tidal-Torque Theory and the Access Problem",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-reconstructible-proxy": {
+      "pos": [
+        0.0,
+        0.0,
+        80.0
+      ],
+      "radius": 7.93,
+      "title": "The Reconstructible Proxy",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:three-objects-not-one": {
+      "pos": [
+        0.0,
+        0.0,
+        120.0
+      ],
+      "radius": 7.73,
+      "title": "Three Objects, Not One",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-empirical-result": {
+      "pos": [
+        0.0,
+        0.0,
+        160.0
+      ],
+      "radius": 8.56,
+      "title": "The Empirical Result",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:from-states-to-trajectories": {
+      "pos": [
+        0.0,
+        0.0,
+        200.0
+      ],
+      "radius": 7.73,
+      "title": "From States to Trajectories",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:distinction-as-the-unit-of-cosmological-memory": {
+      "pos": [
+        0.0,
+        0.0,
+        240.0
+      ],
+      "radius": 7.84,
+      "title": "Distinction as the Unit of Cosmological Memory",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:memory-without-representation": {
+      "pos": [
+        0.0,
+        0.0,
+        280.0
+      ],
+      "radius": 7.34,
+      "title": "Memory Without Representation",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:nonlinear-evolution-as-an-information-degrading-": {
+      "pos": [
+        0.0,
+        0.0,
+        320.0
+      ],
+      "radius": 8.52,
+      "title": "Nonlinear Evolution as an Information-Degrading Transformation",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:repair-without-restoration": {
+      "pos": [
+        0.0,
+        0.0,
+        360.0
+      ],
+      "radius": 8.12,
+      "title": "Repair Without Restoration",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:recursive-repair-and-historical-identity": {
+      "pos": [
+        0.0,
+        0.0,
+        400.0
+      ],
+      "radius": 7.42,
+      "title": "Recursive Repair and Historical Identity",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-plenum-reading": {
+      "pos": [
+        0.0,
+        0.0,
+        440.0
+      ],
+      "radius": 7.53,
+      "title": "The Plenum Reading",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:angular-momentum-as-a-residual-of-field-geometry": {
+      "pos": [
+        0.0,
+        0.0,
+        480.0
+      ],
+      "radius": 7.45,
+      "title": "Angular Momentum as a Residual of Field Geometry",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:entropy-growth-does-not-imply-historical-erasure": {
+      "pos": [
+        0.0,
+        0.0,
+        520.0
+      ],
+      "radius": 7.4,
+      "title": "Entropy Growth Does Not Imply Historical Erasure",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:reachability-and-the-persistence-cone": {
+      "pos": [
+        0.0,
+        0.0,
+        560.0
+      ],
+      "radius": 8.36,
+      "title": "Reachability and the Persistence Cone",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:physical-erasure-versus-observational-terminatio": {
+      "pos": [
+        40.0,
+        0.0,
+        560.0
+      ],
+      "radius": 10.06,
+      "title": "Physical Erasure Versus Observational Termination",
+      "role": "comparison",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:a-falsifiable-ordering-prediction": {
+      "pos": [
+        0.0,
+        0.0,
+        600.0
+      ],
+      "radius": 8.54,
+      "title": "A Falsifiable Ordering Prediction",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:cosmological-archaeology": {
+      "pos": [
+        0.0,
+        0.0,
+        640.0
+      ],
+      "radius": 7.5,
+      "title": "Cosmological Archaeology",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:indirect-inference-and-neutrino-mass": {
+      "pos": [
+        0.0,
+        0.0,
+        680.0
+      ],
+      "radius": 7.45,
+      "title": "Indirect Inference and Neutrino Mass",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:a-general-persistence-principle": {
+      "pos": [
+        0.0,
+        0.0,
+        720.0
+      ],
+      "radius": 7.38,
+      "title": "A General Persistence Principle",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:persistence-under-noninvertible-evolution": {
+      "pos": [
+        0.0,
+        0.0,
+        760.0
+      ],
+      "radius": 10.96,
+      "title": "Persistence Under Noninvertible Evolution",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-galaxy-as-a-historical-object": {
+      "pos": [
+        0.0,
+        0.0,
+        800.0
+      ],
+      "radius": 7.03,
+      "title": "The Galaxy as a Historical Object",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:discussion-a-lossy-historical-channel": {
+      "pos": [
+        0.0,
+        0.0,
+        840.0
+      ],
+      "radius": 7.33,
+      "title": "Discussion: A Lossy Historical Channel",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:conclusion-the-universe-remembers-relations": {
+      "pos": [
+        0.0,
+        0.0,
+        880.0
+      ],
+      "radius": 8.67,
+      "title": "Conclusion: The Universe Remembers Relations",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:13:58",
+      "last_seen": "2026-09-27T09:38:34"
+    }
+  },
+  "labels": {},
+  "aliases": {
+    "section||introduction-what-does-a-galaxy-retain": [
+      "G:introduction-what-does-a-galaxy-retain"
+    ],
+    "section||tidal-torque-theory-and-the-access-problem": [
+      "G:tidal-torque-theory-and-the-access-problem"
+    ],
+    "section||the-reconstructible-proxy": [
+      "G:the-reconstructible-proxy"
+    ],
+    "section||three-objects-not-one": [
+      "G:three-objects-not-one"
+    ],
+    "section||the-empirical-result": [
+      "G:the-empirical-result"
+    ],
+    "section||from-states-to-trajectories": [
+      "G:from-states-to-trajectories"
+    ],
+    "section||distinction-as-the-unit-of-cosmological-memory": [
+      "G:distinction-as-the-unit-of-cosmological-memory"
+    ],
+    "section||memory-without-representation": [
+      "G:memory-without-representation"
+    ],
+    "section||nonlinear-evolution-as-an-information-degrading-": [
+      "G:nonlinear-evolution-as-an-information-degrading-"
+    ],
+    "section||repair-without-restoration": [
+      "G:repair-without-restoration"
+    ],
+    "section||recursive-repair-and-historical-identity": [
+      "G:recursive-repair-and-historical-identity"
+    ],
+    "section||the-plenum-reading": [
+      "G:the-plenum-reading"
+    ],
+    "section||angular-momentum-as-a-residual-of-field-geometry": [
+      "G:angular-momentum-as-a-residual-of-field-geometry"
+    ],
+    "section||entropy-growth-does-not-imply-historical-erasure": [
+      "G:entropy-growth-does-not-imply-historical-erasure"
+    ],
+    "section||reachability-and-the-persistence-cone": [
+      "G:reachability-and-the-persistence-cone"
+    ],
+    "section||physical-erasure-versus-observational-terminatio": [
+      "G:physical-erasure-versus-observational-terminatio"
+    ],
+    "section||a-falsifiable-ordering-prediction": [
+      "G:a-falsifiable-ordering-prediction"
+    ],
+    "section||cosmological-archaeology": [
+      "G:cosmological-archaeology"
+    ],
+    "section||indirect-inference-and-neutrino-mass": [
+      "G:indirect-inference-and-neutrino-mass"
+    ],
+    "section||a-general-persistence-principle": [
+      "G:a-general-persistence-principle"
+    ],
+    "section||persistence-under-noninvertible-evolution": [
+      "G:persistence-under-noninvertible-evolution"
+    ],
+    "section||the-galaxy-as-a-historical-object": [
+      "G:the-galaxy-as-a-historical-object"
+    ],
+    "section||discussion-a-lossy-historical-channel": [
+      "G:discussion-a-lossy-historical-channel"
+    ],
+    "section||conclusion-the-universe-remembers-relations": [
+      "G:conclusion-the-universe-remembers-relations"
+    ]
+  },
+  "history": [
+    {
+      "at": "2026-09-27T07:13:58",
+      "added": [
+        "G:introduction-what-does-a-galaxy-retain",
+        "G:tidal-torque-theory-and-the-access-problem",
+        "G:the-reconstructible-proxy",
+        "G:three-objects-not-one",
+        "G:the-empirical-result",
+        "G:from-states-to-trajectories",
+        "G:distinction-as-the-unit-of-cosmological-memory",
+        "G:memory-without-representation",
+        "G:nonlinear-evolution-as-an-information-degrading-",
+        "G:repair-without-restoration",
+        "G:recursive-repair-and-historical-identity",
+        "G:the-plenum-reading",
+        "G:angular-momentum-as-a-residual-of-field-geometry",
+        "G:entropy-growth-does-not-imply-historical-erasure",
+        "G:reachability-and-the-persistence-cone",
+        "G:physical-erasure-versus-observational-terminatio",
+        "G:a-falsifiable-ordering-prediction",
+        "G:cosmological-archaeology",
+        "G:indirect-inference-and-neutrino-mass",
+        "G:a-general-persistence-principle",
+        "G:persistence-under-noninvertible-evolution",
+        "G:the-galaxy-as-a-historical-object",
+        "G:discussion-a-lossy-historical-channel",
+        "G:conclusion-the-universe-remembers-relations"
+      ],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:21:20",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:22:17",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:23:27",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:24:02",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:24:20",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:25:06",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T09:07:55",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T09:08:30",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T09:38:34",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    }
+  ]
+}

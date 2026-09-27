@@ -1,0 +1,1209 @@
+<title>Cutaway Reader</title>
+<!--FONTS-->
+<style>
+/* Single dark look by choice: this is a cockpit and an automap console. */
+:root{
+  color-scheme: dark;
+  --bg:#030607; --stage:#000000; --panel:#081012; --panel-2:#0c1719; --line:#16292b;
+  --ink:#c3d2ce; --muted:#6b8480; --wire:#dfe9e5; --revealed:#3a67d8;
+  --you:#3fe07f; --route:#f2c14e; --exit:#d65ad8; --door:#ff8a3d; --thread:#ff5a52;
+  --paper:#0e1416; --paper-ink:#d9e2de;
+  --hud:"VT323", "Courier New", monospace;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
+}
+[hidden]{display:none!important}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:13px/1.45 var(--mono);overflow:hidden}
+.app{height:100%;display:grid;grid-template-columns:minmax(0,1fr) 320px}
+.stage{position:relative;background:var(--stage);outline:none;overflow:hidden}
+.stage canvas{display:block;width:100%;height:100%}
+.stage canvas{touch-action:none}
+.stage:focus-visible{box-shadow:inset 0 0 0 2px var(--you)}
+
+/* flight HUD */
+.hud{position:absolute;inset:0;pointer-events:none;font-family:var(--hud);color:var(--you);letter-spacing:.04em}
+.hud .tl{position:absolute;left:16px;top:12px;font-size:20px;line-height:1.05;text-shadow:0 0 6px rgba(63,224,127,.45)}
+.hud .tl .work{color:var(--muted);font-size:17px}
+.hud .tl .loc{color:var(--wire)}
+.hud .tr{position:absolute;right:16px;top:12px;font-size:17px;text-align:right;color:var(--muted)}
+.hud .tr b{font-weight:400;color:var(--you)}
+.reticle{position:absolute;left:50%;top:50%;width:26px;height:26px;margin:-13px 0 0 -13px;border:1px solid rgba(63,224,127,.55);border-radius:50%}
+.reticle::after{content:"";position:absolute;left:50%;top:50%;width:3px;height:3px;margin:-1.5px;background:var(--you)}
+.corner{position:absolute;width:22px;height:22px;border-color:rgba(63,224,127,.5);border-style:solid}
+.c1{left:10px;top:10px;border-width:1px 0 0 1px}.c2{right:10px;top:10px;border-width:1px 1px 0 0}
+.c3{left:10px;bottom:10px;border-width:0 0 1px 1px}.c4{right:10px;bottom:10px;border-width:0 1px 1px 0}
+.rear-tag{position:absolute;left:50%;top:12%;transform:translateX(-50%);font-size:24px;color:var(--route);text-align:center;line-height:1.1}
+.rear-tag ol{margin:4px 0 0;padding:0;list-style:none;font-size:18px;color:var(--you)}
+.toast{position:absolute;left:50%;bottom:64px;transform:translateX(-50%);font-size:20px;color:var(--wire);background:rgba(0,0,0,.7);padding:2px 10px;max-width:calc(100% - 32px);text-align:center}
+.card{position:absolute;left:50%;bottom:96px;transform:translateX(-50%);width:min(440px,calc(100% - 32px));
+  background:rgba(4,10,12,.92);border:1px solid var(--line);padding:10px 12px;font:12px/1.5 var(--mono);color:var(--ink);pointer-events:none}
+.card h3{margin:0 0 4px;font:22px/1 var(--hud);color:var(--wire);letter-spacing:.03em;text-wrap:balance}
+.card .meta{color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-size:10.5px;margin-bottom:6px}
+.card ul{margin:4px 0 0;padding-left:16px}
+.keys{position:absolute;left:0;right:0;bottom:0;padding:6px 16px calc(6px + env(safe-area-inset-bottom,0px));font:15px/1.3 var(--hud);
+  color:var(--muted);background:linear-gradient(transparent,rgba(0,0,0,.85));display:flex;flex-wrap:wrap;gap:4px 16px}
+.keys kbd{font:inherit;color:var(--you)}
+.focus-hint{position:absolute;left:50%;top:62%;transform:translateX(-50%);font:18px var(--hud);color:var(--route);text-align:center}
+.mobile-controls{display:none;position:absolute;inset:0;z-index:3;pointer-events:none;font-family:var(--hud);user-select:none;-webkit-user-select:none}
+.mobile-stick{position:absolute;left:18px;bottom:calc(24px + env(safe-area-inset-bottom,0px));width:112px;height:112px;border:1px solid rgba(63,224,127,.5);border-radius:50%;background:rgba(2,8,9,.55);pointer-events:auto;touch-action:none}
+.mobile-knob{position:absolute;left:38px;top:38px;width:36px;height:36px;border-radius:50%;background:rgba(63,224,127,.75);box-shadow:0 0 12px rgba(63,224,127,.35)}
+.mobile-actions{position:absolute;right:14px;bottom:calc(20px + env(safe-area-inset-bottom,0px));display:grid;grid-template-columns:repeat(2,56px);gap:8px;pointer-events:auto}
+.mobile-actions button{min-height:44px;border:1px solid rgba(63,224,127,.55);background:rgba(2,8,9,.75);color:var(--you);font:17px var(--hud);border-radius:4px;touch-action:none}
+.mobile-actions button:active{background:var(--you);color:#001406}
+.mobile-look{position:absolute;left:18px;bottom:calc(146px + env(safe-area-inset-bottom,0px));color:var(--muted);font-size:15px;text-shadow:0 1px 2px #000}
+
+/* automap console frame (Descent-style) */
+.stage.map .hud .reticle,.stage.map .hud .corner,.stage.map .hud .tl,.stage.map .hud .tr{display:none}
+.mapframe{position:absolute;inset:0;pointer-events:none;border:10px solid #1d2a2c;box-shadow:inset 0 0 0 1px #3b5153, inset 0 0 0 3px #0b1112}
+.mapframe .title{position:absolute;left:18px;top:6px;font:30px/1 var(--hud);color:#e8b04b;letter-spacing:.12em;text-shadow:0 2px 0 #6b3d05}
+.mapframe .depth{position:absolute;right:18px;top:12px;font:18px var(--hud);color:var(--you)}
+.mapframe .legend{position:absolute;right:18px;top:40px;font:15px/1.25 var(--hud);color:var(--muted);text-align:right}
+.mapframe .ghelp{position:absolute;left:18px;bottom:40px;font:16px var(--hud);color:var(--muted)}
+.panel .abstract{color:var(--ink);font-size:12px;line-height:1.5}
+.legend i{display:inline-block;width:18px;height:2px;vertical-align:middle;margin-left:6px}
+.lg-wire{background:var(--wire)}.lg-revealed{background:var(--revealed)}.lg-you{background:var(--you)}.lg-route{background:var(--route)}
+.lg-door{background:var(--door)}.lg-exit{background:var(--exit)}.lg-thread{background:var(--thread)}
+.card .meta.foot{margin:6px 0 0}
+
+/* reading station */
+.reader{position:absolute;inset:0;background:var(--paper);overflow-y:auto;outline:none;scroll-behavior:smooth}
+.reader .col{max-width:64ch;margin:0 auto;padding:28px 20px 80px}
+.reader figure{margin:0 0 22px;aspect-ratio:16/7;max-width:100%;border:1px solid var(--line);display:grid;place-items:center;
+  background:repeating-linear-gradient(135deg,#0b1214 0 10px,#0d1618 10px 20px);color:var(--muted);font:12px var(--mono)}
+.reader .role{font:11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.reader h2{font:600 30px/1.15 var(--serif);color:var(--paper-ink);margin:6px 0 18px;text-wrap:balance}
+.reader p{font:18px/1.62 var(--serif);color:var(--paper-ink);margin:0 0 1em}
+.reader .ref{font:13px var(--mono);color:var(--door)}
+.reader .threads{margin-top:28px;border-top:1px solid var(--line);padding-top:12px;font:12.5px/1.6 var(--mono);color:var(--ink)}
+.reader .back{position:sticky;top:0;background:var(--paper);padding:10px 20px;font:16px var(--hud);color:var(--muted);border-bottom:1px solid var(--line);z-index:1}
+.reader .back kbd{font:inherit;color:var(--you)}
+
+/* text navigator: a Lynx-like projection of the same world */
+.textnav{position:absolute;inset:0;background:#000;color:#c8d6d2;overflow-y:auto;outline:none;font:14px/1.55 var(--mono)}
+.textnav .col{max-width:86ch;margin:0 auto;padding:14px 20px 110px}
+.tn-title{font:26px/1.1 var(--hud);color:var(--you);letter-spacing:.05em;margin:0 0 6px}
+.tn-meta{display:grid;grid-template-columns:max-content 1fr;gap:0 14px;color:var(--muted);margin:0 0 10px}
+.tn-meta dt{text-transform:uppercase;font-size:11px;letter-spacing:.1em;padding-top:2px}
+.tn-meta dd{margin:0;color:var(--ink)}
+.tn-h{margin:14px 0 4px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.tn-list{list-style:none;margin:0;padding:0}
+.tn-list li{padding:1px 6px;display:flex;gap:10px;align-items:baseline}
+.tn-list li .n{color:var(--you);min-width:3.4ch;font-variant-numeric:tabular-nums}
+.tn-list li .d{color:var(--muted)}
+.tn-list li .s{margin-left:auto;font-size:11px;color:var(--muted);white-space:nowrap}
+.tn-list li.sel{background:var(--you);color:#000}
+.tn-list li.sel .n,.tn-list li.sel .d,.tn-list li.sel .s{color:#000}
+.tn-list li.glimpse{color:var(--revealed)}
+.tn-list li .pre{color:var(--door)}
+.tn-list li.sel .pre{color:#000}
+.tn-prose{margin-top:18px;border-top:1px solid var(--line);padding-top:14px}
+.tn-prose p{margin:0 0 1em;max-width:72ch;color:var(--paper-ink)}
+.tn-prose .ref{color:var(--door)}
+.tn-fig{color:var(--muted);font-style:italic;margin-bottom:12px}
+.tn-bar{position:absolute;left:0;right:0;bottom:0;background:#050b0c;border-top:1px solid var(--line);padding:6px 16px calc(6px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:4px}
+.tn-bar .msg{color:var(--route);min-height:1.4em}
+.tn-bar .help{color:var(--muted);font-size:12px}
+.tn-bar .help kbd{font:inherit;color:var(--you)}
+.tn-bar input{font:14px var(--mono);background:#000;color:var(--wire);border:1px solid var(--you);padding:4px 8px}
+
+/* beacon note (cockpit) */
+.note{position:absolute;left:50%;top:40%;transform:translate(-50%,-50%);width:min(420px,calc(100% - 32px));
+  background:#050b0c;border:1px solid var(--you);padding:12px;display:flex;flex-direction:column;gap:8px}
+.note label{font:18px var(--hud);color:var(--you)}
+.note input{font:14px var(--mono);background:#000;color:var(--wire);border:1px solid var(--line);padding:8px}
+.note input:focus{outline:1px solid var(--you)}
+.note small{color:var(--muted)}
+
+/* supervisory panel (Stars!-style) */
+.panel{background:var(--panel);border-left:1px solid var(--line);overflow-y:auto;padding-block:12px 24px}
+.panel section{padding:10px 16px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:6px}
+.panel h4{margin:0;font:11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.panel .big{font:22px/1.05 var(--hud);color:var(--wire);text-wrap:balance}
+.panel .sub{color:var(--muted);font-size:11.5px}
+.row{display:flex;justify-content:space-between;gap:8px;font-variant-numeric:tabular-nums}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font:12px var(--mono);background:var(--panel-2);border:1px solid var(--line);color:var(--ink);padding:3px 8px;cursor:pointer}
+.chip[aria-pressed="true"]{border-color:var(--route);color:var(--route)}
+.chip:hover{border-color:var(--muted)}
+.chip:focus-visible{outline:1px solid var(--you)}
+.list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px}
+.list li{display:flex;gap:8px;align-items:baseline}
+.list .n{font:17px/1 var(--hud);color:var(--you);min-width:1.4em}
+.list .k{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);min-width:7.5em}
+.list button{all:unset;cursor:pointer;color:var(--ink)}
+.list button:hover,.list button:focus-visible{color:var(--wire);text-decoration:underline}
+.change{color:var(--route)}
+.save{font-size:11px;color:var(--muted)}
+.save b{font-weight:500;color:var(--ink)}
+.merge{font:12px var(--mono);background:#000;color:var(--ink);border:1px solid var(--line);padding:5px 8px;max-width:100%}
+.merge:focus{outline:1px solid var(--you)}
+
+@media (max-width:760px){
+  body{overflow:auto}
+  .app{grid-template-columns:1fr;grid-template-rows:62vh auto;height:auto}
+  .panel{border-left:0;border-top:1px solid var(--line)}
+  .keys{font-size:13px}
+}
+@media (pointer:coarse){
+  .mobile-controls:not([hidden]){display:block}
+  .keys{display:none}
+  .card{bottom:154px}
+  .mapframe .ghelp{top:62px;bottom:auto;left:18px;max-width:48%;font-size:14px}
+}
+@media (prefers-reduced-motion:reduce){.reader{scroll-behavior:auto}}
+</style>
+
+<div class="app">
+  <div class="stage" id="stage" tabindex="0" aria-label="Flight view. Use the keyboard to fly, or press T for the text navigator.">
+    <div class="mapframe" id="mapframe" hidden>
+      <div class="title">AUTOMAP</div>
+      <div class="depth" id="depthLabel"></div>
+      <div class="ghelp" id="galaxyHelp" hidden>[ ] select a system · Enter or click again to go there · lanes follow declared exits</div>
+      <div class="legend">
+        traversed<i class="lg-wire"></i><br>
+        revealed<i class="lg-revealed"></i><br>
+        you / trail<i class="lg-you"></i><br>
+        route<i class="lg-route"></i><br>
+        prerequisite door<i class="lg-door"></i><br>
+        exit<i class="lg-exit"></i><br>
+        open thread<i class="lg-thread"></i>
+      </div>
+    </div>
+    <div class="hud">
+      <div class="corner c1"></div><div class="corner c2"></div><div class="corner c3"></div><div class="corner c4"></div>
+      <div class="reticle"></div>
+      <div class="tl"><div class="work" id="hudWork"></div><div class="loc" id="hudLoc"></div><div id="hudMode"></div></div>
+      <div class="tr" id="hudRight"></div>
+      <div class="rear-tag" id="rearTag" hidden></div>
+      <div class="focus-hint" id="focusHint" hidden>Click here to take the controls</div>
+      <div class="card" id="card" hidden></div>
+      <div class="toast" id="toast" hidden></div>
+      <div class="keys" id="keys"></div>
+    </div>
+    <div class="mobile-controls" id="mobileControls" hidden aria-label="Touch flight controls">
+      <div class="mobile-look" id="mobileLook">drag to look</div>
+      <div class="mobile-stick" id="mobileStick" aria-label="Move"><div class="mobile-knob" id="mobileKnob"></div></div>
+      <div class="mobile-actions">
+        <button id="mUp" aria-label="Move up">UP</button><button id="mInspect" aria-label="Inspect">LOOK</button>
+        <button id="mDown" aria-label="Move down">DOWN</button><button id="mRead" aria-label="Read here">READ</button>
+        <button id="mMap" aria-label="Toggle map">MAP</button><button id="mCruise" aria-label="Toggle cruise">GO</button>
+      </div>
+    </div>
+    <div class="note" id="note" hidden>
+      <label for="noteInput" id="noteLabel">Beacon</label>
+      <input id="noteInput" maxlength="120" placeholder="Why come back here?" autocomplete="off">
+      <small>Enter drops the beacon. Esc cancels.</small>
+    </div>
+    <div class="reader" id="reader" tabindex="-1" hidden></div>
+    <div class="textnav" id="textnav" tabindex="-1" hidden aria-label="Text navigator">
+      <div class="col" id="tnBody"></div>
+    </div>
+    <div class="tn-bar" id="tnBar" hidden>
+      <div class="msg" id="tnMsg" aria-live="polite"></div>
+      <input id="tnInput" autocomplete="off" hidden aria-label="Command input">
+      <div class="help" id="tnHelp"></div>
+    </div>
+  </div>
+
+  <aside class="panel" id="panel" aria-label="Supervisory view"></aside>
+</div>
+
+<script type="application/json" id="level-data">__LEVEL__</script>
+<!--THREE-->
+<!--MODEL-->
+<script>
+(() => {
+"use strict";
+const CM = window.CutawayModel;
+const BUNDLE = CM.asBundle(JSON.parse(document.getElementById("level-data").textContent));
+const C = CM.buildCorpus(BUNDLE, { // a split export (index + works/<id>.json) is fetched a work at a time
+  fetch: (id) => fetch(BUNDLE.split + encodeURIComponent(id) + ".json").then(r => r.ok ? r.json() : Promise.reject(new Error(r.status + " " + id))) });
+const V3 = (a) => new THREE.Vector3(a[0], a[1], a[2]);
+const css = (n) => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const COL = { wire: css("--wire"), revealed: css("--revealed"), you: css("--you"), route: css("--route"),
+  exit: css("--exit"), door: css("--door"), thread: css("--thread"), muted: css("--muted"), bg: "#000000", sealed: "#56605f" };
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const wtitle = (id) => C.works.get(id)?.title || id;
+const inBox = (p, n, g = 0) => Math.abs(p.x - n.pos[0]) < n.r - g && Math.abs(p.y - n.pos[1]) < n.r - g && Math.abs(p.z - n.pos[2]) < n.r - g;
+
+/* the work currently loaded; everything below that says m, live, geo or portals means this work */
+let WORK = null, m = null, live = [], centroid = new THREE.Vector3(), geo = new Map(), portalGeo = [];
+const title = (id) => m.nodes.get(id)?.title || id;
+
+/* ================= reader log: one history for every interface and every work ================= */
+const LSKEY = "cutaway-reader:" + C.id;
+const actor = (() => { try { let a = localStorage.getItem("cutaway-actor"); if (!a) { a = CM.newActor(); localStorage.setItem("cutaway-actor", a); } return a; } catch (_) { return CM.newActor(); } })();
+let events = [], S = null, CS = null, bootMoved = false;
+const inCorpus = (e) => !e.work || C.works.has(e.work);
+const Store = {
+  kind: "memory", remote: null, queue: Promise.resolve(), failed: false,
+  readLocal() {
+    try {
+      let out = []; const raw = localStorage.getItem(LSKEY);
+      if (raw) out = CM.upgrade(JSON.parse(raw).events || [], actor);
+      // logs written by earlier single-work pages live under each work's own key: fold them in
+      for (const wid of C.works.keys()) { const k = "cutaway-reader:" + wid; if (k === LSKEY) continue;
+        const r = localStorage.getItem(k); if (!r) continue;
+        out = CM.merge(out, CM.upgrade(JSON.parse(r).events || [], actor).map(e => (e.work || e.t === "session" ? e : Object.assign({}, e, { work: wid })))); }
+      return out.filter(inCorpus);
+    } catch (_) { return null; }
+  },
+  saveLocal() {
+    try { const merged = CM.merge(this.readLocal() || [], events);
+      localStorage.setItem(LSKEY, JSON.stringify({ v: 3, events: merged }));
+      if (this.kind === "memory") this.kind = "browser";
+      if (merged.length > events.length) absorb(merged);
+    } catch (_) { /* no browser storage: the log lives in memory for this visit */ }
+  },
+  push(newEvents) {
+    this.saveLocal();
+    if (this.remote) for (const e of newEvents)
+      this.queue = this.queue.then(() => this.remote.doc(e.id).set(e)).catch(() => { this.failed = true; renderPanel(); });
+  },
+  async connect() {
+    if (!window.claude || !window.claude.use) return;
+    try {
+      const [db, user] = await Promise.all([window.claude.use("db"), window.claude.use("user")]);
+      if (!db || !user) return;
+      const uid = await user.id(); if (!uid) return;
+      const col = db.collection("data/users/" + uid);
+      const fromDocs = (docs) => { let out = [];
+        for (const d of docs) { const x = d.data(); if (!x) continue;
+          if (Array.isArray(x.events)) out = CM.merge(out, CM.upgrade(JSON.parse(JSON.stringify(x.events)), actor)); // first-version log
+          else if (x.id && x.t && inCorpus(x)) out.push(JSON.parse(JSON.stringify(x))); }
+        return CM.upgrade(out, actor).filter(inCorpus); };
+      const snap = await col.get(), remote = fromDocs(snap.docs), have = new Set(remote.map(e => e.id));
+      this.remote = col; this.kind = "account";
+      const missing = events.filter(e => !have.has(e.id));
+      absorb(CM.merge(events, remote)); this.push(missing);
+      col.onSnapshot(s => absorb(CM.merge(events, fromDocs(s.docs))), () => {});
+      renderPanel();
+    } catch (_) { /* stays on browser storage */ }
+  },
+};
+window.addEventListener("storage", (e) => { if (e.key === LSKEY) { const x = Store.readLocal(); if (x) absorb(CM.merge(events, x)); } });
+function absorb(merged) {
+  if (merged.length === events.length) return;
+  events = merged; rederive();
+  if (!bootMoved && CS.here && (CS.here !== WORK || (S.here && S.here !== curChamber))) { const target = CS.here;
+    C.ensure(target).then(() => { if (!bootMoved && CS.here === target) { loadWork(target); spawn(); renderAll(); } }, () => {}); }
+  renderAll();
+}
+function append(bodies) {
+  const out = [];
+  for (const b of bodies) { const e = CM.stamp(events, actor, Object.assign({ work: WORK }, b)); events.push(e); out.push(e); }
+  if (bodies.some(b => b.t === "enter" || b.t === "traverse" || b.t === "jump")) bootMoved = true;
+  rederive(); Store.push(out); return out;
+}
+function rederive() { CS = CM.deriveCorpus(C, events); S = m ? CM.derive(m, CM.workEvents(events, WORK)) : null; }
+
+/* ================= renderer, scenes, shared geometry helpers ================= */
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+const stage = $("stage"); stage.prepend(renderer.domElement);
+const flight = new THREE.Scene(); flight.background = new THREE.Color(COL.bg); flight.fog = new THREE.Fog(COL.bg, 18, 115);
+const mapScene = new THREE.Scene(); mapScene.background = new THREE.Color(COL.bg);
+const galaxy = new THREE.Scene(); galaxy.background = new THREE.Color(COL.bg);
+const cam = new THREE.PerspectiveCamera(75, 1, 0.1, 2000);
+const mapCam = new THREE.PerspectiveCamera(55, 1, 0.1, 8000);
+const lineMat = (color, opacity = 1) => new THREE.LineBasicMaterial({ color, transparent: opacity < 1, opacity });
+function segs(arr, mat) { const g = new THREE.BufferGeometry(); g.setAttribute("position", new THREE.Float32BufferAttribute(arr, 3)); return new THREE.LineSegments(g, mat); }
+const push = (arr, p, q) => arr.push(p.x, p.y, p.z, q.x, q.y, q.z);
+function hash(s) { let h = 2166136261; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
+function rng(seed) { return () => { seed = (seed + 0x6D2B79F5) | 0; let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+  t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+function disposeGroup(g) { g.traverse(o => { o.geometry && o.geometry.dispose(); if (o.material) { o.material.map && o.material.map.dispose(); o.material.dispose(); } }); g.clear(); }
+function frames(pts) {
+  const T = [], N = [], B = [], n = pts.length;
+  for (let i = 0; i < n; i++) T.push(pts[Math.min(i + 1, n - 1)].clone().sub(pts[Math.max(i - 1, 0)]).normalize());
+  const up = Math.abs(T[0].y) < 0.9 ? new THREE.Vector3(0, 1, 0) : new THREE.Vector3(1, 0, 0);
+  N.push(up.clone().addScaledVector(T[0], -up.dot(T[0])).normalize());
+  for (let i = 1; i < n; i++) { const q = new THREE.Quaternion().setFromUnitVectors(T[i - 1], T[i]);
+    const x = N[i - 1].clone().applyQuaternion(q); N.push(x.addScaledVector(T[i], -x.dot(T[i])).normalize()); }
+  for (let i = 0; i < n; i++) B.push(new THREE.Vector3().crossVectors(T[i], N[i]));
+  return { T, N, B };
+}
+function stations(g) {
+  const A = m.nodes.get(g.a), B = g.b ? m.nodes.get(g.b) : null, out = [];
+  const outside = (p) => !inBox(p, A) && !(B && inBox(p, B));
+  const mouth = (i0, i1) => { let lo = 0, hi = 1; const a = g.pts[i0], b = g.pts[i1], ins = !outside(a);
+    for (let k = 0; k < 18; k++) { const x = (lo + hi) / 2; if (!outside(a.clone().lerp(b, x)) === ins) lo = x; else hi = x; }
+    const f = (lo + hi) / 2; return { p: a.clone().lerp(b, f), r: g.rad[i0] + (g.rad[i1] - g.rad[i0]) * f, i: i0 + f, mouth: true }; };
+  for (let i = 0; i < g.pts.length; i++) {
+    if (!outside(g.pts[i])) continue;
+    if (i > 0 && !outside(g.pts[i - 1])) out.push(mouth(i - 1, i));
+    out.push({ p: g.pts[i], r: g.rad[i], i });
+    if (i < g.pts.length - 1 && !outside(g.pts[i + 1])) out.push(mouth(i, i + 1));
+  }
+  return out;
+}
+function ringPts(c, fr, idx, r) { const k = Math.min(Math.round(idx), fr.T.length - 1), out = [];
+  for (let j = 0; j < 8; j++) { const a = j / 8 * Math.PI * 2 + Math.PI / 8; out.push(c.clone().addScaledVector(fr.N[k], Math.cos(a) * r).addScaledVector(fr.B[k], Math.sin(a) * r)); }
+  return out; }
+function textSprite(text, color, h = 2.6) {
+  const c = document.createElement("canvas"), x = c.getContext("2d"), fs = 44, font = fs + "px VT323, 'Courier New', monospace";
+  x.font = font; c.width = Math.ceil(x.measureText(text).width) + 20; c.height = fs + 12; x.font = font;
+  x.fillStyle = color; x.textBaseline = "middle"; x.fillText(text, 10, c.height / 2);
+  const tex = new THREE.CanvasTexture(c); tex.minFilter = THREE.LinearFilter;
+  const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthTest: false })); s.scale.set(h * c.width / c.height, h, 1); return s;
+}
+const boxEdges = (n) => new THREE.EdgesGeometry(new THREE.BoxGeometry(n.r * 2, n.r * 2, n.r * 2));
+
+/* ================= building one work's mine ================= */
+const workRoot = new THREE.Group(), mapRoot = new THREE.Group(); flight.add(workRoot); mapScene.add(mapRoot);
+let flightObjs = null, mapObjs = null;
+function loadWork(id) {
+  if (WORK === id && m) return;
+  WORK = id; m = C.model(id); live = CM.live(m);
+  centroid = live.reduce((a, n) => a.add(V3(n.pos)), new THREE.Vector3()).multiplyScalar(1 / Math.max(live.length, 1));
+  disposeGroup(workRoot); disposeGroup(mapRoot);
+  flightObjs = { doors: [], reactors: [], pulse: null, beacons: new THREE.Group(), trail: null }; workRoot.add(flightObjs.beacons);
+  mapObjs = { chambers: new Map(), tunnels: new Map(), portals: [], extra: new THREE.Group(), system: new THREE.Group() };
+  mapRoot.add(mapObjs.extra); mapRoot.add(mapObjs.system);
+  buildTunnels(); buildPortals(); buildChambers(); buildMap();
+  rederive();
+}
+function buildTunnels() {
+  geo = new Map();
+  for (const t of m.tunnels.values()) {
+    const A = m.nodes.get(t.a), B = m.nodes.get(t.b), rand = rng(hash(t.key));
+    const a = V3(A.pos), b = V3(B.pos), d = b.clone().sub(a), len = d.length(), dir = d.clone().normalize();
+    const up = Math.abs(dir.y) < 0.9 ? new THREE.Vector3(0, 1, 0) : new THREE.Vector3(1, 0, 0);
+    const u = new THREE.Vector3().crossVectors(dir, up).normalize(), v = new THREE.Vector3().crossVectors(u, dir);
+    const gentle = t.kinds.some(k => k === "sequence" || k === "shaft" || k === "branch" || k === "alcove");
+    const amp = Math.min(len * 0.2, 9) * (gentle ? 0.55 : 1), ctrl = [a.clone()];
+    for (const f of [1 / 3, 2 / 3]) ctrl.push(a.clone().addScaledVector(d, f).addScaledVector(u, (rand() * 2 - 1) * amp).addScaledVector(v, (rand() * 2 - 1) * amp * 0.6));
+    ctrl.push(b.clone());
+    const pts = new THREE.CatmullRomCurve3(ctrl, false, "centripetal").getPoints(Math.max(14, Math.round(len / 2.2)));
+    const base = THREE.MathUtils.clamp(Math.min(A.r, B.r) * 0.5, 2.6, 4.2), cite = t.cites[0];
+    // walls narrow toward the cited end: direction is felt, never enforced
+    const rad = pts.map((_, i) => { const f = i / (pts.length - 1); if (!cite) return base; return base * (cite.to === t.b ? 1.25 - 0.45 * f : 0.8 + 0.45 * f); });
+    geo.set(t.key, { a: t.a, b: t.b, pts, rad, cites: t.cites });
+    buildTunnel(geo.get(t.key), null);
+  }
+}
+/* Portals into other works: each leaves its chamber through a wall that no passage already uses. */
+function buildPortals() {
+  portalGeo = [];
+  const used = new Map();
+  const axisOf = (d) => { const ax = ["x", "y", "z"].reduce((a, k) => Math.abs(d[k]) > Math.abs(d[a]) ? k : a, "x"); return ax + (d[ax] >= 0 ? "+" : "-"); };
+  for (const t of m.tunnels.values()) for (const [x, y] of [[t.a, t.b], [t.b, t.a]]) {
+    const d = V3(m.nodes.get(y).pos).sub(V3(m.nodes.get(x).pos)); (used.get(x) || used.set(x, new Set()).get(x)).add(axisOf(d)); }
+  const DIRS = { "x+": [1, 0, 0], "x-": [-1, 0, 0], "z+": [0, 0, 1], "z-": [0, 0, -1], "y+": [0, 1, 0], "y-": [0, -1, 0] };
+  for (const p of CM.portals(C, WORK)) {
+    const A = m.nodes.get(p.chamber); if (!A) continue;
+    const a = V3(A.pos), away = a.clone().sub(centroid); away.y = 0;
+    const taken = used.get(p.chamber) || used.set(p.chamber, new Set()).get(p.chamber);
+    const order = Object.keys(DIRS).sort((k1, k2) => V3(DIRS[k2]).dot(away) - V3(DIRS[k1]).dot(away) + (k1[0] === "y") - (k2[0] === "y"));
+    const key = order.find(k => !taken.has(k)) || order[0]; taken.add(key);
+    const d = V3(DIRS[key]), pts = [];
+    for (let i = 0; i <= 10; i++) pts.push(a.clone().addScaledVector(d, i * (A.r + 16) / 10));
+    const g = Object.assign({}, p, { a: p.chamber, b: null, pts, rad: pts.map(() => 3.0), cites: [], dirv: d });
+    portalGeo.push(g); buildTunnel(g, p);
+  }
+}
+function buildTunnel(g, portal) {
+  const fr = frames(g.pts), st = stations(g), arr = [], chev = []; let prev = null;
+  st.forEach((s, si) => {
+    const ring = ringPts(s.p, fr, s.i, s.r);
+    if (s.mouth || si % 2 === 0) for (let j = 0; j < 8; j++) push(arr, ring[j], ring[(j + 1) % 8]);
+    if (prev) for (let j = 0; j < 8; j++) push(arr, prev[j], ring[j]);
+    prev = ring;
+    if (g.cites.length && si % 3 === 1 && !s.mouth) {
+      const k = Math.min(Math.round(s.i), fr.T.length - 1), toward = fr.T[k].clone().multiplyScalar(g.cites[0].to === g.b ? 1 : -1);
+      const floor = s.p.clone().addScaledVector(fr.N[k], -s.r * 0.92), tip = floor.clone().addScaledVector(toward, 1.1);
+      push(chev, floor.clone().addScaledVector(fr.B[k], s.r * 0.45).addScaledVector(toward, -1.1), tip);
+      push(chev, floor.clone().addScaledVector(fr.B[k], -s.r * 0.45).addScaledVector(toward, -1.1), tip);
+    }
+  });
+  workRoot.add(segs(arr, lineMat(portal ? COL.exit : COL.wire, portal ? 0.7 : 0.55)));
+  if (chev.length) workRoot.add(segs(chev, lineMat(COL.door, 0.7)));
+  const pre = g.cites.find(c => c.door);
+  if (pre) { const x = pre.to === g.b ? st.filter(s => s.mouth).pop() : st.find(s => s.mouth);
+    if (x) { const ring = ringPts(x.p, fr, x.i, x.r * 0.98), a = [];
+      for (let j = 0; j < 8; j++) push(a, ring[j], ring[(j + 1) % 8]); for (let j = 0; j < 4; j++) push(a, ring[j], ring[j + 4]);
+      const o = segs(a, lineMat(COL.door)); workRoot.add(o); flightObjs.doors.push({ obj: o, target: pre.to }); } }
+  if (portal) { // the far end: a door into the other work (sealed if the work is not in this corpus yet)
+    const end = st[st.length - 1], ring = ringPts(end.p, fr, end.i, end.r), a = [];
+    for (let j = 0; j < 8; j++) { push(a, ring[j], ring[(j + 1) % 8]); if (portal.uncharted) push(a, ring[j], end.p); }
+    workRoot.add(segs(a, lineMat(portal.uncharted ? COL.sealed : COL.exit)));
+    const lab = textSprite((portal.oneway ? "→ " : "⇄ ") + (portal.uncharted ? (portal.to_title || portal.to_work) + " (not here yet)" : wtitle(portal.to_work)), portal.uncharted ? COL.muted : COL.exit, 1.3);
+    lab.position.copy(end.p).addScaledVector(fr.N[fr.N.length - 1], end.r + 1.2); workRoot.add(lab);
+  }
+}
+function firstNeighbor(n) { let best = null; for (const t of m.adj.get(n.id) || []) { const o = m.nodes.get(CM.other(t, n.id)); if (!best || o.order < best.order) best = o; } return best; }
+function buildChambers() {
+  for (const n of m.nodes.values()) {
+    const c = V3(n.pos), r = n.r;
+    if (n.status !== "active") {
+      const o = new THREE.LineSegments(boxEdges(n), lineMat(COL.sealed, 0.6)); o.position.copy(c); workRoot.add(o);
+      const a = []; for (const s of [-1, 1]) { push(a, c.clone().add(new THREE.Vector3(-r, -r, s * r)), c.clone().add(new THREE.Vector3(r, r, s * r)));
+        push(a, c.clone().add(new THREE.Vector3(r, -r, s * r)), c.clone().add(new THREE.Vector3(-r, r, s * r))); }
+      workRoot.add(segs(a, lineMat(COL.sealed, 0.6))); continue;
+    }
+    const o = new THREE.LineSegments(boxEdges(n), lineMat(COL.wire, 0.85)); o.position.copy(c); workRoot.add(o);
+    const g = []; for (let i = -1; i <= 1; i++) {
+      push(g, c.clone().add(new THREE.Vector3(i * r / 2, -r, -r)), c.clone().add(new THREE.Vector3(i * r / 2, -r, r)));
+      push(g, c.clone().add(new THREE.Vector3(-r, -r, i * r / 2)), c.clone().add(new THREE.Vector3(r, -r, i * r / 2))); }
+    workRoot.add(segs(g, lineMat(COL.wire, 0.18)));
+    if (n.level === "section") { // illustration landmark on the wall facing the way in
+      const nb = firstNeighbor(n), d = nb ? c.clone().sub(V3(nb.pos)) : new THREE.Vector3(0, 0, 1);
+      const ax = ["x", "y", "z"].reduce((mm, k) => Math.abs(d[k]) > Math.abs(d[mm]) ? k : mm, "z");
+      const nrm = new THREE.Vector3(); nrm[ax] = Math.sign(d[ax]) || 1;
+      const w0 = c.clone().addScaledVector(nrm, r * 0.97), helper = Math.abs(nrm.y) > 0.5 ? new THREE.Vector3(0, 0, 1) : new THREE.Vector3(0, 1, 0);
+      const uu = new THREE.Vector3().crossVectors(nrm, helper).normalize(), vv = new THREE.Vector3().crossVectors(uu, nrm);
+      const w = r * 0.62, h = r * 0.34, Pp = (x, y) => w0.clone().addScaledVector(uu, x).addScaledVector(vv, y), a = [];
+      push(a, Pp(-w, -h), Pp(w, -h)); push(a, Pp(w, -h), Pp(w, h)); push(a, Pp(w, h), Pp(-w, h)); push(a, Pp(-w, h), Pp(-w, -h));
+      if (n.image) { push(a, Pp(-w, -h), Pp(w, h)); push(a, Pp(-w, h), Pp(w, -h)); }
+      else { push(a, Pp(-w * .6, -h * .2), Pp(-w * .1, h * .5)); push(a, Pp(-w * .1, h * .5), Pp(w * .3, -h * .1)); push(a, Pp(w * .3, -h * .1), Pp(w * .6, h * .3)); }
+      workRoot.add(segs(a, lineMat(COL.route, 0.9)));
+    }
+    if (n.thesis) { const x = new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.OctahedronGeometry(r * 0.36)), lineMat(COL.thread)); x.position.copy(c); workRoot.add(x); flightObjs.reactors.push(x); }
+    n.threads.forEach((_, i) => { const x = new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.OctahedronGeometry(0.45)), lineMat(COL.thread));
+      x.position.copy(c).add(new THREE.Vector3((i - (n.threads.length - 1) / 2) * 1.6, r * 0.72, 0)); workRoot.add(x); });
+  }
+}
+function buildMap() {
+  for (const n of m.nodes.values()) { const o = new THREE.LineSegments(boxEdges(n), lineMat(COL.wire)); o.position.copy(V3(n.pos)); mapRoot.add(o); mapObjs.chambers.set(n.id, o); }
+  for (const [key, g] of geo) {
+    const o = new THREE.Line(new THREE.BufferGeometry().setFromPoints(g.pts), lineMat(COL.wire)); mapRoot.add(o);
+    let arrow = null, door = null;
+    if (g.cites.length) { const c = g.cites[0], mid = Math.floor(g.pts.length / 2);
+      const dir = g.pts[mid + 1].clone().sub(g.pts[mid - 1]).normalize().multiplyScalar(c.to === g.b ? 1 : -1);
+      arrow = new THREE.Mesh(new THREE.ConeGeometry(1.1, 3, 8), new THREE.MeshBasicMaterial({ color: COL.wire }));
+      arrow.position.copy(g.pts[mid]); arrow.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), dir); mapRoot.add(arrow); }
+    const pre = g.cites.find(c => c.door);
+    if (pre) { const tgt = m.nodes.get(pre.to), idx = pre.to === g.b ? [...g.pts.keys()] : [...g.pts.keys()].reverse();
+      let p = g.pts[idx[0]]; for (const i of idx) { if (inBox(g.pts[i], tgt)) break; p = g.pts[i]; }
+      door = new THREE.Mesh(new THREE.TorusGeometry(2.2, 0.35, 6, 16), new THREE.MeshBasicMaterial({ color: COL.door }));
+      door.position.copy(p); door.lookAt(V3(tgt.pos)); mapRoot.add(door); }
+    mapObjs.tunnels.set(key, { line: o, arrow, door, doorTarget: pre ? pre.to : null });
+  }
+  for (const x of portalGeo) {
+    const o = new THREE.Line(new THREE.BufferGeometry().setFromPoints(x.pts), lineMat(x.uncharted ? COL.sealed : COL.exit)); mapRoot.add(o);
+    const lab = textSprite((x.oneway ? "→ " : "⇄ ") + (x.uncharted ? (x.to_title || x.to_work) + "?" : wtitle(x.to_work)), x.uncharted ? COL.muted : COL.exit, 2.4);
+    lab.position.copy(x.pts[x.pts.length - 1]).add(new THREE.Vector3(0, 3, 0)); mapRoot.add(lab);
+    mapObjs.portals.push({ line: o, lab, from: x.chamber });
+  }
+}
+
+/* ================= the galaxy: every work as one system ================= */
+const GAL = { root: new THREE.Group(), sel: null, order: [] }; galaxy.add(GAL.root);
+const shortTitle = t => (t || "").split(/:\s/)[0]; // the galaxy names systems by main title; the selected one in full
+function buildGalaxy() {
+  disposeGroup(GAL.root);
+  const ws = [...C.works.values()];
+  for (const x of C.lanes) {
+    const A = C.works.get(x.from); if (!A) continue;
+    if (x.uncharted) { // a declared exit to a work that is not in the corpus: a stub pointing outward
+      const a = V3(A.pos), d = a.clone().sub(galCentre()).setY(0); if (d.lengthSq() < 1) d.set(1, 0, 0); d.normalize();
+      const b = a.clone().addScaledVector(d, 60);
+      GAL.root.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([a, b]), lineMat(COL.sealed, 0.8)));
+      const l = textSprite(shortTitle(x.to_title || x.to) + " ?", COL.muted, 13); l.position.copy(b).add(new THREE.Vector3(0, 6, 0)); GAL.root.add(l); continue;
+    }
+    const B = C.works.get(x.to); if (!B) continue;
+    const used = CS.lanesUsed.has(x.key), known = CS.revealed.has(x.from) || CS.revealed.has(x.to);
+    const col = x.kind === "series" ? COL.muted : COL.exit;
+    const ln = new THREE.Line(new THREE.BufferGeometry().setFromPoints([V3(A.pos), V3(B.pos)]), lineMat(used ? COL.wire : col, used ? 0.9 : known ? 0.55 : 0.18));
+    GAL.root.add(ln);
+    if (x.traversal === "one-way") { const mid = V3(A.pos).lerp(V3(B.pos), 0.5), dir = V3(B.pos).sub(V3(A.pos)).normalize();
+      const cone = new THREE.Mesh(new THREE.ConeGeometry(3, 8, 8), new THREE.MeshBasicMaterial({ color: col })); cone.position.copy(mid);
+      cone.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), dir); GAL.root.add(cone); }
+  }
+  for (const w of ws) {
+    const st = w.status === "withdrawn" ? "sealed" : w.id === WORK ? "here" : CM.workState(CS, w.id);
+    const r = 6 + Math.sqrt(w.counts.sections || 1) * 2.5;
+    const col = st === "here" ? COL.you : st === "visited" ? COL.wire : st === "revealed" ? COL.revealed : st === "sealed" ? COL.sealed : COL.muted;
+    const o = new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.IcosahedronGeometry(r, 1)), lineMat(col, st === "unexplored" ? 0.45 : 1));
+    o.position.copy(V3(w.pos)); GAL.root.add(o);
+    if (st === "sealed") { const x = new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(r * 1.6, r * 1.6, r * 1.6)), lineMat(COL.sealed, 0.6)); x.position.copy(V3(w.pos)); GAL.root.add(x); }
+    if (w.conflicts && w.conflicts.length) { const ring = new THREE.Mesh(new THREE.TorusGeometry(r + 5, 0.8, 6, 32), new THREE.MeshBasicMaterial({ color: COL.door })); ring.position.copy(V3(w.pos)); GAL.root.add(ring); }
+    const threads = Object.values(w.counts.threads || {}).reduce((a, b) => a + b, 0);
+    for (let i = 0; i < Math.min(threads, 6); i++) { const t = new THREE.Mesh(new THREE.OctahedronGeometry(1.6), new THREE.MeshBasicMaterial({ color: COL.thread }));
+      t.position.copy(V3(w.pos)).add(new THREE.Vector3((i - (Math.min(threads, 6) - 1) / 2) * 4.5, -r - 5, 0)); GAL.root.add(t); }
+    const lab = textSprite((GAL.sel === w.id ? w.title : shortTitle(w.title)) + (st === "sealed" ? " (withdrawn)" : ""), GAL.sel === w.id ? COL.route : col, 17); lab.position.copy(V3(w.pos)).add(new THREE.Vector3(0, r + 14, 0)); GAL.root.add(lab);
+  }
+  for (const [sid, s] of Object.entries(C.series)) { // a series is a labelled region, not a container
+    const members = s.order.map(id => C.works.get(id)).filter(Boolean); if (members.length < 2) continue;
+    const c = members.reduce((a, w) => a.add(V3(w.pos)), new THREE.Vector3()).multiplyScalar(1 / members.length);
+    const l = textSprite(s.title.toUpperCase(), COL.muted, 16); l.position.copy(c).add(new THREE.Vector3(0, 70, 0)); GAL.root.add(l);
+  }
+  if (GAL.sel) { const w = C.works.get(GAL.sel), r = 6 + Math.sqrt(w.counts.sections || 1) * 2.5;
+    const ring = new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.BoxGeometry(r * 2.6, r * 2.6, r * 2.6)), lineMat(COL.route)); ring.position.copy(V3(w.pos)); GAL.root.add(ring); }
+}
+function galCentre() { const ws = [...C.works.values()]; return ws.reduce((a, w) => a.add(V3(w.pos)), new THREE.Vector3()).multiplyScalar(1 / ws.length); }
+function galSelect(delta) {
+  const here = C.works.get(WORK), ws = [...C.works.values()].filter(w => w.status !== "withdrawn")
+    .sort((a, b) => CM.dist(a.pos, here.pos) - CM.dist(b.pos, here.pos));
+  const i = Math.max(0, ws.findIndex(w => w.id === GAL.sel)); GAL.sel = ws[(i + delta + ws.length) % ws.length].id;
+  M.target.copy(V3(C.works.get(GAL.sel).pos)); buildGalaxy(); showSystemCard(GAL.sel);
+}
+function showSystemCard(id) {
+  const w = C.works.get(id), lanes = C.lanes.filter(x => !x.uncharted && ((x.from === WORK && x.to === id) || (x.to === WORK && x.from === id && x.traversal !== "one-way")));
+  $("card").innerHTML = `<div class="meta">${w.status === "withdrawn" ? "withdrawn, sealed" : id === WORK ? "you are here" : CM.workState(CS, id)}${w.series ? " · " + esc(C.series[w.series]?.title || w.series) : ""}${w.conflicts?.length ? " · placement conflict" : ""}</div>
+    <h3>${esc(w.title)}</h3><div>${esc(w.abstract || "")}</div>
+    <div class="meta foot">${w.counts.sections} sections · ${w.counts.words} words · ${id === WORK ? "" : lanes.length ? "Enter follows the lane" : "Enter warps (no lane from here)"}</div>`;
+  $("card").hidden = false; clearTimeout(cardTimer); cardTimer = setTimeout(hideCard, 9000);
+}
+
+/* ================= cockpit state ================= */
+const P = { pos: new THREE.Vector3(), q: new THREE.Quaternion(), v: new THREE.Vector3(), w: new THREE.Vector3() };
+const keys = new Set();
+let mode = "flight"; // flight | map | read | note | text
+let mapLatched = false, mapOpenedAt = 0, mapDepth = 0;
+const M = { target: new THREE.Vector3(), q: new THREE.Quaternion(), dist: 60, sel: null };
+let cruise = null, optical = false, replay = false, curChamber = null, curTunnel = null, lastChamber = null;
+let inspectTarget = null, cardTimer = null, portalLock = null;
+
+function spawn(keepOrientation, at) {
+  const id = at || (keepOrientation && curChamber) || (S.here && m.nodes.get(S.here)?.status === "active" ? S.here : CM.startChamber(m));
+  P.pos.copy(V3(m.nodes.get(id).pos)); P.v.set(0, 0, 0); P.w.set(0, 0, 0);
+  if (!keepOrientation) P.q.setFromAxisAngle(new THREE.Vector3(0, 1, 0), Math.PI); // face along the passage (+Z)
+  curChamber = lastChamber = id; curTunnel = null;
+}
+/* crossing into another work: log it, load the other mine, come out of the matching portal if there is one */
+let crossing = null;
+/** Returns true when crossed, false when there is nowhere to go, "pending" while the destination is still
+ *  being fetched (then `after` runs once the crossing has happened). */
+function crossInto(portal, how, after) {
+  if (portal.uncharted) { toast(portal.to_work + " is not in this corpus yet", 3200); return false; }
+  if (!C.loaded(portal.to_work)) {
+    if (crossing) return "pending";
+    crossing = portal.to_work; toast("Loading " + wtitle(portal.to_work) + " …", 10000);
+    if (mode === "flight") { P.v.set(0, 0, 0); P.w.set(0, 0, 0); }
+    C.ensure(portal.to_work).then(() => { crossing = null; if (crossInto(portal, how) === true && after) after(); },
+      () => { crossing = null; if (mode === "flight") P.v.set(0, 0, 0); // the lock stays: leaving the portal and coming back is the retry
+        toast("Could not load " + wtitle(portal.to_work) + "; back out and try again", 4200); });
+    return "pending";
+  }
+  if (!portal.to_chamber) portal = Object.assign({}, portal, { to_chamber: CM.startChamber(C.model(portal.to_work)) });
+  const from = WORK, fromChamber = curChamber || lastChamber, lane = portal.lane;
+  append(how === "warp" ? CM.ops.warp(from, fromChamber, portal.to_work, portal.to_chamber) : CM.ops.jump(from, fromChamber, portal));
+  if (cruise) { cruise = null; }
+  loadWork(portal.to_work);
+  const back = lane && portalGeo.find(g => g.lane === lane && g.to_work === from);
+  if (back && mode === "flight") { // emerge from the portal that leads home, facing into the chamber
+    const end = back.pts[back.pts.length - 2]; P.pos.copy(end); P.v.set(0, 0, 0); P.w.set(0, 0, 0);
+    P.q.setFromRotationMatrix(new THREE.Matrix4().lookAt(new THREE.Vector3(), back.dirv.clone().negate(), new THREE.Vector3(0, 1, 0))); // face into the chamber
+    curChamber = null; lastChamber = back.chamber; portalLock = back;
+    if (back.chamber !== portal.to_chamber) spawn(true, portal.to_chamber);
+  } else spawn(mode === "flight", portal.to_chamber);
+  curChamber = curChamber || portal.to_chamber; lastChamber = curChamber;
+  toast((how === "warp" ? "Warped to " : "Crossed into ") + wtitle(portal.to_work), 2600);
+  if (mode === "map") setDepth(mapDepth, true);
+  renderAll(); return true;
+}
+function inTube(p, pts, rad) { for (let i = 0; i < pts.length - 1; i++) { const a = pts[i], b = pts[i + 1];
+    const ab = b.clone().sub(a), t = THREE.MathUtils.clamp(p.clone().sub(a).dot(ab) / ab.lengthSq(), 0, 1);
+    if (p.distanceTo(a.clone().addScaledVector(ab, t)) < rad[i] + (rad[i + 1] - rad[i]) * t - 0.55) return true; } return false; }
+function allowed(p) {
+  for (const n of live) if (inBox(p, n, 0.8)) return true;
+  for (const g of geo.values()) if (inTube(p, g.pts, g.rad)) return true;
+  for (const g of portalGeo) if (inTube(p, g.pts, g.rad)) return true;
+  return false;
+}
+function chamberAt(p) { let best = null; for (const n of live) if (inBox(p, n) && (!best || n.r < best.r)) best = n; return best; }
+function tunnelAt(p) { let best = null, bd = 1e9;
+  for (const [k, g] of geo) for (let i = 0; i < g.pts.length; i++) { const d = g.pts[i].distanceTo(p); if (d < g.rad[i] && d < bd) { bd = d; best = k; } }
+  return best ? m.tunnels.get(best) : null; }
+
+/* ================= input ================= */
+const FLIGHT_KEYS = ["KeyW", "KeyS", "KeyA", "KeyD", "KeyR", "KeyF", "KeyQ", "KeyE", "KeyH", "KeyJ", "KeyK", "KeyL", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"];
+const coarse = matchMedia("(pointer:coarse)").matches;
+const touchFlight = { x: 0, y: 0, z: 0 };
+const touchPoints = new Map();
+let touchMoved = false, pinchDistance = 0;
+function mobileVisibility() {
+  const hide = !coarse || !(mode === "flight" || mode === "map"), el = $("mobileControls");
+  if (el.hidden !== hide) el.hidden = hide;
+  const map = mode === "map", up = map ? "OUT" : "UP", down = map ? "IN" : "DOWN";
+  if ($("mUp").textContent !== up) { $("mUp").textContent = up; $("mDown").textContent = down;
+    $("mUp").setAttribute("aria-label", map ? "Wider map" : "Move up"); $("mDown").setAttribute("aria-label", map ? "Closer map" : "Move down");
+    $("mobileLook").innerHTML = map ? "drag to turn · pinch to zoom<br>OUT/IN: chamber · work · galaxy" : "drag to look"; }
+}
+function setStick(e) {
+  const r = $("mobileStick").getBoundingClientRect(), dx = e.clientX - (r.left + r.width / 2), dy = e.clientY - (r.top + r.height / 2);
+  const radius = r.width * .34, n = Math.max(1, Math.hypot(dx, dy) / radius), x = dx / n, y = dy / n;
+  touchFlight.x = x / radius; touchFlight.z = y / radius;
+  $("mobileKnob").style.transform = `translate(${x}px,${y}px)`;
+}
+function clearStick() { touchFlight.x = touchFlight.z = 0; $("mobileKnob").style.transform = ""; }
+$("mobileStick").addEventListener("pointerdown", e => { e.preventDefault(); e.currentTarget.setPointerCapture(e.pointerId); if (cruise) stopCruise("manual control"); setStick(e); });
+$("mobileStick").addEventListener("pointermove", e => { if (e.currentTarget.hasPointerCapture(e.pointerId)) setStick(e); });
+$("mobileStick").addEventListener("pointerup", clearStick); $("mobileStick").addEventListener("pointercancel", clearStick);
+function holdVertical(id, value) { const b = $(id); b.addEventListener("pointerdown", e => { e.preventDefault(); b.setPointerCapture(e.pointerId);
+  if (mode === "map") { setDepth(mapDepth + value); return; } touchFlight.y = value; }); b.addEventListener("pointerup", () => touchFlight.y = 0); b.addEventListener("pointercancel", () => touchFlight.y = 0); }
+holdVertical("mUp", 1); holdVertical("mDown", -1);
+$("mInspect").onclick = e => { e.stopPropagation(); inspect(); };
+$("mRead").onclick = e => { e.stopPropagation(); openReader(); mobileVisibility(); };
+$("mMap").onclick = e => { e.stopPropagation(); mode === "map" ? closeMap() : (openMap(), mapLatched = true); mobileVisibility(); };
+$("mCruise").onclick = e => { e.stopPropagation(); cruise ? stopCruise("stopped") : startCruise(); };
+renderer.domElement.addEventListener("pointerdown", e => {
+  if (!coarse || !(mode === "flight" || mode === "map")) return;
+  e.preventDefault(); renderer.domElement.setPointerCapture(e.pointerId); if (!touchPoints.size) touchMoved = false; touchPoints.set(e.pointerId, { x:e.clientX, y:e.clientY });
+  if (touchPoints.size === 2) { touchMoved = true; const p=[...touchPoints.values()]; pinchDistance=Math.hypot(p[0].x-p[1].x,p[0].y-p[1].y); }
+});
+renderer.domElement.addEventListener("pointermove", e => {
+  if (!touchPoints.has(e.pointerId)) return; const old=touchPoints.get(e.pointerId), dx=e.clientX-old.x, dy=e.clientY-old.y;
+  touchPoints.set(e.pointerId,{x:e.clientX,y:e.clientY}); if (Math.abs(dx)+Math.abs(dy)>2) touchMoved=true;
+  if (mode === "flight" && touchPoints.size === 1) { if (cruise) stopCruise("manual control"); P.q.multiply(tmp.setFromEuler(euler.set(-dy*.004,-dx*.004,0))).normalize(); }
+  else if (mode === "map" && touchPoints.size === 1) { M.q.multiply(tmp.setFromEuler(euler.set(-dy*.006,-dx*.006,0))).normalize(); }
+  else if (mode === "map" && touchPoints.size >= 2) { const p=[...touchPoints.values()], d=Math.hypot(p[0].x-p[1].x,p[0].y-p[1].y); if (pinchDistance) M.dist=THREE.MathUtils.clamp(M.dist*pinchDistance/Math.max(d,1),8,3000); pinchDistance=d; }
+});
+function endTouch(e) {
+  const tap = e.type === "pointerup" && touchPoints.has(e.pointerId) && touchPoints.size === 1 && !touchMoved;
+  touchPoints.delete(e.pointerId); if (touchPoints.size<2) pinchDistance=0;
+  if (tap && mode === "map" && mapDepth === 2) pickSystem(e.clientX, e.clientY);
+}
+renderer.domElement.addEventListener("pointerup", endTouch); renderer.domElement.addEventListener("pointercancel", endTouch);
+window.addEventListener("keydown", (e) => {
+  if (mode === "note") return;
+  if (e.target && e.target.closest && (e.target.closest(".panel") || e.target.id === "tnInput")) return;
+  const k = e.code;
+  if (mode === "read") {
+    if (k === "Escape") { closeReader(); e.preventDefault(); }
+    else if (k === "KeyJ") { $("reader").scrollBy(0, 90); e.preventDefault(); }
+    else if (k === "KeyK") { $("reader").scrollBy(0, -90); e.preventDefault(); }
+    return;
+  }
+  if (mode === "text") { textKey(e); return; }
+  if (["Tab", "Space", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", "Semicolon"].includes(k)) e.preventDefault();
+  if (e.repeat && !FLIGHT_KEYS.includes(k)) return;
+  if (k === "Tab" || k === "Semicolon") { if (mode === "map") { mapLatched = false; closeMap(); } else { openMap(); mapOpenedAt = performance.now(); } return; }
+  if (k === "KeyT") { if (mode === "map") closeMap(); openText(); return; }
+  if (mode === "map") {
+    if (mapDepth === 2 && (k === "BracketRight" || k === "BracketLeft")) { galSelect(k === "BracketRight" ? 1 : -1); return; }
+    if (mapDepth === 2 && k === "Enter" && GAL.sel && GAL.sel !== WORK) { goToWork(GAL.sel); return; }
+    if (/^Digit[1-9]$/.test(k)) { const b = beaconByNumber(+k.slice(5)); if (b) { M.sel = b.id; M.target.copy(V3(b.pos)); toast("Beacon " + b.n + (b.note ? ": " + b.note : "")); refreshMap(); } else toast("No beacon " + k.slice(5)); }
+    else if (k === "Equal" || k === "NumpadAdd") setDepth(mapDepth - 1);
+    else if (k === "Minus" || k === "NumpadSubtract") setDepth(mapDepth + 1);
+    else if (k === "KeyD" && e.ctrlKey && M.sel) { const b = S.beacons.get(M.sel); append(CM.ops.retire(M.sel)); toast("Beacon " + (b ? b.n : "") + " retired"); M.sel = null; renderAll(); e.preventDefault(); return; }
+    keys.add(k); return;
+  }
+  if (FLIGHT_KEYS.includes(k)) { if (cruise) stopCruise("manual control"); keys.add(k); return; }
+  if (k === "Enter") openReader();
+  else if (k === "KeyY" || k === "Space") inspect();
+  else if (k === "KeyU") bindTarget();
+  else if (k === "KeyB") openNote();
+  else if (k === "KeyG") scan(P.pos.toArray(), curChamber);
+  else if (k === "KeyO") setOptical(true);
+  else if (k === "KeyP") setReplay(true);
+  else if (k === "KeyC") cruise ? setCruiseSpeed(+1) : startCruise();
+  else if (k === "KeyZ") cruise && setCruiseSpeed(-1);
+  else if (k === "KeyX") cruise && stopCruise("cancelled");
+});
+window.addEventListener("keyup", (e) => {
+  const k = e.code; keys.delete(k);
+  if ((k === "Tab" || k === "Semicolon") && mode === "map") { if (performance.now() - mapOpenedAt > 320 && !mapLatched) closeMap(); else mapLatched = true; }
+  if (k === "KeyO") setOptical(false);
+  if (k === "KeyP") setReplay(false);
+});
+window.addEventListener("blur", () => keys.clear());
+stage.addEventListener("pointerdown", (e) => {
+  if (!e.target.closest("input,button,.textnav,.reader")) stage.focus();
+  // mouse picks on press; touch picks on a tap (endTouch), so starting a drag or a pinch never selects or travels
+  if (mode === "map" && mapDepth === 2 && e.pointerType !== "touch") pickSystem(e.clientX, e.clientY);
+});
+function pickSystem(cx, cy) { // the system nearest the pointer: first press selects, a second press on it goes there
+  const r = renderer.domElement.getBoundingClientRect(), px = cx - r.left, py = cy - r.top;
+  let best = null, bd = 40;
+  for (const w of C.works.values()) { const v = V3(w.pos).project(mapCam); if (v.z > 1) continue;
+    const d = Math.hypot((v.x + 1) / 2 * r.width - px, (1 - v.y) / 2 * r.height - py); if (d < bd) { bd = d; best = w.id; } }
+  if (best) { if (GAL.sel === best && best !== WORK) goToWork(best); else { GAL.sel = best; buildGalaxy(); showSystemCard(best); } }
+}
+function updateFocusHint() { $("focusHint").hidden = document.hasFocus() || matchMedia("(pointer:coarse)").matches || mode !== "flight"; }
+window.addEventListener("focus", updateFocusHint); window.addEventListener("blur", updateFocusHint);
+
+/* go to another work from the galaxy or a view: by a lane if one joins them, otherwise a recorded warp */
+function goToWork(id, chamber) {
+  if (id === WORK) { if (chamber && chamber !== curChamber) { if (mode === "text") textTravel(chamber); } return; }
+  const p = CM.portals(C, WORK).find(x => x.to_work === id && !x.uncharted);
+  if (p && !chamber) {
+    if (mode !== "text") { crossInto(p, "lane"); return; }
+    const evs = CM.ops.travel(m, curChamber, p.chamber); if (evs && evs.length) append(evs); curChamber = p.chamber; crossInto(p, "lane"); return;
+  }
+  crossInto({ to_work: id, to_chamber: chamber || null, lane: null }, "warp");
+}
+
+/* ================= shared verbs (cockpit and text call the same model ops) ================= */
+function toast(msg, ms = 2600) { const t = $("toast"); t.textContent = msg; t.hidden = false; clearTimeout(t._h); t._h = setTimeout(() => t.hidden = true, ms); }
+function beaconByNumber(n) { return [...S.beacons.values()].filter(b => b.n === n).pop(); }
+function scan(pos, chamber) {
+  const before = S.glimpse.size + S.glimpseT.size;
+  append(CM.ops.scan(pos, chamber));
+  const gained = S.glimpse.size + S.glimpseT.size - before;
+  if (mode !== "text") { const s = new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.IcosahedronGeometry(1, 1)), lineMat(COL.revealed, 0.9));
+    s.position.copy(V3(pos)); workRoot.add(s); flightObjs.pulse = { obj: s, t0: performance.now() }; }
+  const msg = gained ? "Scan: " + gained + " structures glimpsed for " + CM.SCAN_MS / 1000 + " seconds" : "Scan: nothing unexplored nearby";
+  mode === "text" ? tnMsg(msg) : toast(msg); renderAll();
+}
+function bindChamber(id) {
+  if (!id || m.nodes.get(id)?.status !== "active") return "Sealed chambers cannot join a route";
+  if (S.route.includes(id)) return "Already on your route";
+  append(CM.ops.bind(id)); renderAll(); return "Bound to route: " + title(id);
+}
+/* optical rear view (O) and history replay (P) are different questions */
+function setOptical(on) { if (optical === on) return; optical = on; updateRearTag(); }
+function setReplay(on) {
+  if (replay === on) return; replay = on;
+  if (flightObjs.trail) { workRoot.remove(flightObjs.trail); flightObjs.trail.geometry.dispose(); flightObjs.trail = null; }
+  if (on) { const recent = S.trail.slice(-10), pos = [], col = [], c = new THREE.Color(COL.you);
+    recent.forEach((e, i) => { const g = geo.get(e.key); if (!g) return; const pts = g.a === e.from ? g.pts : g.pts.slice().reverse(), f = 0.25 + 0.75 * (i + 1) / recent.length;
+      for (let j = 0; j < pts.length - 1; j++) { pos.push(pts[j].x, pts[j].y, pts[j].z, pts[j + 1].x, pts[j + 1].y, pts[j + 1].z); col.push(c.r * f, c.g * f, c.b * f, c.r * f, c.g * f, c.b * f); } });
+    if (pos.length) { const gg = new THREE.BufferGeometry(); gg.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3)); gg.setAttribute("color", new THREE.Float32BufferAttribute(col, 3));
+      flightObjs.trail = new THREE.LineSegments(gg, new THREE.LineBasicMaterial({ vertexColors: true, depthTest: false })); workRoot.add(flightObjs.trail); } }
+  updateRearTag(); refreshMap();
+}
+function historyList(n) {
+  const within = S.trail.map(e => ({ at: e.at, s: title(e.from) + " → " + title(e.to) }));
+  const across = CS.jumps.map(e => ({ at: e.at, s: wtitle(e.from_work) + " ⇒ " + wtitle(e.to_work) + (e.lane ? "" : " (warp)") }));
+  return within.concat(across).sort((a, b) => (a.at < b.at ? -1 : 1)).slice(-n).reverse().map(x => x.s);
+}
+function updateRearTag() {
+  const tag = $("rearTag");
+  if (replay) { const h = historyList(5); tag.innerHTML = "YOUR PATH" + (h.length ? "<ol>" + h.map(x => "<li>" + esc(x) + "</li>").join("") + "</ol>" : "<ol><li>no passages yet</li></ol>"); }
+  else if (optical) tag.textContent = "REAR VIEW";
+  tag.hidden = !(optical || replay);
+}
+
+function inspect() {
+  const ray = new THREE.Ray(cam.position.clone(), new THREE.Vector3(0, 0, -1).applyQuaternion(P.q));
+  let best = null, bt = 1e9; const hit = new THREE.Vector3();
+  for (const n of m.nodes.values()) { if (n.id === curChamber) continue; const c = V3(n.pos);
+    if (ray.intersectBox(new THREE.Box3(c.clone().subScalar(n.r), c.clone().addScalar(n.r)), hit)) { const d = hit.distanceTo(ray.origin); if (d < bt) { bt = d; best = { kind: "chamber", id: n.id }; } } }
+  for (const [k, g] of geo) for (let i = 0; i < g.pts.length; i++) { const p = g.pts[i], along = p.clone().sub(ray.origin).dot(ray.direction);
+    if (along < 1) continue; if (ray.distanceToPoint(p) < g.rad[i] && along < bt - 1) { bt = along; best = { kind: "tunnel", key: k }; } }
+  for (const g of portalGeo) for (let i = 0; i < g.pts.length; i++) { const p = g.pts[i], along = p.clone().sub(ray.origin).dot(ray.direction);
+    if (along < 1) continue; if (ray.distanceToPoint(p) < g.rad[i] && along < bt - 1) { bt = along; best = { kind: "portal", g }; } }
+  if (!best) { hideCard(); toast("Nothing in the reticle"); return; }
+  inspectTarget = best; showCard(best);
+}
+function showCard(t) {
+  const card = $("card"); let h = "";
+  if (t.kind === "chamber") { const n = m.nodes.get(t.id), rel = CM.relations(m, n.id);
+    h = `<div class="meta">${n.status === "active" ? CM.ROLE_TEXT[n.role] : "withdrawn, sealed"} · ${CM.stateOf(S, n.id)}${n.thesis ? " · thesis" : ""}</div><h3>${esc(n.title)}</h3>`;
+    if (rel.outs.length) h += `<div>Cites → ${rel.outs.map(title).map(esc).join(", ")}</div>`;
+    if (rel.ins.length) h += `<div>Cited by ← ${rel.ins.map(title).map(esc).join(", ")}</div>`;
+    if (n.threads.length) h += `<ul>${n.threads.map(x => `<li>${CM.THREAD_TEXT[x.kind]}: ${esc(x.text)}</li>`).join("")}</ul>`;
+    h += `<div class="meta foot">U adds it to your route</div>`;
+  } else if (t.kind === "portal") { const g = t.g, w = C.works.get(g.to_work);
+    h = `<div class="meta">${esc(g.dir)} · ${g.oneway ? "one-way" : "two-way"}${w ? " · " + CM.workState(CS, w.id) : ""}</div><h3>${esc(w ? w.title : g.to_work)}</h3>` +
+      (w ? `<div>${esc(w.abstract || "")}</div><div class="meta foot">${w.counts.sections} sections · fly to the door to cross</div>` : `<div>Not in this corpus yet.</div>`);
+  } else { const tt = m.tunnels.get(t.key);
+    h = `<div class="meta">passage · two-way · ${CM.tunnelState(S, tt.key)}</div><h3>${esc(title(tt.a))} ⇄ ${esc(title(tt.b))}</h3>`;
+    for (const c of tt.cites) h += `<div>${esc(title(c.from))} cites ${esc(title(c.to))}${c.door ? " (prerequisite)" : ""}</div>`;
+    if (!tt.cites.length) h += `<div>${tt.kinds.join(", ")}</div>`; }
+  card.innerHTML = h; card.hidden = false; clearTimeout(cardTimer); cardTimer = setTimeout(hideCard, 7000);
+}
+function hideCard() { $("card").hidden = true; }
+function bindTarget() {
+  if (!inspectTarget) { inspect(); if (!inspectTarget) return; }
+  if (inspectTarget.kind === "portal") { toast("Routes stay inside one work for now; the galaxy view lists the others"); return; }
+  const id = inspectTarget.kind === "chamber" ? inspectTarget.id : (() => { const t = m.tunnels.get(inspectTarget.key); return t.cites[0]?.to || CM.other(t, curChamber || t.a); })();
+  toast(bindChamber(id));
+}
+function openNote() {
+  mode = "note"; const n = Math.max(0, ...[...S.beacons.values()].map(b => b.n || 0)) + 1;
+  $("noteLabel").textContent = "Beacon " + n + " · " + (curChamber ? title(curChamber) : "passage");
+  $("note").hidden = false; $("noteInput").value = ""; keys.clear(); P.v.multiplyScalar(0.2); setTimeout(() => $("noteInput").focus(), 0);
+}
+$("noteInput").addEventListener("keydown", (e) => {
+  if (e.key === "Enter") { const out = append(CM.ops.beacon(m, S, { chamber: curChamber || lastChamber, pos: P.pos.toArray(), quat: P.q.toArray(), note: $("noteInput").value.trim() }));
+    closeNote(); toast("Beacon " + out[0].n + " dropped"); renderAll(); e.preventDefault(); }
+  else if (e.key === "Escape") { closeNote(); e.preventDefault(); }
+  e.stopPropagation();
+});
+function closeNote() { $("note").hidden = true; mode = "flight"; stage.focus(); }
+
+/* reading station */
+function openReader(id) {
+  const n = m.nodes.get(id || curChamber); if (!n || n.status !== "active") { toast("Enter a chamber to read it"); return; }
+  const r = $("reader"), kids = live.filter(x => x.parent === n.id);
+  const paras = n.text.map(p => `<p>${esc(p).replace(/\[([^\]]+)\]/g, '<span class="ref">[$1]</span>')}</p>`).join("");
+  r.innerHTML = `<div class="back"><kbd>Esc</kbd> back · <kbd>J</kbd>/<kbd>K</kbd> scroll</div><div class="col">
+    <figure>${n.image ? "Illustration: " + esc(n.image) : "No illustration yet"}</figure>
+    <div class="role">${esc(wtitle(WORK))} · ${CM.ROLE_TEXT[n.role]}${n.thesis ? " · thesis" : ""}</div><h2>${esc(n.title)}</h2>${paras || "<p>This chamber has no prose yet.</p>"}
+    ${kids.length ? `<div class="threads">Alcoves: ${kids.map(k => `<button class="chip" data-read="${esc(k.id)}">${esc(k.title)}</button>`).join(" ")}</div>` : ""}
+    ${n.threads.length ? `<div class="threads">${n.threads.map(x => `<div><b>${CM.THREAD_TEXT[x.kind]}</b> · ${esc(x.text)}</div>`).join("")}</div>` : ""}</div>`;
+  if (mode !== "read") r.dataset.from = mode;
+  r.hidden = false; mode = "read"; keys.clear(); P.v.set(0, 0, 0); P.w.set(0, 0, 0); r.scrollTop = 0; r.focus();
+  r.querySelectorAll("[data-read]").forEach(b => b.addEventListener("click", () => openReader(b.dataset.read)));
+  append(CM.ops.read(n.id));
+}
+function closeReader() { const back = $("reader").dataset.from; $("reader").hidden = true; mode = "flight"; if (back === "text") openText(); else stage.focus(); }
+
+/* ================= cruise ================= */
+const SPEEDS = [5, 10, 18];
+function startCruise() {
+  if (!curChamber) { toast("Cruise starts from inside a chamber"); return; }
+  const stops = CM.remainingStops(m, S, curChamber);
+  if (!stops.length) { toast(S.policy === "bound" ? "No chambers bound yet: inspect one with Y, then press U" : "You are at the end of this route"); return; }
+  const pts = [P.pos.clone(), V3(m.nodes.get(curChamber).pos)]; let at = curChamber; const used = [];
+  for (const tgt of stops) { const hops = CM.pathBetween(m, at, tgt); if (!hops) continue;
+    for (const h of hops) { const g = geo.get(h.t.key), seq = g.a === h.from ? g.pts : g.pts.slice().reverse(); pts.push(...seq.slice(1)); }
+    used.push(tgt); at = tgt; }
+  if (pts.length < 3) { toast("No passage leads there"); return; }
+  const lens = [0]; for (let k = 1; k < pts.length; k++) lens.push(lens[k - 1] + pts[k].distanceTo(pts[k - 1]));
+  cruise = { pts, lens, s: 0, speed: 1, stops: used }; keys.clear(); P.v.set(0, 0, 0);
+  append(CM.ops.cruise(S.policy, used)); toast("Cruise: " + used.length + " chambers · Z slower · C faster · X stop"); renderAll();
+}
+function setCruiseSpeed(d) { cruise.speed = THREE.MathUtils.clamp(cruise.speed + d, 0, 2); toast("Cruise speed " + (cruise.speed + 1) + " of 3"); }
+function stopCruise(why) { if (!cruise) return; cruise = null; append(CM.ops.cruiseStop(why)); toast("Cruise " + why); renderAll(); }
+function samplePath(c, s) { let k = 1; while (k < c.lens.length - 1 && c.lens[k] < s) k++;
+  const f = (s - c.lens[k - 1]) / Math.max(c.lens[k] - c.lens[k - 1], 1e-6); return c.pts[k - 1].clone().lerp(c.pts[k], THREE.MathUtils.clamp(f, 0, 1)); }
+
+/* ================= automap: here, this work, the corpus ================= */
+function openMap() { mode = "map"; keys.clear(); setDepth(0, true); $("mapframe").hidden = false; stage.classList.add("map"); refreshMap(); updateFocusHint(); }
+function closeMap() { mode = "flight"; $("mapframe").hidden = true; stage.classList.remove("map"); keys.clear(); hideCard(); updateFocusHint(); mobileVisibility(); }
+function setDepth(d, silent) {
+  mapDepth = THREE.MathUtils.clamp(d, 0, 2);
+  if (mapDepth === 2) { M.dist = 520; GAL.sel = GAL.sel || WORK; M.target.copy(V3(C.works.get(WORK).pos)); buildGalaxy(); }
+  else { M.dist = [55, 170][mapDepth]; M.target.copy(mapDepth === 0 ? P.pos : centroid); }
+  // local depth keeps your own orientation; wider depths swing to an oblique view
+  if (mapDepth === 0) M.q.copy(P.q); else M.q.setFromEuler(new THREE.Euler(mapDepth === 2 ? -0.75 : -0.55, Math.PI / 2 - 0.35, 0, "YXZ"));
+  $("depthLabel").textContent = ["DEPTH 1 · HERE", "DEPTH 2 · " + wtitle(WORK).toUpperCase(), "DEPTH 3 · " + C.title.toUpperCase()][mapDepth];
+  $("galaxyHelp").hidden = mapDepth !== 2;
+  if (coarse) $("galaxyHelp").textContent = "tap a system to select it · tap again to go there";
+  if (!silent) toast(["Local: this chamber and its neighbours", "Whole work", coarse ? "The corpus: tap a system, tap again to go there" : "The corpus: [ and ] select a system, Enter goes there"][mapDepth], 2200);
+  refreshMap();
+}
+function neighborhood(id) { const set = new Set([id]); if (!id) return set;
+  for (const t of m.adj.get(id) || []) set.add(CM.other(t, id));
+  const n = m.nodes.get(id); for (const x of m.nodes.values()) if (x.parent === id || (n.parent && x.id === n.parent)) set.add(x.id);
+  return set; }
+function refreshMap() {
+  if (!mapObjs) return;
+  const near = neighborhood(curChamber || lastChamber);
+  const routeKeys = new Set(); if (cruise) { let at = curChamber || lastChamber; for (const s of cruise.stops) { const h = CM.pathBetween(m, at, s); if (h) h.forEach(x => routeKeys.add(x.t.key)); at = s; } }
+  const trail = S.trail.slice(-14), trailAge = new Map(); trail.forEach((e, i) => trailAge.set(e.key, (i + 1) / trail.length));
+  for (const [id, o] of mapObjs.chambers) {
+    const n = m.nodes.get(id), st = n.status !== "active" ? (S.glimpse.has(id) ? "sealed" : "unknown") : CM.stateOf(S, id);
+    let vis = st !== "unexplored" && st !== "unknown"; if (mapDepth === 0 && !near.has(id) && st !== "glimpsed") vis = false;
+    o.visible = vis; o.material.color.set(id === curChamber ? COL.you : st === "visited" ? COL.wire : st === "sealed" ? COL.sealed : COL.revealed);
+    o.material.transparent = st !== "visited"; o.material.opacity = st === "revealed" ? 0.6 : st === "glimpsed" ? 0.3 : st === "sealed" ? 0.5 : 1;
+  }
+  for (const [key, x] of mapObjs.tunnels) {
+    const t = m.tunnels.get(key), st = CM.tunnelState(S, key); let vis = st !== "unexplored";
+    if (mapDepth === 0 && st !== "glimpsed" && !(near.has(t.a) && near.has(t.b))) vis = false;
+    const age = trailAge.get(key), col = routeKeys.has(key) ? COL.route : age ? COL.you : st === "traversed" ? COL.wire : COL.revealed;
+    x.line.visible = vis; x.line.material.color.set(col); x.line.material.transparent = !!age || st !== "traversed";
+    x.line.material.opacity = age ? 0.35 + 0.65 * age : st === "traversed" ? 1 : st === "glimpsed" ? 0.3 : 0.6;
+    if (replay && age) { x.line.material.color.set(COL.route); x.line.material.opacity = 0.4 + 0.6 * age; }
+    if (x.arrow) { x.arrow.visible = vis; x.arrow.material.color.set(col); }
+    if (x.door) x.door.visible = vis && !S.visited.has(x.doorTarget);
+  }
+  for (const x of mapObjs.portals) { const v = S.revealed.has(x.from) && (mapDepth > 0 || near.has(x.from)); x.line.visible = v; x.lab.visible = v; }
+  disposeGroup(mapObjs.extra);
+  for (const n of m.nodes.values()) { if (!mapObjs.chambers.get(n.id).visible) continue; const c = V3(n.pos);
+    if (n.level === "section" || mapDepth === 0) { const s = textSprite(n.title, n.id === curChamber ? COL.you : S.visited.has(n.id) ? COL.wire : COL.revealed, mapDepth === 0 ? 2.2 : 3.6);
+      s.position.copy(c).add(new THREE.Vector3(0, n.r + 2.6, 0)); mapObjs.extra.add(s); }
+    n.threads.forEach((_, i) => { const x = new THREE.Mesh(new THREE.OctahedronGeometry(0.9), new THREE.MeshBasicMaterial({ color: COL.thread }));
+      x.position.copy(c).add(new THREE.Vector3((i - (n.threads.length - 1) / 2) * 2.4, n.r * 0.7, 0)); mapObjs.extra.add(x); });
+    if (n.thesis) { const x = new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.OctahedronGeometry(n.r * 0.4)), lineMat(COL.thread)); x.position.copy(c); mapObjs.extra.add(x); }
+  }
+  for (const b of S.beacons.values()) { const p = V3(b.pos), x = new THREE.Mesh(new THREE.OctahedronGeometry(1.2), new THREE.MeshBasicMaterial({ color: COL.you }));
+    x.position.copy(p); mapObjs.extra.add(x); const s = textSprite(String(b.n), b.id === M.sel ? COL.route : COL.you, 3); s.position.copy(p).add(new THREE.Vector3(0, 2.6, 0)); mapObjs.extra.add(s); }
+  const me = new THREE.Mesh(new THREE.ConeGeometry(1.4, 4, 4), new THREE.MeshBasicMaterial({ color: COL.you }));
+  me.position.copy(P.pos); me.quaternion.copy(P.q).multiply(new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1, 0, 0), -Math.PI / 2)); mapObjs.extra.add(me);
+  if (mapDepth === 2 && mode === "map") buildGalaxy();
+}
+function rebuildFlightBeacons() {
+  if (!flightObjs) return;
+  disposeGroup(flightObjs.beacons);
+  for (const b of S.beacons.values()) { const x = new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.OctahedronGeometry(0.8)), lineMat(COL.you));
+    x.position.copy(V3(b.pos)); flightObjs.beacons.add(x); const s = textSprite(String(b.n), COL.you, 1.6); s.position.copy(V3(b.pos)).add(new THREE.Vector3(0, 1.6, 0)); flightObjs.beacons.add(s); }
+}
+
+/* ================= text navigator (T): the same world, as text ================= */
+const TN = { sel: 0, items: [], search: null, view: null, input: null, back: [], fwd: [], auto: null, gPending: 0, inspect: null };
+function openText(viewId) {
+  mode = "text"; keys.clear(); P.v.set(0, 0, 0); P.w.set(0, 0, 0); if (cruise) stopCruise("paused for text mode");
+  if (!curChamber) curChamber = lastChamber;
+  $("textnav").hidden = false; $("tnBar").hidden = false; TN.sel = 0; TN.search = null; TN.view = viewId || null; renderText(); $("textnav").focus(); updateFocusHint();
+}
+function closeText() {
+  stopAuto(); $("textnav").hidden = true; $("tnBar").hidden = true; $("tnInput").hidden = true; mode = "flight";
+  spawn(true); // the ship is wherever the text navigator left the reader
+  renderAll(); stage.focus(); updateFocusHint();
+}
+function tnMsg(s) { $("tnMsg").textContent = s || ""; }
+function renderText() {
+  if (mode !== "text") return;
+  const body = $("tnBody");
+  if (TN.search) {
+    TN.items = TN.search.hits.map(h => ({ kind: "hit", to: h.id }));
+    body.innerHTML = `<div class="tn-title">SEARCH · ${esc(TN.search.q)}</div><div class="tn-h">${TN.search.hits.length} matches in ${esc(wtitle(WORK))} · Enter travels there by passage · Esc clears</div>
+      <ul class="tn-list">${TN.search.hits.map((h, i) => `<li class="${i === TN.sel ? "sel" : ""}"><span class="n">[${i + 1}]</span><span>${esc(h.title)} <span class="d">${esc(h.snip)}</span></span></li>`).join("")}</ul>`;
+    return;
+  }
+  if (TN.view) {
+    const v = CM.view(C, CS, TN.view); TN.items = v.rows.map(r => ({ kind: "work", to_work: r.work, chamber: r.chamber }));
+    TN.sel = Math.min(TN.sel, Math.max(TN.items.length - 1, 0)); let group = null;
+    body.innerHTML = `<div class="tn-title">${esc(C.title.toUpperCase())} · ${esc(v.title)}</div>
+      <div class="tn-h">views: ${v.views.map(x => x.id === v.id ? `<b>${esc(x.title)}</b>` : esc(x.title)).join(" · ")} · w next view · Enter goes there · Esc back</div>
+      <ul class="tn-list">${v.rows.map((r, i) => { const g = r.group && r.group !== group ? (group = r.group, `</ul><div class="tn-h">${esc(r.group)}</div><ul class="tn-list">`) : "";
+        const mark = r.work === WORK ? "◆" : r.state === "visited" ? "●" : r.state === "revealed" ? "○" : "·";
+        return g + `<li class="${i === TN.sel ? "sel" : ""}"><span class="n">[${i + 1}]</span><span>${mark} ${esc(r.title)} <span class="d">${esc(r.sub)}</span></span><span class="s">${r.state}</span></li>`; }).join("")}</ul>`;
+    return;
+  }
+  const v = CM.textView(m, S, curChamber, CM.portals(C, WORK));
+  TN.items = v.passages.map(p => ({ kind: "passage", to: p.to, key: p.key })).concat(v.exits.map(x => ({ kind: "exit", x })));
+  TN.sel = Math.min(TN.sel, Math.max(TN.items.length - 1, 0));
+  const [px, py, pz] = v.pos.map(x => Math.round(x)), w = C.works.get(WORK);
+  const pRow = (p, i) => `<li class="${i === TN.sel ? "sel" : ""}"><span class="n">[${p.n}]</span><span><span class="d">${esc(p.dir)}:</span> ${esc(p.title)}${p.prereq ? ` <span class="pre">${p.doorOpen ? "(prerequisite, read)" : "(prerequisite door)"}</span>` : ""}</span><span class="s">${p.state}${p.tunnel === "traversed" ? " · traversed" : ""}</span></li>`;
+  const xRow = (x, i) => `<li class="${i === TN.sel ? "sel" : ""}"><span class="n">[${x.n}]</span><span><span class="d">${esc(x.dir)}${x.oneway ? " (one-way)" : ""}</span>${x.uncharted ? ' <span class="d">(not in this corpus yet)</span>' : ""}</span><span class="s">${x.uncharted ? "" : CM.workState(CS, x.to_work)}</span></li>`;
+  const paras = v.text.map(p => `<p>${esc(p).replace(/\[([^\]]+)\]/g, '<span class="ref">[$1]</span>')}</p>`).join("");
+  const next = CM.remainingStops(m, S, curChamber).slice(0, 3).map(title);
+  body.innerHTML = `<div class="tn-title">CUTAWAY READER · ${esc(v.title)}</div>
+    <dl class="tn-meta"><dt>Work</dt><dd>${esc(w.title)}${w.series ? ` <span class="d">(${esc(C.series[w.series]?.title || w.series)})</span>` : ""}</dd><dt>Role</dt><dd>${esc(v.roleText)}</dd>
+      <dt>Position</dt><dd>X ${px} · Y ${py} · Z ${pz}</dd>
+      ${v.arrivedFrom ? `<dt>Arrived from</dt><dd>${esc(v.arrivedFrom)}</dd>` : ""}<dt>State</dt><dd>${v.state}</dd>
+      ${v.cites.length ? `<dt>Cites</dt><dd>${v.cites.map(esc).join(", ")}</dd>` : ""}${v.citedBy.length ? `<dt>Cited by</dt><dd>${v.citedBy.map(esc).join(", ")}</dd>` : ""}
+      <dt>Route</dt><dd>${esc(CM.POLICIES.find(p => p[0] === S.policy)[1])}${TN.auto ? " · auto-advancing" : ""} · next: ${esc(next.join(" → ") || "end of route")}</dd></dl>
+    <div class="tn-h">Passages</div><ul class="tn-list">${v.passages.map(pRow).join("")}${v.exits.map((x, i) => xRow(x, v.passages.length + i)).join("")}</ul>
+    ${v.glimpsed.length ? `<div class="tn-h">Glimpsed by scan · fades in ${v.scanSeconds} s</div><ul class="tn-list">${v.glimpsed.map(g => `<li class="glimpse"><span class="n">·</span><span>${esc(g.a)} ⇄ ${esc(g.b)} <span class="d">(${esc(g.dir)})</span></span></li>`).join("")}</ul>` : ""}
+    ${v.threads.length ? `<div class="tn-h">Open threads</div><ul class="tn-list">${v.threads.map(t => `<li><span class="n">[${t.code}]</span><span><span class="d">${esc(t.kindText)}:</span> ${esc(t.text)}</span></li>`).join("")}</ul>` : ""}
+    ${v.beacons.length ? `<div class="tn-h">Beacons here</div><ul class="tn-list">${v.beacons.map(b => `<li><span class="n">${b.n}</span><span>${esc(b.note || "(no note)")}</span></li>`).join("")}</ul>` : ""}
+    ${TN.inspect ? `<div class="tn-h">Inspect</div><div>${TN.inspect}</div>` : ""}
+    <div class="tn-prose"><div class="tn-fig">${v.image ? "Illustration: " + esc(v.image) : "No illustration yet."}</div>${paras || "<p>This chamber has no prose yet.</p>"}</div>`;
+  $("tnHelp").innerHTML = [["j k", "select"], ["Enter 1-9", "follow"], ["h l", "back / forward"], ["i", "inspect"], ["u", "bind"], ["b", "beacon"],
+    ["s", "scan"], ["c", "cruise step"], ["C", "auto"], ["p", "path"], ["w", "corpus views"], ["/", "search"], ["gg G", "top / end"], ["r", "read"], ["T Esc", "cockpit"]]
+    .map(([k, d]) => `<kbd>${k}</kbd> ${d}`).join(" · ");
+  const selEl = body.querySelector("li.sel"); if (selEl) selEl.scrollIntoView({ block: "nearest" });
+}
+function textTravel(to, how) {
+  if (to === curChamber) return;
+  const evs = CM.ops.travel(m, curChamber, to); if (!evs) { tnMsg("No passage leads to " + title(to)); return; }
+  if (how === "back") TN.fwd.push(curChamber); else { TN.back.push(curChamber); if (how !== "fwd") TN.fwd = []; }
+  append(evs); curChamber = lastChamber = to; TN.sel = 0; TN.inspect = null;
+  const hops = evs.filter(e => e.t === "traverse").length;
+  tnMsg(how === "back" ? "Back to " + title(to) : hops > 1 ? "Travelled " + hops + " passages to " + title(to) : "Entered " + title(to));
+  renderAll(); $("textnav").scrollTop = 0;
+}
+function follow(item) {
+  if (!item) return;
+  if (item.kind === "exit") { const from = wtitle(WORK);
+    const done = () => { TN.back = []; TN.fwd = []; TN.sel = 0; tnMsg("Crossed from " + from + " into " + wtitle(WORK)); renderText(); $("textnav").scrollTop = 0; };
+    const r = crossInto(item.x, "lane", done);
+    if (r === true) done(); else if (r === "pending") tnMsg("Loading " + wtitle(item.x.to_work) + " …"); else tnMsg(item.x.to_work + " is not in this corpus yet"); return; }
+  if (item.kind === "work") { TN.view = null; TN.sel = 0; goToWork(item.to_work, item.chamber); tnMsg(item.to_work === WORK ? "" : "Now in " + wtitle(WORK)); renderText(); return; }
+  if (item.kind === "hit") TN.search = null;
+  textTravel(item.to);
+}
+function stopAuto() { if (TN.auto) { clearInterval(TN.auto); TN.auto = null; } }
+function cruiseStep() {
+  const next = CM.remainingStops(m, S, curChamber)[0];
+  if (!next) { stopAuto(); tnMsg("End of route"); renderText(); return false; }
+  textTravel(next); return true;
+}
+function tnPrompt(label, onDone) { const inp = $("tnInput"); inp.hidden = false; inp.value = ""; inp.placeholder = label; TN.input = onDone; tnMsg(label); inp.focus(); }
+$("tnInput").addEventListener("keydown", (e) => {
+  e.stopPropagation();
+  if (e.key === "Enter") { const f = TN.input, v = $("tnInput").value; $("tnInput").hidden = true; TN.input = null; $("textnav").focus(); f && f(v); e.preventDefault(); }
+  else if (e.key === "Escape") { $("tnInput").hidden = true; TN.input = null; tnMsg(""); $("textnav").focus(); e.preventDefault(); }
+});
+function textKey(e) {
+  const k = e.key, tn = $("textnav"), item = TN.items[TN.sel];
+  if (e.ctrlKey || e.metaKey || e.altKey) return;
+  const handled = () => e.preventDefault();
+  if (k === "Escape") { handled(); if (TN.search || TN.view) { TN.search = null; TN.view = null; TN.sel = 0; renderText(); } else closeText(); return; }
+  if (k === "T" || k === "t") { handled(); closeText(); return; }
+  if (k === "Tab") { handled(); closeText(); openMap(); mapLatched = true; return; }
+  if (k === "j" || k === "ArrowDown") { handled(); TN.sel = Math.min(TN.sel + 1, TN.items.length - 1); renderText(); return; }
+  if (k === "k" || k === "ArrowUp") { handled(); TN.sel = Math.max(TN.sel - 1, 0); renderText(); return; }
+  if (k === "Enter") { handled(); follow(item); return; }
+  if (/^[1-9]$/.test(k)) { handled(); follow(TN.items[+k - 1]); return; }
+  if (k === "w") { handled(); const vs = C.views.map(v => v.id), i = vs.indexOf(TN.view); TN.view = vs[(i + 1) % vs.length]; TN.search = null; TN.sel = 0; renderText(); tn.scrollTop = 0; return; }
+  if (TN.view) return; // the other keys act on the chamber, not on a list of works
+  if (k === "h") { handled(); const to = TN.back.pop(); if (!to) { tnMsg("No earlier chamber in this work this session"); return; } textTravel(to, "back"); return; }
+  if (k === "l") { handled(); const to = TN.fwd.pop(); if (!to) { tnMsg("Nothing ahead in your history"); return; } textTravel(to, "fwd"); return; }
+  if (k === "i") { handled();
+    if (!item || item.kind === "hit") { TN.inspect = null; renderText(); return; }
+    if (item.kind === "exit") { const x = item.x, w = C.works.get(x.to_work);
+      TN.inspect = esc(x.dir) + (x.oneway ? " · one-way" : " · two-way") + (w ? `<br>${esc(w.title)}: ${esc(w.abstract || "")}<br>${w.counts.sections} sections · ${CM.workState(CS, w.id)}` : "<br>Not in this corpus yet."); renderText(); return; }
+    const t = m.tunnels.get(item.key), n = m.nodes.get(item.to), rel = CM.relations(m, item.to);
+    TN.inspect = `${esc(title(t.a))} ⇄ ${esc(title(t.b))} · two-way · ${CM.tunnelState(S, t.key)}<br>` +
+      (t.cites.length ? t.cites.map(c => `${esc(title(c.from))} cites ${esc(title(c.to))}${c.door ? " (prerequisite)" : ""}`).join("<br>") + "<br>" : "") +
+      `Leads to ${esc(n.title)} · ${CM.ROLE_TEXT[n.role]} · ${CM.stateOf(S, n.id)}${n.threads.length ? " · " + n.threads.length + " open thread(s)" : ""}` +
+      (rel.outs.length ? `<br>It cites: ${rel.outs.map(title).map(esc).join(", ")}` : "");
+    renderText(); return; }
+  if (k === "u") { handled(); tnMsg(item && item.to ? bindChamber(item.to) : "Select a passage to bind its chamber"); return; }
+  if (k === "b") { handled(); tnPrompt("Beacon note, then Enter", (note) => {
+      const out = append(CM.ops.beacon(m, S, { chamber: curChamber, facing: item && item.key ? item.key : null, note: note.trim() }));
+      tnMsg("Beacon " + out[0].n + " dropped in " + title(curChamber)); renderAll(); }); return; }
+  if (k === "s") { handled(); scan(m.nodes.get(curChamber).pos, curChamber); return; }
+  if (k === "c") { handled(); cruiseStep(); return; }
+  if (k === "C") { handled(); if (TN.auto) { stopAuto(); tnMsg("Auto-advance stopped"); renderText(); }
+      else if (cruiseStep()) { TN.auto = setInterval(() => { if (mode !== "text" || !cruiseStep()) stopAuto(); }, 2600); tnMsg("Auto-advancing along the route · x stops"); } return; }
+  if (k === "x") { handled(); stopAuto(); tnMsg("Stopped"); renderText(); return; }
+  if (k === "p") { handled(); const h = historyList(12); TN.inspect = h.length ? "Your path, most recent first:<br>" + h.map(esc).join("<br>") : "No passages traversed yet."; renderText(); return; }
+  if (k === "/") { handled(); tnPrompt("Search this work, then Enter", (q) => { const hits = CM.search(m, q);
+      TN.search = hits.length ? { q, hits } : null; TN.sel = 0; tnMsg(hits.length ? "" : "No matches for " + q); renderText(); }); return; }
+  if (k === "G") { handled(); tn.scrollTop = tn.scrollHeight; return; }
+  if (k === "g") { handled(); const t = performance.now(); if (t - TN.gPending < 450) { tn.scrollTop = 0; TN.gPending = 0; } else TN.gPending = t; return; }
+  if (k === "r") { handled(); $("textnav").hidden = true; $("tnBar").hidden = true; openReader(curChamber); return; }
+}
+
+/* ================= panel + HUD ================= */
+$("keys").innerHTML = [["W S A D R F", "move"], ["Q E", "roll"], ["H J K L", "orient"], ["Tab ;", "map"], ["T", "text"], ["Enter", "read"],
+  ["Y", "inspect"], ["U", "bind"], ["B", "beacon"], ["G", "scan"], ["O", "rear"], ["P", "path"], ["Z X C", "cruise"]]
+  .map(([k, v]) => `<span><kbd>${k}</kbd> ${v}</span>`).join("");
+function fmtWhen(iso) { if (!iso) return ""; return new Date(iso).toLocaleString(undefined, { weekday: "short", month: "short", day: "numeric", hour: "2-digit", minute: "2-digit" }); }
+function renderPanel() {
+  const here = m.nodes.get(curChamber), prev = S.prevSession, w = C.works.get(WORK);
+  const revs = m.history.filter(h => h.added.length || h.extended.length || h.withdrawn.length);
+  const since = prev ? revs.filter(h => h.at > prev.at) : revs.slice(-1);
+  const changes = since.flatMap(h => [...h.added.map(id => ["dug", id]), ...h.extended.map(id => ["enlarged", id]), ...h.withdrawn.map(id => ["sealed", id])]);
+  const galaxyChanges = (BUNDLE.corpus.ledger.history || []).filter(h => prev && h.at > prev.at && (h.placed || h.withdrawn || h.conflict || h.restored))
+    .map(h => h.placed ? ["new system", h.placed] : h.withdrawn ? ["withdrawn", h.withdrawn] : h.restored ? ["restored", h.restored] : ["placement conflict", h.conflict]);
+  const threads = live.flatMap(n => n.threads.map(t => ({ ...t, id: n.id })));
+  const targets = CM.routeTargets(m, S), lastT = S.trail[S.trail.length - 1];
+  const secs = CM.sections(m), vis = secs.filter(n => S.visited.has(n.id)).length;
+  const saveTxt = Store.kind === "account" ? "<b>Saved to your account</b>" : Store.kind === "browser" ? "<b>Saved in this browser only</b>" : "Not saved: this visit only";
+  const actors = new Set(events.map(e => e.actor)).size, worksVisited = [...C.works.values()].filter(x => CS.visited.has(x.id)).length;
+  $("panel").innerHTML = `
+  <section><h4>${esc(C.title)}</h4><div class="big">${esc(w.title)}</div>
+    <div class="sub">${w.series ? esc(C.series[w.series]?.title || w.series) + " · " : ""}${worksVisited} of ${C.works.size} works visited · ${CS.lanesUsed.size} lanes used${CS.warps ? " · " + CS.warps + " warps" : ""}</div>
+    ${w.abstract ? `<div class="abstract">${esc(w.abstract)}</div>` : ""}
+    <div class="chips">${C.views.map(v => `<button class="chip" data-view="${esc(v.id)}">${esc(v.title)}</button>`).join("")}</div></section>
+  <section><h4>Position</h4><div class="big">${here ? esc(here.title) : curTunnel ? esc(title(curTunnel.a)) + " ⇄ " + esc(title(curTunnel.b)) : "—"}</div>
+    <div class="sub">${here ? CM.ROLE_TEXT[here.role] : "in a passage"}${lastT && here && lastT.to === here.id ? " · arrived from " + esc(title(lastT.from)) : ""}</div>
+    <div class="chips"><button class="chip" id="bMap">Map</button><button class="chip" id="bText">Text navigator</button><button class="chip" id="bRead">Read here</button><button class="chip" id="bCruise">${cruise ? "Stop cruise" : mode === "text" ? "Next stop" : "Cruise route"}</button></div></section>
+  <section><h4>${prev ? "Since your last visit" : "Latest source revision"}</h4>
+    <div class="sub">${prev ? "Last here " + fmtWhen(prev.at) : "First visit" + (since[0] ? " · revised " + fmtWhen(since[0].at) : "")}</div>
+    ${changes.length || galaxyChanges.length ? `<ul class="list">${changes.map(([k, id]) => `<li><span class="k">${k}</span><button data-read="${esc(id)}" class="change">${esc(title(id))}</button></li>`).join("")}${galaxyChanges.map(([k, id]) => `<li><span class="k">${k}</span><button data-work="${esc(id)}" class="change">${esc(wtitle(id))}</button></li>`).join("")}</ul>` : `<div class="sub">No source changes.</div>`}</section>
+  <section><h4>Route in this work</h4><div class="chips">${CM.POLICIES.map(([k, v]) => `<button class="chip" data-pol="${k}" aria-pressed="${S.policy === k}">${v}</button>`).join("")}</div>
+    ${S.policy === "bound" ? (S.route.length ? `<ul class="list">${S.route.map((id, i) => `<li><span class="n">${i + 1}</span><button data-read="${esc(id)}">${esc(title(id))}</button> <button data-unbind="${esc(id)}" aria-label="Remove ${esc(title(id))}">×</button></li>`).join("")}</ul>` : `<div class="sub">Inspect a chamber, then press U to bind it.</div>`)
+      : `<div class="sub">${targets.map(title).map(esc).slice(0, 6).join(" → ")}${targets.length > 6 ? " → …" : ""}</div>`}</section>
+  <section><h4>Open threads here</h4>${threads.length ? `<ul class="list">${threads.map(t => `<li><span class="k">${CM.THREAD_TEXT[t.kind]}</span><button data-read="${esc(t.id)}">${esc(t.text)}</button></li>`).join("")}</ul>` : `<div class="sub">None in this work.</div>`}</section>
+  <section><h4>Beacons here</h4>${S.beacons.size ? `<ul class="list">${[...S.beacons.values()].map(b => `<li><span class="n">${b.n}</span><button data-beacon="${esc(b.id)}">${esc(b.note || "(no note)")} · ${esc(title(b.chamber))}</button></li>`).join("")}</ul>` : `<div class="sub">B drops a numbered beacon with a note.</div>`}</section>
+  <section><h4>Explored</h4><div class="row"><span>Chambers visited here</span><span>${vis} / ${secs.length}</span></div>
+    <div class="row"><span>Passages traversed here</span><span>${S.traversed.size} / ${m.tunnels.size}</span></div>
+    <div class="save">Reader log: ${saveTxt}${Store.failed ? " · last account save failed, kept locally" : ""} · ${events.length} events${actors > 1 ? " from " + actors + " devices" : ""}</div>
+    <div class="chips"><button class="chip" id="bCopyLog">Copy log (JSONL)</button></div>
+    <input id="mergeLog" class="merge" placeholder="Paste a log from the terminal or another device" autocomplete="off" aria-label="Paste a reader log to merge">
+    ${matchMedia("(pointer:coarse)").matches ? `<div class="sub">Touch flight: left stick moves; drag the view to look; UP/DOWN change level. The map supports drag and pinch.</div>` : ""}</section>`;
+  $("bMap").onclick = () => { if (mode === "text") closeText(); mode === "map" ? closeMap() : (openMap(), mapLatched = true); };
+  $("bText").onclick = () => { if (mode === "map") closeMap(); mode === "text" ? closeText() : openText(); };
+  $("bRead").onclick = () => openReader(curChamber || lastChamber);
+  $("bCruise").onclick = () => { if (mode === "text") { cruiseStep(); return; } cruise ? stopCruise("stopped") : startCruise(); };
+  $("bCopyLog").onclick = () => { const text = events.map(e => JSON.stringify(e)).join("\n") + "\n";
+    const fallback = () => { const f = $("mergeLog"); f.value = text; f.select(); toast("Copy was blocked here: the log is selected in the field below"); };
+    try { navigator.clipboard.writeText(text).then(() => toast("Copied " + events.length + " events"), fallback); } catch (_) { fallback(); } };
+  $("mergeLog").addEventListener("paste", (e) => { e.preventDefault();
+    const raw = (e.clipboardData || window.clipboardData).getData("text").trim(); let incoming = [];
+    try { incoming = raw.startsWith("{") && raw.includes('"events"') && !raw.includes("\n{") ? JSON.parse(raw).events : raw.split("\n").filter(Boolean).map(l => JSON.parse(l)); }
+    catch (_) { toast("That text is not a reader log"); return; }
+    const have = new Set(events.map(x => x.id)), fresh = CM.upgrade(incoming, actor).filter(x => x.id && !have.has(x.id) && inCorpus(x));
+    if (!fresh.length) { toast("Nothing new in that log"); return; }
+    events = CM.merge(events, fresh); rederive(); Store.push(fresh); toast("Merged " + fresh.length + " events"); renderAll(); });
+  $("panel").querySelectorAll("[data-view]").forEach(b => b.onclick = () => { if (mode === "map") closeMap(); if (mode === "text") { TN.view = b.dataset.view; TN.sel = 0; renderText(); } else openText(b.dataset.view); });
+  $("panel").querySelectorAll("[data-work]").forEach(b => b.onclick = () => goToWork(b.dataset.work));
+  $("panel").querySelectorAll("[data-pol]").forEach(b => b.onclick = () => { append(CM.ops.policy(b.dataset.pol)); renderAll(); });
+  $("panel").querySelectorAll("[data-unbind]").forEach(b => b.onclick = () => { append(CM.ops.unbind(b.dataset.unbind)); renderAll(); });
+  $("panel").querySelectorAll("[data-read]").forEach(b => b.onclick = () => openReader(b.dataset.read));
+  $("panel").querySelectorAll("[data-beacon]").forEach(b => b.onclick = () => { const x = S.beacons.get(b.dataset.beacon); if (!x) return;
+    if (mode === "text") closeText(); if (mode !== "map") { openMap(); mapLatched = true; } M.sel = x.id; M.target.copy(V3(x.pos)); refreshMap(); });
+}
+function renderAll() { renderPanel(); refreshMap(); rebuildFlightBeacons(); renderText(); }
+function hud() {
+  $("hudWork").textContent = wtitle(WORK).toUpperCase();
+  $("hudLoc").textContent = curChamber ? title(curChamber) : curTunnel ? "passage: " + title(curTunnel.a) + " ⇄ " + title(curTunnel.b) : portalLock ? "portal: " + portalLock.dir : "";
+  $("hudMode").textContent = cruise ? "CRUISE " + (cruise.speed + 1) + "/3" : "";
+  $("hudRight").innerHTML = `SPD <b>${P.v.length().toFixed(1).padStart(4, "0")}</b><br>VISITED <b>${S.visited.size}</b>`;
+}
+
+/* ================= loop ================= */
+let last = performance.now(), hudTick = 0, scanTick = 0;
+const tmp = new THREE.Quaternion(), euler = new THREE.Euler();
+function step(dt) {
+  if (mode === "flight" && cruise) {
+    cruise.s += SPEEDS[cruise.speed] * dt; const end = cruise.lens[cruise.lens.length - 1];
+    if (cruise.s >= end) { P.pos.copy(cruise.pts[cruise.pts.length - 1]); stopCruise("arrived"); }
+    else { const p = samplePath(cruise, cruise.s), ahead = samplePath(cruise, Math.min(cruise.s + 6, end)), fwd = ahead.clone().sub(p);
+      if (fwd.lengthSq() > 1e-4) { const up = new THREE.Vector3(0, 1, 0).applyQuaternion(P.q);
+        tmp.setFromRotationMatrix(new THREE.Matrix4().lookAt(new THREE.Vector3(), fwd, up)); P.q.slerp(tmp, Math.min(1, dt * 2.5)); } // look where you are going
+      P.pos.copy(p); }
+  } else if (mode === "flight") {
+    const k = (c) => keys.has(c) ? 1 : 0;
+    P.v.addScaledVector(new THREE.Vector3(k("KeyD") - k("KeyA") + touchFlight.x, k("KeyR") - k("KeyF") + touchFlight.y, k("KeyS") - k("KeyW") + touchFlight.z).applyQuaternion(P.q), 55 * dt);
+    P.v.multiplyScalar(Math.exp(-2.6 * dt)); if (P.v.length() > 24) P.v.setLength(24);
+    P.w.lerp(new THREE.Vector3(k("KeyK") + k("ArrowUp") - k("KeyJ") - k("ArrowDown"), k("KeyH") + k("ArrowLeft") - k("KeyL") - k("ArrowRight"), k("KeyQ") - k("KeyE")).multiplyScalar(1.7), Math.min(1, dt * 9));
+    P.q.multiply(tmp.setFromEuler(euler.set(P.w.x * dt, P.w.y * dt, P.w.z * dt))).normalize();
+    const d = P.v.clone().multiplyScalar(dt), np = P.pos.clone().add(d);
+    if (allowed(np)) P.pos.copy(np);
+    else for (const ax of ["x", "y", "z"]) { const t = P.pos.clone(); t[ax] += d[ax]; if (allowed(t)) P.pos.copy(t); else P.v[ax] *= -0.15; }
+  } else if (mode === "map") {
+    const k = (c) => keys.has(c) ? 1 : 0;
+    const rot = new THREE.Vector3(k("KeyK") - k("KeyJ"), k("KeyH") - k("KeyL"), k("KeyQ") - k("KeyE")).multiplyScalar(1.4 * dt);
+    M.q.multiply(tmp.setFromEuler(euler.set(rot.x, rot.y, rot.z))).normalize();
+    M.dist = THREE.MathUtils.clamp(M.dist * Math.exp((k("KeyS") - k("KeyW")) * 1.4 * dt), 8, 3000);
+    M.target.add(new THREE.Vector3(k("KeyD") - k("KeyA"), k("KeyR") - k("KeyF"), 0).multiplyScalar(M.dist * 0.8 * dt).applyQuaternion(M.q));
+  }
+  if (mode === "flight") { // where the ship is decides the log: the same traverse/enter events the text navigator writes
+    const ch = chamberAt(P.pos);
+    if (ch && ch.id !== curChamber) {
+      const from = lastChamber; curChamber = ch.id; curTunnel = null; portalLock = null;
+      append(CM.ops.cross(m, from, ch.id));
+      lastChamber = ch.id; renderAll();
+    } else if (!ch && curChamber) { curChamber = null; curTunnel = tunnelAt(P.pos); renderPanel(); }
+    for (const g of portalGeo) { // reaching the door at the end of a portal crosses into the other work
+      const atDoor = P.pos.distanceTo(g.pts[g.pts.length - 1]) < 4.5;
+      if (atDoor && portalLock !== g) { portalLock = g; if (!crossInto(g, "lane")) { P.v.multiplyScalar(-0.4); } break; }
+      if (!atDoor && portalLock === g && P.pos.distanceTo(g.pts[g.pts.length - 1]) > 9) portalLock = null;
+    }
+  }
+}
+function frame(t) {
+  const dt = Math.min(0.05, (t - last) / 1000); last = t;
+  step(dt);
+  for (const r of flightObjs.reactors) r.rotation.y += dt * 0.6;
+  for (const d of flightObjs.doors) d.obj.material.color.set(S.visited.has(d.target) ? COL.wire : COL.door);
+  if (flightObjs.pulse) { const f = flightObjs.pulse, a = (t - f.t0) / 1200;
+    if (a > 1) { workRoot.remove(f.obj); flightObjs.pulse = null; } else { f.obj.scale.setScalar(2 + a * 68); f.obj.material.opacity = 0.9 * (1 - a); } }
+  // glimpses expire on their own: re-derive once a second while any scan is active
+  if ((scanTick += dt) > 1) { scanTick = 0; if (S.scansActive) { rederive(); refreshMap(); renderText(); } }
+  if (mode === "map") { mapCam.quaternion.copy(M.q); mapCam.position.copy(M.target).add(new THREE.Vector3(0, 0, M.dist).applyQuaternion(M.q));
+    renderer.render(mapDepth === 2 ? galaxy : mapScene, mapCam); }
+  else if (mode !== "text" && mode !== "read") { cam.position.copy(P.pos); cam.quaternion.copy(P.q);
+    if (optical) cam.quaternion.multiply(tmp.setFromAxisAngle(new THREE.Vector3(0, 1, 0), Math.PI)); renderer.render(flight, cam); }
+  if ((hudTick += dt) > 0.1) { hudTick = 0; hud(); }
+  mobileVisibility();
+  requestAnimationFrame(frame);
+}
+function resize() { const w = stage.clientWidth, h = stage.clientHeight; renderer.setSize(w, h, false);
+  cam.aspect = mapCam.aspect = w / Math.max(h, 1); cam.updateProjectionMatrix(); mapCam.updateProjectionMatrix(); }
+new ResizeObserver(resize).observe(stage);
+
+/* ================= boot ================= */
+events = Store.readLocal() || []; if (events.length) Store.kind = "browser";
+CS = CM.deriveCorpus(C, events);
+const firstWork = CS.here && C.has(CS.here) ? CS.here : [...C.works.values()].find(w => C.has(w.id)).id;
+function boot() {
+  loadWork(firstWork); spawn();
+  append(CM.ops.session().map(e => Object.assign(e, { work: null })));
+  if (!S.visited.has(curChamber)) append(CM.ops.enter(curChamber));
+  bootMoved = false;
+  resize(); renderAll(); updateFocusHint();
+  (document.fonts ? document.fonts.ready : Promise.resolve()).then(() => refreshMap());
+  stage.focus(); mobileVisibility();
+  requestAnimationFrame(frame);
+  Store.connect();
+}
+if (C.loaded(firstWork)) boot();
+else C.ensure(firstWork).then(boot, (err) => { $("toast").hidden = false; $("toast").textContent = "Could not load " + wtitle(firstWork) + " (" + err.message + "). Reload to try again."; });
+if (location.hash === "#debug") window.__cutaway = { // test hook only: lets a headless check fly through a portal
+  state: () => ({ work: WORK, chamber: curChamber, events: events.length, jumps: CS.jumps.length, warps: CS.warps, portals: portalGeo.map(g => g.dir),
+    mode, depth: mapDepth, sel: GAL.sel, works: [...C.works.keys()] }),
+  screenOf(id) { const r = renderer.domElement.getBoundingClientRect(), v = V3(C.works.get(id).pos).project(mapCam);
+    return [r.left + (v.x + 1) / 2 * r.width, r.top + (1 - v.y) / 2 * r.height]; },
+  approach(i) { const g = portalGeo[i]; P.pos.copy(g.pts[g.pts.length - 3]); P.v.copy(g.dirv).multiplyScalar(12); curChamber = null; portalLock = null; },
+  pos: () => P.pos.toArray(),
+  forward: () => new THREE.Vector3(0, 0, -1).applyQuaternion(cam.quaternion).toArray(), // what the rendered camera faces
+  centre: (id) => m.nodes.get(id || curChamber || lastChamber).pos,
+  cruise: () => startCruise(),
+};
+})();
+</script>

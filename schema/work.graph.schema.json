@@ -1,0 +1,247 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://standardgalactic.github.io/cutaway/schema/work.graph.schema.json",
+  "title": "Work graph",
+  "description": "One work's meaning, recomputed from its source on every run (mine.py). Never edited by hand.",
+  "type": "object",
+  "required": [
+    "work",
+    "nodes",
+    "edges",
+    "title",
+    "bibliography"
+  ],
+  "properties": {
+    "work": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "title": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "level",
+          "role",
+          "thesis",
+          "words",
+          "threads",
+          "cites",
+          "order",
+          "text"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^(G|L):.+"
+          },
+          "title": {
+            "type": "string"
+          },
+          "heading": {
+            "type": "string"
+          },
+          "level": {
+            "enum": [
+              "section",
+              "subsection"
+            ]
+          },
+          "role": {
+            "enum": [
+              "main",
+              "foundation",
+              "consequence",
+              "comparison",
+              "appendix",
+              "alcove"
+            ]
+          },
+          "thesis": {
+            "type": "boolean"
+          },
+          "part": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "words": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "image": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "order": {
+            "type": "integer"
+          },
+          "cites": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "text": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "paragraphs as plain reading text"
+          },
+          "threads": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "kind",
+                "text"
+              ],
+              "properties": {
+                "kind": {
+                  "enum": [
+                    "missing",
+                    "extension",
+                    "evidence",
+                    "open"
+                  ]
+                },
+                "text": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "edges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "from",
+          "to",
+          "kind",
+          "traversal"
+        ],
+        "properties": {
+          "from": {
+            "type": "string",
+            "pattern": "^(G|L):.+"
+          },
+          "to": {
+            "type": "string",
+            "pattern": "^((G|L):.+|work:[a-z0-9][a-z0-9-]*(#.+)?)$"
+          },
+          "kind": {
+            "enum": [
+              "sequence",
+              "branch",
+              "shaft",
+              "alcove",
+              "reference",
+              "prerequisite",
+              "exit"
+            ]
+          },
+          "traversal": {
+            "enum": [
+              "two-way",
+              "one-way"
+            ]
+          },
+          "door": {
+            "type": "boolean"
+          },
+          "label": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "bibliography": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "text",
+          "title",
+          "flyxion"
+        ],
+        "properties": {
+          "text": {
+            "type": "string"
+          },
+          "title": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "flyxion": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "every file read, relative to the main file"
+    },
+    "warnings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "severity",
+          "text"
+        ],
+        "properties": {
+          "kind": {
+            "enum": [
+              "no-thesis",
+              "large-part",
+              "unlabeled",
+              "empty",
+              "missing-file"
+            ]
+          },
+          "severity": {
+            "enum": [
+              "problem",
+              "advice"
+            ]
+          },
+          "text": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "source_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "miner": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{12}$",
+      "description": "hash of the mine.py that produced this"
+    }
+  }
+}

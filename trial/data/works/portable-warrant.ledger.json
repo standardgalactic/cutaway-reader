@@ -1,0 +1,921 @@
+{
+  "work": "portable-warrant",
+  "version": 1,
+  "nodes": {
+    "G:introduction": {
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 8.15,
+      "title": "Introduction",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:portable-certitude-and-the-fiber-criterion": {
+      "pos": [
+        0.0,
+        0.0,
+        40.0
+      ],
+      "radius": 7.26,
+      "title": "Portable Certitude and the Fiber Criterion",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-warrant-reconstruction-limit": {
+      "pos": [
+        0.0,
+        0.0,
+        80.0
+      ],
+      "radius": 7.36,
+      "title": "The Warrant Reconstruction Limit",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:three-ways-to-lose-a-distinction": {
+      "pos": [
+        0.0,
+        0.0,
+        120.0
+      ],
+      "radius": 5.77,
+      "title": "Three Ways to Lose a Distinction",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:temporal-truncation": {
+      "pos": [
+        19.71,
+        0.0,
+        120.0
+      ],
+      "radius": 4.37,
+      "title": "Temporal truncation",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:three-ways-to-lose-a-distinction",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:structural-flattening": {
+      "pos": [
+        -19.93,
+        0.0,
+        120.0
+      ],
+      "radius": 4.52,
+      "title": "Structural flattening",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:three-ways-to-lose-a-distinction",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:representational-translation": {
+      "pos": [
+        11.03,
+        13.47,
+        127.73
+      ],
+      "radius": 4.7,
+      "title": "Representational translation",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:three-ways-to-lose-a-distinction",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:a-calculus-of-warrant-preservation": {
+      "pos": [
+        0.0,
+        0.0,
+        160.0
+      ],
+      "radius": 8.34,
+      "title": "A Calculus of Warrant Preservation",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:restriction-and-monotonicity": {
+      "pos": [
+        24.93,
+        0.0,
+        160.0
+      ],
+      "radius": 5.28,
+      "title": "Restriction and monotonicity",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:a-calculus-of-warrant-preservation",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:composition-is-a-new-proof-obligation": {
+      "pos": [
+        -24.41,
+        0.0,
+        160.0
+      ],
+      "radius": 4.93,
+      "title": "Composition is a new proof obligation",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:a-calculus-of-warrant-preservation",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:joins-and-relational-properties": {
+      "pos": [
+        13.26,
+        16.19,
+        169.29
+      ],
+      "radius": 4.85,
+      "title": "Joins and relational properties",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:a-calculus-of-warrant-preservation",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:from-claims-to-evidence-objects": {
+      "pos": [
+        0.0,
+        0.0,
+        200.0
+      ],
+      "radius": 7.51,
+      "title": "From Claims to Evidence Objects",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-three-gate-runtime": {
+      "pos": [
+        0.0,
+        0.0,
+        240.0
+      ],
+      "radius": 7.29,
+      "title": "The Three-Gate Runtime",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:evidence-lifecycle-and-boundary-semantics": {
+      "pos": [
+        0.0,
+        0.0,
+        280.0
+      ],
+      "radius": 8.81,
+      "title": "Evidence Lifecycle and Boundary Semantics",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:threat-model-and-non-goals": {
+      "pos": [
+        0.0,
+        0.0,
+        320.0
+      ],
+      "radius": 8.17,
+      "title": "Threat Model and Non-Goals",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-portable-kernel": {
+      "pos": [
+        0.0,
+        0.0,
+        360.0
+      ],
+      "radius": 7.71,
+      "title": "The Portable Kernel",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:forth-and-the-shape-of-authorization": {
+      "pos": [
+        0.0,
+        0.0,
+        400.0
+      ],
+      "radius": 7.06,
+      "title": "Forth and the Shape of Authorization",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-operating-system-interpretation": {
+      "pos": [
+        0.0,
+        0.0,
+        440.0
+      ],
+      "radius": 7.51,
+      "title": "The Operating-System Interpretation",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:null-action-as-operational-abstention": {
+      "pos": [
+        0.0,
+        0.0,
+        480.0
+      ],
+      "radius": 6.72,
+      "title": "NULL_ACTION as Operational Abstention",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:warrant-algebra": {
+      "pos": [
+        0.0,
+        0.0,
+        520.0
+      ],
+      "radius": 8.31,
+      "title": "Warrant Algebra",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:composition": {
+      "pos": [
+        25.3,
+        0.0,
+        520.0
+      ],
+      "radius": 5.56,
+      "title": "Composition",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:warrant-algebra",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:joins": {
+      "pos": [
+        -24.48,
+        0.0,
+        520.0
+      ],
+      "radius": 5.01,
+      "title": "Joins",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:warrant-algebra",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:algebraic-non-laws": {
+      "pos": [
+        13.17,
+        16.08,
+        529.22
+      ],
+      "radius": 4.77,
+      "title": "Algebraic non-laws",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:warrant-algebra",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:temporal-warrant-and-historical-extension": {
+      "pos": [
+        0.0,
+        40.0,
+        520.0
+      ],
+      "radius": 6.89,
+      "title": "Temporal Warrant and Historical Extension",
+      "role": "consequence",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:archival-truth-and-operational-sufficiency": {
+      "pos": [
+        22.23,
+        40.0,
+        520.0
+      ],
+      "radius": 4.93,
+      "title": "Archival truth and operational sufficiency",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:temporal-warrant-and-historical-extension",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:monotone-and-non-monotone-evidence": {
+      "pos": [
+        -22.37,
+        40.0,
+        520.0
+      ],
+      "radius": 5.02,
+      "title": "Monotone and non-monotone evidence",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:temporal-warrant-and-historical-extension",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:causal-markers-and-sufficient-summaries": {
+      "pos": [
+        11.98,
+        54.63,
+        528.39
+      ],
+      "radius": 4.74,
+      "title": "Causal markers and sufficient summaries",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:temporal-warrant-and-historical-extension",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:replay": {
+      "pos": [
+        -11.96,
+        54.6,
+        528.37
+      ],
+      "radius": 4.71,
+      "title": "Replay",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:temporal-warrant-and-historical-extension",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:a-worked-neuro-formal-counterexample": {
+      "pos": [
+        0.0,
+        -40.0,
+        520.0
+      ],
+      "radius": 8.56,
+      "title": "A Worked Neuro-Formal Counterexample",
+      "role": "foundation",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:evidence-is-not-truth": {
+      "pos": [
+        0.0,
+        0.0,
+        560.0
+      ],
+      "radius": 9.07,
+      "title": "Evidence Is Not Truth",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:sound-forgetting-and-portable-warrant": {
+      "pos": [
+        0.0,
+        0.0,
+        600.0
+      ],
+      "radius": 5.45,
+      "title": "Sound Forgetting and Portable Warrant",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:abstraction-as-disciplined-information-loss": {
+      "pos": [
+        21.99,
+        0.0,
+        600.0
+      ],
+      "radius": 6.21,
+      "title": "Abstraction as Disciplined Information Loss",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:sound-forgetting-and-portable-warrant",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:where-scc-begins": {
+      "pos": [
+        -21.78,
+        0.0,
+        600.0
+      ],
+      "radius": 6.07,
+      "title": "Where SCC Begins",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:sound-forgetting-and-portable-warrant",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:sound-forgetting-admissible-loss-and-warrant-tra": {
+      "pos": [
+        11.66,
+        14.24,
+        608.17
+      ],
+      "radius": 5.79,
+      "title": "Sound Forgetting, Admissible Loss, and Warrant Transport",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:sound-forgetting-and-portable-warrant",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:reflexive-analysis-and-the-trusted-boundary": {
+      "pos": [
+        -11.62,
+        14.18,
+        608.13
+      ],
+      "radius": 5.73,
+      "title": "Reflexive Analysis and the Trusted Boundary",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:sound-forgetting-and-portable-warrant",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:related-work": {
+      "pos": [
+        0.0,
+        0.0,
+        640.0
+      ],
+      "radius": 9.47,
+      "title": "Related Work",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:methodology-and-conformance": {
+      "pos": [
+        0.0,
+        0.0,
+        680.0
+      ],
+      "radius": 7.24,
+      "title": "Methodology and Conformance",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-system-must-certify-less-than-it-knows": {
+      "pos": [
+        0.0,
+        0.0,
+        720.0
+      ],
+      "radius": 7.29,
+      "title": "The System Must Certify Less Than It Knows",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:conclusion": {
+      "pos": [
+        0.0,
+        0.0,
+        760.0
+      ],
+      "radius": 7.28,
+      "title": "Conclusion",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:finite-fiber-counterexamples": {
+      "pos": [
+        0.0,
+        -40.0,
+        760.0
+      ],
+      "radius": 7.14,
+      "title": "Finite Fiber Counterexamples",
+      "role": "appendix",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:evidence-chain-structure": {
+      "pos": [
+        0.0,
+        -80.0,
+        760.0
+      ],
+      "radius": 7.22,
+      "title": "Evidence-Chain Structure",
+      "role": "appendix",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:portable-kernel": {
+      "pos": [
+        0.0,
+        -120.0,
+        760.0
+      ],
+      "radius": 6.92,
+      "title": "Portable Kernel",
+      "role": "appendix",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:conformance-snapshot": {
+      "pos": [
+        0.0,
+        -160.0,
+        760.0
+      ],
+      "radius": 7.06,
+      "title": "Conformance Snapshot",
+      "role": "appendix",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:warrant-algebra-reference-laws": {
+      "pos": [
+        0.0,
+        -200.0,
+        760.0
+      ],
+      "radius": 7.46,
+      "title": "Warrant Algebra Reference Laws",
+      "role": "appendix",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:machine-readable-neuro-formal-counterexample": {
+      "pos": [
+        0.0,
+        -240.0,
+        760.0
+      ],
+      "radius": 7.32,
+      "title": "Machine-Readable Neuro-Formal Counterexample",
+      "role": "appendix",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    }
+  },
+  "labels": {},
+  "aliases": {
+    "section||introduction": [
+      "G:introduction"
+    ],
+    "section||portable-certitude-and-the-fiber-criterion": [
+      "G:portable-certitude-and-the-fiber-criterion"
+    ],
+    "section||the-warrant-reconstruction-limit": [
+      "G:the-warrant-reconstruction-limit"
+    ],
+    "section||three-ways-to-lose-a-distinction": [
+      "G:three-ways-to-lose-a-distinction"
+    ],
+    "subsection|G:three-ways-to-lose-a-distinction|temporal-truncation": [
+      "G:temporal-truncation"
+    ],
+    "subsection|G:three-ways-to-lose-a-distinction|structural-flattening": [
+      "G:structural-flattening"
+    ],
+    "subsection|G:three-ways-to-lose-a-distinction|representational-translation": [
+      "G:representational-translation"
+    ],
+    "section||a-calculus-of-warrant-preservation": [
+      "G:a-calculus-of-warrant-preservation"
+    ],
+    "subsection|G:a-calculus-of-warrant-preservation|restriction-and-monotonicity": [
+      "G:restriction-and-monotonicity"
+    ],
+    "subsection|G:a-calculus-of-warrant-preservation|composition-is-a-new-proof-obligation": [
+      "G:composition-is-a-new-proof-obligation"
+    ],
+    "subsection|G:a-calculus-of-warrant-preservation|joins-and-relational-properties": [
+      "G:joins-and-relational-properties"
+    ],
+    "section||from-claims-to-evidence-objects": [
+      "G:from-claims-to-evidence-objects"
+    ],
+    "section||the-three-gate-runtime": [
+      "G:the-three-gate-runtime"
+    ],
+    "section||evidence-lifecycle-and-boundary-semantics": [
+      "G:evidence-lifecycle-and-boundary-semantics"
+    ],
+    "section||threat-model-and-non-goals": [
+      "G:threat-model-and-non-goals"
+    ],
+    "section||the-portable-kernel": [
+      "G:the-portable-kernel"
+    ],
+    "section||forth-and-the-shape-of-authorization": [
+      "G:forth-and-the-shape-of-authorization"
+    ],
+    "section||the-operating-system-interpretation": [
+      "G:the-operating-system-interpretation"
+    ],
+    "section||null-action-as-operational-abstention": [
+      "G:null-action-as-operational-abstention"
+    ],
+    "section||warrant-algebra": [
+      "G:warrant-algebra"
+    ],
+    "subsection|G:warrant-algebra|composition": [
+      "G:composition"
+    ],
+    "subsection|G:warrant-algebra|joins": [
+      "G:joins"
+    ],
+    "subsection|G:warrant-algebra|algebraic-non-laws": [
+      "G:algebraic-non-laws"
+    ],
+    "section||temporal-warrant-and-historical-extension": [
+      "G:temporal-warrant-and-historical-extension"
+    ],
+    "subsection|G:temporal-warrant-and-historical-extension|archival-truth-and-operational-sufficiency": [
+      "G:archival-truth-and-operational-sufficiency"
+    ],
+    "subsection|G:temporal-warrant-and-historical-extension|monotone-and-non-monotone-evidence": [
+      "G:monotone-and-non-monotone-evidence"
+    ],
+    "subsection|G:temporal-warrant-and-historical-extension|causal-markers-and-sufficient-summaries": [
+      "G:causal-markers-and-sufficient-summaries"
+    ],
+    "subsection|G:temporal-warrant-and-historical-extension|replay": [
+      "G:replay"
+    ],
+    "section||a-worked-neuro-formal-counterexample": [
+      "G:a-worked-neuro-formal-counterexample"
+    ],
+    "section||evidence-is-not-truth": [
+      "G:evidence-is-not-truth"
+    ],
+    "section||sound-forgetting-and-portable-warrant": [
+      "G:sound-forgetting-and-portable-warrant"
+    ],
+    "subsection|G:sound-forgetting-and-portable-warrant|abstraction-as-disciplined-information-loss": [
+      "G:abstraction-as-disciplined-information-loss"
+    ],
+    "subsection|G:sound-forgetting-and-portable-warrant|where-scc-begins": [
+      "G:where-scc-begins"
+    ],
+    "subsection|G:sound-forgetting-and-portable-warrant|sound-forgetting-admissible-loss-and-warrant-tra": [
+      "G:sound-forgetting-admissible-loss-and-warrant-tra"
+    ],
+    "subsection|G:sound-forgetting-and-portable-warrant|reflexive-analysis-and-the-trusted-boundary": [
+      "G:reflexive-analysis-and-the-trusted-boundary"
+    ],
+    "section||related-work": [
+      "G:related-work"
+    ],
+    "section||methodology-and-conformance": [
+      "G:methodology-and-conformance"
+    ],
+    "section||the-system-must-certify-less-than-it-knows": [
+      "G:the-system-must-certify-less-than-it-knows"
+    ],
+    "section||conclusion": [
+      "G:conclusion"
+    ],
+    "section||finite-fiber-counterexamples": [
+      "G:finite-fiber-counterexamples"
+    ],
+    "section||evidence-chain-structure": [
+      "G:evidence-chain-structure"
+    ],
+    "section||portable-kernel": [
+      "G:portable-kernel"
+    ],
+    "section||conformance-snapshot": [
+      "G:conformance-snapshot"
+    ],
+    "section||warrant-algebra-reference-laws": [
+      "G:warrant-algebra-reference-laws"
+    ],
+    "section||machine-readable-neuro-formal-counterexample": [
+      "G:machine-readable-neuro-formal-counterexample"
+    ]
+  },
+  "history": [
+    {
+      "at": "2026-09-27T07:21:21",
+      "added": [
+        "G:introduction",
+        "G:portable-certitude-and-the-fiber-criterion",
+        "G:the-warrant-reconstruction-limit",
+        "G:three-ways-to-lose-a-distinction",
+        "G:temporal-truncation",
+        "G:structural-flattening",
+        "G:representational-translation",
+        "G:a-calculus-of-warrant-preservation",
+        "G:restriction-and-monotonicity",
+        "G:composition-is-a-new-proof-obligation",
+        "G:joins-and-relational-properties",
+        "G:from-claims-to-evidence-objects",
+        "G:the-three-gate-runtime",
+        "G:evidence-lifecycle-and-boundary-semantics",
+        "G:threat-model-and-non-goals",
+        "G:the-portable-kernel",
+        "G:forth-and-the-shape-of-authorization",
+        "G:the-operating-system-interpretation",
+        "G:null-action-as-operational-abstention",
+        "G:warrant-algebra",
+        "G:composition",
+        "G:joins",
+        "G:algebraic-non-laws",
+        "G:temporal-warrant-and-historical-extension",
+        "G:archival-truth-and-operational-sufficiency",
+        "G:monotone-and-non-monotone-evidence",
+        "G:causal-markers-and-sufficient-summaries",
+        "G:replay",
+        "G:a-worked-neuro-formal-counterexample",
+        "G:evidence-is-not-truth",
+        "G:sound-forgetting-and-portable-warrant",
+        "G:abstraction-as-disciplined-information-loss",
+        "G:where-scc-begins",
+        "G:sound-forgetting-admissible-loss-and-warrant-tra",
+        "G:reflexive-analysis-and-the-trusted-boundary",
+        "G:related-work",
+        "G:methodology-and-conformance",
+        "G:the-system-must-certify-less-than-it-knows",
+        "G:conclusion",
+        "G:finite-fiber-counterexamples",
+        "G:evidence-chain-structure",
+        "G:portable-kernel",
+        "G:conformance-snapshot",
+        "G:warrant-algebra-reference-laws",
+        "G:machine-readable-neuro-formal-counterexample"
+      ],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:22:18",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:23:28",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:24:03",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:24:21",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:25:06",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T09:07:55",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T09:08:30",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T09:38:34",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    }
+  ]
+}

@@ -1,0 +1,211 @@
+.
+├── CHANGELOG.md
+├── Makefile
+├── README.md
+├── astounding-infographic.png
+├── build_viewer.py
+├── corpus
+│   ├── corpus.json
+│   ├── corpus.py
+│   ├── data
+│   │   ├── bundle.json
+│   │   ├── corpus.graph.json
+│   │   ├── corpus.ledger.json
+│   │   └── works
+│   │       ├── automap-spec.graph.json
+│   │       ├── automap-spec.ledger.json
+│   │       ├── automap-spec.preview.svg
+│   │       ├── document-repositories.graph.json
+│   │       ├── document-repositories.ledger.json
+│   │       ├── document-repositories.preview.svg
+│   │       ├── memorable-interfaces.graph.json
+│   │       ├── memorable-interfaces.ledger.json
+│   │       ├── memorable-interfaces.preview.svg
+│   │       ├── two-games.graph.json
+│   │       ├── two-games.ledger.json
+│   │       └── two-games.preview.svg
+│   └── works
+│       ├── automap-spec-draft0.tex
+│       ├── automap-spec.tex
+│       ├── document-repositories.tex
+│       ├── memorable-interfaces.tex
+│       └── two-games.tex
+├── corpus.py
+├── cutaway-reader.aux
+├── cutaway-reader.log
+├── cutaway-reader.out
+├── cutaway-reader.pdf
+├── cutaway-reader.tex
+├── cutaway-tty.js
+├── do-tech-billionaires-high-resolution.pdf
+├── do-tech-billionaires.pdf
+├── docs
+│   ├── FORMATS.md
+│   └── SPEC.md
+├── fetch_vendor.py
+├── fig
+│   ├── cockpit-crop.jpg
+│   ├── map-galaxy-crop.jpg
+│   ├── map-local-crop.jpg
+│   ├── map-work-crop.jpg
+│   └── text-crop.jpg
+├── file-list.txt
+├── index.html
+├── ingest.py
+├── mine.py
+├── model.js
+├── requirements-dev.txt
+├── retro-comic
+│   ├── 00-special-report.png
+│   ├── 01-future.png
+│   ├── 02-roads.png
+│   ├── 03-whale-return.png
+│   ├── 04-feed-machine.png
+│   ├── 05-ledger.png
+│   ├── 06-replacement-progress.png
+│   ├── 07-wall.png
+│   ├── 08-gospel-of-acceleration.png
+│   ├── 09-admissible-degradation.png
+│   ├── 10-no-exit.png
+│   ├── 11-world.png
+│   └── 12-references.png
+├── schema
+│   ├── corpus.graph.schema.json
+│   ├── corpus.ledger.schema.json
+│   ├── corpus.manifest.schema.json
+│   ├── event.schema.json
+│   ├── work.graph.schema.json
+│   └── work.ledger.schema.json
+├── site
+│   ├── cutaway-reader.html
+│   └── works
+│       ├── arranged-conditions.json
+│       ├── cosmological-memory.json
+│       ├── forgotten-specification.json
+│       ├── joy-of-spherepop.json
+│       ├── mem8-conscious-gaia.json
+│       ├── mem8-monograph.json
+│       ├── portable-warrant.json
+│       ├── spherepop-os.json
+│       ├── spherepop.json
+│       └── what-probability-forgets.json
+├── test_all.py
+├── test_corpus.js
+├── test_corpus_build.py
+├── test_ingest.py
+├── test_manifest.py
+├── test_model.js
+├── test_schema.py
+├── test_viewer.py
+├── tract-script.aux
+├── tract-script.log
+├── tract-script.out
+├── tract-script.pdf
+├── tract-script.tex
+├── trial
+│   ├── corpus.json
+│   ├── data
+│   │   ├── bundle.json
+│   │   ├── corpus.graph.json
+│   │   ├── corpus.ledger.json
+│   │   ├── report.json
+│   │   ├── report.md
+│   │   └── works
+│   │       ├── arranged-conditions.graph.json
+│   │       ├── arranged-conditions.ledger.json
+│   │       ├── arranged-conditions.preview.svg
+│   │       ├── cosmological-memory.graph.json
+│   │       ├── cosmological-memory.ledger.json
+│   │       ├── cosmological-memory.preview.svg
+│   │       ├── forgotten-specification.graph.json
+│   │       ├── forgotten-specification.ledger.json
+│   │       ├── forgotten-specification.preview.svg
+│   │       ├── joy-of-spherepop.graph.json
+│   │       ├── joy-of-spherepop.ledger.json
+│   │       ├── joy-of-spherepop.preview.svg
+│   │       ├── mem8-conscious-gaia.graph.json
+│   │       ├── mem8-conscious-gaia.ledger.json
+│   │       ├── mem8-conscious-gaia.preview.svg
+│   │       ├── mem8-monograph.graph.json
+│   │       ├── mem8-monograph.ledger.json
+│   │       ├── mem8-monograph.preview.svg
+│   │       ├── portable-warrant.graph.json
+│   │       ├── portable-warrant.ledger.json
+│   │       ├── portable-warrant.preview.svg
+│   │       ├── spherepop-os.graph.json
+│   │       ├── spherepop-os.ledger.json
+│   │       ├── spherepop-os.preview.svg
+│   │       ├── spherepop.graph.json
+│   │       ├── spherepop.ledger.json
+│   │       ├── spherepop.preview.svg
+│   │       ├── what-probability-forgets.graph.json
+│   │       ├── what-probability-forgets.ledger.json
+│   │       └── what-probability-forgets.preview.svg
+│   ├── export
+│   │   ├── index.json
+│   │   └── works
+│   │       ├── arranged-conditions.json
+│   │       ├── cosmological-memory.json
+│   │       ├── forgotten-specification.json
+│   │       ├── joy-of-spherepop.json
+│   │       ├── mem8-conscious-gaia.json
+│   │       ├── mem8-monograph.json
+│   │       ├── portable-warrant.json
+│   │       ├── spherepop-os.json
+│   │       ├── spherepop.json
+│   │       └── what-probability-forgets.json
+│   └── works
+│       ├── arranged-conditions
+│       │   └── d920fc30bb.tex
+│       ├── cosmological-memory
+│       │   ├── 458d5a43c2.tex
+│       │   ├── e8a91f2973.tex
+│       │   └── ec1624aa36.tex
+│       ├── forgotten-specification
+│       │   └── 890b1a4adb.tex
+│       ├── joy-of-spherepop
+│       │   ├── 0e8b97d482.tex
+│       │   └── eba530ea8b.tex
+│       ├── mem8-conscious-gaia
+│       │   ├── 1518ea39d4.tex
+│       │   ├── 9efe5ae514.tex
+│       │   ├── ac80748d01.tex
+│       │   ├── acd628d21a.tex
+│       │   ├── b2f7155234.tex
+│       │   ├── d9e8d617b0.tex
+│       │   ├── db189d364a.tex
+│       │   └── ef0d9f4573.tex
+│       ├── mem8-monograph
+│       │   └── abc4fc9a52.tex
+│       ├── portable-warrant
+│       │   └── 1aabbe7871
+│       │       ├── appendices
+│       │       │   ├── A-fiber-counterexamples.tex
+│       │       │   ├── B-evidence-chain.tex
+│       │       │   ├── C-portable-kernel.tex
+│       │       │   ├── D-conformance-results.tex
+│       │       │   ├── E-warrant-algebra.tex
+│       │       │   └── F-neuroformal-case.tex
+│       │       ├── portable-warrant.bib
+│       │       ├── portable-warrant.tex
+│       │       └── tables
+│       │           ├── porting-matrix.tex
+│       │           └── test-matrix.tex
+│       ├── spherepop
+│       │   └── 061aaaa34e.tex
+│       ├── spherepop-os
+│       │   └── 9e4a7995fc.tex
+│       └── what-probability-forgets
+│           └── ee6cbc8a3e.tex
+├── vendor
+│   ├── fonts
+│   │   ├── ibm-plex-mono-latin-400-normal.woff2
+│   │   ├── ibm-plex-mono-latin-500-normal.woff2
+│   │   ├── source-serif-4-latin-400-normal.woff2
+│   │   ├── source-serif-4-latin-600-normal.woff2
+│   │   └── vt323-latin-400-normal.woff2
+│   ├── lock.json
+│   └── three.min.js
+└── viewer_template.html
+
+32 directories, 177 files

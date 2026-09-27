@@ -1,0 +1,3100 @@
+{
+  "work": "spherepop-os",
+  "nodes": [
+    {
+      "id": "G:motivation-and-design-goals",
+      "title": "Motivation and Design Goals",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 167,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 0,
+      "text": [
+        "Contemporary operating systems are historically organized around mutable global state, imperative control flow, and opaque side effects. While these designs have proven effective for single-user, single-machine computation, they exhibit deep structural limitations when extended to collaborative, distributed, or semantically rich environments. In particular, traditional systems struggle to provide strong guarantees of determinism, introspectability, and time-consistent reasoning.",
+        "Spherepop OS is motivated by the following design goals:",
+        "Deterministic Replay: Any system state must be reproducible exactly from an authoritative log. Total Causal Order: All state transitions must admit a global, unambiguous ordering. View\u2013Cause Separation: Observations, visualizations, and speculative reasoning must not interfere with authoritative state. Semantic Primacy: Relations, equivalence, and meaning precede processes and files as first-class concepts. Collaborative Introspection: Multiple observers may join, leave, rewind, and speculate without destabilizing the system.",
+        "These goals jointly rule out large classes of conventional kernel and database architectures, motivating a log-centric, event-sourced design with strict discipline around causality and derivation."
+      ]
+    },
+    {
+      "id": "G:core-ontology",
+      "title": "Core Ontology",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 105,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 1,
+      "text": [
+        "Definition (Semantic Object). A semantic object is an abstract entity identified by a stable handle. Objects have no intrinsic meaning except insofar as they participate in relations, equivalence classes, and events.",
+        "Definition (Relation). A relation is a typed, directed association between two semantic objects. Relations are first-class and may carry flags or metadata.",
+        "Definition (Equivalence). An equivalence relation over objects identifies multiple handles as representing a single canonical representative. Equivalence is induced by merge events and maintained via a union\u2013find structure.",
+        "Importantly, objects, relations, and equivalence classes exist only as consequences of event replay. There is no mutable object table independent of the log."
+      ]
+    },
+    {
+      "id": "G:authoritative-event-log",
+      "title": "Authoritative Event Log",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 124,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 2,
+      "text": [
+        "Axiom (Append-Only Authority). All authoritative state transitions in Spherepop OS are recorded as events in a single append-only log. No other structure is permitted to introduce or modify semantic state.",
+        "Each event is assigned a strictly increasing sequence identifier (EID) by a single authoritative arbiter. The log is therefore totally ordered.",
+        "Proposition (Deterministic State). Given an initial empty state and a prefix of the event log, the resulting semantic state is uniquely determined.",
+        "Proof. All kernel transitions are pure functions of prior state and the next event. Since the log is totally ordered and immutable, replay is deterministic.",
+        "This property elevates the log from an implementation detail to the primary artifact of the system."
+      ]
+    },
+    {
+      "id": "G:kernel-semantics",
+      "title": "Kernel Semantics",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 93,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 3,
+      "text": [
+        "The Spherepop kernel is a deterministic interpreter of events. It maintains derived state such as equivalence classes and relation tables, but these structures are caches, not authorities.",
+        "Definition (Kernel). The kernel is the minimal deterministic machine that replays events and emits derived changes (diffs). It has no external side effects and no hidden state.",
+        "Kernel operations include:",
+        "Object creation (POP) Merge (MERGE, inducing equivalence) Relation creation (LINK) and removal (UNLINK) Region collapse (COLLAPSE) Metadata attachment (SET_META)",
+        "Each operation is represented as a canonical event type with a fixed binary schema."
+      ]
+    },
+    {
+      "id": "G:formal-execution-semantics",
+      "title": "Formal Execution Semantics",
+      "level": "section",
+      "heading": "section",
+      "role": "foundation",
+      "thesis": false,
+      "part": null,
+      "words": 44,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 4,
+      "text": [
+        "We now make the kernel transition function explicit by presenting a small-step operational semantics for event application. The goal is not to specify implementation details, but to provide an unambiguous mathematical description of how authoritative state evolves in response to events."
+      ]
+    },
+    {
+      "id": "G:kernel-state",
+      "title": "Kernel State",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 49,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 5,
+      "text": [
+        "Definition (Kernel State). A kernel state is a tuple",
+        "[equation]",
+        "O is a finite set of object identifiers, U : O \u2192 O is a union\u2013find parent map representing equivalence, R \u2286 O \u00d7 O \u00d7 T is a multiset of typed relations, M : O \u2192 K V is a partial metadata map.",
+        "We write rep_\u03c3(o) for the canonical representative of o under U, after path compression."
+      ]
+    },
+    {
+      "id": "G:transition-relation",
+      "title": "Transition Relation",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 10,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 6,
+      "text": [
+        "Kernel execution is defined by a labeled transition relation",
+        "[equation]"
+      ]
+    },
+    {
+      "id": "G:pop-object-creation",
+      "title": "POP (Object Creation)",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 3,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 7,
+      "text": [
+        "[equation]"
+      ]
+    },
+    {
+      "id": "G:merge-equivalence-induction",
+      "title": "MERGE (Equivalence Induction)",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 21,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 8,
+      "text": [
+        "[equation]",
+        "where \u03c3' differs from \u03c3 only in U, with",
+        "[equation]",
+        "This rule is idempotent: merging already-equivalent objects yields no further change."
+      ]
+    },
+    {
+      "id": "G:link-relation-creation",
+      "title": "LINK (Relation Creation)",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 3,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 9,
+      "text": [
+        "[equation]"
+      ]
+    },
+    {
+      "id": "G:unlink-relation-removal",
+      "title": "UNLINK (Relation Removal)",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 3,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 10,
+      "text": [
+        "[equation]"
+      ]
+    },
+    {
+      "id": "G:collapse-bulk-equivalence",
+      "title": "COLLAPSE (Bulk Equivalence)",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 28,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 11,
+      "text": [
+        "Let S \u2286 O be a region to be collapsed, with chosen representative o_r \u2208 S.",
+        "[equation]",
+        "where for all o \u2208 S, U'(rep(o)) = rep(o_r). Objects not equal to o_r remain in O but are no longer representatives."
+      ]
+    },
+    {
+      "id": "G:set-meta-metadata-attachment",
+      "title": "SET_META (Metadata Attachment)",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 10,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 12,
+      "text": [
+        "[equation]",
+        "Metadata updates do not affect O, U, or R."
+      ]
+    },
+    {
+      "id": "G:semantic-properties",
+      "title": "Semantic Properties",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 89,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 13,
+      "text": [
+        "Proposition (Determinism). For any kernel state \u03c3 and event e, there exists at most one state \u03c3' such that \u03c3 e \u03c3'.",
+        "Proposition (Merge Confluence). The final equivalence relation induced by a set of MERGE events is independent of their order.",
+        "Proof. Union\u2013find union is associative and commutative over equivalence classes. The induced partition is given by the reflexive\u2013transitive closure of the merge relation and therefore does not depend on merge order.",
+        "Proposition (View Consistency). Derived views that collapse non-representative objects preserve semantic equivalence."
+      ]
+    },
+    {
+      "id": "G:merge-induced-relation-normalization",
+      "title": "MERGE-Induced Relation Normalization",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 91,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 14,
+      "text": [
+        "We now make explicit the interaction between equivalence induction and relations.",
+        "Axiom (Representative Normalization). All relations are stored and interpreted in representative-normalized form. That is, for any relation (o_1,o_2,t) \u2208 R, it is invariant that o_1 = rep(o_1) and o_2 = rep(o_2).",
+        "Proposition (Relation Rewriting under MERGE). When an event MERGE(o_a,o_b) is applied, all relations incident to rep(o_b) are rewritten to reference rep(o_a).",
+        "Proof. After MERGE, rep(o_b)=rep(o_a). Any relation previously referencing rep(o_b) is therefore normalized to reference rep(o_a). No semantic information is lost, since o_a and o_b are equivalent by definition."
+      ]
+    },
+    {
+      "id": "G:replay-equivalence",
+      "title": "Replay Equivalence",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 136,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 15,
+      "text": [
+        "We now formalize the equivalence between full replay and incremental observation.",
+        "Theorem (Replay Equivalence). Let = e_1, e_2, , e_n be an event sequence. Let \u03c3_replay be the state obtained by replaying from the initial state \u03c3_0. Let \u03c3_diff be the state obtained by applying the sequence of diffs derived from e_1,,e_n to \u03c3_0. Then \u03c3_replay and \u03c3_diff are semantically equivalent.",
+        "Proof. Each diff is a deterministic function of a single event application. Since kernel transitions are deterministic and diffs are derived without side effects, incremental application of diffs reconstructs the same representative-normalized state as direct replay of the log. Equivalence follows by induction on the length of .",
+        "Proposition (Merge Confluence). The final equivalence relation induced by a set of MERGE events is independent of their order.",
+        "Proposition (View Consistency). Derived views that collapse non-representative objects preserve semantic equivalence."
+      ]
+    },
+    {
+      "id": "G:meta-theorem-functoriality-of-derived-views",
+      "title": "Meta-Theorem: Functoriality of Derived Views",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 47,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 16,
+      "text": [
+        "The core philosophical discipline of Spherepop OS is the separation of cause (events) from views (snapshots, diffs, geometry). The following meta-theorem states this separation as a functoriality principle: any admissible view is a structure-preserving map out of the event-sourced semantics."
+      ]
+    },
+    {
+      "id": "G:event-prefix-category",
+      "title": "Event Prefix Category",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 43,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 17,
+      "text": [
+        "Definition (Prefix Category). Fix an event log = (e_1,e_2,). Define the prefix category Pref() as follows. Objects are natural numbers n \u2208 N, interpreted as prefixes _ n := (e_1,,e_n). There is a unique morphism m_n\u2192 n+k: n \u2192 n+k for each k 0, representing prefix extension by k events. Composition is given by addition: m_n\u2192 n+k m_n+k\u2192 n+k+j= m_n\u2192 n+k+j."
+      ]
+    },
+    {
+      "id": "G:state-semantics-as-a-functor",
+      "title": "State Semantics as a Functor",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 94,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 18,
+      "text": [
+        "Definition (State Semantics). Let State be the category whose objects are kernel states \u03c3 and whose morphisms are deterministic state updates induced by event application. Define the state semantics functor",
+        "[equation]",
+        "by S_(n) := \u03c3_n, the state obtained by replaying _ n from \u03c3_0, and by mapping each generator m_n\u2192 n+1 to the single-step transition",
+        "[equation]",
+        "Proposition (Functoriality of Replay). The assignment S_ is a functor.",
+        "Proof. Identity morphisms correspond to applying zero events and therefore map to identity state updates. Composition in Pref() corresponds to sequential event application, which equals composition of deterministic transitions in State by definition."
+      ]
+    },
+    {
+      "id": "G:derived-views",
+      "title": "Derived Views",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 254,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 19,
+      "text": [
+        "Definition (Admissible View). An admissible view is any functor",
+        "[equation]",
+        "into some category of observer representations View (e.g. JSON graphs, NDJSON diffs, geometric layouts), such that V is non-interfering: it does not feed back into S_.",
+        "Theorem (View Functoriality Meta-Theorem). For any log and any admissible view functor V:State\u2192View, the composite",
+        "[equation]",
+        "exists and is a functor. In particular: Causal Respect: view updates compose according to event order; Snapshot Coherence: V(\u03c3_n) is uniquely determined by the prefix _ n; Transport Independence: any two admissible transports realizing the same V are observationally equivalent; Gauge Freedom: if V quotients by a metadata gauge (e.g. layout hints), semantic content is preserved.",
+        "Proof. Since S_ is a functor and V is a functor, their composite is a functor. Items (i)\u2013(iv) are immediate restatements: functoriality enforces respect for composition (event order), object mapping enforces prefix-determined snapshots, transport choices refine the same arrow in View, and gauge quotienting corresponds to functoring into a category that identifies gauge-equivalent metadata.",
+        "Corollary (Diffs and Snapshots as Two Views). Let V_snap be the view that serializes full state (snapshot) and V_diff be the view that serializes incremental changes. Both are admissible views, hence both factor functorially through S_. The Replay Equivalence theorem is the statement that these two views agree on semantic content up to the observer's equivalence relation.",
+        "Corollary (Late-Joiner Correctness). A late-joining observer that first receives V_snap(\u03c3_k) and then receives V_diff for subsequent events reconstructs the same view as an observer that applied V_diff from the beginning."
+      ]
+    },
+    {
+      "id": "G:diffs-and-incremental-observation",
+      "title": "Diffs and Incremental Observation",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 87,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 20,
+      "text": [
+        "While the log is authoritative, clients require efficient incremental observation.",
+        "Definition (Diff). A diff is a derived, non-authoritative description of how kernel state changes as a result of applying a single event.",
+        "Diffs may include object additions, removals, relation changes, or metadata updates. They are broadcast to observers but are never logged themselves.",
+        "Axiom (View Non-Interference). Diffs do not influence kernel state and may be dropped, reordered, or ignored by observers without affecting correctness.",
+        "This separation permits high-frequency visualization without compromising determinism."
+      ]
+    },
+    {
+      "id": "G:snapshots-as-derived-views",
+      "title": "Snapshots as Derived Views",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 70,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 21,
+      "text": [
+        "Definition (Snapshot). A snapshot is a complete serialization of kernel state derived by replaying a prefix of the event log.",
+        "Snapshots are used for bootstrapping late-joining clients and for historical inspection.",
+        "Proposition (Snapshot Purity). Snapshots introduce no new information beyond what is contained in the log prefix they represent.",
+        "Snapshots are never logged and never assigned sequence identifiers. They are observational artifacts only."
+      ]
+    },
+    {
+      "id": "G:seekable-time-and-historical-inspection",
+      "title": "Seekable Time and Historical Inspection",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 64,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 22,
+      "text": [
+        "Spherepop OS supports time navigation by allowing clients to request snapshots at arbitrary past EIDs.",
+        "Definition (Seek-to-EID Snapshot). A seekable snapshot is a snapshot derived by replaying the log up to a specified EID.",
+        "This operation is implemented using a temporary kernel instance, ensuring isolation from live state.",
+        "Corollary. Historical inspection cannot affect the present state of the system."
+      ]
+    },
+    {
+      "id": "L:sec:speculative-branches",
+      "title": "Speculative Branches",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 85,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 23,
+      "text": [
+        "Speculation is treated as a local, non-authoritative overlay.",
+        "Definition (Speculative Branch). A speculative branch consists of a base EID and a client-local overlay log of hypothetical events.",
+        "Branches are replayed by applying the authoritative log up to the base EID, followed by the overlay events. Branches may be discarded or rebased freely.",
+        "Axiom (Speculative Isolation). Speculative events have no effect on authoritative state unless explicitly re-submitted as proposals.",
+        "This design permits safe exploration without timeline pollution."
+      ]
+    },
+    {
+      "id": "G:layout-and-geometry-as-metadata",
+      "title": "Layout and Geometry as Metadata",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 78,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 24,
+      "text": [
+        "Spherepop OS distinguishes sharply between semantic structure and geometric presentation.",
+        "Definition (Layout Hint). A layout hint is non-causal metadata attached to an object, expressing advisory geometric information such as position, scale, or clustering intent.",
+        "Layout hints may be modified freely by clients and are never interpreted by the kernel as semantic operations.",
+        "Proposition. Geometry in Spherepop OS is a gauge choice, not a semantic constraint.",
+        "This permits rich visualization while preserving semantic invariants."
+      ]
+    },
+    {
+      "id": "G:arbiter-and-collaboration-model",
+      "title": "Arbiter and Collaboration Model",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 77,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 25,
+      "text": [
+        "The arbiter is responsible for assigning sequence identifiers and appending events to the log.",
+        "Definition (Arbiter). The arbiter is the sole authority permitted to commit events to the log.",
+        "Clients submit proposals, which are either accepted and sequenced or rejected. Accepted proposals are broadcast as diffs to all observers, including the originator.",
+        "Axiom (Single Sequencer). There exists exactly one arbiter per authoritative log.",
+        "This ensures total causal order."
+      ]
+    },
+    {
+      "id": "L:sec:reduction",
+      "title": "Reduction of OS Events to the Causal Calculus",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 122,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 26,
+      "text": [
+        "The preceding sections specified six kernel event types \u2014 POP, MERGE, LINK, UNLINK, COLLAPSE, SET_META \u2014 as primitive to the operational semantics of Section 5. This section establishes that only two of them, POP and COLLAPSE, are primitive in the stronger sense of corresponding directly to Spherepop's underlying causal calculus, whose four operators are Pop, Refuse, Bind, and Collapse. The remaining four kernel events are typed compositions over that calculus, and one of them, SET_META, is not a composition over it at all. Stating this precisely narrows the completeness claim this specification has been informally trading on: the four-operator calculus is complete for causal history transformation, not for every event the kernel exposes."
+      ]
+    },
+    {
+      "id": "G:the-term-grammar-extended",
+      "title": "The Term Grammar, Extended",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 245,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 27,
+      "text": [
+        "The causal calculus's term grammar types judgments of the form \u0393 t : State under rules for state-introduction, Bind, Pop, Refuse, Collapse, and sequential composition. That grammar is single-history throughout: no rule combines two independently constructed terms t_1, t_2 into one. LINK and MERGE both require exactly this, and the calculus's own framing \u2014 histories compose via the tensor product of a strict monoidal category \u2014 already asserts the operation exists without supplying its typing rule. We supply it here.",
+        "Axiom (Tensor Composition). For \u0393 t_1 : State and \u0393 t_2 : State,",
+        "[equation]",
+        "t_1 t_2 denotes the joint state whose option space and history are the monoidal composition of t_1's and t_2's, in the sense already named, but not formalized, in the companion essay's discussion of concurrency as composition of histories.",
+        "Proposition (Tensor Is Structural, Not Causal). is not a fifth causal operator alongside Pop, Refuse, Bind, and Collapse. It performs no selection, rejection, narrowing, or projection on any option space; it constructs the multi-history term on which those four operators subsequently act. Its addition to the grammar does not enlarge the causal algebra, in the same sense that the pre-existing sequence rule does not. Proof. Immediate from Axiom [ax:tensor]'s premises and conclusion sharing the same type State: introduces no new judgment form, no new observable type, and no rule targeting Opt or H directly. It is a structural rule in the same sense sequence is, differing only in combining two terms rather than ordering one term after another."
+      ]
+    },
+    {
+      "id": "G:pop-and-collapse-as-already-primitive",
+      "title": "POP and COLLAPSE as Already Primitive",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 363,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 28,
+      "text": [
+        "Proposition (POP Reduces Trivially). Kernel event POP(o), object creation, is the causal term Pop_exists(Bind_true({exists_o, absent_o})): a trivial Bind over the unconditionally admissible two-element option space {exists, absent}, followed by a Pop committing existence. No structural composition is required, since object creation concerns a single new identity rather than a relation between existing ones.",
+        "Proposition (COLLAPSE Reduces to Collapse Plus an Identity-Designation Step). Kernel event COLLAPSE(S, o_r) is Collapse(_o \u2208 S H_o) \u2014 an instance of the causal Collapse operator applied to a tensor-composed region history \u2014 together with an external identity-designation step selecting o_r as the representative for every o \u2208 S, recorded in the kernel-state update U'(rep(o)) = rep(o_r) (Section 5.7). Proof. The projection Collapse(_o\u2208 S H_o) accounts for the observable value produced by bulk collapse, exactly as the causal Collapse operator is defined. It does not account for U''s reassignment of every o \u2208 S's representative to o_r: by Proposition [prop:tensor-structural], is silent on identity, and nothing in the causal Collapse operator's own definition (Definition [def:state-extended], Axiom [ax:frame]) specifies which of several composed objects' identities should be designated canonical afterward. Choosing o_r is therefore an external policy decision, structurally identical to the one Proposition [prop:merge-identity] already found necessary for MERGE, here generalized from a pair to an arbitrary finite S.",
+        "Corollary (COLLAPSE Is Hybrid, Not Directly Primitive). Kernel event COLLAPSE(S,o_r) is not directly primitive in the sense Proposition [prop:pop-trivial] shows POP to be. It is derived, combining the causal Collapse operator, the structural tensor rule, and an identity-designation policy external to both \u2014 the same three-part hybrid structure Proposition [prop:merge-identity] established for MERGE, not a clean single-primitive reduction. Proof. Immediate from Proposition [prop:collapse-already]: the kernel event's full behavior requires the identity-designation step in addition to the causal Collapse operator and tensor composition, so no single causal primitive alone accounts for it, unlike POP (Proposition [prop:pop-trivial]).",
+        "This corrects a classification error in an earlier draft of this reduction table, which treated kernel COLLAPSE as directly primitive alongside POP. It is not: only POP is primitive among the six kernel event types without further qualification."
+      ]
+    },
+    {
+      "id": "G:link",
+      "title": "LINK",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 158,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 29,
+      "text": [
+        "Definition (LINK Reduction).",
+        "[equation]",
+        "where C_r is the admissibility condition for relation type r, and r' ranges over any relation candidates excluded from the current option space by the choice of r(a,b) (empty when r is not exclusive with any sibling relation type).",
+        "Proposition (LINK Well-Typedness). LINK(a,b,r) is well-typed under Axiom [ax:tensor] and the bind, pop, refuse, and collapse rules of the causal calculus, given \u0393 H_a : State and \u0393 H_b : State. Proof. By Axiom [ax:tensor], H_a H_b : State. Bind applies C_r to the resulting option space, typed by the bind rule. Pop commits r(a,b) from the filtered space, typed by the pop rule provided r(a,b) is admissible under C_r. Refuse discharges any excluded sibling r' against the original unfiltered option space, per the causal calculus's stated division between Bind's filtering and Refuse's recording. Collapse projects the result to Obs, typed by the collapse rule. Each step is licensed by an existing or newly supplied grammar rule; no untyped step occurs."
+      ]
+    },
+    {
+      "id": "G:unlink",
+      "title": "UNLINK",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 261,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 30,
+      "text": [
+        "Definition (UNLINK Reduction).",
+        "[equation]",
+        "where H_a,b is the joint history already containing the prior Pop_r(a,b) from a previous LINK, and {revoke_r, retain_r} is a freshly opened option space concerning the relation's continued standing.",
+        "Proposition (UNLINK Does Not Erase). UNLINK(a,b,r) never removes, rewrites, or targets the earlier Pop_r(a,b) event. H_a,b after UNLINK strictly contains every event it contained before, plus Pop_revoke_r. Proof. Refuse's typing rule requires its target to lie in the current option space Opt_t; an event already committed via Pop has left Opt_t and entered H_t, and is therefore not a legal target for Refuse under the grammar as given. Definition [def:unlink-reduction] accordingly does not attempt to Refuse the original Pop; it opens a disjoint, freshly introduced option space and commits within that. No rule in the grammar permits deletion from or rewriting of H_t; append is the only operation the grammar exposes on history.",
+        "Which of two conflicting Pop events concerning the same relation slot is reported in the operational (i.e. Collapsed) state is a modeling choice, not a fact forced by the four primitives \u2014 exactly as the companion essay's own worked example leaves the collapse rule uninstantiated at the level of the core grammar. This specification adopts most-recent-event precedence as its collapse rule for relation slots: a Collapse over H_a,b reports the relation as active if the most recent event tagged r(a,b) or revoke_r in H_a,b is a Pop of the former, and inactive if it is a Pop of the latter. This rule is stated here as an explicit application-layer choice, not derived from Pop/Refuse/Bind/Collapse themselves."
+      ]
+    },
+    {
+      "id": "G:merge",
+      "title": "MERGE",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 213,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 31,
+      "text": [
+        "Definition (MERGE Reduction).",
+        "[equation]",
+        "where f_compat filters the composed option space to continuations consistent with treating o_1 and o_2 as identical, and Refuse_distinct records the elimination of the alternative in which they remain separate.",
+        "Proposition (MERGE Requires Identity Absorption Beyond Tensor). Definition [def:merge-reduction] alone is insufficient to specify MERGE's effect on kernel state, because (Axiom [ax:tensor]) composes two histories without asserting anything about the immutable identities I(o_1) and I(o_2) underlying them. MERGE additionally requires that one representative's identity be designated to resolve future references to both, matching the union\u2013find update U'(rep(o_2)) = rep(o_1) already given for the MERGE rule in Section 5.4. Proof. By Axiom [ax:tensor], H_o_1 H_o_2 is well-typed and yields a single composed State, but tensor's definition places no constraint on I; it is silent on identity by construction, since it is a structural rule (Proposition [prop:tensor-structural]) rather than a causal one. A term satisfying Definition [def:merge-reduction] can therefore be well-typed while leaving unresolved which of I(o_1), I(o_2) a future LINK or query should resolve through. Some additional assignment, external to the four primitives and to , is required to designate the surviving representative \u2014 precisely the role Section 5.4's union\u2013find update already plays operationally, here made explicit as a necessary supplement to, not a consequence of, the causal reduction."
+      ]
+    },
+    {
+      "id": "G:set-meta",
+      "title": "SET_META",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 182,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 32,
+      "text": [
+        "Proposition (SET_META Is Outside the Causal Algebra). SET_META(o,k,v) admits no well-typed reduction to a composition of Pop, Refuse, Bind, Collapse, and . Proof. Every rule in the causal grammar \u2014 bind, pop, refuse, collapse, sequence, and tensor (Axiom [ax:tensor]) \u2014 is defined over State terms whose meaning is given in terms of an option space and a history. By Section 5's own kernel semantics, SET_META(o,k,v) updates M alone and leaves O, U, and R unchanged, meaning it modifies no option space and appends nothing causally observable to any H_o. Forcing a reduction would require introducing a fictitious option space with a single admissible candidate purely to give the event a place in the grammar, which is exactly the \u201chidden state or new semantics\u201d the completeness claim is required not to smuggle in. No such reduction is therefore given, and none should be.",
+        "This is consistent with, rather than a defect of, the kernel state definition \u03c3 = (O,U,R,M) given in Section 5.1: M was already kept structurally separate from (O,U,R), and Section 13's treatment of Layout Hints as \u201ca gauge choice, not a semantic constraint\u201d already anticipates exactly this exclusion for a different class of metadata."
+      ]
+    },
+    {
+      "id": "G:the-boundary-stated",
+      "title": "The Boundary, Stated",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 259,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 33,
+      "text": [
+        "Theorem (Scope of the Four-Primitive Completeness Claim). Spherepop OS has four primitive causal operators: Pop, Refuse, Bind, and Collapse. Of the six kernel event types, only POP is directly primitive without qualification. LINK and UNLINK are typed compositions over histories constructed using structural rules \u2014 sequence and tensor \u2014 that are not themselves causal operators (Proposition [prop:tensor-structural]). MERGE and kernel COLLAPSE are hybrid: each requires that same structural composition plus an identity-designation step external to the four primitives and to tensor alike (Propositions [prop:merge-identity], [prop:collapse-already]) \u2014 kernel COLLAPSE, despite sharing a name with the causal Collapse primitive, is not a direct instance of it, but the n-ary generalization of MERGE. SET_META is not derived from the four primitives at all, because it operates on the non-causal annotation channel M, outside the option-space algebra (Proposition [prop:setmeta-boundary]). The four-primitive completeness claim therefore applies to causal history transformation, not to every operation exposed by the operating-system interface, and applies without qualification to only one of the six kernel event types. Proof. Immediate from Propositions [prop:pop-trivial], [prop:collapse-already] and its Corollary [cor:collapse-hybrid], [prop:link-typed], [prop:unlink-nonerasure], [prop:merge-identity], and [prop:setmeta-boundary], which jointly classify all six kernel event types: one primitive without further qualification (POP); two derived via structural composition alone (LINK, UNLINK); two hybrid, requiring structural composition plus an identity-designation step external to the causal algebra proper (MERGE, COLLAPSE); and one excluded outright (SET_META)."
+      ]
+    },
+    {
+      "id": "L:sec:branch",
+      "title": "Branch as a Structural Rule",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 81,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 34,
+      "text": [
+        "Section [sec:reduction] supplied tensor (Axiom [ax:tensor]) as the structural rule composing independently constructed histories into one term. fork and speculative execution both need the reverse relationship: one existing history giving rise to two, sharing an immutable prefix and diverging afterward. Nothing in the grammar as extended so far supplies this. This section adds it as its own structural rule, Branch, deliberately not reusing tensor and deliberately not typed as an unconstrained Cartesian pair."
+      ]
+    },
+    {
+      "id": "G:the-branch-judgment",
+      "title": "The Branch Judgment",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 184,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 35,
+      "text": [
+        "Definition (Branch). Branch introduces a distinguished judgment form rather than an ordinary product type:",
+        "[equation]",
+        "with elimination rules recovering each projection as an ordinary state term:",
+        "[equation]",
+        "The subscript e names the branch event distinguishing this application of the rule from any other branching of the same t.",
+        "The judgment form exists precisely so that Branch can carry an invariant State\u00d7State cannot: that t_p and t_c are not an arbitrary pair of states but two continuations of one prior history. The typing rules alone do not yet enforce this \u2014 they only give the pair a place to be typed correctly. The enforcement is a separate axiom.",
+        "Axiom (Branch Prefix Coherence). If \u0393 t _e (t_p,t_c) : Branch, then",
+        "[equation]",
+        "Both projections' histories, truncated to the length H_t had at the moment of branching, equal H_t exactly. Events appended after the branch point are unconstrained by this axiom and may differ freely between t_p and t_c.",
+        "Without Axiom [ax:branch-coherence], Definition [def:branch-judgment] would license exactly the unconstrained pairing this section exists to avoid, merely relocated behind a new type name. With it, \u201cBranch\u201d names a real invariant rather than asserting one."
+      ]
+    },
+    {
+      "id": "G:identity-is-left-open-by-branch",
+      "title": "Identity Is Left Open by Branch",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 215,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 36,
+      "text": [
+        "Proposition (Branch Does Not Resolve Identity). Definition [def:branch-judgment] and Axiom [ax:branch-coherence] impose no constraint on I(t_p) or I(t_c) relative to I(t). Proof. Neither the branch rule nor the coherence axiom mentions I; both are stated entirely in terms of State typing and H. This is the same gap Proposition [prop:merge-identity] identified for tensor: a structural rule concerning histories is silent on identity by construction, and silence is not a default value.",
+        "This silence is deliberate rather than an oversight to be patched uniformly, because Branch serves two consumers with opposite identity requirements. fork (Section [sec:process-management]) needs \u03c0_p to inherit I(t) unchanged \u2014 the parent continues under its existing identity \u2014 while \u03c0_c receives a freshly minted identity distinct from every identity currently in scope, since the child is a new process. Speculative execution needs the opposite policy: both \u03c0_p and \u03c0_c retain I(t), because a speculative branch is an alternative continuation of the same object under consideration, not the creation of a second one. A single Branch Identity Axiom fixed at this level of generality would be wrong for one of these two consumers no matter which policy it chose. Identity policy is therefore supplied at each use site, not by Branch itself; Section [sec:process-management] states fork's policy explicitly when fork is defined."
+      ]
+    },
+    {
+      "id": "G:branch-and-tensor-are-not-inverse",
+      "title": "Branch and Tensor Are Not Inverse",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 218,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 37,
+      "text": [
+        "Proposition (Non-Invertibility). For \u0393 t _e (t_p,t_c) : Branch, t_p t_c \u2260 t in general. Proof. By Axiom [ax:branch-coherence], H_t_p and H_t_c agree with H_t only up to |H_t|; each may accumulate independent events beyond that point once \u03c0_p(t_p,t_c) and \u03c0_c(t_p,t_c) are used separately. Tensor (Axiom [ax:tensor]) composes t_p and t_c into a joint state whose history is their monoidal composition, containing both post-branch extensions rather than discarding either. Whenever either projection has accumulated at least one event beyond the branch point, H_t_p t_c strictly contains H_t, so t_p t_c \u2260 t. Equality holds only in the degenerate case where neither projection has yet been extended, which is not the general case this proposition concerns.",
+        "Branch and tensor have opposite arities \u2014 Branch: 1 \u2192 2 against : 2 \u2192 1 \u2014 and it is tempting on that basis alone to call them inverse. Proposition [prop:branch-tensor-noninverse] shows this is the wrong reading. Composing two branches back together does not undo the branch; it produces a new state recording both continuations, their shared ancestry, and their divergence, which is a richer object than the pre-branch t, not a return to it. wait (Section [sec:process-management]) depends on exactly this: it recomposes parent and child via specifically because that recomposition preserves what each side did independently, rather than erasing it to reconstruct a single prior state that no longer corresponds to what either process has since done."
+      ]
+    },
+    {
+      "id": "G:relation-to-speculative-branches",
+      "title": "Relation to Speculative Branches",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 131,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 38,
+      "text": [
+        "The Speculative Branch mechanism specified in Section [sec:speculative-branches] \u2014 a base EID plus a client-local overlay log, retained until explicitly resubmitted or discarded \u2014 is Definition [def:branch-judgment] under a different name, arrived at operationally before this section gave it a typing discipline. The base EID is the branch point at which Axiom [ax:branch-coherence] anchors agreement; the authoritative continuation and the speculative overlay are \u03c0_p and \u03c0_c; and Axiom [ax:speculative-isolation] (Speculative Isolation) \u2014 no effect on authoritative state unless resubmitted \u2014 is the statement that \u03c0_c remains an unresolved projection of an unresolved Branch term until some later event promotes it. Nothing in this section changes that mechanism's behavior; it gives the mechanism a place in the calculus rather than leaving it as a kernel-level convenience with no corresponding causal term."
+      ]
+    },
+    {
+      "id": "L:sec:process-management",
+      "title": "Process Management as Derived Kernel Functions",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 70,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 39,
+      "text": [
+        "Process management is the first derived-function layer to draw on both structural rules established so far: tensor (Section [sec:reduction]) for wait, and Branch (Section [sec:branch]) for fork. Per Theorem [thm:completeness-scope]'s stated boundary, nothing in this section enlarges the causal basis; every operation defined here is a typed composition over Pop, Refuse, Bind, Collapse, sequence, and tensor/Branch."
+      ]
+    },
+    {
+      "id": "G:process",
+      "title": "Process",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 80,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 40,
+      "text": [
+        "Definition (Process). A process is a tuple \u03c0 = (I_\u03c0, H_\u03c0, Opt_\u03c0, Res_\u03c0): an immutable identity I_\u03c0, a causal history H_\u03c0, a current admissible option space Opt_\u03c0, and a set of owned resource objects Res_\u03c0 \u2286 O. The process's current observable state is Collapse(H_\u03c0).",
+        "This is Definition [def:namespace-renderer-v2]'s object of study given a concrete inhabitant: a process is exactly the kind of continuing State term the causal calculus was built to describe, with Res_\u03c0 naming which objects in O the process's subsequent Binds and Pops are entitled to act on."
+      ]
+    },
+    {
+      "id": "G:fork",
+      "title": "fork",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 243,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 41,
+      "text": [
+        "Axiom (Fork Identity). For H_\u03c0 _e (t_p, t_c) : Branch invoked by fork, I(\u03c0_p(t_p,t_c)) = I_\u03c0 unchanged, and I(\u03c0_c(t_p,t_c)) = I_new, a freshly assigned identity distinct from every identity currently in scope.",
+        "This is the use-site policy Proposition [prop:branch-identity-open] left open: fork is the consumer of Branch for which the parent continues under its existing identity and the child is genuinely new.",
+        "Definition (fork). fork(\u03c0) invokes H_\u03c0 _e (t_p,t_c) : Branch, and produces two process records:",
+        "[equation]",
+        "per Axiom [ax:fork-identity], both option spaces and resource sets initialized identically at the branch point.",
+        "Proposition (Resource Visibility at the Branch Point). Every o \u2208 Res_\u03c0 at the moment of fork is visible, with identical history, to both \u03c0' and \u03c0_child immediately after forking; subsequent Binds or Pops asserting exclusive ownership over any such o may diverge independently between the two. Proof. Immediate from Axiom [ax:branch-coherence]: H_t_p and H_t_c agree with H_\u03c0 up to |H_\u03c0|, and every o \u2208 Res_\u03c0 has its history up to the branch point recorded within H_\u03c0 by Definition [def:process]. Divergence after the branch point follows from Proposition [prop:branch-tensor-noninverse], which places no constraint on events appended past |H_\u03c0|.",
+        "Resource reconciliation after divergent post-fork ownership claims \u2014 what happens if both \u03c0' and \u03c0_child independently Bind exclusive access to the same o \u2208 Res_\u03c0 \u2014 is not resolved by this proposition and is left to the scheduler's arbitration (Section [sec:scheduling]), which is the general mechanism for adjudicating competing Binds regardless of whether the competitors arose from a common fork."
+      ]
+    },
+    {
+      "id": "G:exec",
+      "title": "exec",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 118,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 42,
+      "text": [
+        "Definition (exec). exec(\u03c0, img) := (I_\u03c0, Pop_image=img(H_\u03c0), Opt_img, Res_\u03c0), replacing \u03c0's option space with the one appropriate to the new image while appending, not replacing, its history.",
+        "Proposition (exec Does Not Erase Prior Image History). H_\u03c0 after exec strictly contains H_\u03c0 before it. Proof. Immediate from the pop rule: Pop_a(t) appends a to H_t and does not modify or remove any existing entry, by the same argument as Proposition [prop:unlink-nonerasure].",
+        "I_\u03c0 is unchanged by exec, matching the POSIX convention that exec preserves process identity while replacing the executing image \u2014 here made structurally forced rather than a convention the implementation happens to follow, since nothing in the grammar permits I to be reassigned mid-history."
+      ]
+    },
+    {
+      "id": "G:exit",
+      "title": "exit",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 88,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 43,
+      "text": [
+        "Definition (exit). $exit(, code) := Collapse( Pop_terminate(code)( Bind_f_valid(H_ {continue, terminate}) ))$",
+        "This is exit modeled exactly on the UNLINK reduction (Definition [def:unlink-reduction]): a freshly opened option space concerning \u03c0's own continued standing, rather than an external relation's. It inherits UNLINK's non-erasure property by the same proof, and inherits UNLINK's honesty about the collapse rule being an application-layer choice: whether a namespace renderer treats a terminated process as absent, zombie, or reapable is governed by R (Definition [def:version-pinned]), not fixed by exit itself."
+      ]
+    },
+    {
+      "id": "G:wait",
+      "title": "wait",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 218,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 44,
+      "text": [
+        "Definition (wait).",
+        "[equation]",
+        "where f_terminated(resume) := [ terminate(code) \u2208 H_\u03c0_child -component of the joint term].",
+        "Proposition (wait Blocks Structurally, Not Operationally). resume Opt' after Bind_f_terminated whenever \u03c0_child's history contains no terminate(\u00b7) event, and Pop_resume is therefore inadmissible under the pop rule until the child terminates. Proof. By Bind's definition (bind rule), f_terminated filters resume out of Opt exactly when the existential condition is false, since Opt' = {o \u2208 Opt : f(o)}. The pop rule requires its target to lie in Opt'; resume Opt' makes Pop_resume untypeable until re-evaluation of the Bind, after further child events, admits it.",
+        "Corollary (wait Recomposes Without Inverting fork). wait's use of to join H_\u03c0_parent and H_\u03c0_child does not reconstruct the pre-fork H_\u03c0; by Proposition [prop:branch-tensor-noninverse], the joint term retains both processes' independent post-branch histories in full.",
+        "Proposition [prop:wait-blocks] is the precise sense in which wait blocks: not as an operational suspension the scheduler must special-case, but as an ordinary instance of Bind narrowing an option space to empty for the option under consideration, identical in kind to the scheduler's general admissibility filtering in Section [sec:scheduling] \u2014 wait is the special case of scheduling arbitration where the admissibility condition happens to be phrased over another process's history rather than over priority or resource availability."
+      ]
+    },
+    {
+      "id": "L:sec:scheduling",
+      "title": "Scheduling",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 74,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 45,
+      "text": [
+        "Section [sec:process-management]'s wait was shown, in Proposition [prop:wait-blocks], to be an ordinary instance of Bind narrowing an option space to exclude an inadmissible candidate \u2014 no special blocking mechanism was needed beyond what the grammar already had. Scheduling is the general case of that same pattern, applied across every runnable process rather than a single parent-child pair, and this section is correspondingly short: it generalizes rather than introduces."
+      ]
+    },
+    {
+      "id": "G:the-runnable-set",
+      "title": "The Runnable Set",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 98,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 46,
+      "text": [
+        "Definition (Runnable Set). At kernel state \u03c3, let \u03a0_run(\u03c3) \u2286 {\u03c0 : \u03c0 a process} be the processes not currently blocked by an empty admissible continuation set (per Proposition [prop:wait-blocks] or equivalent). The scheduling option space is constructed as",
+        "[equation]",
+        "over the joint term _\u03c0 \u2208 \u03a0_run(\u03c3) H_\u03c0, the -composition (Axiom [ax:tensor], extended associatively to more than two terms) of every runnable process's history.",
+        "The joint tensor is necessary rather than cosmetic: admissibility conditions below routinely need cross-process facts (whether a resource o a candidate process wants is currently held elsewhere), which are not visible from any single H_\u03c0 in isolation."
+      ]
+    },
+    {
+      "id": "G:admissibility-versus-selection",
+      "title": "Admissibility Versus Selection",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 325,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 47,
+      "text": [
+        "Definition (Scheduling Reduction).",
+        "[equation]",
+        "where f_elig filters Opt_sched to Opt'_sched by dependency satisfaction, resource availability, and hard policy constraints (quota, permission), and \u03c0^* is selected from Opt'_sched by a priority function external to the grammar.",
+        "Proposition (Priority Is Not Admissibility). The choice of \u03c0^* from among several candidates surviving Bind_f_elig is not itself a Bind, Pop, Refuse, or Collapse operation, and requires no Refuse for the candidates in Opt'_sched not chosen. Proof. By the pop rule, Pop_a(t) requires only a \u2208 Opt'_t; it does not require that every other admissible option be separately disposed of. This matches the worked arithmetic example precedent: at a step where both options remain admissible after filtering, only the chosen option is Popped, and the unchosen one remains an unresolved element of the residual option space rather than being Refused. A candidate \u03c0' \u2208 Opt'_sched {continue_\u03c0^*} therefore requires no Refuse; it remains eligible and may be selected on a future scheduling reduction.",
+        "Corollary (Refuse Records Exactly the Filtered Set). Definition [def:sched-reduction]'s Refuse targets exactly Opt_sched Opt'_sched \u2014 the candidates Bind's filter removed from admissibility \u2014 and no others. This is forced by the grammar, not a scheduling policy choice: Refuse's typing rule requires its target to be drawn from the original unfiltered option space precisely because that option is no longer available for Pop, matching the causal calculus's stated division of labor between Bind's filtering and Refuse's recording.",
+        "Corollary [cor:refuse-exact] corrects the original specification's looser phrasing \u2014 \u201cRefuse could record an explicitly rejected candidate when that rejection matters.\u201d Whether a rejection \u201cmatters\u201d is not a judgment call available to the scheduler: any process failing f_elig (dependency unmet, resource unavailable, quota exceeded, permission revoked) is Refused, always; any process merely outranked by \u03c0^* on priority is never Refused, always. History records every enforced exclusion and no mere non-selections, avoiding both silent rejection and an unbounded history of routine priority comparisons."
+      ]
+    },
+    {
+      "id": "G:rendering-the-run-queue",
+      "title": "Rendering the Run Queue",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 89,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 48,
+      "text": [
+        "Reading the current run queue or CPU allocation is a Collapse over _\u03c0 H_\u03c0 exactly as every current-state read a mainstream system performs silently. What a mainstream system treats as an invisible implementation detail this specification makes an explicit, namespace-mediated operation: a run queue view is a namespace renderer (Definition [def:namespace-renderer-v2]) like any other, subject to Definition [def:compatibility-v2] if more than one namespace observes scheduling state, and to Proposition [prop:shared-library-suffices] if that observation is to be trusted across namespaces rather than merely within one."
+      ]
+    },
+    {
+      "id": "G:scheduling-and-log-sequencing-are-the-same-arbit",
+      "title": "Scheduling and Log Sequencing Are the Same Arbitration Pattern",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 215,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 49,
+      "text": [
+        "Proposition (Arbiter Generalization). The Arbiter's role (Section [sec:speculative-branches] and following) \u2014 accepting or rejecting client proposals and assigning sequence identifiers \u2014 is an instance of Definition [def:sched-reduction] with Opt_sched replaced by the set of pending proposals, f_elig replaced by well-formedness and permission checking, and \u03c0^* replaced by whichever proposal is sequenced next. Proof. Both reduce to the same shape: Bind filters a candidate set by an admissibility condition, Pop commits one survivor, Refuse records exactly the filtered-out remainder per Corollary [cor:refuse-exact], and Collapse projects the result \u2014 an assigned EID in the Arbiter's case, a scheduling decision here. Axiom [ax:single-sequencer] (exactly one arbiter per log) is the further constraint that exactly one entity performs this reduction for the authoritative log, which Definition [def:sched-reduction] does not itself require for CPU scheduling, since multiple schedulers across isolated namespaces may run the same reduction independently over disjoint \u03a0_run.",
+        "This is not merely an analogy noted in passing. It means the syscall boundary (Section [sec:syscall]) requires no new reduction pattern of its own \u2014 a syscall is a proposal, and that section proceeds by instantiating Definition [def:sched-reduction] rather than deriving a fourth version of the same structure from scratch."
+      ]
+    },
+    {
+      "id": "L:sec:syscall",
+      "title": "The Syscall Boundary",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 104,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 50,
+      "text": [
+        "The original specification described a syscall informally: \u201cThe kernel would Bind it against permissions and current constraints, Pop the accepted transition or Refuse the proposal, and Collapse the result into the value returned to the caller.\u201d Proposition [prop:arbiter-generalization] already showed this shape is not novel to syscalls \u2014 it is the same arbitration pattern proven for scheduling and for the Arbiter's own sequencing role. This section instantiates that pattern precisely rather than re-deriving it, and states the one genuinely new content: what a syscall proposal is permitted to reference, which is where privilege separation actually lives in this calculus."
+      ]
+    },
+    {
+      "id": "G:syscall-as-a-degenerate-scheduling-reduction",
+      "title": "Syscall as a Degenerate Scheduling Reduction",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 416,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 51,
+      "text": [
+        "Definition (Syscall Proposal). A syscall proposal is a tuple p = (\u03c0, op, args): the requesting process \u03c0, a requested causal operation op (itself a Bind, Pop, Refuse, or Collapse target), and args referencing only fact keys in K_ns(\u03c0)(\u03c3) (Definition [def:authorized-domain]), where ns(\u03c0) is \u03c0's namespace.",
+        "The restriction to K_ns(\u03c0)(\u03c3) is not a permission check; it is a well-formedness condition on what the proposal can even be built to say. A process cannot propose an operation over an object it is not authorized to observe, independent of whether that operation would otherwise be permitted \u2014 the two failure modes are kept distinct below.",
+        "Definition (Syscall Reduction). Let Opt_p = {admit_p} and let f_perm(admit_p) hold iff p is well-formed per Definition [def:syscall-proposal] and satisfies the kernel's permission and capability constraints at \u03c3. Then",
+        "[equation]",
+        "Proposition (Syscall Reduction Is a Degenerate Case of Definition [def:sched-reduction). ] Definition [def:syscall-reduction] is Definition [def:sched-reduction] with |Opt_sched| = 1: a single candidate, no priority selection required, admission and denial both handled by the same Bind-then-commit shape already proven for scheduling and for the Arbiter. Proof. Immediate by comparison of the two definitions: both filter a candidate set by an admissibility predicate via Bind, commit the admissible survivor via Pop, and record the excluded alternative via Refuse per Corollary [cor:refuse-exact]. Where Definition [def:sched-reduction] additionally selects \u03c0^* from among several survivors, Definition [def:syscall-reduction]'s Opt_p has cardinality one, making that selection step vacuous rather than absent.",
+        "This degeneracy is why syscall denial reuses Refuse rather than introducing a distinct deny_p option: a rejected proposal is not a different kind of event from an accepted one, only a differently tagged entry in the same history, and Definition [def:syscall-reduction]'s case split is exactly that tagging, not a fork in the underlying mechanism.",
+        "Corollary (Concurrent Syscalls Are Ordinary Scheduling). When multiple processes submit proposals contending for the same resource within one scheduling quantum, the reduction is not several independent applications of Definition [def:syscall-reduction] but a single application of the general Definition [def:sched-reduction] over Opt_sched = {admit_p_1, , admit_p_n}, with f_elig specialized to f_perm for each candidate. Proof. Contention for a shared resource is exactly the condition under which f_perm for one proposal depends on facts affected by another's admission \u2014 the case Definition [def:runnable-set]'s joint tensor _\u03c0 H_\u03c0 was constructed to make visible. Evaluating each p_i against Opt_p = {admit_p_i} in isolation would not see this dependency; only the joint reduction does."
+      ]
+    },
+    {
+      "id": "G:privilege-separation-as-namespace-asymmetry",
+      "title": "Privilege Separation as Namespace Asymmetry",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 264,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 52,
+      "text": [
+        "Proposition (Syscalls Cross a Namespace Boundary, Not a New Boundary). The user/kernel privilege boundary is an instance of Definition [def:namespace-renderer-v2]'s authorized-domain asymmetry: the kernel namespace has K_kernel(\u03c3) = K (every fact key), and a user namespace i has K_i(\u03c3) K. Evaluating f_perm may reference any fact in K_kernel(\u03c3), including facts outside K_ns(\u03c0)(\u03c3); this does not violate namespace coherence, because Definition [def:compatibility-v2] constrains agreement only over D_ij(\u03c3) = K_i(\u03c3) K_j(\u03c3), and a fact the kernel consults but never reports back into K_i(\u03c3) is never part of any D_ij(\u03c3) a user namespace participates in. Proof. f_perm is evaluated kernel-side, prior to and independent of Collapse's projection into the caller's returned value; it is not itself a namespace renderer in the sense of Definition [def:namespace-renderer-v2] and is not subject to Definition [def:compatibility-v2]. Only syscall(p)'s output, Collapse(\u00b7) as rendered back through \u03c0_ns(\u03c0), is a namespace-rendered fact, and it is restricted to K_ns(\u03c0)(\u03c3) by Definition [def:syscall-proposal]'s own well-formedness condition on what args \u2014 and hence what the returned value can meaningfully describe \u2014 was permitted to reference.",
+        "This is the precise content of \u201cprivilege separation\u201d in this calculus: not a separate mechanism bolted onto the causal core, but the ordinary consequence of K_kernel(\u03c3) K_i(\u03c3) for every user namespace i, together with Proposition [prop:shared-library-suffices]'s requirement that whatever is reported back must use the same version-pinned rule library the kernel used internally. A permission check consulting facts the caller can never see is not a special case requiring justification; it is the default shape of any renderer pair where one side's authorized domain strictly contains the other's."
+      ]
+    },
+    {
+      "id": "L:sec:vfs",
+      "title": "Virtual Object Namespace",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 78,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 53,
+      "text": [
+        "The original specification's description of a Spherepop VFS \u2014 \u201ca path would resolve to a history-bearing object rather than merely a mutable inode\u201d \u2014 can now be made exact, with less new machinery than the previous sections needed. Naming is not a fourth kind of structure alongside objects, relations, and metadata; it is itself a relation, and path resolution, write, read, rename, deletion, and mount all reduce to instances of apparatus already proven in Sections [sec:reduction] and [sec:syscall]."
+      ]
+    },
+    {
+      "id": "G:extending-the-state-term",
+      "title": "Extending the State Term",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 202,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 54,
+      "text": [
+        "The identity-preservation proofs of prior sections argued informally from \u201cthe definition does not mention I,\u201d which proves non-interference only given a frame property this specification has not yet stated. Fixing this requires first making I an explicit component of a causal State term, which the grammar so far has left implicit.",
+        "Definition (State Term, Extended). A State term is a triple t = (I_t, Opt_t, H_t): immutable identity, current admissible option space, and history. Bind, Pop, and Refuse write only to Opt_t and H_t:",
+        "[equation]",
+        "Sequence composes operations on one t and inherits I_t trivially. Collapse(t) : State \u2192 Obs produces no new State term, so I-preservation does not apply to its output.",
+        "Axiom (Frame). For t e t' where e is an instance of Bind, Pop, Refuse, Collapse, or sequence, I_t' = I_t.",
+        "Tensor and Branch are deliberately excluded from Axiom [ax:frame]'s scope. Tensor's silence on identity (Proposition [prop:merge-identity]) and Branch's open identity (Proposition [prop:branch-identity-open]) are not oversights Frame should paper over; they are exactly the two places a use site must supply an explicit identity policy. Frame licenses every identity proof built entirely from Bind/Pop/Refuse/Collapse/sequence without re-deriving non-interference each time; it says nothing about tensor or Branch, by design."
+      ]
+    },
+    {
+      "id": "G:paths-naming-and-content-as-fact-keys",
+      "title": "Paths, Naming, and Content as Fact Keys",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 219,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 55,
+      "text": [
+        "Definition (Path Object and Naming Relation). A path is an object p \u2208 O of designated type Path. Naming is a relation type named \u2208 T: r_named(p,o) asserts that path p currently designates object o. C_named, the admissibility condition for this relation type, is exclusive on its first argument: at most one r_named(p,\u00b7) may be active for a given p at once, though a given o may be the target of several distinct active r_named(\u00b7,o) (hard links).",
+        "This is not a new mechanism. C_named's exclusivity is exactly the case Definition [def:link-reduction] already anticipated \u2014 \u201cempty when r is not exclusive with any sibling relation type\u201d \u2014 now instantiated rather than left as an unused generality.",
+        "Definition (Path Resolution). resolve_\u03c3(p) = o iff active(named,p,o) \u2208 D and R(active(named,p,o),\u03c3) = true, using the shared version-pinned rule library (Definition [def:version-pinned]) and its adopted most-recent-event precedence for relation activity (Section [sec:reduction]). resolve_\u03c3(p) is undefined if no such o exists.",
+        "Definition (Fact Key, Extended). K (Definition [def:fact-key]) is extended with content(o) alongside exists(o), rep(o), active(r,a,b). R(content(o), \u03c3) is evaluated by the shared version-pinned library from H_o's sequence of committed content events; whether successive commits replace, append, or patch the reported value is that library's choice, exactly as UNLINK's superseding rule was \u2014 not fixed by Pop or Bind themselves."
+      ]
+    },
+    {
+      "id": "G:read",
+      "title": "read",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 56,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 56,
+      "text": [
+        "Definition (read).",
+        "[equation]",
+        "read is a direct instance of Definition [def:namespace-renderer-v2]'s factorization: semantic evaluation via R, presentation via \u03c0_i, with no intermediate Obs value that a state-to-view functor would need to consume after the fact. Cross-namespace read agreement is exactly Proposition [prop:shared-library-suffices], applied to the single fact key content(o)."
+      ]
+    },
+    {
+      "id": "G:write",
+      "title": "write",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 91,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 57,
+      "text": [
+        "Definition (write). write(p, \u0394) is a syscall proposal in the sense of Definition [def:syscall-proposal], with op = Pop_content=\u0394 and f_perm = f_writable, resolved by Definition [def:syscall-reduction].",
+        "Proposition (write Non-Erasure Holds Only on Admission). H_resolve_\u03c3(p) after write(p,\u0394) strictly contains H_resolve_\u03c3(p) before it if admit_p \u2208 Opt_p'; otherwise H_resolve_\u03c3(p) is unchanged. Proof. By Definition [def:syscall-reduction]'s case split: the admitted branch applies Pop_content=\u0394, appending per Definition [def:state-extended]; the refused branch applies Refuse_admit_p to Opt_p itself, never touching H_resolve_\u03c3(p)."
+      ]
+    },
+    {
+      "id": "G:rename",
+      "title": "rename",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 171,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 58,
+      "text": [
+        "Definition (Atomic Composition). t_1 ; t_2 denotes a compound term admitted to the log under a single EID: the Arbiter sequences it as one indivisible unit, and no Collapse computed against any intermediate point between t_1's and t_2's internal commits is possible. This is a new capability of the Arbiter (Axiom [ax:single-sequencer]), not a causal or structural rule.",
+        "Definition (rename). Let o := resolve_\u03c3(p), bound once, before construction.",
+        "[equation]",
+        "Proposition (rename Preserves Identity). I(o) is unchanged by rename(p,p'). Proof. o is bound once by Definition [def:rename-v2] and referenced, never re-resolved. Every step inside \u00b7 is Bind, Pop, Refuse, or sequence (per Definitions [def:unlink-reduction], [def:link-reduction]), so Axiom [ax:frame] applies directly to each, and hence to their atomic composition.",
+        "Atomicity is stated here as a capability the Arbiter must supply, not derived from anything already proven \u2014 Definition [def:atomic] is honestly a new primitive at the interface tier (Section [sec:layering]'s \u201csyscalls and compatibility interfaces\u201d tier), sitting outside the causal/structural/derived-function stack rather than reducing into it."
+      ]
+    },
+    {
+      "id": "G:deletion",
+      "title": "Deletion",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 97,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 59,
+      "text": [
+        "Corollary (Deletion Is Path-Named UNLINK). delete(p) := UNLINK(p, resolve_\u03c3(p), named). By Proposition [prop:unlink-nonerasure] directly, H_resolve_\u03c3(p) is untouched; only r_named(p,\u00b7)'s activity is revoked.",
+        "No new proof is required or offered \u2014 this corollary's entire content is that deletion needed no new apparatus, which is itself the claim worth recording. An object with every naming relation revoked becomes unreachable by path resolution while its history remains addressable by I(o) directly: \u201crevoke reachability while preserving historical existence,\u201d now identified as literally the same operation already proven for relation revocation generally rather than a filesystem-specific behavior."
+      ]
+    },
+    {
+      "id": "G:mount",
+      "title": "mount",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 185,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 60,
+      "text": [
+        "Definition (mount).",
+        "[equation]",
+        "where mounted \u2208 T is exclusive on p_point (at most one active mount per mount point, matching named's exclusivity discipline), f_valid checks p_point is a valid, currently-unmounted directory object, and v' ranges over any competing mount proposals for the same point.",
+        "This follows exactly the \u2192 Bind \u2192 Pop shape (with optional Refuse) that Definition [def:link-reduction] already established, differing only in operating over a whole external namespace rather than a single relation candidate.",
+        "Definition (Path Resolution Under Mount). For p = p_point / p_rest where R(active(mounted, p_point, o_root, v), \u03c3) = true, resolve_\u03c3(p) defers to the mounted namespace's own naming relations, resolving p_rest relative to o_root.",
+        "Proposition (mount Preserves External Identity). I(o) is unchanged for every o reachable through the mounted subtree. Proof. (Axiom [ax:tensor]) does not unify any object's identity with another's \u2014 unlike MERGE, mount never asserts o_1 o_2 for distinct objects, so tensor's silence on identity (Proposition [prop:merge-identity]) is inapplicable here rather than a gap: no identity question is being asked of tensor in the first place. The subsequent Bind, Pop, and Refuse steps preserve I directly by Axiom [ax:frame]."
+      ]
+    },
+    {
+      "id": "L:sec:modules",
+      "title": "Modules and Drivers",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 73,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 61,
+      "text": [
+        "Modules are the point at which design goal G1 (Deterministic Replay, Section 1) is genuinely at risk for the first time. Every prior section extended the causal basis's reach \u2014 LINK, scheduling, syscalls, the VFS \u2014 without touching what makes Proposition [prop:deterministic-state] true. Modules touch it directly, because they are the mechanism by which R itself becomes pluggable and upgradeable, and Proposition [prop:deterministic-state]'s proof did not account for that."
+      ]
+    },
+    {
+      "id": "G:driver-as-typed-interpreter",
+      "title": "Driver as Typed Interpreter",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 108,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 62,
+      "text": [
+        "Definition (Driver). A driver for device class d is a partial function D_d : RawSignal State, translating a raw device signal into a term built from Pop, Refuse, Bind, Collapse, sequence, and tensor. A driver-originated event is admitted as a syscall proposal (Definition [def:syscall-proposal]) whose requesting \u201cprocess\u201d is a kernel-designated device namespace rather than an ordinary user process, resolved by the existing Definition [def:syscall-reduction] without modification.",
+        "Treating driver input as an ordinary syscall proposal is deliberate: it means device admission inherits Corollary [cor:concurrent-syscall] for free when multiple devices signal within one scheduling quantum, rather than needing a separate arbitration mechanism invented for hardware specifically."
+      ]
+    },
+    {
+      "id": "G:module-loading-does-not-enlarge-the-causal-basis",
+      "title": "Module Loading Does Not Enlarge the Causal Basis",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 161,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 63,
+      "text": [
+        "Definition (Module). A module is a pair (id, v) contributing, to the shared rule library, some subset of: driver translators (Definition [def:driver]), and fact-key evaluator functions for object or relation types the module introduces.",
+        "Proposition (Module Loading Is Not a Fifth Primitive). Loading (id,v) extends dom(R) without introducing any new causal operator, judgment form, or rule schema. Proof. By Definition [def:module], a module contributes only evaluator functions (consumed inside Definition [def:namespace-renderer-v2]'s semantic-view construction) and driver translators producing terms already built from existing operators. This is the same structural-vs-causal distinction Proposition [prop:tensor-structural] established for , and the same application-layer-choice pattern Section [sec:reduction] already acknowledged for collapse rules generally: modules are pluggable providers of exactly that already-licensed flexibility, extended to relation and object types beyond the kernel's built-in set, never a change to Pop/Refuse/Bind/Collapse themselves."
+      ]
+    },
+    {
+      "id": "G:module-version-attribution-and-deterministic-rep",
+      "title": "Module Version Attribution and Deterministic Replay",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 470,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 64,
+      "text": [
+        "Definition (Modular Rule Library). R = R_core _(id,v) \u2208 Mod(\u03c3) R_id,v, where Mod(\u03c3) is the set of currently loaded module-version pairs and R_id,v is (id,v)'s evaluator contribution.",
+        "Definition (Module-Attributed Fact Key). A fact key k is module-attributed to (id,v) at \u03c3 if R(k,\u03c3) is computed by R_id,v rather than R_core.",
+        "Axiom (Module Attribution Recording). For every event e_k whose committed interpretation depended on a module-attributed fact key, the log records modattr(e_k) = (id,v), the specific module version whose evaluator governed that interpretation at commit time.",
+        "Definition (Module-Consistent Replay). A replay of _ n is module-consistent if, for every e_k with modattr(e_k) recorded, the replaying kernel evaluates any fact key depending on e_k using exactly R_modattr(e_k), regardless of which module versions the replaying kernel currently has loaded.",
+        "Proposition (Replay Determinism Requires Module-Version Pinning). Without Axiom [ax:module-attribution] enforced, two replays of the same _ n can produce different states \u03c3_n, contradicting Proposition [prop:deterministic-state]. Proof. Let module (sensor, v_1) define R_sensor,v_1(content(o),\u03c3) as the raw signal value. Let event e_k = Pop_content=raw be committed while (sensor,v_1) is Mod(\u03c3)'s active version. Let (sensor,v_2) later be loaded, redefining R_sensor,v_2(content(o),\u03c3) = raw \u00d7 calibration. A replay performed immediately after e_k's commit, under Mod(\u03c3)={(sensor,v_1)}, computes content(o) = raw. A replay of the identical prefix _ k performed later, under Mod(\u03c3)={(sensor,v_2)} and without Axiom [ax:module-attribution]'s pinning enforced, computes content(o) = raw \u00d7 calibration. Both replay the same _ k from the same \u03c3_0; they produce different \u03c3_k, contradicting Proposition [prop:deterministic-state]'s claim that a log prefix uniquely determines the resulting state.",
+        "Proposition [prop:deterministic-state]'s original proof \u2014 \u201call kernel transitions are pure functions of prior state and the next event... replay is deterministic\u201d \u2014 is not wrong, but it is incomplete once modules exist: it implicitly assumed a fixed, unchanging R, an assumption every prior section of this specification was free to make and modules are the first to break. Proposition [prop:replay-needs-pinning] does not weaken that proposition; it identifies the hypothesis modules must not violate for it to keep holding, and Definition [def:module-consistent-replay] states exactly what a replay implementation must do to satisfy it.",
+        "Corollary (Deterministic Replay Under Modules). If every module-attributed event carries a recorded modattr per Axiom [ax:module-attribution], and every replay is module-consistent per Definition [def:module-consistent-replay], then Proposition [prop:deterministic-state] holds unconditionally, including across module upgrades. Proof. Under these two conditions, every fact-key evaluation during replay uses exactly the evaluator that was in effect at commit time, regardless of what the replaying kernel currently has loaded \u2014 collapsing the two divergent branches of Proposition [prop:replay-needs-pinning]'s construction into one, since Mod(\u03c3) at replay time no longer affects the evaluator selected for any already-committed module-attributed event."
+      ]
+    },
+    {
+      "id": "L:sec:permissions",
+      "title": "Permissions, Capabilities, and Namespace Isolation",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 48,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 65,
+      "text": [
+        "Section [sec:syscall]'s syscall reduction referred to \u201cthe kernel's permission and capability constraints\u201d without defining what a capability is. This section closes that gap, then uses it to give namespace isolation the coherence guarantee it needs and honestly cannot get for free."
+      ]
+    },
+    {
+      "id": "G:capabilities-as-relations",
+      "title": "Capabilities as Relations",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 274,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 66,
+      "text": [
+        "Definition (Capability Object and Grant Relation). A capability is an object c \u2208 O of type Capability, carrying a fixed description authorizes(c): either a fact key k \u2208 K or an operation-target pair (op, target). grants \u2208 T is a relation type; r_grants(i,c) asserts subject i (a process or namespace identity) currently holds c. grants is not exclusive: a subject may hold several capabilities simultaneously.",
+        "Definition (Grant and Revoke).",
+        "[equation]",
+        "Both are direct instantiations of Definitions [def:link-reduction] and [def:unlink-reduction], contributing no new causal or structural machinery. grant's admissibility condition C_grants checks that the granting party itself holds authority to grant c (an ordinary Bind filter over the granting party's own capability set); revoke inherits Proposition [prop:unlink-nonerasure] directly, so a revoked capability remains in history \u2014 auditable, never erased \u2014 while ceasing to be currently active under most-recent-event precedence, exactly as a revoked LINK does.",
+        "Definition (Authorized Fact Domain).",
+        "[equation]",
+        "Definition (Operation Authorization). authorized(i, op, target, \u03c3) holds iff c with R(active(grants,i,c),\u03c3) and authorizes(c) = (op, target).",
+        "Proposition (f_perm Is Operation Authorization). Definition [def:syscall-reduction]'s f_perm(admit_p), for p=(\u03c0,op,args), is authorized(ns(\u03c0), op, args, \u03c3) conjoined with p's well-formedness (Definition [def:syscall-proposal]). Similarly, write's f_writable and mount's f_valid each reduce to authorized(\u00b7) for their respective (op,target) pairs. Proof. Immediate by definition: every capability-gated Bind filter introduced in Sections [sec:syscall]\u2013 [sec:vfs] was informally described as \u201cchecking permissions\u201d; each such check is, by Definition [def:op-authorization], exactly membership of the relevant (op,target) pair in some active capability's authorizes(c). No filter introduced so far required anything authorized(\u00b7) does not already express."
+      ]
+    },
+    {
+      "id": "G:namespace-as-bundled-renderer",
+      "title": "Namespace as Bundled Renderer",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 252,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 67,
+      "text": [
+        "Definition (Namespace Renderer). A namespace renderer V_i factors as V_i(\u03c3) = \u03c0_i(V_i(\u03c3)), where the semantic view V_i(\u03c3) = {(k, R(k,\u03c3)) : k \u2208 K_i(\u03c3)} evaluates every authorized fact key against one shared R, and \u03c0_i is a presentation map (naming, formatting) applied afterward. A namespace i is the pair (K_i(\u03c3), \u03c0_i), with K_i(\u03c3) constructed by Definition [def:authorized-domain].",
+        "Proposition (Isolation Is Enforced at Proposal Construction, Not Only at Rendering). A process \u03c0 in namespace i cannot construct a well-formed syscall proposal referencing args outside K_i(\u03c3) (Definition [def:syscall-proposal]), independent of whether read_i's domain restriction (Definition [def:read-v2]) would also have blocked the corresponding read. Proof. Definition [def:syscall-proposal] restricts args to K_ns(\u03c0)(\u03c3) as a well-formedness condition prior to and independent of f_perm evaluation; Definition [def:read-v2] restricts read_i's domain as a separate condition on the rendering side. Neither implies the other, and both hold simultaneously for any process operating normally within its namespace: it cannot propose what it cannot name, and cannot read what it is not authorized to have rendered, and these are two independent enforcement points rather than one mechanism described twice.",
+        "Corollary (Revocation Narrows Isolation Boundaries in Real Time). If revoke(i,c) commits at \u03c3 \u2192 \u03c3' and authorizes(c) = k, then k K_i(\u03c3') even though k \u2208 K_i(\u03c3), and any syscall proposal from a process in namespace i referencing k becomes ill-formed from \u03c3' onward. Proof. Immediate from Definition [def:authorized-domain] under most-recent-event precedence: R(active(grants,i,c),\u03c3') evaluates false once revoke(i,c)'s UNLINK-derived supersession is the most recent event concerning (i,c), by the same argument as Section [sec:reduction]'s original collapse rule for revoked relations."
+      ]
+    },
+    {
+      "id": "L:sec:namespace-coherence",
+      "title": "Namespace Isolation Requires View Coherence",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 705,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 68,
+      "text": [
+        "Theorem [thm:view-functoriality] guarantees that a single admissible view V composes coherently with itself across time. It says nothing about two different views, V_i and V_j, applied to the same \u03c3. Namespace isolation requires exactly this: different processes receiving different Collapses of the same underlying world. The guarantee this needs does not follow from Theorem [thm:view-functoriality] and must be established, or shown unattainable, on its own terms.",
+        "Definition (Observable Fact Key). An observable fact key is a term of the form exists(o), rep(o), or active(r,a,b), for o \u2208 O, r \u2208 T, a,b \u2208 O (extended by Definition [def:fact-key-v2]). Let K denote the set of all such keys.",
+        "Definition (Shared Observable Domain). For namespace renderers V_i, V_j, D_ij(\u03c3) = K_i(\u03c3) K_j(\u03c3).",
+        "A fact key absent from K_i(\u03c3) is legitimate redaction, full stop \u2014 it is not part of D_ij(\u03c3) and imposes no agreement obligation on namespace i at all, including for other facts about the same object. Only keys both namespaces are authorized to report enter the domain over which coherence is required.",
+        "Definition (Version-Pinned Rule Library). A rule library R assigns to each fact-key type a function computing its semantic value from \u03c3. R is version-pinned relative to log if every event e_k \u2208 carries a recorded library-version tag v_k, and evaluating any fact key at prefix _ n uses exactly the rule definitions in effect at v_n \u2014 never a later library's reinterpretation of earlier events.",
+        "Definition (Compatibility Relation). V_i(\u03c3)_D_ij(\u03c3) V_j(\u03c3)_D_ij(\u03c3) iff V_i(\u03c3)_D_ij(\u03c3) = V_j(\u03c3)_D_ij(\u03c3) (exact semantic equality) and \u03c0_i, \u03c0_j differ, on that equal semantic content, only in naming or format.",
+        "Proposition (Determinism and Shared Source Do Not Imply Coherence). There exist admissible namespace renderers V_i, V_j and a state \u03c3 with active(r,a,b) \u2208 D_ij(\u03c3) on which they disagree. Proof. H_a,b contains Pop_r(a,b) then Pop_revoke_r. R_i evaluates active(r,a,b) by most-recent-event precedence (false); R_j by first-committed-event precedence (true). Both are functors on Pref(), both non-interfering, hence both admissible under Definition [def:admissible-view] \u2014 that definition fixes only functoriality and non-interference, neither a canonical current-state interpretation nor revocation-sensitivity. active(r,a,b) \u2208 K_i(\u03c3) K_j(\u03c3) = D_ij(\u03c3) by hypothesis that both namespaces are authorized to report relation activity. The two libraries disagree on its value.",
+        "This is not a pathological edge case. It is the generic situation whenever two namespace renderers are permitted to instantiate their own collapse rules independently, which nothing prior forbids. Determinism per renderer and a shared source were the only hypotheses Theorem [thm:view-functoriality] required; Proposition [prop:determinism-insufficient-v2] shows they are not enough once more than one renderer is in play.",
+        "Definition (Namespace-Coherent Renderer Family). A family {V_i} is namespace-coherent if, for every i,j and every \u03c3, V_i(\u03c3)_D_ij(\u03c3) V_j(\u03c3)_D_ij(\u03c3).",
+        "Theorem (Conditional Namespace Isolation Safety). If {V_i} is namespace-coherent, then no two namespaces derive incompatible causal claims about any shared visible object. Proof. Immediate from Definition [def:namespace-coherent-family]: is defined to permit exactly the legitimate divergences of Definition [def:compatibility-v2] and no others, so namespace-coherence is the absence of incompatible claims on D_ij(\u03c3), restated. The content of this theorem is not in its proof but in what it refuses to claim: it does not assert that isolation, as architecturally proposed, automatically produces a namespace-coherent family. Proposition [prop:determinism-insufficient-v2] already shows it does not, in general.",
+        "Proposition (Shared-Library Divergence Suffices). If every namespace renderer uses the same version-pinned R (Definition [def:version-pinned]) to compute every shared observable fact, and namespaces differ only in K_i(\u03c3) and \u03c0_i, then {V_i} is namespace-coherent, with V_i(\u03c3)_D_ij(\u03c3) = V_j(\u03c3)_D_ij(\u03c3) exactly, prior to any presentation-level comparison via . Proof. For k \u2208 D_ij(\u03c3), both V_i(\u03c3) and V_j(\u03c3) evaluate k as R(k,\u03c3), the same function applied to the same \u03c3 under the same pinned version, by hypothesis. Equality follows key-by-key, hence as sets over D_ij(\u03c3). \u03c0_i, \u03c0_j act only afterward, on already-equal semantic content, so any resulting difference is representational, satisfying Definition [def:compatibility-v2] via trivially once semantic equality is established.",
+        "Proposition [prop:shared-library-suffices] is the operational payoff: it turns \u201ccoherence must be imposed as an admissibility condition\u201d into a concrete, enforceable design rule \u2014 namespace renderers must share one canonical, version-pinned collapse-rule library (Section [sec:modules]) and diverge only by authorized-domain masking (Section [sec:permissions].1\u2013 [sec:permissions].2), never by redefining what a relation or object evaluates to."
+      ]
+    },
+    {
+      "id": "L:sec:layering",
+      "title": "Architectural Layering",
+      "level": "section",
+      "heading": "section",
+      "role": "main",
+      "thesis": false,
+      "part": null,
+      "words": 4,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 69,
+      "text": []
+    },
+    {
+      "id": "G:the-five-way-taxonomy",
+      "title": "The Five-Way Taxonomy",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 75,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 70,
+      "text": [
+        "Spherepop OS distinguishes causal operators, structural rules, derived kernel functions, interface operations, and non-causal annotations. Pop, Refuse, Bind, and Collapse constitute the causal basis. Sequence, tensor, and Branch construct the terms over which that basis operates. Process management, scheduling, namespace operations, messaging, and revocation are derived kernel functions. Syscalls expose those functions across the privilege boundary. Metadata remains a separate annotation channel and does not participate in causal reduction."
+      ]
+    },
+    {
+      "id": "G:where-everything-landed",
+      "title": "Where Everything Landed",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 171,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 71,
+      "text": [
+        "p0.22p0.68@ Tier & Members Causal operators & Pop, Refuse, Bind, Collapse Structural rules & sequence, tensor (), Branch Derived kernel functions & LINK, UNLINK, fork, exec, exit, wait, schedule, write, read, rename, delete, mount, grant, revoke Hybrid (structural + external identity policy) & MERGE, bulk COLLAPSE(S,o_r) Interface operations & syscall boundary, Atomic Composition (\u00b7), driver admission Non-causal annotations & SET_META, layout hints, debugging labels, presentation maps (\u03c0_i)",
+        "Two placements are worth flagging rather than leaving implicit in the table. Atomic Composition sits in the interface tier, not the derived tier, because Section [sec:vfs] showed it is not reducible to the causal or structural rules \u2014 it is a new capability the Arbiter must supply, honestly placed outside the reduction rather than forced into it. Presentation maps sit in the annotation tier alongside metadata, not the derived tier, because Definition [def:namespace-renderer-v2] factored every namespace renderer into a semantic evaluation (causal, via R) and a presentation step (non-causal, via \u03c0_i) precisely to keep these two kinds of difference from being confused with each other, per Definition [def:compatibility-v2]."
+      ]
+    },
+    {
+      "id": "G:comparative-rationale",
+      "title": "Comparative Rationale",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 209,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 72,
+      "text": [
+        "The comparison to POSIX kernels, CRDT-based systems, and version control can now be stated against the taxonomy rather than in general terms.",
+        "Unlike POSIX kernels, every derived kernel function in this specification is a typed composition traceable to four causal operators and three structural rules, rather than an opaque syscall whose internal state mutation is invisible outside a debugger; Section [sec:reduction]'s reduction table and Sections [sec:process-management]\u2013 [sec:permissions]'s extensions are the traceability, not a claim about it.",
+        "Unlike CRDT-based systems, a single total order is enforced at every tier \u2014 Axiom [ax:single-sequencer] governs not only ordinary events but the Atomic Composition construct of Section [sec:vfs], which exists specifically because even an interface-layer convenience must still resolve to one position in one total order, not a conflict-free merge of concurrent writes.",
+        "Unlike version control systems, speculation is structurally identical to ordinary branching rather than a separate workflow: Section [sec:branch] showed the Speculative Branch mechanism (Section [sec:speculative-branches]) is Definition [def:branch-judgment] under a different name, meaning a Spherepop OS process's fork and a client's speculative overlay are the same term at the same tier, differing only in which identity policy (Section [sec:process-management]'s fork policy vs. speculation's identity-preserving policy) governs their two projections."
+      ]
+    },
+    {
+      "id": "G:what-this-specification-establishes-assumes-and-",
+      "title": "What This Specification Establishes, Assumes, and Leaves Open",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 376,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 73,
+      "text": [
+        "Established unconditionally. Theorem [thm:completeness-scope] (the four-primitive causal basis is complete for causal history transformation, precisely scoped to exclude SET_META); Proposition [prop:tensor-structural] and Proposition [prop:branch-tensor-noninverse] (tensor and Branch are structural, not causal, and are not inverse); non-erasure for UNLINK, exec, and write on its admitted branch (Propositions [prop:unlink-nonerasure], [prop:exec-nonerasure], [prop:write-nonerasure-v2]); every identity-preservation result built from Axiom [ax:frame] (rename, mount, LINK, UNLINK).",
+        "Established conditionally. Theorem [thm:conditional-isolation] holds given a namespace-coherent renderer family \u2014 Proposition [prop:shared-library-suffices] gives one sufficient, checkable way to satisfy that hypothesis, but does not claim it is the only way, and Proposition [prop:determinism-insufficient-v2] shows the hypothesis cannot simply be assumed. Corollary [cor:deterministic-under-modules] holds given Axiom [ax:module-attribution] is actually enforced by every module and every replay implementation \u2014 a real deployment obligation, not a consequence of the grammar alone. rename's atomicity holds given Definition [def:atomic]'s Arbiter capability is implemented, which Section [sec:vfs] was explicit is a new primitive supplied at the interface tier, not derived from anything proven earlier.",
+        "Left open. The priority function selecting \u03c0^* among several admissible scheduling candidates (Proposition [prop:priority-not-admissibility] deliberately leaves this external); the concrete replace/append/patch semantics for any given content fact key (deferred to R's design per object type, exactly as UNLINK's supersession rule was deferred in Section [sec:reduction]); reclamation of history behind permanently Refused or superseded branches \u2014 a cost the retention discipline incurs without a matching reclamation story, still unaddressed by anything in this specification; the identity-designation policy MERGE and bulk COLLAPSE both require beyond the causal-plus-structural reduction (Propositions [prop:merge-identity] and [prop:collapse-already]) \u2014 this specification fixes one instance of that policy operationally (union\u2013find representative assignment) but does not state the policy in general, leaving open whether a merged or collapsed identity must always be selected from among its inputs or may in principle be freshly minted; and a conflict-resolution procedure for competing LINK or mount proposals beyond \u201cthe losing candidates are Refused,\u201d which says what is recorded but not how contention among several simultaneously valid candidates is adjudicated when priority, not mere admissibility, is what distinguishes them."
+      ]
+    },
+    {
+      "id": "G:conclusion",
+      "title": "Conclusion",
+      "level": "subsection",
+      "heading": "subsection",
+      "role": "alcove",
+      "thesis": false,
+      "part": null,
+      "words": 121,
+      "image": null,
+      "threads": [],
+      "cites": [],
+      "order": 74,
+      "text": [
+        "Spherepop OS presents a disciplined rethinking of operating system structure grounded in determinism, causal clarity, and semantic primacy. Sections [sec:reduction]\u2013 [sec:permissions] add to the original specification not a change of ambition but a change of evidential standard: every Linux-like capability absorbed into this design \u2014 processes, scheduling, a syscall boundary, a virtual namespace, modules, permissions \u2014 is now either a proven composition over four causal primitives and three structural rules, or an explicitly named exception to that reduction, rather than an architectural aspiration stated in prose and left there. The system's future extensions, including richer semantic types, entropy-driven scheduling, and distributed arbitration, inherit a taxonomy precise enough to say, of any proposed addition, exactly which tier it belongs to and what obligations that placement carries."
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "G:motivation-and-design-goals",
+      "to": "G:core-ontology",
+      "kind": "sequence",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:core-ontology",
+      "to": "G:authoritative-event-log",
+      "kind": "sequence",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:authoritative-event-log",
+      "to": "G:kernel-semantics",
+      "kind": "sequence",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:kernel-semantics",
+      "to": "G:replay-equivalence",
+      "kind": "sequence",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:replay-equivalence",
+      "to": "G:meta-theorem-functoriality-of-derived-views",
+      "kind": "sequence",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:meta-theorem-functoriality-of-derived-views",
+      "to": "G:diffs-and-incremental-observation",
+      "kind": "sequence",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:diffs-and-incremental-observation",
+      "to": "G:snapshots-as-derived-views",
+      "kind": "sequence",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:snapshots-as-derived-views",
+      "to": "G:seekable-time-and-historical-inspection",
+      "kind": "sequence",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:seekable-time-and-historical-inspection",
+      "to": "L:sec:speculative-branches",
+      "kind": "sequence",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:speculative-branches",
+      "to": "G:layout-and-geometry-as-metadata",
+      "kind": "sequence",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:layout-and-geometry-as-metadata",
+      "to": "G:arbiter-and-collaboration-model",
+      "kind": "sequence",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:arbiter-and-collaboration-model",
+      "to": "L:sec:reduction",
+      "kind": "sequence",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:reduction",
+      "to": "L:sec:branch",
+      "kind": "sequence",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:branch",
+      "to": "L:sec:process-management",
+      "kind": "sequence",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:process-management",
+      "to": "L:sec:scheduling",
+      "kind": "sequence",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:scheduling",
+      "to": "L:sec:syscall",
+      "kind": "sequence",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:syscall",
+      "to": "L:sec:vfs",
+      "kind": "sequence",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:vfs",
+      "to": "L:sec:modules",
+      "kind": "sequence",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:modules",
+      "to": "L:sec:permissions",
+      "kind": "sequence",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:permissions",
+      "to": "L:sec:layering",
+      "kind": "sequence",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:kernel-semantics",
+      "to": "G:formal-execution-semantics",
+      "kind": "branch",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:formal-execution-semantics",
+      "to": "G:kernel-state",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:formal-execution-semantics",
+      "to": "G:transition-relation",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:formal-execution-semantics",
+      "to": "G:pop-object-creation",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:formal-execution-semantics",
+      "to": "G:merge-equivalence-induction",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:formal-execution-semantics",
+      "to": "G:link-relation-creation",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:formal-execution-semantics",
+      "to": "G:unlink-relation-removal",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:formal-execution-semantics",
+      "to": "G:collapse-bulk-equivalence",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:formal-execution-semantics",
+      "to": "G:set-meta-metadata-attachment",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:formal-execution-semantics",
+      "to": "G:semantic-properties",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:formal-execution-semantics",
+      "to": "G:merge-induced-relation-normalization",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:meta-theorem-functoriality-of-derived-views",
+      "to": "G:event-prefix-category",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:meta-theorem-functoriality-of-derived-views",
+      "to": "G:state-semantics-as-a-functor",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:meta-theorem-functoriality-of-derived-views",
+      "to": "G:derived-views",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:reduction",
+      "to": "G:the-term-grammar-extended",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:reduction",
+      "to": "G:pop-and-collapse-as-already-primitive",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:pop-and-collapse-as-already-primitive",
+      "to": "G:the-term-grammar-extended",
+      "kind": "reference",
+      "label": "prop:tensor-structural",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:pop-and-collapse-as-already-primitive",
+      "to": "G:extending-the-state-term",
+      "kind": "reference",
+      "label": "def:state-extended",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:pop-and-collapse-as-already-primitive",
+      "to": "G:extending-the-state-term",
+      "kind": "reference",
+      "label": "ax:frame",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:pop-and-collapse-as-already-primitive",
+      "to": "G:merge",
+      "kind": "reference",
+      "label": "prop:merge-identity",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:reduction",
+      "to": "G:link",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:link",
+      "to": "G:the-term-grammar-extended",
+      "kind": "reference",
+      "label": "ax:tensor",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:reduction",
+      "to": "G:unlink",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:reduction",
+      "to": "G:merge",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:merge",
+      "to": "G:the-term-grammar-extended",
+      "kind": "reference",
+      "label": "ax:tensor",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:merge",
+      "to": "G:the-term-grammar-extended",
+      "kind": "reference",
+      "label": "prop:tensor-structural",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:reduction",
+      "to": "G:set-meta",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:set-meta",
+      "to": "G:the-term-grammar-extended",
+      "kind": "reference",
+      "label": "ax:tensor",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:reduction",
+      "to": "G:the-boundary-stated",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:the-boundary-stated",
+      "to": "G:the-term-grammar-extended",
+      "kind": "reference",
+      "label": "prop:tensor-structural",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:the-boundary-stated",
+      "to": "G:merge",
+      "kind": "reference",
+      "label": "prop:merge-identity",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:the-boundary-stated",
+      "to": "G:pop-and-collapse-as-already-primitive",
+      "kind": "reference",
+      "label": "prop:collapse-already",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:the-boundary-stated",
+      "to": "G:set-meta",
+      "kind": "reference",
+      "label": "prop:setmeta-boundary",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:the-boundary-stated",
+      "to": "G:pop-and-collapse-as-already-primitive",
+      "kind": "reference",
+      "label": "prop:pop-trivial",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:the-boundary-stated",
+      "to": "G:pop-and-collapse-as-already-primitive",
+      "kind": "reference",
+      "label": "cor:collapse-hybrid",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:the-boundary-stated",
+      "to": "G:link",
+      "kind": "reference",
+      "label": "prop:link-typed",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:the-boundary-stated",
+      "to": "G:unlink",
+      "kind": "reference",
+      "label": "prop:unlink-nonerasure",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:branch",
+      "to": "L:sec:reduction",
+      "kind": "reference",
+      "label": "sec:reduction",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:branch",
+      "to": "G:the-term-grammar-extended",
+      "kind": "reference",
+      "label": "ax:tensor",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:branch",
+      "to": "G:the-branch-judgment",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:branch",
+      "to": "G:identity-is-left-open-by-branch",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:identity-is-left-open-by-branch",
+      "to": "G:the-branch-judgment",
+      "kind": "reference",
+      "label": "def:branch-judgment",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:identity-is-left-open-by-branch",
+      "to": "G:the-branch-judgment",
+      "kind": "reference",
+      "label": "ax:branch-coherence",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:identity-is-left-open-by-branch",
+      "to": "G:merge",
+      "kind": "reference",
+      "label": "prop:merge-identity",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:identity-is-left-open-by-branch",
+      "to": "L:sec:process-management",
+      "kind": "reference",
+      "label": "sec:process-management",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:branch",
+      "to": "G:branch-and-tensor-are-not-inverse",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:branch-and-tensor-are-not-inverse",
+      "to": "G:the-branch-judgment",
+      "kind": "reference",
+      "label": "ax:branch-coherence",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:branch-and-tensor-are-not-inverse",
+      "to": "G:the-term-grammar-extended",
+      "kind": "reference",
+      "label": "ax:tensor",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:branch-and-tensor-are-not-inverse",
+      "to": "L:sec:process-management",
+      "kind": "reference",
+      "label": "sec:process-management",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:branch",
+      "to": "G:relation-to-speculative-branches",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:relation-to-speculative-branches",
+      "to": "L:sec:speculative-branches",
+      "kind": "reference",
+      "label": "sec:speculative-branches",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:relation-to-speculative-branches",
+      "to": "G:the-branch-judgment",
+      "kind": "reference",
+      "label": "def:branch-judgment",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:relation-to-speculative-branches",
+      "to": "G:the-branch-judgment",
+      "kind": "reference",
+      "label": "ax:branch-coherence",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:relation-to-speculative-branches",
+      "to": "L:sec:speculative-branches",
+      "kind": "reference",
+      "label": "ax:speculative-isolation",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:process-management",
+      "to": "L:sec:reduction",
+      "kind": "reference",
+      "label": "sec:reduction",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:process-management",
+      "to": "L:sec:branch",
+      "kind": "reference",
+      "label": "sec:branch",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:process-management",
+      "to": "G:the-boundary-stated",
+      "kind": "reference",
+      "label": "thm:completeness-scope",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:process-management",
+      "to": "G:process",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:process",
+      "to": "G:namespace-as-bundled-renderer",
+      "kind": "reference",
+      "label": "def:namespace-renderer-v2",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:process-management",
+      "to": "G:fork",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:fork",
+      "to": "G:identity-is-left-open-by-branch",
+      "kind": "reference",
+      "label": "prop:branch-identity-open",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:fork",
+      "to": "G:the-branch-judgment",
+      "kind": "reference",
+      "label": "ax:branch-coherence",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:fork",
+      "to": "G:process",
+      "kind": "reference",
+      "label": "def:process",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:fork",
+      "to": "G:branch-and-tensor-are-not-inverse",
+      "kind": "reference",
+      "label": "prop:branch-tensor-noninverse",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:fork",
+      "to": "L:sec:scheduling",
+      "kind": "reference",
+      "label": "sec:scheduling",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:process-management",
+      "to": "G:exec",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:exec",
+      "to": "G:unlink",
+      "kind": "reference",
+      "label": "prop:unlink-nonerasure",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:process-management",
+      "to": "G:exit",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:exit",
+      "to": "G:unlink",
+      "kind": "reference",
+      "label": "def:unlink-reduction",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:exit",
+      "to": "L:sec:namespace-coherence",
+      "kind": "reference",
+      "label": "def:version-pinned",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:process-management",
+      "to": "G:wait",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:wait",
+      "to": "G:branch-and-tensor-are-not-inverse",
+      "kind": "reference",
+      "label": "prop:branch-tensor-noninverse",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:wait",
+      "to": "L:sec:scheduling",
+      "kind": "reference",
+      "label": "sec:scheduling",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:scheduling",
+      "to": "L:sec:process-management",
+      "kind": "reference",
+      "label": "sec:process-management",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:scheduling",
+      "to": "G:wait",
+      "kind": "reference",
+      "label": "prop:wait-blocks",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:scheduling",
+      "to": "G:the-runnable-set",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:the-runnable-set",
+      "to": "G:wait",
+      "kind": "reference",
+      "label": "prop:wait-blocks",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:the-runnable-set",
+      "to": "G:the-term-grammar-extended",
+      "kind": "reference",
+      "label": "ax:tensor",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:scheduling",
+      "to": "G:admissibility-versus-selection",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:scheduling",
+      "to": "G:rendering-the-run-queue",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:rendering-the-run-queue",
+      "to": "G:namespace-as-bundled-renderer",
+      "kind": "reference",
+      "label": "def:namespace-renderer-v2",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:rendering-the-run-queue",
+      "to": "L:sec:namespace-coherence",
+      "kind": "reference",
+      "label": "def:compatibility-v2",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:rendering-the-run-queue",
+      "to": "L:sec:namespace-coherence",
+      "kind": "reference",
+      "label": "prop:shared-library-suffices",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:scheduling",
+      "to": "G:scheduling-and-log-sequencing-are-the-same-arbit",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:scheduling-and-log-sequencing-are-the-same-arbit",
+      "to": "L:sec:speculative-branches",
+      "kind": "reference",
+      "label": "sec:speculative-branches",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:scheduling-and-log-sequencing-are-the-same-arbit",
+      "to": "G:admissibility-versus-selection",
+      "kind": "reference",
+      "label": "def:sched-reduction",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:scheduling-and-log-sequencing-are-the-same-arbit",
+      "to": "G:admissibility-versus-selection",
+      "kind": "reference",
+      "label": "cor:refuse-exact",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:scheduling-and-log-sequencing-are-the-same-arbit",
+      "to": "G:arbiter-and-collaboration-model",
+      "kind": "reference",
+      "label": "ax:single-sequencer",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:scheduling-and-log-sequencing-are-the-same-arbit",
+      "to": "L:sec:syscall",
+      "kind": "reference",
+      "label": "sec:syscall",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:syscall",
+      "to": "G:scheduling-and-log-sequencing-are-the-same-arbit",
+      "kind": "reference",
+      "label": "prop:arbiter-generalization",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:syscall",
+      "to": "G:syscall-as-a-degenerate-scheduling-reduction",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:syscall-as-a-degenerate-scheduling-reduction",
+      "to": "G:capabilities-as-relations",
+      "kind": "reference",
+      "label": "def:authorized-domain",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:syscall-as-a-degenerate-scheduling-reduction",
+      "to": "G:admissibility-versus-selection",
+      "kind": "reference",
+      "label": "def:sched-reduction",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:syscall-as-a-degenerate-scheduling-reduction",
+      "to": "G:admissibility-versus-selection",
+      "kind": "reference",
+      "label": "cor:refuse-exact",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:syscall-as-a-degenerate-scheduling-reduction",
+      "to": "G:the-runnable-set",
+      "kind": "reference",
+      "label": "def:runnable-set",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:syscall",
+      "to": "G:privilege-separation-as-namespace-asymmetry",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:privilege-separation-as-namespace-asymmetry",
+      "to": "G:namespace-as-bundled-renderer",
+      "kind": "reference",
+      "label": "def:namespace-renderer-v2",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:privilege-separation-as-namespace-asymmetry",
+      "to": "L:sec:namespace-coherence",
+      "kind": "reference",
+      "label": "def:compatibility-v2",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:privilege-separation-as-namespace-asymmetry",
+      "to": "G:syscall-as-a-degenerate-scheduling-reduction",
+      "kind": "reference",
+      "label": "def:syscall-proposal",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:privilege-separation-as-namespace-asymmetry",
+      "to": "L:sec:namespace-coherence",
+      "kind": "reference",
+      "label": "prop:shared-library-suffices",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:vfs",
+      "to": "L:sec:reduction",
+      "kind": "reference",
+      "label": "sec:reduction",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:vfs",
+      "to": "L:sec:syscall",
+      "kind": "reference",
+      "label": "sec:syscall",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:vfs",
+      "to": "G:extending-the-state-term",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:extending-the-state-term",
+      "to": "G:merge",
+      "kind": "reference",
+      "label": "prop:merge-identity",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:extending-the-state-term",
+      "to": "G:identity-is-left-open-by-branch",
+      "kind": "reference",
+      "label": "prop:branch-identity-open",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:vfs",
+      "to": "G:paths-naming-and-content-as-fact-keys",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:paths-naming-and-content-as-fact-keys",
+      "to": "G:link",
+      "kind": "reference",
+      "label": "def:link-reduction",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:paths-naming-and-content-as-fact-keys",
+      "to": "L:sec:namespace-coherence",
+      "kind": "reference",
+      "label": "def:version-pinned",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:paths-naming-and-content-as-fact-keys",
+      "to": "L:sec:reduction",
+      "kind": "reference",
+      "label": "sec:reduction",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:paths-naming-and-content-as-fact-keys",
+      "to": "L:sec:namespace-coherence",
+      "kind": "reference",
+      "label": "def:fact-key",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:vfs",
+      "to": "G:read",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:read",
+      "to": "G:namespace-as-bundled-renderer",
+      "kind": "reference",
+      "label": "def:namespace-renderer-v2",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:read",
+      "to": "L:sec:namespace-coherence",
+      "kind": "reference",
+      "label": "prop:shared-library-suffices",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:vfs",
+      "to": "G:write",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:write",
+      "to": "G:syscall-as-a-degenerate-scheduling-reduction",
+      "kind": "reference",
+      "label": "def:syscall-proposal",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:write",
+      "to": "G:syscall-as-a-degenerate-scheduling-reduction",
+      "kind": "reference",
+      "label": "def:syscall-reduction",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:write",
+      "to": "G:extending-the-state-term",
+      "kind": "reference",
+      "label": "def:state-extended",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:vfs",
+      "to": "G:rename",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:rename",
+      "to": "G:arbiter-and-collaboration-model",
+      "kind": "reference",
+      "label": "ax:single-sequencer",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:rename",
+      "to": "G:unlink",
+      "kind": "reference",
+      "label": "def:unlink-reduction",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:rename",
+      "to": "G:link",
+      "kind": "reference",
+      "label": "def:link-reduction",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:rename",
+      "to": "G:extending-the-state-term",
+      "kind": "reference",
+      "label": "ax:frame",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:rename",
+      "to": "L:sec:layering",
+      "kind": "reference",
+      "label": "sec:layering",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:vfs",
+      "to": "G:deletion",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:deletion",
+      "to": "G:unlink",
+      "kind": "reference",
+      "label": "prop:unlink-nonerasure",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:vfs",
+      "to": "G:mount",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:mount",
+      "to": "G:link",
+      "kind": "reference",
+      "label": "def:link-reduction",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:mount",
+      "to": "G:the-term-grammar-extended",
+      "kind": "reference",
+      "label": "ax:tensor",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:mount",
+      "to": "G:merge",
+      "kind": "reference",
+      "label": "prop:merge-identity",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:mount",
+      "to": "G:extending-the-state-term",
+      "kind": "reference",
+      "label": "ax:frame",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:modules",
+      "to": "G:authoritative-event-log",
+      "kind": "reference",
+      "label": "prop:deterministic-state",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:modules",
+      "to": "G:driver-as-typed-interpreter",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:driver-as-typed-interpreter",
+      "to": "G:syscall-as-a-degenerate-scheduling-reduction",
+      "kind": "reference",
+      "label": "def:syscall-proposal",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:driver-as-typed-interpreter",
+      "to": "G:syscall-as-a-degenerate-scheduling-reduction",
+      "kind": "reference",
+      "label": "def:syscall-reduction",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:driver-as-typed-interpreter",
+      "to": "G:syscall-as-a-degenerate-scheduling-reduction",
+      "kind": "reference",
+      "label": "cor:concurrent-syscall",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:modules",
+      "to": "G:module-loading-does-not-enlarge-the-causal-basis",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:module-loading-does-not-enlarge-the-causal-basis",
+      "to": "G:driver-as-typed-interpreter",
+      "kind": "reference",
+      "label": "def:driver",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:module-loading-does-not-enlarge-the-causal-basis",
+      "to": "G:namespace-as-bundled-renderer",
+      "kind": "reference",
+      "label": "def:namespace-renderer-v2",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:module-loading-does-not-enlarge-the-causal-basis",
+      "to": "G:the-term-grammar-extended",
+      "kind": "reference",
+      "label": "prop:tensor-structural",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:module-loading-does-not-enlarge-the-causal-basis",
+      "to": "L:sec:reduction",
+      "kind": "reference",
+      "label": "sec:reduction",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:modules",
+      "to": "G:module-version-attribution-and-deterministic-rep",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:module-version-attribution-and-deterministic-rep",
+      "to": "G:authoritative-event-log",
+      "kind": "reference",
+      "label": "prop:deterministic-state",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:permissions",
+      "to": "L:sec:syscall",
+      "kind": "reference",
+      "label": "sec:syscall",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:permissions",
+      "to": "G:capabilities-as-relations",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:capabilities-as-relations",
+      "to": "G:link",
+      "kind": "reference",
+      "label": "def:link-reduction",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:capabilities-as-relations",
+      "to": "G:unlink",
+      "kind": "reference",
+      "label": "def:unlink-reduction",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:capabilities-as-relations",
+      "to": "G:unlink",
+      "kind": "reference",
+      "label": "prop:unlink-nonerasure",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:capabilities-as-relations",
+      "to": "G:syscall-as-a-degenerate-scheduling-reduction",
+      "kind": "reference",
+      "label": "def:syscall-reduction",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:capabilities-as-relations",
+      "to": "G:syscall-as-a-degenerate-scheduling-reduction",
+      "kind": "reference",
+      "label": "def:syscall-proposal",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:capabilities-as-relations",
+      "to": "L:sec:syscall",
+      "kind": "reference",
+      "label": "sec:syscall",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:capabilities-as-relations",
+      "to": "L:sec:vfs",
+      "kind": "reference",
+      "label": "sec:vfs",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:permissions",
+      "to": "G:namespace-as-bundled-renderer",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:namespace-as-bundled-renderer",
+      "to": "G:capabilities-as-relations",
+      "kind": "reference",
+      "label": "def:authorized-domain",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:namespace-as-bundled-renderer",
+      "to": "G:syscall-as-a-degenerate-scheduling-reduction",
+      "kind": "reference",
+      "label": "def:syscall-proposal",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:namespace-as-bundled-renderer",
+      "to": "G:read",
+      "kind": "reference",
+      "label": "def:read-v2",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:namespace-as-bundled-renderer",
+      "to": "L:sec:reduction",
+      "kind": "reference",
+      "label": "sec:reduction",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:permissions",
+      "to": "L:sec:namespace-coherence",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:namespace-coherence",
+      "to": "G:derived-views",
+      "kind": "reference",
+      "label": "thm:view-functoriality",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:namespace-coherence",
+      "to": "G:paths-naming-and-content-as-fact-keys",
+      "kind": "reference",
+      "label": "def:fact-key-v2",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:namespace-coherence",
+      "to": "G:derived-views",
+      "kind": "reference",
+      "label": "def:admissible-view",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:namespace-coherence",
+      "to": "L:sec:modules",
+      "kind": "reference",
+      "label": "sec:modules",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:namespace-coherence",
+      "to": "L:sec:permissions",
+      "kind": "reference",
+      "label": "sec:permissions",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:layering",
+      "to": "G:the-five-way-taxonomy",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:layering",
+      "to": "G:where-everything-landed",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:where-everything-landed",
+      "to": "L:sec:vfs",
+      "kind": "reference",
+      "label": "sec:vfs",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:where-everything-landed",
+      "to": "G:namespace-as-bundled-renderer",
+      "kind": "reference",
+      "label": "def:namespace-renderer-v2",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:where-everything-landed",
+      "to": "L:sec:namespace-coherence",
+      "kind": "reference",
+      "label": "def:compatibility-v2",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:layering",
+      "to": "G:comparative-rationale",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:comparative-rationale",
+      "to": "L:sec:reduction",
+      "kind": "reference",
+      "label": "sec:reduction",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:comparative-rationale",
+      "to": "L:sec:process-management",
+      "kind": "reference",
+      "label": "sec:process-management",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:comparative-rationale",
+      "to": "L:sec:permissions",
+      "kind": "reference",
+      "label": "sec:permissions",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:comparative-rationale",
+      "to": "G:arbiter-and-collaboration-model",
+      "kind": "reference",
+      "label": "ax:single-sequencer",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:comparative-rationale",
+      "to": "L:sec:vfs",
+      "kind": "reference",
+      "label": "sec:vfs",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:comparative-rationale",
+      "to": "L:sec:branch",
+      "kind": "reference",
+      "label": "sec:branch",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:comparative-rationale",
+      "to": "L:sec:speculative-branches",
+      "kind": "reference",
+      "label": "sec:speculative-branches",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:comparative-rationale",
+      "to": "G:the-branch-judgment",
+      "kind": "reference",
+      "label": "def:branch-judgment",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:layering",
+      "to": "G:what-this-specification-establishes-assumes-and-",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:what-this-specification-establishes-assumes-and-",
+      "to": "G:the-boundary-stated",
+      "kind": "reference",
+      "label": "thm:completeness-scope",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:what-this-specification-establishes-assumes-and-",
+      "to": "G:the-term-grammar-extended",
+      "kind": "reference",
+      "label": "prop:tensor-structural",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:what-this-specification-establishes-assumes-and-",
+      "to": "G:branch-and-tensor-are-not-inverse",
+      "kind": "reference",
+      "label": "prop:branch-tensor-noninverse",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:what-this-specification-establishes-assumes-and-",
+      "to": "G:unlink",
+      "kind": "reference",
+      "label": "prop:unlink-nonerasure",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:what-this-specification-establishes-assumes-and-",
+      "to": "G:exec",
+      "kind": "reference",
+      "label": "prop:exec-nonerasure",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:what-this-specification-establishes-assumes-and-",
+      "to": "G:write",
+      "kind": "reference",
+      "label": "prop:write-nonerasure-v2",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:what-this-specification-establishes-assumes-and-",
+      "to": "G:extending-the-state-term",
+      "kind": "reference",
+      "label": "ax:frame",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:what-this-specification-establishes-assumes-and-",
+      "to": "L:sec:namespace-coherence",
+      "kind": "reference",
+      "label": "thm:conditional-isolation",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:what-this-specification-establishes-assumes-and-",
+      "to": "L:sec:namespace-coherence",
+      "kind": "reference",
+      "label": "prop:shared-library-suffices",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:what-this-specification-establishes-assumes-and-",
+      "to": "L:sec:namespace-coherence",
+      "kind": "reference",
+      "label": "prop:determinism-insufficient-v2",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:what-this-specification-establishes-assumes-and-",
+      "to": "G:module-version-attribution-and-deterministic-rep",
+      "kind": "reference",
+      "label": "cor:deterministic-under-modules",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:what-this-specification-establishes-assumes-and-",
+      "to": "G:module-version-attribution-and-deterministic-rep",
+      "kind": "reference",
+      "label": "ax:module-attribution",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:what-this-specification-establishes-assumes-and-",
+      "to": "G:rename",
+      "kind": "reference",
+      "label": "def:atomic",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:what-this-specification-establishes-assumes-and-",
+      "to": "L:sec:vfs",
+      "kind": "reference",
+      "label": "sec:vfs",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:what-this-specification-establishes-assumes-and-",
+      "to": "G:admissibility-versus-selection",
+      "kind": "reference",
+      "label": "prop:priority-not-admissibility",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:what-this-specification-establishes-assumes-and-",
+      "to": "L:sec:reduction",
+      "kind": "reference",
+      "label": "sec:reduction",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:what-this-specification-establishes-assumes-and-",
+      "to": "G:merge",
+      "kind": "reference",
+      "label": "prop:merge-identity",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:what-this-specification-establishes-assumes-and-",
+      "to": "G:pop-and-collapse-as-already-primitive",
+      "kind": "reference",
+      "label": "prop:collapse-already",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "L:sec:layering",
+      "to": "G:conclusion",
+      "kind": "alcove",
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:conclusion",
+      "to": "L:sec:reduction",
+      "kind": "reference",
+      "label": "sec:reduction",
+      "door": false,
+      "traversal": "two-way"
+    },
+    {
+      "from": "G:conclusion",
+      "to": "L:sec:permissions",
+      "kind": "reference",
+      "label": "sec:permissions",
+      "door": false,
+      "traversal": "two-way"
+    }
+  ],
+  "title": "Spherepop OS: A Deterministic Semantic Operating System: Formal Specification and Architectural Rationale",
+  "bibliography": {},
+  "sources": [
+    "9e4a7995fc.tex"
+  ],
+  "warnings": [
+    {
+      "kind": "no-thesis",
+      "severity": "advice",
+      "text": "no thesis chamber marked (add '% mine: thesis' under the central section)"
+    },
+    {
+      "kind": "large-part",
+      "severity": "advice",
+      "text": "22 chambers in part '(none)' exceeds 20; split by \\part",
+      "part": null,
+      "chambers": 22
+    },
+    {
+      "kind": "unlabeled",
+      "severity": "advice",
+      "text": "12 of 22 chambers have no \\label; their identity follows their headings, so a renamed heading is dug as a new chamber",
+      "titles": [
+        "Motivation and Design Goals",
+        "Core Ontology",
+        "Authoritative Event Log",
+        "Kernel Semantics",
+        "Formal Execution Semantics",
+        "Replay Equivalence",
+        "Meta-Theorem: Functoriality of Derived Views",
+        "Diffs and Incremental Observation",
+        "Snapshots as Derived Views",
+        "Seekable Time and Historical Inspection",
+        "Layout and Geometry as Metadata",
+        "Arbiter and Collaboration Model"
+      ]
+    }
+  ],
+  "source_sha256": "9e4a7995fcc255f8d2e48bd40fc6f0480ca8406636b465db9236935ac2922fd3",
+  "miner": "41bc78ba46f5"
+}

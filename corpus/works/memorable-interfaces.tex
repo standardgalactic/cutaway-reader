@@ -1,0 +1,48 @@
+\documentclass{article}
+\title{Memorable Interfaces}
+\begin{document}
+\begin{abstract}
+Why an archive that keeps every page can still be impossible to remember, and what Descent's mines and cutaway map teach about building one that is not.
+\end{abstract}
+\section{Introduction}\label{sec:intro}
+An archive can preserve every page and still be impossible to remember. The magazine mosaic keeps each photograph of each page, yet a reader who closes it retains almost nothing about where anything was.
+
+Descent solved a harder problem. Its mines have no reliable floor or ceiling, and players still learned them, because memory attached to topology and action together: the broad chamber with the vertical shaft that leads back toward the blue door.
+\includegraphics{img/intro.png}
+\section{Preliminaries and Notation}\label{sec:prelim}
+A work is a set of units. Each section is a chamber with a stable identifier, each subsection an alcove, and each reference a passage.
+
+The semantic graph records meaning. The spatial ledger records remembered location. A reader log records what one person actually did.
+\subsection{Chambers}\label{sub:chambers}
+A chamber keeps its identifier and coordinates for the life of the work. Revision may enlarge it or seal it, never move it.
+\subsection{Passages}
+A passage is physically two-way. The citation it realizes keeps its direction in the graph.
+\section{The Cutaway Map}\label{sec:cutaway}
+Using the notation of Section~\ref{sec:prelim}, the automap removes texture, lighting and surface detail so that connectivity is all that remains.
+
+It opens in the viewer's current orientation, centred on the present chamber, and discloses only what has been visited or revealed. Traversed passages are white; revealed ones are a faint blue envelope; the rest is absent.
+\section{Route Persistence}\label{sec:routes}
+A Stars! repeat route becomes a reproducible flight path. Cruise flies it with the same translations and rotations a pilot would make, and any key takes control back.
+\section{Supervisory Memory}\label{sec:thesis}
+% mine: thesis
+% mine: exit=two-games
+Orientation comes from invariants amid transformation, see \ref{sub:chambers}. The reader may roll upside down and approach a chamber along another axis, but its connections stay where they were.
+
+A second loop sits above the first. Routes declared in the strategic view are flown as real trajectories in the mine, and the log of what happened lets a reader return after days and resume where the argument was left.
+Policies extend this. A route can be declared once as a rule, such as prerequisites before dependents, and recomputed whenever the source or the reader's history changes, so the plan stays current without being redrawn by hand.
+% thread[evidence]: needs a recall study with returning readers
+\section{Objections from Search}\label{sec:obj}
+Search reaches any point instantly, which is exactly why it produces no place memory. Retrieval answers where a phrase is; it says nothing about what surrounds it or how one arrived, contra \ref{sec:thesis}.
+% thread[open]: whether instant retrieval erodes place memory is deliberately left open
+\section{Applications to an Essay Corpus}\label{sec:apps}
+% mine: exit=manufactured-necessity
+% mine: exit=document-repositories#sec:notes-cutaway
+Six hundred works become six hundred small levels, each generated from its own source, each learnable with the same axis rule. Illustrations hang on the far wall of the chamber they open. \todo{add series-level route examples}
+\section{Closing}\label{sec:concl}
+The test for the whole design is simple. After closing it for a day, can the reader say where an argument was, how they reached it, and which passage they meant to explore next?
+\appendix
+\section{Formal Model}\label{app:formal}
+Ledger invariants, per \ref{sec:prelim}: identifiers are never reused, coordinates are never recomputed, and withdrawn chambers remain as sealed volumes.
+\section{Control Table}\label{app:controls}
+Left hand translates: W and S surge, A and D strafe, R and F heave, Q and E roll. Right hand orients: H and L yaw, J and K pitch. Tab or semicolon opens the automap.
+\end{document}

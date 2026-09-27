@@ -1,0 +1,191 @@
+{
+  "work": "document-repositories",
+  "version": 1,
+  "nodes": {
+    "L:sec:notes-intro": {
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 6.39,
+      "title": "A Deceptively Simple System",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:12:25",
+      "last_seen": "2026-09-27T09:11:17"
+    },
+    "L:sec:notes-record": {
+      "pos": [
+        0.0,
+        0.0,
+        40.0
+      ],
+      "radius": 6.59,
+      "title": "What a Document Was",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:12:25",
+      "last_seen": "2026-09-27T09:11:17"
+    },
+    "L:sec:notes-replication": {
+      "pos": [
+        0.0,
+        0.0,
+        80.0
+      ],
+      "radius": 6.73,
+      "title": "Replication Without a Master",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:12:25",
+      "last_seen": "2026-09-27T09:11:17"
+    },
+    "L:sec:notes-files": {
+      "pos": [
+        0.0,
+        0.0,
+        120.0
+      ],
+      "radius": 6.62,
+      "title": "Files Inside Records",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:12:25",
+      "last_seen": "2026-09-27T09:11:17"
+    },
+    "L:sec:notes-limits": {
+      "pos": [
+        0.0,
+        0.0,
+        160.0
+      ],
+      "radius": 6.36,
+      "title": "Limits the Article Admits",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:12:25",
+      "last_seen": "2026-09-27T09:11:17"
+    },
+    "L:sec:notes-cases": {
+      "pos": [
+        0.0,
+        0.0,
+        200.0
+      ],
+      "radius": 6.43,
+      "title": "Two Working Repositories",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:12:25",
+      "last_seen": "2026-09-27T09:11:17"
+    },
+    "L:sec:notes-github": {
+      "pos": [
+        40.0,
+        0.0,
+        200.0
+      ],
+      "radius": 6.39,
+      "title": "Comparison with GitHub",
+      "role": "comparison",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:12:25",
+      "last_seen": "2026-09-27T09:11:17"
+    },
+    "L:sec:notes-cutaway": {
+      "pos": [
+        0.0,
+        0.0,
+        240.0
+      ],
+      "radius": 6.59,
+      "title": "What It Offers the Cutaway Reader",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:12:25",
+      "last_seen": "2026-09-27T09:11:17"
+    }
+  },
+  "labels": {
+    "sec:notes-intro": "L:sec:notes-intro",
+    "sec:notes-record": "L:sec:notes-record",
+    "sec:notes-replication": "L:sec:notes-replication",
+    "sec:notes-files": "L:sec:notes-files",
+    "sec:notes-limits": "L:sec:notes-limits",
+    "sec:notes-cases": "L:sec:notes-cases",
+    "sec:notes-github": "L:sec:notes-github",
+    "sec:notes-cutaway": "L:sec:notes-cutaway"
+  },
+  "aliases": {
+    "section||a-deceptively-simple-system": [
+      "L:sec:notes-intro"
+    ],
+    "section||what-a-document-was": [
+      "L:sec:notes-record"
+    ],
+    "section||replication-without-a-master": [
+      "L:sec:notes-replication"
+    ],
+    "section||files-inside-records": [
+      "L:sec:notes-files"
+    ],
+    "section||limits-the-article-admits": [
+      "L:sec:notes-limits"
+    ],
+    "section||two-working-repositories": [
+      "L:sec:notes-cases"
+    ],
+    "section||comparison-with-github": [
+      "L:sec:notes-github"
+    ],
+    "section||what-it-offers-the-cutaway-reader": [
+      "L:sec:notes-cutaway"
+    ]
+  },
+  "history": [
+    {
+      "at": "2026-09-27T07:12:25",
+      "added": [
+        "L:sec:notes-intro",
+        "L:sec:notes-record",
+        "L:sec:notes-replication",
+        "L:sec:notes-files",
+        "L:sec:notes-limits",
+        "L:sec:notes-cases",
+        "L:sec:notes-github",
+        "L:sec:notes-cutaway"
+      ],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:12:25",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T09:11:17",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    }
+  ]
+}

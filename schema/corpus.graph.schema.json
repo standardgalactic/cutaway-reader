@@ -1,0 +1,293 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://standardgalactic.github.io/cutaway/schema/corpus.graph.schema.json",
+  "title": "Corpus graph",
+  "description": "The corpus's meaning, recomputed on every build (corpus.py build): work records, lanes, views, suggestions.",
+  "type": "object",
+  "required": [
+    "corpus",
+    "title",
+    "works",
+    "lanes",
+    "views",
+    "built"
+  ],
+  "properties": {
+    "corpus": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "built": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d\\d-\\d\\dT\\d\\d:\\d\\d"
+    },
+    "series": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "title",
+          "order"
+        ]
+      }
+    },
+    "works": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "abstract",
+          "series",
+          "provenance",
+          "counts",
+          "start",
+          "labels"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*$"
+          },
+          "title": {
+            "type": "string"
+          },
+          "abstract": {
+            "type": "string"
+          },
+          "series": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "series_order": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "start": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "labels": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "provenance": {
+            "type": "object",
+            "required": [
+              "edition",
+              "edition_how",
+              "editions"
+            ],
+            "properties": {
+              "source": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "edition": {
+                "type": "string"
+              },
+              "edition_how": {
+                "enum": [
+                  "only",
+                  "declared",
+                  "decided",
+                  "proposed"
+                ]
+              },
+              "editions": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "path",
+                    "sha256"
+                  ],
+                  "properties": {
+                    "path": {
+                      "type": "string"
+                    },
+                    "sha256": {
+                      "type": "string",
+                      "pattern": "^[0-9a-f]{64}$"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "counts": {
+            "type": "object",
+            "required": [
+              "sections",
+              "words",
+              "threads",
+              "thesis"
+            ]
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "kind",
+                "severity",
+                "text"
+              ],
+              "properties": {
+                "kind": {
+                  "enum": [
+                    "no-thesis",
+                    "large-part",
+                    "unlabeled",
+                    "empty",
+                    "missing-file"
+                  ]
+                },
+                "severity": {
+                  "enum": [
+                    "problem",
+                    "advice"
+                  ]
+                },
+                "text": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "open_threads": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "chamber",
+                "chamber_title",
+                "kind",
+                "text"
+              ],
+              "properties": {
+                "kind": {
+                  "enum": [
+                    "missing",
+                    "extension",
+                    "evidence",
+                    "open"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "lanes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "from",
+          "to",
+          "kind",
+          "traversal"
+        ],
+        "properties": {
+          "from": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9-]*$"
+          },
+          "to": {
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "exit",
+              "cites-work",
+              "series"
+            ]
+          },
+          "traversal": {
+            "enum": [
+              "two-way",
+              "one-way"
+            ]
+          },
+          "from_chamber": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "from_chamber_title": {
+            "type": "string"
+          },
+          "to_label": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "to_chamber": {
+            "type": "string"
+          },
+          "uncharted": {
+            "type": "boolean"
+          },
+          "inferred": {
+            "type": "boolean"
+          },
+          "declared": {
+            "enum": [
+              "both ends"
+            ]
+          },
+          "declared_in": {
+            "enum": [
+              "manifest"
+            ]
+          },
+          "note": {
+            "type": "string"
+          },
+          "series": {
+            "type": "string"
+          },
+          "to_title": {
+            "type": "string"
+          },
+          "via": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "views": {
+      "type": "array"
+    },
+    "suggestions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "from",
+          "chamber",
+          "chamber_title",
+          "to",
+          "count"
+        ]
+      }
+    }
+  }
+}

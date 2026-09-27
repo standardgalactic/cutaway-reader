@@ -1,0 +1,1503 @@
+{
+  "work": "spherepop-os",
+  "version": 1,
+  "nodes": {
+    "G:motivation-and-design-goals": {
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 7.58,
+      "title": "Motivation and Design Goals",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:core-ontology": {
+      "pos": [
+        0.0,
+        0.0,
+        40.0
+      ],
+      "radius": 7.05,
+      "title": "Core Ontology",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:authoritative-event-log": {
+      "pos": [
+        0.0,
+        0.0,
+        80.0
+      ],
+      "radius": 7.23,
+      "title": "Authoritative Event Log",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:kernel-semantics": {
+      "pos": [
+        0.0,
+        0.0,
+        120.0
+      ],
+      "radius": 6.93,
+      "title": "Kernel Semantics",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:formal-execution-semantics": {
+      "pos": [
+        0.0,
+        -40.0,
+        120.0
+      ],
+      "radius": 6.33,
+      "title": "Formal Execution Semantics",
+      "role": "foundation",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:kernel-state": {
+      "pos": [
+        20.59,
+        -40.0,
+        120.0
+      ],
+      "radius": 4.4,
+      "title": "Kernel State",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:formal-execution-semantics",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:transition-relation": {
+      "pos": [
+        -19.44,
+        -40.0,
+        120.0
+      ],
+      "radius": 3.63,
+      "title": "Transition Relation",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:formal-execution-semantics",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:pop-object-creation": {
+      "pos": [
+        10.39,
+        -27.32,
+        127.27
+      ],
+      "radius": 3.35,
+      "title": "POP (Object Creation)",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:formal-execution-semantics",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:merge-equivalence-induction": {
+      "pos": [
+        -10.85,
+        -26.75,
+        127.6
+      ],
+      "radius": 3.92,
+      "title": "MERGE (Equivalence Induction)",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:formal-execution-semantics",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:link-relation-creation": {
+      "pos": [
+        10.39,
+        -27.32,
+        112.73
+      ],
+      "radius": 3.35,
+      "title": "LINK (Relation Creation)",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:formal-execution-semantics",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:unlink-relation-removal": {
+      "pos": [
+        -10.39,
+        -27.32,
+        112.73
+      ],
+      "radius": 3.35,
+      "title": "UNLINK (Relation Removal)",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:formal-execution-semantics",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:collapse-bulk-equivalence": {
+      "pos": [
+        13.39,
+        -40.0,
+        133.39
+      ],
+      "radius": 4.06,
+      "title": "COLLAPSE (Bulk Equivalence)",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:formal-execution-semantics",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:set-meta-metadata-attachment": {
+      "pos": [
+        -12.96,
+        -40.0,
+        132.96
+      ],
+      "radius": 3.63,
+      "title": "SET_META (Metadata Attachment)",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:formal-execution-semantics",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:semantic-properties": {
+      "pos": [
+        11.65,
+        -54.22,
+        128.16
+      ],
+      "radius": 4.89,
+      "title": "Semantic Properties",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:formal-execution-semantics",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:merge-induced-relation-normalization": {
+      "pos": [
+        -11.66,
+        -54.24,
+        128.17
+      ],
+      "radius": 4.91,
+      "title": "MERGE-Induced Relation Normalization",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:formal-execution-semantics",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:replay-equivalence": {
+      "pos": [
+        0.0,
+        0.0,
+        160.0
+      ],
+      "radius": 7.33,
+      "title": "Replay Equivalence",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:meta-theorem-functoriality-of-derived-views": {
+      "pos": [
+        0.0,
+        0.0,
+        200.0
+      ],
+      "radius": 6.37,
+      "title": "Meta-Theorem: Functoriality of Derived Views",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:event-prefix-category": {
+      "pos": [
+        20.52,
+        0.0,
+        200.0
+      ],
+      "radius": 4.31,
+      "title": "Event Prefix Category",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:meta-theorem-functoriality-of-derived-views",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:state-semantics-as-a-functor": {
+      "pos": [
+        -21.46,
+        0.0,
+        200.0
+      ],
+      "radius": 4.94,
+      "title": "State Semantics as a Functor",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:meta-theorem-functoriality-of-derived-views",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:derived-views": {
+      "pos": [
+        12.75,
+        15.56,
+        208.92
+      ],
+      "radius": 6.19,
+      "title": "Derived Views",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "G:meta-theorem-functoriality-of-derived-views",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:diffs-and-incremental-observation": {
+      "pos": [
+        0.0,
+        0.0,
+        240.0
+      ],
+      "radius": 6.87,
+      "title": "Diffs and Incremental Observation",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:snapshots-as-derived-views": {
+      "pos": [
+        0.0,
+        0.0,
+        280.0
+      ],
+      "radius": 6.67,
+      "title": "Snapshots as Derived Views",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:seekable-time-and-historical-inspection": {
+      "pos": [
+        0.0,
+        0.0,
+        320.0
+      ],
+      "radius": 6.6,
+      "title": "Seekable Time and Historical Inspection",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:sec:speculative-branches": {
+      "pos": [
+        0.0,
+        0.0,
+        360.0
+      ],
+      "radius": 6.84,
+      "title": "Speculative Branches",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:layout-and-geometry-as-metadata": {
+      "pos": [
+        0.0,
+        0.0,
+        400.0
+      ],
+      "radius": 6.77,
+      "title": "Layout and Geometry as Metadata",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:arbiter-and-collaboration-model": {
+      "pos": [
+        0.0,
+        0.0,
+        440.0
+      ],
+      "radius": 6.75,
+      "title": "Arbiter and Collaboration Model",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:sec:reduction": {
+      "pos": [
+        0.0,
+        0.0,
+        480.0
+      ],
+      "radius": 7.21,
+      "title": "Reduction of OS Events to the Causal Calculus",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-term-grammar-extended": {
+      "pos": [
+        24.51,
+        0.0,
+        480.0
+      ],
+      "radius": 6.13,
+      "title": "The Term Grammar, Extended",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:reduction",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:pop-and-collapse-as-already-primitive": {
+      "pos": [
+        -25.53,
+        0.0,
+        480.0
+      ],
+      "radius": 6.81,
+      "title": "POP and COLLAPSE as Already Primitive",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:reduction",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:link": {
+      "pos": [
+        12.88,
+        15.72,
+        489.02
+      ],
+      "radius": 5.51,
+      "title": "LINK",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:reduction",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:unlink": {
+      "pos": [
+        -13.47,
+        16.44,
+        489.43
+      ],
+      "radius": 6.23,
+      "title": "UNLINK",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:reduction",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:merge": {
+      "pos": [
+        13.21,
+        16.13,
+        470.75
+      ],
+      "radius": 5.92,
+      "title": "MERGE",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:reduction",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:set-meta": {
+      "pos": [
+        -13.03,
+        15.91,
+        470.87
+      ],
+      "radius": 5.7,
+      "title": "SET_META",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:reduction",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-boundary-stated": {
+      "pos": [
+        16.43,
+        0.0,
+        504.64
+      ],
+      "radius": 6.22,
+      "title": "The Boundary, Stated",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:reduction",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:sec:branch": {
+      "pos": [
+        0.0,
+        0.0,
+        520.0
+      ],
+      "radius": 6.8,
+      "title": "Branch as a Structural Rule",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-branch-judgment": {
+      "pos": [
+        15.51,
+        0.0,
+        535.51
+      ],
+      "radius": 5.71,
+      "title": "The Branch Judgment",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:branch",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:identity-is-left-open-by-branch": {
+      "pos": [
+        -23.59,
+        0.0,
+        520.0
+      ],
+      "radius": 5.93,
+      "title": "Identity Is Left Open by Branch",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:branch",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:branch-and-tensor-are-not-inverse": {
+      "pos": [
+        12.9,
+        23.62,
+        529.03
+      ],
+      "radius": 5.95,
+      "title": "Branch and Tensor Are Not Inverse",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:branch",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:relation-to-speculative-branches": {
+      "pos": [
+        -12.36,
+        15.09,
+        528.66
+      ],
+      "radius": 5.29,
+      "title": "Relation to Speculative Branches",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:branch",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:sec:process-management": {
+      "pos": [
+        0.0,
+        0.0,
+        560.0
+      ],
+      "radius": 6.67,
+      "title": "Process Management as Derived Kernel Functions",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:process": {
+      "pos": [
+        21.69,
+        0.0,
+        560.0
+      ],
+      "radius": 4.79,
+      "title": "Process",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:process-management",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:fork": {
+      "pos": [
+        -23.68,
+        0.0,
+        560.0
+      ],
+      "radius": 6.12,
+      "title": "fork",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:process-management",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:exec": {
+      "pos": [
+        12.16,
+        14.84,
+        568.51
+      ],
+      "radius": 5.17,
+      "title": "exec",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:process-management",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:exit": {
+      "pos": [
+        -11.92,
+        14.55,
+        568.35
+      ],
+      "radius": 4.88,
+      "title": "exit",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:process-management",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:wait": {
+      "pos": [
+        12.8,
+        15.62,
+        551.04
+      ],
+      "radius": 5.95,
+      "title": "wait",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:process-management",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:sec:scheduling": {
+      "pos": [
+        0.0,
+        0.0,
+        600.0
+      ],
+      "radius": 6.72,
+      "title": "Scheduling",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-runnable-set": {
+      "pos": [
+        22.05,
+        0.0,
+        600.0
+      ],
+      "radius": 4.98,
+      "title": "The Runnable Set",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:scheduling",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:admissibility-versus-selection": {
+      "pos": [
+        -24.49,
+        0.0,
+        600.0
+      ],
+      "radius": 6.61,
+      "title": "Admissibility Versus Selection",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:scheduling",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:rendering-the-run-queue": {
+      "pos": [
+        11.97,
+        14.61,
+        608.38
+      ],
+      "radius": 4.89,
+      "title": "Rendering the Run Queue",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:scheduling",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:scheduling-and-log-sequencing-are-the-same-arbit": {
+      "pos": [
+        -12.82,
+        15.65,
+        608.98
+      ],
+      "radius": 5.93,
+      "title": "Scheduling and Log Sequencing Are the Same Arbitration Pattern",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:scheduling",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:sec:syscall": {
+      "pos": [
+        0.0,
+        0.0,
+        640.0
+      ],
+      "radius": 7.04,
+      "title": "The Syscall Boundary",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:syscall-as-a-degenerate-scheduling-reduction": {
+      "pos": [
+        25.68,
+        0.0,
+        640.0
+      ],
+      "radius": 7.08,
+      "title": "Syscall as a Degenerate Scheduling Reduction",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:syscall",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:privilege-separation-as-namespace-asymmetry": {
+      "pos": [
+        -24.43,
+        0.0,
+        640.0
+      ],
+      "radius": 6.25,
+      "title": "Privilege Separation as Namespace Asymmetry",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:syscall",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:sec:vfs": {
+      "pos": [
+        0.0,
+        0.0,
+        680.0
+      ],
+      "radius": 6.77,
+      "title": "Virtual Object Namespace",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:extending-the-state-term": {
+      "pos": [
+        23.41,
+        0.0,
+        680.0
+      ],
+      "radius": 5.84,
+      "title": "Extending the State Term",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:vfs",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:paths-naming-and-content-as-fact-keys": {
+      "pos": [
+        -23.59,
+        0.0,
+        680.0
+      ],
+      "radius": 5.96,
+      "title": "Paths, Naming, and Content as Fact Keys",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:vfs",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:read": {
+      "pos": [
+        11.69,
+        14.27,
+        688.18
+      ],
+      "radius": 4.5,
+      "title": "read",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:vfs",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:write": {
+      "pos": [
+        -12.03,
+        14.68,
+        688.42
+      ],
+      "radius": 4.91,
+      "title": "write",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:vfs",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:rename": {
+      "pos": [
+        12.61,
+        15.39,
+        671.17
+      ],
+      "radius": 5.62,
+      "title": "rename",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:vfs",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:deletion": {
+      "pos": [
+        -12.07,
+        14.74,
+        671.55
+      ],
+      "radius": 4.97,
+      "title": "Deletion",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:vfs",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:mount": {
+      "pos": [
+        15.49,
+        0.0,
+        703.24
+      ],
+      "radius": 5.72,
+      "title": "mount",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:vfs",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:sec:modules": {
+      "pos": [
+        0.0,
+        0.0,
+        720.0
+      ],
+      "radius": 6.71,
+      "title": "Modules and Drivers",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:driver-as-typed-interpreter": {
+      "pos": [
+        22.18,
+        0.0,
+        720.0
+      ],
+      "radius": 5.08,
+      "title": "Driver as Typed Interpreter",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:modules",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:module-loading-does-not-enlarge-the-causal-basis": {
+      "pos": [
+        -22.88,
+        0.0,
+        720.0
+      ],
+      "radius": 5.54,
+      "title": "Module Loading Does Not Enlarge the Causal Basis",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:modules",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:module-version-attribution-and-deterministic-rep": {
+      "pos": [
+        13.97,
+        17.05,
+        729.78
+      ],
+      "radius": 7.34,
+      "title": "Module Version Attribution and Deterministic Replay",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:modules",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:sec:permissions": {
+      "pos": [
+        0.0,
+        0.0,
+        760.0
+      ],
+      "radius": 6.39,
+      "title": "Permissions, Capabilities, and Namespace Isolation",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:capabilities-as-relations": {
+      "pos": [
+        23.55,
+        0.0,
+        760.0
+      ],
+      "radius": 6.31,
+      "title": "Capabilities as Relations",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:permissions",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:namespace-as-bundled-renderer": {
+      "pos": [
+        -23.34,
+        0.0,
+        760.0
+      ],
+      "radius": 6.17,
+      "title": "Namespace as Bundled Renderer",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:permissions",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:sec:namespace-coherence": {
+      "pos": [
+        14.5,
+        17.7,
+        770.15
+      ],
+      "radius": 8.31,
+      "title": "Namespace Isolation Requires View Coherence",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:permissions",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "L:sec:layering": {
+      "pos": [
+        0.0,
+        0.0,
+        800.0
+      ],
+      "radius": 5.4,
+      "title": "Architectural Layering",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:the-five-way-taxonomy": {
+      "pos": [
+        19.7,
+        0.0,
+        800.0
+      ],
+      "radius": 4.73,
+      "title": "The Five-Way Taxonomy",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:layering",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:where-everything-landed": {
+      "pos": [
+        -21.03,
+        0.0,
+        800.0
+      ],
+      "radius": 5.62,
+      "title": "Where Everything Landed",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:layering",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:comparative-rationale": {
+      "pos": [
+        11.71,
+        14.29,
+        808.2
+      ],
+      "radius": 5.89,
+      "title": "Comparative Rationale",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:layering",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:what-this-specification-establishes-assumes-and-": {
+      "pos": [
+        -12.52,
+        15.28,
+        808.76
+      ],
+      "radius": 6.88,
+      "title": "What This Specification Establishes, Assumes, and Leaves Open",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:layering",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    },
+    "G:conclusion": {
+      "pos": [
+        11.14,
+        -13.6,
+        792.2
+      ],
+      "radius": 5.2,
+      "title": "Conclusion",
+      "role": "alcove",
+      "level": "subsection",
+      "parent": "L:sec:layering",
+      "status": "active",
+      "first_seen": "2026-09-27T07:21:21",
+      "last_seen": "2026-09-27T09:38:34"
+    }
+  },
+  "labels": {
+    "sec:speculative-branches": "L:sec:speculative-branches",
+    "sec:reduction": "L:sec:reduction",
+    "sec:branch": "L:sec:branch",
+    "sec:process-management": "L:sec:process-management",
+    "sec:scheduling": "L:sec:scheduling",
+    "sec:syscall": "L:sec:syscall",
+    "sec:vfs": "L:sec:vfs",
+    "sec:modules": "L:sec:modules",
+    "sec:permissions": "L:sec:permissions",
+    "sec:namespace-coherence": "L:sec:namespace-coherence",
+    "sec:layering": "L:sec:layering"
+  },
+  "aliases": {
+    "section||motivation-and-design-goals": [
+      "G:motivation-and-design-goals"
+    ],
+    "section||core-ontology": [
+      "G:core-ontology"
+    ],
+    "section||authoritative-event-log": [
+      "G:authoritative-event-log"
+    ],
+    "section||kernel-semantics": [
+      "G:kernel-semantics"
+    ],
+    "section||formal-execution-semantics": [
+      "G:formal-execution-semantics"
+    ],
+    "subsection|G:formal-execution-semantics|kernel-state": [
+      "G:kernel-state"
+    ],
+    "subsection|G:formal-execution-semantics|transition-relation": [
+      "G:transition-relation"
+    ],
+    "subsection|G:formal-execution-semantics|pop-object-creation": [
+      "G:pop-object-creation"
+    ],
+    "subsection|G:formal-execution-semantics|merge-equivalence-induction": [
+      "G:merge-equivalence-induction"
+    ],
+    "subsection|G:formal-execution-semantics|link-relation-creation": [
+      "G:link-relation-creation"
+    ],
+    "subsection|G:formal-execution-semantics|unlink-relation-removal": [
+      "G:unlink-relation-removal"
+    ],
+    "subsection|G:formal-execution-semantics|collapse-bulk-equivalence": [
+      "G:collapse-bulk-equivalence"
+    ],
+    "subsection|G:formal-execution-semantics|set-meta-metadata-attachment": [
+      "G:set-meta-metadata-attachment"
+    ],
+    "subsection|G:formal-execution-semantics|semantic-properties": [
+      "G:semantic-properties"
+    ],
+    "subsection|G:formal-execution-semantics|merge-induced-relation-normalization": [
+      "G:merge-induced-relation-normalization"
+    ],
+    "section||replay-equivalence": [
+      "G:replay-equivalence"
+    ],
+    "section||meta-theorem-functoriality-of-derived-views": [
+      "G:meta-theorem-functoriality-of-derived-views"
+    ],
+    "subsection|G:meta-theorem-functoriality-of-derived-views|event-prefix-category": [
+      "G:event-prefix-category"
+    ],
+    "subsection|G:meta-theorem-functoriality-of-derived-views|state-semantics-as-a-functor": [
+      "G:state-semantics-as-a-functor"
+    ],
+    "subsection|G:meta-theorem-functoriality-of-derived-views|derived-views": [
+      "G:derived-views"
+    ],
+    "section||diffs-and-incremental-observation": [
+      "G:diffs-and-incremental-observation"
+    ],
+    "section||snapshots-as-derived-views": [
+      "G:snapshots-as-derived-views"
+    ],
+    "section||seekable-time-and-historical-inspection": [
+      "G:seekable-time-and-historical-inspection"
+    ],
+    "section||speculative-branches": [
+      "L:sec:speculative-branches"
+    ],
+    "section||layout-and-geometry-as-metadata": [
+      "G:layout-and-geometry-as-metadata"
+    ],
+    "section||arbiter-and-collaboration-model": [
+      "G:arbiter-and-collaboration-model"
+    ],
+    "section||reduction-of-os-events-to-the-causal-calculus": [
+      "L:sec:reduction"
+    ],
+    "subsection|L:sec:reduction|the-term-grammar-extended": [
+      "G:the-term-grammar-extended"
+    ],
+    "subsection|L:sec:reduction|pop-and-collapse-as-already-primitive": [
+      "G:pop-and-collapse-as-already-primitive"
+    ],
+    "subsection|L:sec:reduction|link": [
+      "G:link"
+    ],
+    "subsection|L:sec:reduction|unlink": [
+      "G:unlink"
+    ],
+    "subsection|L:sec:reduction|merge": [
+      "G:merge"
+    ],
+    "subsection|L:sec:reduction|set-meta": [
+      "G:set-meta"
+    ],
+    "subsection|L:sec:reduction|the-boundary-stated": [
+      "G:the-boundary-stated"
+    ],
+    "section||branch-as-a-structural-rule": [
+      "L:sec:branch"
+    ],
+    "subsection|L:sec:branch|the-branch-judgment": [
+      "G:the-branch-judgment"
+    ],
+    "subsection|L:sec:branch|identity-is-left-open-by-branch": [
+      "G:identity-is-left-open-by-branch"
+    ],
+    "subsection|L:sec:branch|branch-and-tensor-are-not-inverse": [
+      "G:branch-and-tensor-are-not-inverse"
+    ],
+    "subsection|L:sec:branch|relation-to-speculative-branches": [
+      "G:relation-to-speculative-branches"
+    ],
+    "section||process-management-as-derived-kernel-functions": [
+      "L:sec:process-management"
+    ],
+    "subsection|L:sec:process-management|process": [
+      "G:process"
+    ],
+    "subsection|L:sec:process-management|fork": [
+      "G:fork"
+    ],
+    "subsection|L:sec:process-management|exec": [
+      "G:exec"
+    ],
+    "subsection|L:sec:process-management|exit": [
+      "G:exit"
+    ],
+    "subsection|L:sec:process-management|wait": [
+      "G:wait"
+    ],
+    "section||scheduling": [
+      "L:sec:scheduling"
+    ],
+    "subsection|L:sec:scheduling|the-runnable-set": [
+      "G:the-runnable-set"
+    ],
+    "subsection|L:sec:scheduling|admissibility-versus-selection": [
+      "G:admissibility-versus-selection"
+    ],
+    "subsection|L:sec:scheduling|rendering-the-run-queue": [
+      "G:rendering-the-run-queue"
+    ],
+    "subsection|L:sec:scheduling|scheduling-and-log-sequencing-are-the-same-arbit": [
+      "G:scheduling-and-log-sequencing-are-the-same-arbit"
+    ],
+    "section||the-syscall-boundary": [
+      "L:sec:syscall"
+    ],
+    "subsection|L:sec:syscall|syscall-as-a-degenerate-scheduling-reduction": [
+      "G:syscall-as-a-degenerate-scheduling-reduction"
+    ],
+    "subsection|L:sec:syscall|privilege-separation-as-namespace-asymmetry": [
+      "G:privilege-separation-as-namespace-asymmetry"
+    ],
+    "section||virtual-object-namespace": [
+      "L:sec:vfs"
+    ],
+    "subsection|L:sec:vfs|extending-the-state-term": [
+      "G:extending-the-state-term"
+    ],
+    "subsection|L:sec:vfs|paths-naming-and-content-as-fact-keys": [
+      "G:paths-naming-and-content-as-fact-keys"
+    ],
+    "subsection|L:sec:vfs|read": [
+      "G:read"
+    ],
+    "subsection|L:sec:vfs|write": [
+      "G:write"
+    ],
+    "subsection|L:sec:vfs|rename": [
+      "G:rename"
+    ],
+    "subsection|L:sec:vfs|deletion": [
+      "G:deletion"
+    ],
+    "subsection|L:sec:vfs|mount": [
+      "G:mount"
+    ],
+    "section||modules-and-drivers": [
+      "L:sec:modules"
+    ],
+    "subsection|L:sec:modules|driver-as-typed-interpreter": [
+      "G:driver-as-typed-interpreter"
+    ],
+    "subsection|L:sec:modules|module-loading-does-not-enlarge-the-causal-basis": [
+      "G:module-loading-does-not-enlarge-the-causal-basis"
+    ],
+    "subsection|L:sec:modules|module-version-attribution-and-deterministic-rep": [
+      "G:module-version-attribution-and-deterministic-rep"
+    ],
+    "section||permissions-capabilities-and-namespace-isolation": [
+      "L:sec:permissions"
+    ],
+    "subsection|L:sec:permissions|capabilities-as-relations": [
+      "G:capabilities-as-relations"
+    ],
+    "subsection|L:sec:permissions|namespace-as-bundled-renderer": [
+      "G:namespace-as-bundled-renderer"
+    ],
+    "subsection|L:sec:permissions|namespace-isolation-requires-view-coherence": [
+      "L:sec:namespace-coherence"
+    ],
+    "section||architectural-layering": [
+      "L:sec:layering"
+    ],
+    "subsection|L:sec:layering|the-five-way-taxonomy": [
+      "G:the-five-way-taxonomy"
+    ],
+    "subsection|L:sec:layering|where-everything-landed": [
+      "G:where-everything-landed"
+    ],
+    "subsection|L:sec:layering|comparative-rationale": [
+      "G:comparative-rationale"
+    ],
+    "subsection|L:sec:layering|what-this-specification-establishes-assumes-and-": [
+      "G:what-this-specification-establishes-assumes-and-"
+    ],
+    "subsection|L:sec:layering|conclusion": [
+      "G:conclusion"
+    ]
+  },
+  "history": [
+    {
+      "at": "2026-09-27T07:21:21",
+      "added": [
+        "G:motivation-and-design-goals",
+        "G:core-ontology",
+        "G:authoritative-event-log",
+        "G:kernel-semantics",
+        "G:formal-execution-semantics",
+        "G:kernel-state",
+        "G:transition-relation",
+        "G:pop-object-creation",
+        "G:merge-equivalence-induction",
+        "G:link-relation-creation",
+        "G:unlink-relation-removal",
+        "G:collapse-bulk-equivalence",
+        "G:set-meta-metadata-attachment",
+        "G:semantic-properties",
+        "G:merge-induced-relation-normalization",
+        "G:replay-equivalence",
+        "G:meta-theorem-functoriality-of-derived-views",
+        "G:event-prefix-category",
+        "G:state-semantics-as-a-functor",
+        "G:derived-views",
+        "G:diffs-and-incremental-observation",
+        "G:snapshots-as-derived-views",
+        "G:seekable-time-and-historical-inspection",
+        "L:sec:speculative-branches",
+        "G:layout-and-geometry-as-metadata",
+        "G:arbiter-and-collaboration-model",
+        "L:sec:reduction",
+        "G:the-term-grammar-extended",
+        "G:pop-and-collapse-as-already-primitive",
+        "G:link",
+        "G:unlink",
+        "G:merge",
+        "G:set-meta",
+        "G:the-boundary-stated",
+        "L:sec:branch",
+        "G:the-branch-judgment",
+        "G:identity-is-left-open-by-branch",
+        "G:branch-and-tensor-are-not-inverse",
+        "G:relation-to-speculative-branches",
+        "L:sec:process-management",
+        "G:process",
+        "G:fork",
+        "G:exec",
+        "G:exit",
+        "G:wait",
+        "L:sec:scheduling",
+        "G:the-runnable-set",
+        "G:admissibility-versus-selection",
+        "G:rendering-the-run-queue",
+        "G:scheduling-and-log-sequencing-are-the-same-arbit",
+        "L:sec:syscall",
+        "G:syscall-as-a-degenerate-scheduling-reduction",
+        "G:privilege-separation-as-namespace-asymmetry",
+        "L:sec:vfs",
+        "G:extending-the-state-term",
+        "G:paths-naming-and-content-as-fact-keys",
+        "G:read",
+        "G:write",
+        "G:rename",
+        "G:deletion",
+        "G:mount",
+        "L:sec:modules",
+        "G:driver-as-typed-interpreter",
+        "G:module-loading-does-not-enlarge-the-causal-basis",
+        "G:module-version-attribution-and-deterministic-rep",
+        "L:sec:permissions",
+        "G:capabilities-as-relations",
+        "G:namespace-as-bundled-renderer",
+        "L:sec:namespace-coherence",
+        "L:sec:layering",
+        "G:the-five-way-taxonomy",
+        "G:where-everything-landed",
+        "G:comparative-rationale",
+        "G:what-this-specification-establishes-assumes-and-",
+        "G:conclusion"
+      ],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:22:18",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:23:28",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:24:03",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:24:21",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:25:06",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T09:07:55",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T09:08:30",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T09:38:34",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    }
+  ]
+}

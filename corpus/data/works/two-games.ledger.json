@@ -1,0 +1,171 @@
+{
+  "work": "two-games",
+  "version": 1,
+  "nodes": {
+    "L:sec:games-intro": {
+      "pos": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "radius": 6.17,
+      "title": "A Long Convergence",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:12:25",
+      "last_seen": "2026-09-27T09:11:17"
+    },
+    "L:sec:games-haplopraxis": {
+      "pos": [
+        0.0,
+        0.0,
+        40.0
+      ],
+      "radius": 6.33,
+      "title": "Haplopraxis",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:12:25",
+      "last_seen": "2026-09-27T09:11:17"
+    },
+    "L:sec:games-polyxan": {
+      "pos": [
+        0.0,
+        0.0,
+        80.0
+      ],
+      "radius": 6.39,
+      "title": "Polyxan and Semantic Space",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:12:25",
+      "last_seen": "2026-09-27T09:11:17"
+    },
+    "L:sec:games-trajectories": {
+      "pos": [
+        0.0,
+        0.0,
+        120.0
+      ],
+      "radius": 6.37,
+      "title": "Navigation as Reasoning",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:12:25",
+      "last_seen": "2026-09-27T09:11:17"
+    },
+    "L:sec:games-loops": {
+      "pos": [
+        0.0,
+        0.0,
+        160.0
+      ],
+      "radius": 6.31,
+      "title": "Two Loops",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:12:25",
+      "last_seen": "2026-09-27T09:11:17"
+    },
+    "L:sec:games-routes": {
+      "pos": [
+        0.0,
+        0.0,
+        200.0
+      ],
+      "radius": 6.39,
+      "title": "Repeat Routes and Policies",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:12:25",
+      "last_seen": "2026-09-27T09:11:17"
+    },
+    "L:sec:games-new": {
+      "pos": [
+        0.0,
+        0.0,
+        240.0
+      ],
+      "radius": 6.37,
+      "title": "What Was New",
+      "role": "main",
+      "level": "section",
+      "parent": null,
+      "status": "active",
+      "first_seen": "2026-09-27T07:12:25",
+      "last_seen": "2026-09-27T09:11:17"
+    }
+  },
+  "labels": {
+    "sec:games-intro": "L:sec:games-intro",
+    "sec:games-haplopraxis": "L:sec:games-haplopraxis",
+    "sec:games-polyxan": "L:sec:games-polyxan",
+    "sec:games-trajectories": "L:sec:games-trajectories",
+    "sec:games-loops": "L:sec:games-loops",
+    "sec:games-routes": "L:sec:games-routes",
+    "sec:games-new": "L:sec:games-new"
+  },
+  "aliases": {
+    "section||a-long-convergence": [
+      "L:sec:games-intro"
+    ],
+    "section||haplopraxis": [
+      "L:sec:games-haplopraxis"
+    ],
+    "section||polyxan-and-semantic-space": [
+      "L:sec:games-polyxan"
+    ],
+    "section||navigation-as-reasoning": [
+      "L:sec:games-trajectories"
+    ],
+    "section||two-loops": [
+      "L:sec:games-loops"
+    ],
+    "section||repeat-routes-and-policies": [
+      "L:sec:games-routes"
+    ],
+    "section||what-was-new": [
+      "L:sec:games-new"
+    ]
+  },
+  "history": [
+    {
+      "at": "2026-09-27T07:12:25",
+      "added": [
+        "L:sec:games-intro",
+        "L:sec:games-haplopraxis",
+        "L:sec:games-polyxan",
+        "L:sec:games-trajectories",
+        "L:sec:games-loops",
+        "L:sec:games-routes",
+        "L:sec:games-new"
+      ],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T07:12:25",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    },
+    {
+      "at": "2026-09-27T09:11:17",
+      "added": [],
+      "extended": [],
+      "withdrawn": []
+    }
+  ]
+}
